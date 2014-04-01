@@ -82,3 +82,9 @@ a img {border: none; } /* IE fix */
 	
 }
 
+#mainMenuContainer div:hover {
+	
+	color: yellow;
+	
+}
+
