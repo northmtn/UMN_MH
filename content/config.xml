@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config>
+
+	<settings>
+		<setting id="audioExtension" value=".mp3" />
+		<setting id="videoExtension" value=".mp4" />
+		<setting id="developerMode" value="true" />
+		<setting id="LMSEnabled" value="false" />
+	</settings>
+    
+</config>
