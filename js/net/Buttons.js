@@ -40,21 +40,21 @@ function buttonClicked(btnId) {
 		out("buttonClicked(btnId): "+btnId);
 
     // catch specific types of buttons
-    if (btnId.substring(0, 7) == "navDot_") {
-
+    if (btnId.substring(0, 5) == "goto_") {
+    
+		//main menu nav
+		var screenId = btnId.substring(5);
+		globalNavGo( screenId );
         return;
         
     }
 
     //other btns...
     switch (btnId) {
-    	case "goto_integrative":
+    	case "btnid_1":
     		
-    	break;
-		case "goto_touchstone":
-			
 		break;
-		case "goto_wilder":
+		case "btnid_2":
 			
 		break;
         default:
@@ -62,4 +62,32 @@ function buttonClicked(btnId) {
             break;
     }
         
+}
+
+
+
+function globalNavGo(screenId) {
+
+	out(screenId);
+	
+//	$("#wrapper").children("div[id^='screen_']").hide();
+	
+	$("#screen_"+screenId).show();
+	$("#screen_mainmenu").show();
+	
+	if (screenId != "mainmenu") {
+	
+		$("#screen_"+screenId).css("left", 1024);
+		TweenLite.to( $("#screen_mainmenu"), 1, { css: { left: -1024 } } );
+		
+	}else {
+		
+		$("#screen_"+screenId).css("left", -1024);
+		
+		TweenLite.to( $("#screen_integrative,#screen_touchstone,#screen_wilder" ), 1, { css: { left: 1024 } } );
+		
+	}
+	
+	TweenLite.to( $("#screen_"+screenId), 1, { css: { left: 0 } } );
+
 }
