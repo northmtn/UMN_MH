@@ -37,7 +37,7 @@ function refreshButtonListeners () {
 
 function buttonClicked(btnId) {
     	
-		out("buttonClicked(btnId): "+btnId);
+	out("buttonClicked(btnId): "+btnId);
 
     // catch specific types of buttons
     if (btnId.substring(0, 5) == "goto_") {
@@ -67,11 +67,7 @@ function buttonClicked(btnId) {
 
 
 function globalNavGo(screenId) {
-
-	out(screenId);
-	
-//	$("#wrapper").children("div[id^='screen_']").hide();
-	
+		
 	$("#screen_"+screenId).show();
 	$("#screen_mainmenu").show();
 	
@@ -90,4 +86,14 @@ function globalNavGo(screenId) {
 	
 	TweenLite.to( $("#screen_"+screenId), 1, { css: { left: 0 } } );
 
+}
+
+function bubbleIn(element) {
+//	out("over");
+}
+function bubbleOut(element) {
+//	out("out");
+}
+function bubbleClick(element) {
+//	out("click");
 }
