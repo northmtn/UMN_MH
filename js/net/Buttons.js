@@ -79,7 +79,6 @@ function globalNavGo(screenId) {
 	}else {
 		
 		$("#screen_"+screenId).css("left", -1024);
-		
 		TweenLite.to( $("#screen_integrative,#screen_touchstone,#screen_wilder" ), 1, { css: { left: 1024 } } );
 		
 	}
@@ -88,12 +87,5 @@ function globalNavGo(screenId) {
 
 }
 
-function bubbleIn(element) {
-//	out("over");
-}
-function bubbleOut(element) {
-//	out("out");
-}
-function bubbleClick(element) {
-//	out("click");
-}
+
+

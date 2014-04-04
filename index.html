@@ -11,6 +11,7 @@
     <script src="js/libs/jquery/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="js/net/Utils.js" type="text/javascript"></script>
     <script src="js/net/Buttons.js" type="text/javascript"></script>
+    <script src="js/net/Bubble.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
          
 </head>
@@ -26,32 +27,37 @@
    		
    		<!-- INTEGRATIVE MODULE -->
    		<div id="screen_integrative" class="fullbleed" data-role="container" style="display: none;">
-   			<br/><br/><br/>integrative
+   			<br/><br/><br/>Integrative learning module here
    		</div>
    		
    		<!-- TOUCHSTONE MODULE -->
    		<div id="screen_touchstone" class="fullbleed" data-role="container" style="display: none;">
-   			<br/><br/><br/>touchstone
-   			<div id="bubble_physical" data-role="graphic">
+   		
+   			<div id="bubbles_container" data-role="container">
+   			
+   			</div>
+   			
+   			
+   			
+   			<!--
+   			<!-- bubble template --*>
+   			<div id="bubble_physical" class="bubble" data-role="container" >
+   				<img src="img/tstone/bub_physical.png" data-role="graphic" />   
+   				<p data-role="label">PHYSICAL</p>
+   				<img src="img/tstone/bub_over.png" data-role="button" usemap="#map_bubble_circle"/> 
    				<map name="map_bubble_circle" >
-   				  <area shape="circle" data-role="button" coords="110,110,110" alt="Physical" href="#" onClick="bubbleClick(this);" onMouseOver="bubbleIn(this);" onMouseOut="bubbleOut(this);">
+   				  <area shape="circle" data-role="button" coords="100, -100, 333" alt="Physical" onClick="bubbleClick(this);" onMouseOver="bubbleIn(this);" onMouseOut="bubbleOut(this);" >
    				</map>
-   				<img src="img/circ_physical.png" data-role="graphic" usemap="#map_bubble_circle" />   				
-   				<p data-role="label">xxxxxxxxxphysical </p>
    			</div>
-   			<br/><br/><br/><br/>
-   			<div id="bubble_physical2" data-role="graphic">
-   				<map name="map_bubble_circle2" >
-   				  <area shape="circle" data-role="button" coords="110,110,110" alt="Physical" href="#" onClick="bubbleClick(this);" onMouseOver="bubbleIn(this);" onMouseOut="bubbleOut(this);">
-   				</map>
-   				<img src="img/circ_physical.png" data-role="graphic" usemap="#map_bubble_circle2" />   				
-   				<p data-role="label">xxxxxxxxx22sical </p>
-   			</div>
+   			<!-- --*>
+   			-->
+   			
+   			
    		</div>
    		
    		<!-- WILDER MODULE -->
    		<div id="screen_wilder" class="fullbleed" data-role="container" style="display: none;">
-   			<br/><br/><br/>wilder
+   			<br/><br/><br/>Wilder learning module here
    		</div>
    		
    		<!-- GLOBAL NAV -->

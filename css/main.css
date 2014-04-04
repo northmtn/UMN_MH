@@ -22,7 +22,7 @@ body {
 	z-index:1;
 	margin:auto;
 	width: 1024px;
-	height: 672px; //iPad resolution without safari/ios bars
+	height: 672px; /* iPad resolution without safari/ios bars */
 	overflow: hidden;
 	color: #666;
 }
@@ -33,6 +33,8 @@ body {
 
 div[data-role="button"],
 img[data-role="button"],
+map[data-role="button"],
+area[data-role="button"],
 img[data-role="graphic"],
 img[data-role="background"],
 div[data-role="template"],
@@ -44,6 +46,8 @@ div[data-role="container"] {
 }
 
 div[data-role="button"],
+area[data-role="button"],
+map[data-role="button"],
 img[data-role="button"] {
 	cursor: pointer;
 }
@@ -100,3 +104,24 @@ a img {border: none; } /* IE fix */
 	
 }
 
+
+/*------------*/
+/* Touchstone */
+/*------------*/	
+.bubble {
+
+}
+
+.bubble img {
+	
+	left: -145px;
+	top: -145px;
+	
+}
+
+.bubble p {
+	
+	left: -30px;
+	top: -20px;
+	
+}
