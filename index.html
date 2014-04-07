@@ -7,11 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link href="css/main.css" type="text/css" rel="Stylesheet" />
+    <link rel="Stylesheet" href="css/mediaelementplayer.css" />
     <script src="js/libs/greensock/TweenMax.min.js" type="text/javascript"></script>
     <script src="js/libs/jquery/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="js/libs/media/mediaelement-and-player.js"></script>
     <script src="js/net/Utils.js" type="text/javascript"></script>
     <script src="js/net/Buttons.js" type="text/javascript"></script>
     <script src="js/net/Bubble.js" type="text/javascript"></script>
+    <script src="js/net/AppData.js" type="text/javascript"></script>
+    <script src="js/net/Media.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
          
 </head>
@@ -64,7 +68,18 @@
    		<div id="global_nav" data-role="container">
    			<div id="goto_mainmenu" data-role="button">MAIN MENU</div>
    		</div>
-    			
+   		
+   		
+   		<!-- VIDEO PLAYER OVERLAY -->
+   		<div id="vid_player_overlay" class="overlay_bg fullbleed" data-role="container">
+   			<div id="player_container" width="640" height="360" data-role="container">
+   				<video id="global_player" src="content/video/M01_S02V01_D.mp4" width="640" height="360"></video>
+   			</div>
+   			<button id="v1" onClick="vid1Select(this);">vid 1</button>
+   			<button id="v2" onClick="vid2Select(this);">vid 2</button>
+   			<button id="v2" onClick="vidExit(this);">exit</button>
+   		</div>
+
     </div>
     
 </body>

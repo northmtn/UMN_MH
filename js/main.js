@@ -45,7 +45,11 @@ $(document).ready(function () {
 
     	refreshButtonListeners();
     	
+    	//temp
+    	vp = new VidPlayer("global_player");
+    	vp.loadVideo("content/video/M01_S02V02_D.mp4");
+    	
     }
-    
+        
  });
  

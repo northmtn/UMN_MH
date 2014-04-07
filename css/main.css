@@ -82,6 +82,12 @@ a img {border: none; } /* IE fix */
 	background-color: #987;
 	
 }
+.overlay_bg {
+	
+	background-color: rgba(0, 0, 0, 0.7);
+	width: 1024px;
+	height: 672px;
+}
 
 
 /*-----------*/
@@ -123,5 +129,20 @@ a img {border: none; } /* IE fix */
 	
 	left: -30px;
 	top: -20px;
+	
+}
+
+
+/*--------------*/
+/* Video Player */
+/*--------------*/
+#vid_player_overlay {
+	
+}
+#vid_player_overlay #player_container {
+	
+	position: absolute;
+	top: 150px;
+	left: 200px;
 	
 }

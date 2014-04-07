@@ -63,11 +63,11 @@ Bubble.prototype.stopFloat = function( ) {
 Bubble.prototype.randomFloat = function( bub ) {
 	
 	//Float "randomly" around home location
-	var rx = bub.homeX + (Math.random() * 100 - 50);
-	var ry = bub.homeY + (Math.random() * 100 - 50);
-	var rd = 3 + Math.random() * 2;
+	var rx = bub.homeX + (Math.random() * 60 - 30);
+	var ry = bub.homeY + (Math.random() * 60 - 30);
+	var rd = 2 + Math.random() * 1;
 		
-	TweenLite.to( $(bub.bubbleDiv), rd, { css: { left: rx, top: ry }, ease:Power1.easeInOut, onComplete:bub.randomFloat, onCompleteParams:[bub] } );
+	TweenLite.to( $(bub.bubbleDiv), rd, { css: { left: rx, top: ry }, ease:Power1.easeOut, onComplete:bub.randomFloat, onCompleteParams:[bub] } );
 	
 }
 
