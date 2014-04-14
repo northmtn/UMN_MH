@@ -87,6 +87,7 @@ a img {border: none; } /* IE fix */
 	background-color: rgba(0, 0, 0, 0.7);
 	width: 1024px;
 	height: 672px;
+	
 }
 
 
@@ -114,6 +115,31 @@ a img {border: none; } /* IE fix */
 /*------------*/
 /* Touchstone */
 /*------------*/	
+#timeline_nav {
+	
+	left: 600px;
+	
+}
+
+#timeline_nav div {
+	
+	width: 35px;
+	float: left;
+	
+}
+
+.two_col_vid_right p {
+	
+	width: 250px;
+	
+}
+.two_col_vid_right .mejs-container {
+	
+	left: 350px;
+	top: 50px;
+	
+}
+
 .bubble {
 
 }

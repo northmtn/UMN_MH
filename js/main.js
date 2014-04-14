@@ -13,10 +13,10 @@ $(document).ready(function () {
         	
         	//Will spin until the initial section is loaded.
 //        	showSpinner();
-        
+
         	configXML = xml;
 
-        	initialize();
+        	setup();
 
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -24,15 +24,37 @@ $(document).ready(function () {
         }
     });
     
+    function setup() {
     
-    function initialize() {
-        	
     	//read config settings, set global vars
+    	audioFolder = $(configXML).find('setting[id=audioFolder]').attr('value');
     	audioExtension = $(configXML).find('setting[id=audioExtension]').attr('value');
+    	videoFolder = $(configXML).find('setting[id=videoFolder]').attr('value');
     	videoExtension = $(configXML).find('setting[id=videoExtension]').attr('value');
     	developerMode = ($(configXML).find('setting[id=developerMode]').attr('value') == "true");
-    	LMSEnabled = $(configXML).find('setting[id=LMSEnabled]').attr('value') == "true";//converts to bool
     	
+    	setupSoundManager(); // delay app start until after sound manager setup.
+    	
+    }
+    
+    function setupSoundManager() {
+    	
+    	soundManager.setup({
+    	  url: 'js/libs/soundmanager2/',
+    	  // ignore Flash where possible, use 100% HTML5 mode
+    	  preferFlash: false,
+    	  onready: function() {
+    	    // Ready to use; soundManager.createSound() etc. can now be called.
+    	    
+    	   	//Start App
+    	   	initialize();
+    	   	
+    	  }
+    	});
+    }
+    
+    function initialize() {
+
     	var bubbleContainer = $("#screen_touchstone #bubbles_container");
     	
     	var bub1 = new Bubble("bubble_physical", "PHYSICAL", bubbleContainer, 150, 250);
@@ -46,10 +68,28 @@ $(document).ready(function () {
     	refreshButtonListeners();
     	
     	//temp
-    	vp = new VidPlayer("global_player");
-    	vp.loadVideo("content/video/M01_S02V02_D.mp4");
+    	vp = new VidPlayer("#global_player");
+    	vp.loadVideo("content/video/M01_S02V02_D.mp4");    	
+    	
+    	///temp
+    	var c = $("#screen_touchstone #views_container");
+    	var vc = new ViewCollection( $(c), "trustone_views");
+    	
+    	vc.addView( new View( $(c), "view_1", "view_1") ); // _containerDiv, _contentId, _templateId
+    	vc.addView( new View( $(c), "view_2", "view_1") );
+    	vc.addView( new View( $(c), "view_3", "view_1") );
+    	vc.addView( new View( $(c), "view_4", "view_4") );
+    	
+    	//will not work, must set after templates are loaded
+    	vc.gotoView( 0 ); // set initial view
+    	
+    	//temp
+    	var tn = new TimelineNav( $("#screen_touchstone  #timeline_nav").first(), vc);
+    	tn.refreshDisplays();
     	
     }
+    
+    
         
  });
  

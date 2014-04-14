@@ -51,8 +51,8 @@ function buttonClicked(btnId) {
 
     //other btns...
     switch (btnId) {
-    	case "btnid_1":
-    		
+    	case "btn_video_overlay":
+    		$("#vid_player_overlay").show();
 		break;
 		case "btnid_2":
 			

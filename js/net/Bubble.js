@@ -32,25 +32,15 @@ Bubble.prototype.generateHTML = function( ) {
 	$( this.bubbleDiv ).css('left', this.homeX);
 	$( this.bubbleDiv ).css('top', this.homeY);
 	
-	$( this.bubbleDiv ).on( "click", { bubble:this }, function(event) {
-	
-	  var b = event.data.bubble;
-	  
-	  if (b.isActive == true){
-	  	b.deactivate();
-	  }else {
-	  	b.activate();
-	  }
-	  
-	  
-	});
+	addBubble(this);
 	
 }
 
 // beginFloat() | Make bubble start floating around randomly
 Bubble.prototype.beginFloat = function( ) {
 	
-	this.randomFloat( this );
+	this.floatX( this );
+	this.floatY( this );
 	
 }
 
@@ -60,16 +50,24 @@ Bubble.prototype.stopFloat = function( ) {
 	
 }
 
-Bubble.prototype.randomFloat = function( bub ) {
+Bubble.prototype.floatX = function( bub ) {
 	
 	//Float "randomly" around home location
-	var rx = bub.homeX + (Math.random() * 60 - 30);
-	var ry = bub.homeY + (Math.random() * 60 - 30);
+	var rx = bub.homeX + (Math.random() * 100 - 50);
 	var rd = 2 + Math.random() * 1;
-		
-	TweenLite.to( $(bub.bubbleDiv), rd, { css: { left: rx, top: ry }, ease:Power1.easeOut, onComplete:bub.randomFloat, onCompleteParams:[bub] } );
+	TweenLite.to( $(bub.bubbleDiv), rd, { css: { left: rx }, ease:Power1.easeInOut, onComplete:bub.floatX, onCompleteParams:[bub] } );
 	
 }
+
+Bubble.prototype.floatY = function( bub ) {
+	
+	//Float "randomly" around home location
+	var ry = bub.homeY + (Math.random() * 100 - 50);
+	var rd = 2 + Math.random() * 1;
+	TweenLite.to( $(bub.bubbleDiv), rd, { css: { top: ry }, ease:Power1.easeInOut, onComplete:bub.floatY, onCompleteParams:[bub] } );
+	
+}
+
 
 // activate() | bring bubble into foreground
 Bubble.prototype.activate = function( ) {
@@ -78,7 +76,7 @@ Bubble.prototype.activate = function( ) {
 	
 	this.stopFloat();
 	
-	TweenLite.to( $(this.bubbleDiv), 0.25, { css: { scale: 1, zIndex:1 } } ); // scale  up, bring to foreground
+	TweenLite.to( $(this.bubbleDiv), 0.25, { css: { scale: 1, zIndex:5 } } ); // scale  up, bring to foreground
 	
 	TweenLite.to( $(this.bubbleDiv).children("#over_inactive"), 0.2, { css: { opacity: 0 } } );
 	
@@ -103,4 +101,53 @@ Bubble.prototype.deactivate = function( ) {
 	
 	this.beginFloat();
 	
+}
+
+
+/////
+///move into bubble container class
+////
+/////
+var bubbles = [];
+
+function addBubble(b){
+
+	bubbles.push(b);
+
+}
+
+function activateBubbles(bubbleIds) {
+	    
+	for (var i = 0; i < bubbles.length; i++) {
+		
+		for (var j = 0; j < bubbleIds.length; j++) {
+			
+			if ( bubbles[i].id == bubbleIds[j] ) {
+			
+				bubbles[i].activate();
+				
+			}
+			
+		}
+		
+		
+	}
+	
+}
+
+
+//temp
+function stepClicked(button) {
+	var id = $(button).attr('id');
+	
+	out(id);
+	switch (id) {
+		case 'step1':
+			activateBubbles(["bubble_physical","bubble_emotional"]);
+		break;
+		case 'step2':
+			activateBubbles(["bubble_spiritual"]);
+		break;
+		
+	}
 }
