@@ -37,7 +37,7 @@ function refreshButtonListeners () {
 
 function buttonClicked(btnId) {
     	
-	out("buttonClicked(btnId): "+btnId);
+	out("buttonClicked(btnId): " + btnId);
 
     // catch specific types of buttons
     if (btnId.substring(0, 5) == "goto_") {
@@ -86,6 +86,4 @@ function globalNavGo(screenId) {
 	TweenLite.to( $("#screen_"+screenId), 1, { css: { left: 0 } } );
 
 }
-
-
 

@@ -32,8 +32,6 @@ Bubble.prototype.generateHTML = function( ) {
 	$( this.bubbleDiv ).css('left', this.homeX);
 	$( this.bubbleDiv ).css('top', this.homeY);
 	
-	addBubble(this);
-	
 }
 
 // beginFloat() | Make bubble start floating around randomly
@@ -45,7 +43,7 @@ Bubble.prototype.beginFloat = function( ) {
 }
 
 Bubble.prototype.stopFloat = function( ) {
-		
+	
 	TweenMax.killTweensOf($(this.bubbleDiv));
 	
 }
@@ -53,8 +51,8 @@ Bubble.prototype.stopFloat = function( ) {
 Bubble.prototype.floatX = function( bub ) {
 	
 	//Float "randomly" around home location
-	var rx = bub.homeX + (Math.random() * 100 - 50);
-	var rd = 2 + Math.random() * 1;
+	var rx = bub.homeX + (Math.random() * 80 - 40);
+	var rd = 2 + Math.random() * 2;
 	TweenLite.to( $(bub.bubbleDiv), rd, { css: { left: rx }, ease:Power1.easeInOut, onComplete:bub.floatX, onCompleteParams:[bub] } );
 	
 }
@@ -62,8 +60,8 @@ Bubble.prototype.floatX = function( bub ) {
 Bubble.prototype.floatY = function( bub ) {
 	
 	//Float "randomly" around home location
-	var ry = bub.homeY + (Math.random() * 100 - 50);
-	var rd = 2 + Math.random() * 1;
+	var ry = bub.homeY + (Math.random() * 80 - 40);
+	var rd = 2 + Math.random() * 2;
 	TweenLite.to( $(bub.bubbleDiv), rd, { css: { top: ry }, ease:Power1.easeInOut, onComplete:bub.floatY, onCompleteParams:[bub] } );
 	
 }
@@ -101,53 +99,4 @@ Bubble.prototype.deactivate = function( ) {
 	
 	this.beginFloat();
 	
-}
-
-
-/////
-///move into bubble container class
-////
-/////
-var bubbles = [];
-
-function addBubble(b){
-
-	bubbles.push(b);
-
-}
-
-function activateBubbles(bubbleIds) {
-	    
-	for (var i = 0; i < bubbles.length; i++) {
-		
-		for (var j = 0; j < bubbleIds.length; j++) {
-			
-			if ( bubbles[i].id == bubbleIds[j] ) {
-			
-				bubbles[i].activate();
-				
-			}
-			
-		}
-		
-		
-	}
-	
-}
-
-
-//temp
-function stepClicked(button) {
-	var id = $(button).attr('id');
-	
-	out(id);
-	switch (id) {
-		case 'step1':
-			activateBubbles(["bubble_physical","bubble_emotional"]);
-		break;
-		case 'step2':
-			activateBubbles(["bubble_spiritual"]);
-		break;
-		
-	}
 }

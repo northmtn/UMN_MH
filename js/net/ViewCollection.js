@@ -1,5 +1,5 @@
 
-function ViewCollection(_containerDiv, _id) {
+function ViewCollection( _containerDiv, _id ) {
 
 	this.containerDiv = _containerDiv;
 	this.id = _id;

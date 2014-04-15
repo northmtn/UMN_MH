@@ -140,6 +140,23 @@ a img {border: none; } /* IE fix */
 	
 }
 
+.touchstone_steps {
+	
+}
+
+.touchstone_steps #bubbles_container {
+	
+	top: 0px;
+	left: 250px;
+	
+}
+
+.touchstone_steps #stepBtnContainer {
+	
+	top: 100px;
+	
+}
+
 .bubble {
 
 }
