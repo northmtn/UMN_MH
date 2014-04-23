@@ -63,10 +63,10 @@ $(document).ready(function () {
     	var c = $("#screen_touchstone #views_container");
     	var vc = new ViewCollection( $(c), "trustone_views");
     	
-    	vc.addView( new View( $(c), "view_1", "view_1") ); // _containerDiv, _contentId, _templateId
+    	vc.addView( new View( $(c), "view_1", "touchstone_1") ); // ( containerDiv, contentId, templateId )
     	vc.addView( new View( $(c), "view_2", "view_2") );
     	vc.addView( new View( $(c), "view_3", "view_1") );
-    	vc.addView( new View( $(c), "view_4", "view_1") );
+    	vc.addView( new View( $(c), "view_4", "touchstone_1") );
     	
     	
     	//will not work, must set after templates are loaded
@@ -80,38 +80,53 @@ $(document).ready(function () {
     	TweenLite.delayedCall(1, function () {
     		
     		var bubbleContainer = $("#screen_touchstone #bubbles_container");
-    		var bub1 = new Bubble("bubble_physical", "PHYSICAL", bubbleContainer, 150, 250);
-    		var bub2 = new Bubble("bubble_emotional", "EMOTIONAL", bubbleContainer, 350, 150);
-    		var bub3 = new Bubble("bubble_spiritual", "SPIRITUAL", bubbleContainer, 550, 150);
-    		var bub4 = new Bubble("bubble_social", "SOCIAL", bubbleContainer, 700, 250);
-    		var bub5 = new Bubble("bubble_environmental", "ENVIRONMENTAL", bubbleContainer, 200, 400);
-    		var bub6 = new Bubble("bubble_occupational", "OCCUPATIONAL", bubbleContainer, 425, 500);
-    		var bub7 = new Bubble("bubble_financial", "FINANCIAL", bubbleContainer, 650, 400);
+    		
+    		var bub1 = new Bubble("bubble_physical", "Physical", bubbleContainer, 150, 250);
+    		var bub2 = new Bubble("bubble_emotional", "Emotional", bubbleContainer, 350, 150);
+    		var bub3 = new Bubble("bubble_spiritual", "Spiritual", bubbleContainer, 550, 150);
+    		var bub4 = new Bubble("bubble_social", "Social", bubbleContainer, 700, 250);
+    		var bub5 = new Bubble("bubble_environmental", "Environmental", bubbleContainer, 200, 400);
+    		var bub6 = new Bubble("bubble_occupational", "Occupational", bubbleContainer, 425, 500);
+    		var bub7 = new Bubble("bubble_financial", "Financial", bubbleContainer, 650, 400);
     		
     		var bubTank = new BubbleTank( bubbleContainer );
     		bubTank.addBubbles( [bub1,bub2,bub3,bub4,bub5,bub6,bub7] );
     		
+    		
+    		
+    		//Set home positions of all bubbles
+    		var homePt = [];
+    		var offsetX = 200;
+    		var offsetY = 300;
+    		var degreeOffset = 360 / bubTank.bubbles.length;
+    	
+    		for (var i = 0; i < bubTank.bubbles.length; i++) {
+    			homePt = getPointOnRing( deg2Rad(degreeOffset) * i, 200);
+    			bubTank.bubbles[i].setHome(homePt[0] + offsetX, homePt[1] + offsetY);
+    		}
+    		
+    		
     		//attach navigation to bubble tank
-    		$("#stepBtnContainer").children( "button[id^='step']" ).each( function () {
-
+    		$("#navigation_sidebar #step_buttons_container").children( "div[id^='step']" ).each( function () {
+				
     			$( this ).on( "click", function() {
     			  
     			  var id = $(this).attr('id');
-    			      			  
+    			      		  
     			  switch (id) {
-    			  	case 'step1':
+    			  	case 'step_1':
     			  		bubTank.activateBubbles(["bubble_physical","bubble_emotional"]);
     			  	break;
-    			  	case 'step2':
+    			  	case 'step_2':
     			  		bubTank.activateBubbles(["bubble_spiritual"]);
     			  	break;
-    			  	case 'step3':
+    			  	case 'step_3':
     			  		bubTank.activateBubbles(["bubble_occupational","bubble_physical"]);
     			  	break;
-    			  	case 'step4':
+    			  	case 'step_4':
     			  		bubTank.activateBubbles(["bubble_social"]);
     			  	break;
-    			  	case 'step5':
+    			  	case 'step_5':
     			  		bubTank.activateBubbles(["bubble_financial","bubble_environmental"]);
     			  	break;
     			  	

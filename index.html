@@ -9,6 +9,8 @@
     
     <link href="css/main.css" type="text/css" rel="Stylesheet" />
     <link href="css/mediaelementplayer.css" type="text/css" rel="Stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     
     <script src="js/libs/greensock/TweenMax.min.js" type="text/javascript"></script>
     <script src="js/libs/jquery/jquery-1.11.0.min.js" type="text/javascript"></script>
@@ -50,23 +52,16 @@
    		<div id="screen_touchstone" class="fullbleed" data-role="container" style="display: none;">
    		
    			<div id="views_container" data-role="container">
-   			
    			</div>
-
-   			<!--
-   			<button id="step1" onClick="stepClicked(this);">step 1</button>
-   			<br /><br />
-   			<button id="step2" onClick="stepClicked(this);">step 2</button>
-   			
-   			<div id="bubbles_container" data-role="container">
-   			</div>
-   			-->
-   			
-   			<div id="timeline_nav" data-role="container">
-   				 <button id="navIcon_0" data-nav="0">0</button>
-   				 <button id="navIcon_1" data-nav="1">1</button>
-   				 <button id="navIcon_2" data-nav="2">2</button>
-   				 <button id="navIcon_3" data-nav="3">3</button>
+			
+			<div id="header_bar" class="fullbleed" data-role="container">
+			
+	   			<div id="timeline_nav" data-role="container">
+	   				 <button id="navIcon_0" data-nav="0">0</button>
+	   				 <button id="navIcon_1" data-nav="1">1</button>
+	   				 <button id="navIcon_2" data-nav="2">2</button>
+	   				 <button id="navIcon_3" data-nav="3">3</button>
+	   			</div>
    			</div>
    			
    		</div>
@@ -78,13 +73,12 @@
    		
    		<!-- GLOBAL NAV -->
    		<div id="global_nav" data-role="container">
-   			<div id="goto_mainmenu" data-role="button">MAIN</div>
-   			<br/><br/>
-   			<div id="btn_video_overlay" data-role="button">MEDIA</div>
+   			<button id="goto_mainmenu" data-role="button">MAIN</button>
+   			<button id="btn_video_overlay" data-role="button">MEDIA</button>
    		</div>
    		
    		<!-- VIDEO PLAYER OVERLAY -->
-   		<div id="vid_player_overlay" class="overlay_bg fullbleed" data-role="container" style="display: none;">
+   		<div id="vid_player_overlay" class="overlay_bg fullbleed" data-role="container" style="display: none;" >
    			<div id="player_container" width="640" height="360" data-role="container">
    				<video id="global_player" src="content/video/M01_S02V01_D.mp4" width="640" height="360"></video>
    			</div>
@@ -92,6 +86,8 @@
    			<button id="v2" onClick="vid2Select(this);">vid 2</button>
    			<button id="a1" onClick="aud1Select(this);">audio 1</button>
    			<button id="a2" onClick="aud2Select(this);">audio 2</button>
+   			<br/>
+   			<button id="circle_mask" onClick="toggleCircular(this);">circle mask</button>
    			<br/>
    			<button id="exit" onClick="vidExit(this);">exit</button>
    		</div>

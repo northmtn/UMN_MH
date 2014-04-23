@@ -23,10 +23,20 @@ Bubble.prototype.generateHTML = function( ) {
 	//circle img
 	$( this.bubbleDiv ).append( '<img src="img/tstone/bub_' + this.title.toLowerCase() + '.png" data-role="graphic" /> ' );
 	//title label
-	$( this.bubbleDiv ).append( '<p data-role="label">' + this.title + '</p>' );
+	$( this.bubbleDiv ).append( '<p class="bubTitle">' + this.title + '</p>' );
 	//overlay imgs
 	$( this.bubbleDiv ).append( '<img id="over_active" src="img/tstone/bub_over.png" data-role="button" alt="'+this.title+'"/>' );
 	$( this.bubbleDiv ).append( '<img id="over_inactive" src="img/tstone/bub_over_inactive.png" data-role="button" style="display: none;" />' );
+
+	this.setHome(this.homeX, this.homeY);
+	
+}
+
+// setHome(x,y) | Set home position for bubble
+Bubble.prototype.setHome = function( x, y ) {
+	
+	this.homeX = x;
+	this.homeY = y;
 	
 	//position
 	$( this.bubbleDiv ).css('left', this.homeX);

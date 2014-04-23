@@ -43,6 +43,15 @@ function audCallback(){
 	out("sound completed");
 }
 
+function toggleCircular(element) {
+out("circle mask: "+$("#player_container").hasClass( 'vid_circle_mask' ));
+	if ($("#player_container").hasClass( 'vid_circle_mask' ) == true){
+		$("#player_container").removeClass('vid_circle_mask');
+	}else {
+		$("#player_container").addClass('vid_circle_mask');
+	}
+}
+
 function vidExit(element) {
 	vp.kill();
 	soundManager.stopAll();

@@ -5,6 +5,7 @@
 function VidPlayer(_uniqueSelector) {
 	
 	this.id = _uniqueSelector;
+
 	this.player = new MediaElementPlayer(this.id, {
 													    // shows debug errors on screen
 													    enablePluginDebug: false,
