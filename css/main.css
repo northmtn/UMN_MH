@@ -141,23 +141,30 @@ a img {border: none; } /* IE fix */
 
 #screen_touchstone #header_bar {
 	
-	background-image: url("../img/tstone/header_bg_tile.jpg");
+	background-image: url("../img/touchstone/header_bg_tile.jpg");
 	background-repeat: repeat-x;
 	height: 40px;
 	
 }
 
+#screen_touchstone #header_bar h2 {
+	
+	float: left;
+	margin: 0px;
+	
+}
+
 #screen_touchstone {
 	
-	background-image: url("../img/tstone/touchstone_bg1.jpg");
+	background-image: url("../img/touchstone/touchstone_bg1.jpg");
 	background-repeat: repeat-x;
 	background-position-y: 39px;
 
 }
 
 #timeline_nav {
+
 	
-	left: 600px;
 	
 }
 
@@ -165,7 +172,7 @@ a img {border: none; } /* IE fix */
 	
 	width: 35px;
 	float: left;
-	
+		
 }
 
 .single_centered_col {
@@ -186,50 +193,94 @@ a img {border: none; } /* IE fix */
 	width: 480px;
 }
 
-.touchstone_steps #navigation_sidebar {
+.touchstone_steps #navigation_bar {
 	
 	padding-top: 50px;
+	padding-left:  72px;
+	position: relative;
 	
 }
 
+.touchstone_steps #step_buttons_container  {
+	position: relative;	
+}
+
+.touchstone_steps #nav_panel_bg {
+	
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	
+}
+
+.touchstone_steps #nav_panel_bg {
+	
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	
+}
 
 .touchstone_steps .banner_portrait {
+
 	text-align: center;
+	
 }
 
-.touchstone_steps p {
-	top: 180px;
-	left: 50px;
+.touchstone_steps .banner_portrait p {
+
+	position: relative;
+	color: red;
+	top: -25px;
+	
 }
 
-.touchstone_steps #navigation_sidebar #step_buttons_container h3,
-.touchstone_steps #navigation_sidebar #step_buttons_container p {
+.touchstone_steps #navigation_bar #navigation_header {
+	
+	height: 190px;
+		
+}
+
+.touchstone_steps #navigation_bar h3,
+.touchstone_steps #navigation_bar p {
 	margin: 0px;
 	text-align: center;
+	color: white;
 }
 
-.touchstone_steps #navigation_sidebar #step_buttons_container h3 {
+.touchstone_steps #navigation_bar #step_buttons_container h3 {
 	padding-top: 20px;
 }
 
-.touchstone_steps #navigation_sidebar #step_buttons_container p {
+.touchstone_steps #navigation_bar #step_buttons_container p {
 	font-style: italic;
 }
 
-.touchstone_steps #navigation_sidebar #step_buttons_container .stepBtn {
+.touchstone_steps #navigation_bar #step_buttons_container .stepBtn {
 	
-	background-color: blue;
 	width: 200px;
 	height: 80px;
 	position: relative;
 	border: 1px solid #ccc;
+	background-image: url("../img/touchstone/nav_btn.png");
 	
+}
+
+.touchstone_steps #navigation_bar #step_buttons_container .stepBtn:hover {
+	
+	background-color: rgb(50,100,125);
+	
+}
+
+.touchstone_steps #navigation_bar img[data-role="background"] {
+	top: 0px;
+	left: 0px;
 }
 
 .touchstone_steps #bubbles_container {
 	
 	top: 0px;
-	left: 250px;
+	left: 400px;
 	
 }
 
@@ -254,12 +305,14 @@ a img {border: none; } /* IE fix */
 	
 }
 
-.bubble .bubTitle {
+#screen_touchstone .bubble .bubTitle {
 
 	text-align: center;
 	position: relative;
 	left: -149px;
-	top: -23px;
+	top: -43px;
+	color: white;
+	font-weight: 100;
 	
 }
 
@@ -287,5 +340,16 @@ a img {border: none; } /* IE fix */
 	
 	-webkit-mask: url("../img/vid_circle_mask.png") no-repeat;
 	-webkit-mask-position: 140px 0px;
+	
+}
+
+/* Load Spinner Overlay */
+#spinnerOverlayContainer{
+	text-align: center;
+}
+#spinnerOverlayContainer #loadingSpinner {
+
+	top:286px;
+	left:461px;
 	
 }

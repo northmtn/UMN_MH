@@ -54,9 +54,6 @@ function buttonClicked(btnId) {
     	case "btn_video_overlay":
     		$("#vid_player_overlay").show();
 		break;
-		case "btnid_2":
-			
-		break;
         default:
         
             break;

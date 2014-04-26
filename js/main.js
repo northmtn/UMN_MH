@@ -12,7 +12,7 @@ $(document).ready(function () {
         success: function (xml) {
         	
         	//Will spin until the initial section is loaded.
-//        	showSpinner();
+        	showSpinner();
 
         	configXML = xml;
 
@@ -107,10 +107,19 @@ $(document).ready(function () {
     		
     		
     		//attach navigation to bubble tank
-    		$("#navigation_sidebar #step_buttons_container").children( "div[id^='step']" ).each( function () {
+    		$("#navigation_bar #step_buttons_container").children( "div[id^='step']" ).each( function () {
 				
     			$( this ).on( "click", function() {
-    			  
+    			
+					//show/hide subtitles and change background
+					$("#navigation_bar #step_buttons_container").children( "div[id^='step']" ).each( function () {
+						$(this).children('#subtitle').hide();
+						$(this).css("background-color", "rgb(90,220,180)");
+					});
+					$(this).children('p[id="subtitle"]').show();
+					$(this).css("background-color", "rgb(10,90,25)");
+					
+
     			  var id = $(this).attr('id');
     			      		  
     			  switch (id) {
@@ -139,6 +148,8 @@ $(document).ready(function () {
     	});
 
     	refreshButtonListeners();
+    	
+    	hideSpinner();
     	
     }
     
