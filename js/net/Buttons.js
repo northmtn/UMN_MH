@@ -1,5 +1,5 @@
 /*-----------------*/
-/* Button Listners */
+/* Button Listeners */
 /*-----------------*/
 
 function refreshButtonListeners () {
@@ -81,6 +81,9 @@ function globalNavGo(screenId) {
 	}
 	
 	TweenLite.to( $("#screen_"+screenId), 1, { css: { left: 0 } } );
-
+	
+	//preload assets for this module if they haven't been already. 
+	
+	
 }
 

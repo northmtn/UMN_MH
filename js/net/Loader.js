@@ -7,7 +7,6 @@ function showSpinner() {
 	//Start spinning
 	TweenMax.to( $("#spinnerOverlayContainer #loadingSpinner"), 1, {rotation:360, repeat:-1, yoyo:false, ease:"Linear.easeNone"});
 	
-	out("showSpinner()");
 }
 
 function hideSpinner() {
@@ -25,13 +24,31 @@ function hideSpinner() {
 	
 	$("#spinnerOverlayContainer").hide();
 	
-	out("hideSpinner()");
+}
 
+function scrapeDivForImageArray(containerDiv) {
+
+	var imgArr = [];
+
+	//gather image urls from template html
+	$(containerDiv).find('img').each( function () {
+		if ( $(this).attr('src') != "") {
+			imgArr.push( $(this).attr('src') );
+		}
+		
+	});
+	
+	return imgArr;
+	
 }
 
 function preLoadImageArray(imagesArray, loadingCompleteCallback, callbackObj) {
 
-	
+	if(imagesArray.length == 0) {
+		out("OOPS: No images in array to preload");
+		loadingCompleteCallback.apply (callbackObj, []);
+	}
+		
 	new preLoader(imagesArray, {
 	    onProgress: function(img, imageEl, index){
 	        // fires every time an image is done or errors. 

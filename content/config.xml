@@ -39,8 +39,10 @@
 		
 		<view id="view_3" title="Intro 3">
 			
-			<text id="text_1">Touchstone Mental Health 3</text>
-			<text id="text_2">in voluptate velit esse cillum dolore eu fugiat nu</text>
+			<text id="text_1">This is the 3rd view</text>
+			<image id="image_1">img/vid_circle_mask.png</image>
+			<image id="image_2">img/vid_circle_mask.png</image>
+			<image id="image_3">img/vid_circle_mask.png</image>
 			
 		</view>
 		

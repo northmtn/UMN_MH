@@ -31,3 +31,32 @@ ViewCollection.prototype.gotoView = function ( goToIndex ) {
 	this.currentViewIndex = goToIndex;
 	
 }
+
+ViewCollection.prototype.getImageArray = function(  ) {
+
+	var imgArr = [];
+	
+	for (var i = 0; i < this.views.length; i++) {
+			
+		//gather image paths from config data		
+		$(this.views[i].viewConfig).find('image').each( function () {
+			if ($(this).text() != "") {
+				imgArr.push( $(this).text() );
+			}
+			
+		});
+		
+		//gather image urls from template html
+		$(this.views[i].viewDiv).find('img').each( function () {
+			if ($(this).attr('src') != "") {
+				imgArr.push( $(this).attr('src') );
+			}
+			
+		});
+		
+	
+	}
+	
+	return imgArr;
+	
+}

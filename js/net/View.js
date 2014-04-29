@@ -5,6 +5,7 @@ function View( _containerDiv, _contentId, _templateId) {
 	this.contentId = _contentId;
 	
 	this.viewDiv = {};
+	this.viewConfig = {};
 		
 	this.initWithTemplate();
 
@@ -35,6 +36,7 @@ View.prototype.initWithTemplate = function() {
 View.prototype.populateDisplay = function( contentConfig, templateDiv ) {
 
 	this.viewDiv = templateDiv;
+	this.viewConfig = contentConfig;
 	
 	//Change div id to match view
 	$(templateDiv).children().first().attr( 'id', this.contentId );	
@@ -58,7 +60,7 @@ View.prototype.populateDisplay = function( contentConfig, templateDiv ) {
 	for (var i = 0; i < imgNodes.size(); i++) {
 	
 		var imgId = $(imgNodes[i]).attr('id');
-		var imgSrc = imgFolder + $(imgNodes[i]).text();
+		var imgSrc = $(imgNodes[i]).text();
 		var delay = $(imgNodes[i]).attr('delay');
 		if(! delay){
 			delay = "0";

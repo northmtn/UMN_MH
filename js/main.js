@@ -26,6 +26,8 @@ $(document).ready(function () {
     
     function setup() {
     
+    	mytfunc = tfunc;
+
     	//read config settings, set global vars
     	audioFolder = $(configXML).find('setting[id=audioFolder]').attr('value');
     	audioExtension = $(configXML).find('setting[id=audioExtension]').attr('value');
@@ -65,7 +67,7 @@ $(document).ready(function () {
     	
     	vc.addView( new View( $(c), "view_1", "touchstone_1") ); // ( containerDiv, contentId, templateId )
     	vc.addView( new View( $(c), "view_2", "view_2") );
-    	vc.addView( new View( $(c), "view_3", "view_1") );
+    	vc.addView( new View( $(c), "view_3", "view_3") );
     	vc.addView( new View( $(c), "view_4", "touchstone_1") );
     	
     	
@@ -76,8 +78,13 @@ $(document).ready(function () {
     	var tn = new TimelineNav( $("#screen_touchstone  #timeline_nav").first(), vc);
     	tn.refreshDisplays();
     	
+    	var initialImages = scrapeDivForImageArray( $("#wrapper #screen_mainmenu") );
+    	preLoadImageArray(  initialImages, onInitialImageArrayPreLoaded, this);
     	
-    	TweenLite.delayedCall(1, function () {
+    	
+    	/// T-STONE Bubble setups
+    	// TODO - move into own class ya dingus
+    	TweenLite.delayedCall(0.5, function () { 
     		
     		var bubbleContainer = $("#screen_touchstone #bubbles_container");
     		
@@ -91,7 +98,6 @@ $(document).ready(function () {
     		
     		var bubTank = new BubbleTank( bubbleContainer );
     		bubTank.addBubbles( [bub1,bub2,bub3,bub4,bub5,bub6,bub7] );
-    		
     		
     		
     		//Set home positions of all bubbles
@@ -142,21 +148,24 @@ $(document).ready(function () {
     			  }
     			  
     			});
-
+    			    			    			    		
     		});
-    		
-    	});
 
-    	refreshButtonListeners();
-    	
-    	hideSpinner();
-    	
+    	}); // End T-STONE Bubble setups
+    	    	
+    }
+    
+    function tfunc(str) {
+    	out("dest a a a "+ str);
     }
     
     
+    function onInitialImageArrayPreLoaded() {
     
-    
-    
-        
- });
+    	hideSpinner();
+    	
+    	refreshButtonListeners();
+    	
+    }
  
+ });

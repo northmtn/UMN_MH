@@ -1,7 +1,6 @@
 /*------------------*/
 /* Global Variables */
 /*------------------*/
-
 var configXML;
 var developerMode;
 
