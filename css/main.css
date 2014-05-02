@@ -49,6 +49,7 @@ div[data-role="container"] {
 div[data-role="button"],
 area[data-role="button"],
 map[data-role="button"],
+p[data-role="button"],
 img[data-role="button"] {
 	cursor: pointer;
 }
@@ -96,18 +97,17 @@ a img {border: none; } /* IE fix */
 /*-----------*/	
 #screen_mainmenu {
 	
-	background: 0#ffa;
-	
 }
-#screen_mainmenu div {
+#screen_mainmenu #menu_container {
 	
 	position: relative;
-	top: 200px;
+	text-align: center;
+	top: 100px;
 	
 }
-#screen_mainmenu div:hover {
+#screen_mainmenu #menu_container p:hover {
 	
-	color: yellow;
+	color: white;
 	
 }
 

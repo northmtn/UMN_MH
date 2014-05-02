@@ -9,26 +9,11 @@
     
     <link href="css/main.css" type="text/css" rel="Stylesheet" />
     <link href="css/mediaelementplayer.css" type="text/css" rel="Stylesheet" />
+    <link href="css/pace-theme.css" type="text/css" rel="Stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    
-    <script src="js/libs/greensock/TweenMax.min.js" type="text/javascript"></script>
-    <script src="js/libs/jquery/jquery-1.11.0.min.js" type="text/javascript"></script>
-    <script src="js/libs/media/mediaelement-and-player.js"></script>
-    <script src="js/libs/soundmanager2/soundmanager2-nodebug-jsmin.js" type="text/javascript"></script>
-    
-    <script src="js/net/Utils.js" type="text/javascript"></script>
-    <script src="js/net/Loader.js" type="text/javascript"></script>
-    <script src="js/net/Buttons.js" type="text/javascript"></script>
-    <script src="js/net/Bubble.js" type="text/javascript"></script>
-    <script src="js/net/BubbleTank.js" type="text/javascript"></script>
-    <script src="js/net/AppData.js" type="text/javascript"></script>
-    <script src="js/net/Media.js" type="text/javascript"></script>
-    <script src="js/net/View.js" type="text/javascript"></script>
-    <script src="js/net/ViewCollection.js" type="text/javascript"></script>
-    <script src="js/net/TimelineNav.js" type="text/javascript"></script>
-    
-    <script src="js/main.js" type="text/javascript"></script>
+
+    <script src="js/require.js" data-main="js/app.js"></script>
     
          
 </head>
@@ -37,16 +22,17 @@
     	
     	<!-- MAIN MENU SCREEN -->
     	<div id="screen_mainmenu" class="fullbleed" data-role="container">
-    		<div id="goto_integrative" data-role="button">Intro to Integrative Mental Health</div><br/>
-    		<div id="goto_touchstone" data-role="button" class="tableOfContentsChapter">Intro to Touchstone Mental Health</div><br/>
-    		<div id="goto_wilder" data-role="button" class="tableOfContentsChapter">Intro to Wilder Foundation</div><br/>
+    		<div id="menu_container">
+    			<h1>Main Menu</h1>
+    			<p id="goto_integrative" data-role="button">Intro to Integrative Mental Health</p>
+    			<p id="goto_touchstone" data-role="button" class="tableOfContentsChapter">Intro to Touchstone Mental Health</p>
+    			<p id="goto_wilder" data-role="button" class="tableOfContentsChapter">Intro to Wilder Foundation</p>
+    		</div>
    		</div>
    		
    		<!-- INTEGRATIVE MODULE -->
    		<div id="screen_integrative" class="fullbleed" data-role="container" style="display: none;">
-   			<br /><br /><br /><br />
-	   		
-   			<br/><br/><br/>Integrative learning module here
+
    		</div>
    		
    		<!-- TOUCHSTONE MODULE -->
@@ -59,7 +45,7 @@
 			<div id="header_bar" class="fullbleed" data-role="container">
 			
 				<h2 id="header_title">TOUCHSTONE MENTAL HEALTH</h2>
-			
+				
 	   			<div id="timeline_nav" >
 	   				 <button id="navIcon_0" data-nav="0">1</button>
 	   				 <button id="navIcon_1" data-nav="1">2</button>
@@ -78,7 +64,7 @@
    		
    		<!-- WILDER MODULE -->
    		<div id="screen_wilder" class="fullbleed" data-role="container" style="display: none;">
-   			<br/><br/><br/>Wilder learning module here
+   		
    		</div>
    		
    		<!-- VIDEO PLAYER OVERLAY -->
