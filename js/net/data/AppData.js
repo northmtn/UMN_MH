@@ -1,4 +1,4 @@
-define([], function(){
+define(["net/ui/Navigator"], function(Navigator){
 
 
     function AppData(){
@@ -16,7 +16,6 @@ define([], function(){
     	this.videoExtension = $(this.configXML).find('setting[id=videoExtension]').attr('value');
     	this.developerMode = ($(this.configXML).find('setting[id=developerMode]').attr('value') == "true");
     	
-        
     };
 
     return AppData;

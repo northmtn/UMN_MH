@@ -1,16 +1,41 @@
 define([], function(){
 
 
-    function Screen(){
-    
+    function Screen(containerDiv){
+    	
+    	this.containerDiv = containerDiv; 
+    	this.hasBeenInitialized = false;
+        	
     }
 
-    Screen.prototype.initWithDiv = function(containerDiv){
-            
-        this.containerDiv = containerDiv;    
-        this.refreshButtonListeners()
-            
+    Screen.prototype.init = function(){
+            console.log("screen init");
+        if (this.hasBeenInitialized == false) {
+        	
+        	//do loading and setup
+        	this.setup();
+        
+        }else {
+        
+        	//already loaded and setup,
+        	//reset as needed..
+        	
+        }        
+        
+        this.hasBeenInitialized = true;  
+        this.enable();
+        
     };
+    
+    Screen.prototype.setup = function() {
+    	//overwrite to setup
+    }
+    
+    Screen.prototype.enable = function() {
+    	
+    	this.refreshButtonListeners()
+    	
+    }
     
     Screen.prototype.disable = function(){
     		
@@ -19,7 +44,7 @@ define([], function(){
     }
     
     Screen.prototype.refreshButtonListeners = function(){
-    
+        
     	var thisRef = this;
     	
     	//Removes all existing listeners to avoid layering listeners
@@ -36,7 +61,7 @@ define([], function(){
     
     	//Removes all existing listeners to avoid layering listeners
     	$(this.containerDiv).find("div[data-role='button'], button[data-role='button'], img[data-role='button'], p[data-role='button']").each( function () {
-    		$(this).off( );	
+    		$(this).off();	
     	});
     	
     }

@@ -16,7 +16,7 @@ require.config({
 });
 
 
-require(['libs/pace.min', 'net/data/AppData', 'net/media/Media', 'net/ui/MainMenu', 'jquery'], function( pace, AppData, Media, MainMenu ) {
+require(['libs/pace.min', 'net/data/AppData', 'net/media/Media', 'net/ui/Navigator', 'net/ui/MainMenu', 'net/ui/Touchstone', 'jquery'], function( pace, AppData, Media, Navigator, MainMenu, Touchstone ) {
 
 	/*--------------*/
 	/* Initial Load */
@@ -45,8 +45,15 @@ require(['libs/pace.min', 'net/data/AppData', 'net/media/Media', 'net/ui/MainMen
     
     function initialize() {
     	
-    	var mainMenu = new MainMenu();
-    	mainMenu.initWithDiv( $("#wrapper #screen_mainmenu") );
+    	Navigator.init();
+    	
+    	var mm = new MainMenu( $("#wrapper #screen_mainmenu"), this );
+    	var ts = new Touchstone( $("#wrapper #screen_touchstone"), this );
+    	
+    	Navigator.addScreen(mm);
+    	Navigator.addScreen(ts);
+    	
+    	Navigator.goToScreen("mainmenu");
     	    
     }
 
