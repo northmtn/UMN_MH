@@ -120,30 +120,30 @@ a img {border: none; } /* IE fix */
 .tooltips span {
   position: absolute;
   width:255px;
-  color: #FFFFFF;
-  background: #7EA901;
+  color: #555555;
+  background: #FFFFFF;
   height: auto;
   text-align: center;
-  border-radius: 3px;
+  border-radius: 2px;
   box-shadow: 0px 1px 4px #333;
   
   opacity: 1;
   top: 30px;
   left: 50%;
   margin-left: -76px;
-  z-index: 999;
 }
 .tooltips span:after {
   content: '';
   position: absolute;
-  bottom: 99%;
-  right: 1px;
+  bottom: 100%;
+  right: 0px;
 	
   margin-left: -8px;
   width: 0; height: 0;
-  border-bottom: 13px solid #7EA901;
-  border-right: 13px solid transparent;
-  border-left: 13px solid transparent;
+  border-bottom: 12px solid #555555;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  
 }
 
 
@@ -175,6 +175,7 @@ a img {border: none; } /* IE fix */
 	
 	color: rgb(116, 164, 52);
 	font-size: 30px;
+	letter-spacing: 1.5px;
 	
 }
 
@@ -194,12 +195,9 @@ a img {border: none; } /* IE fix */
 	
 }
 
-#screen_touchstone #header_bar {
-	
-	background-image: url("../img/touchstone/nav_header_bg.png");
-	background-repeat: repeat-x;
-	height: 40px;
-	
+#screen_touchstone #header_bar #header_bg_img img {
+
+		
 }
 
 #screen_touchstone #header_bar h1,
@@ -212,31 +210,33 @@ a img {border: none; } /* IE fix */
 
 #screen_touchstone #header_bar #header_title {
 	
+	position: absolute;
 	float: left;
-	margin: 6px 0 0 65px;
+	margin: 6px 0 0 45px;
 	font-size: 20px;
-	letter-spacing: 1.75px;	
+	font-weight: 100;
+	letter-spacing: 1.85px;	
 	
 }
 
 #screen_touchstone {
 	
-	background-image: url("../img/touchstone/touchstone_bg1.jpg");
+	background-image: url("../img/touchstone/touchstone_bg_tile.png");
 	background-repeat: repeat-x;
-	background-position-y: 39px;
+	background-position-y: 31px;
 
 }
 
 #screen_touchstone #header_bar #center_leaf {
 
-	left: 500px;
+	left: 464px;
 	top: -59px;
 		
 }
 
 #timeline_nav {
 	
-	left: 210px;
+	left: 582px;
 	position: relative;
 		
 }
@@ -277,45 +277,97 @@ a img {border: none; } /* IE fix */
 }
 
 #screen_touchstone #header_bar #goto_mainmenu {
-	left: 756px;
+	left: 721px;
 	top: 8px;
 }
 
 #screen_touchstone #header_bar #btn_resources {
-	left: 875px;
+	left: 847px;
 	top: 8px;
 }
 
 #screen_touchstone #header_bar #btn_tips {
 	position: absolute;
-	left: 986px;
+	left: 961px;
 	font-family: 'Open Sans', serif;
 	font-weight: bold;
 }
 
+#screen_touchstone #header_bar .circle-text-ring:after {
+	background: #d9eca6;
+/*	border: 1px solid #2e3a14;
+	-moz-box-sizing:    border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing:        border-box;*/
+}
+
+#screen_touchstone #header_bar .circle-text-ring div {
+	color: #2e3a14;
+}
+
 #screen_touchstone #header_bar #touchstone_tip {
 
-	left: 837px;
-	top: 21px;
+	left: 813px;
+	top: 0px;
 		
+}
+
+#screen_touchstone #header_bar #touchstone_tip.tooltips span:after {
+  bottom: 17px;
+  right: 0px;
+	
+  border-bottom: 12px solid #90a4a8;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  
 }
 
 #screen_touchstone #header_bar #touchstone_tip h2 {
 	
 	text-align: left;
-	padding: 3px 10px;
-	margin: 0px;
-	font-size: 14px;
+	padding: 0px 10px;
+	font-size: 12px;
+	background: #90a4a8;
 	color: white;
 	
+}
+#screen_touchstone #header_bar #touchstone_tip #closex {
+	color: #FFFFFF;
+	right: 9px;
+	bottom: 0px;
+	font-size: 13px;
+	position: absolute;
 }
 #screen_touchstone #header_bar #touchstone_tip p {
 
 	text-align: left;
-	padding: 7px 10px 9px 10px;
-	background: #e8f5c6;
-	color: #707f49;
-	font-weight: 600;
+	padding: 25px 10px 10px 10px;
+	background: #FFFFFF;
+	color: #90a4a8;
+	font-size: 14px;
+	font-weight: 200;
+	
+}
+
+#screen_touchstone #footer_bar {
+	
+	background-image: url("../img/touchstone/touchstone_footer_tab.png");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	
+}
+
+#screen_touchstone #footer_bar #btn_quit_program {
+
+	position: absolute;
+	left: 872px;
+	bottom: -8px;
+	
+}
+
+#screen_touchstone #footer_bar #btn_quit_program h3 {
+
+	color: white;
 	
 }
 

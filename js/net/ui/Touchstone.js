@@ -24,19 +24,31 @@ define(["net/ui/Screen", "net/ui/Navigator", "tween"], function( Screen, Navigat
 	}
 	
 	function toggleTip() {
+		var t = $("#header_bar #touchstone_tip");
 		if (tipShowing == false) {
-			$("#header_bar #touchstone_tip").show();
+			$(t).show();
+			TweenLite.set( $(t), { css: { top: -100 } } );
+			TweenLite.to( $(t), 0.5, { css: { top: 0, opacity:1 }, ease:Power2.easeOut } );
+			$("#header_bar #btn_tips_inner").addClass("circle-text-ring");
 			tipShowing = true;
 		}else {
-			$("#header_bar #touchstone_tip").hide();
+			TweenLite.to( $(t), 0.5, { css: { top: -100, opacity:0 }, ease:Power2.easeInOut } );
+			$("#header_bar #btn_tips_inner").removeClass("circle-text-ring");
 			tipShowing = false;
 		}
 	}
 	
+	function updateTipText(tipStr) {
+		
+		var tt = $("#header_bar #touchstone_tip #tip_content");
+		$(tt).text( tipStr );
+		
+	}
+	
 	function resetLeaf() {
 		var leaf = $("#header_bar #center_leaf");
-		TweenLite.set( $(leaf), { css: { top: -158, left: 500, rotation: 0 } } );
-		TweenLite.to( $(leaf), 1.5, { css: { top: -58 }, ease:Power2.easeInOut, onComplete:leafResetComplete } );
+		TweenLite.set( $(leaf), { css: { top: -158, left: 464, rotation: 0 } } );
+		TweenLite.to( $(leaf), 1.5, { css: { top: -59 }, ease:Power2.easeInOut, onComplete:leafResetComplete } );
 	}
 	
 	function leafResetComplete(){
@@ -85,6 +97,9 @@ define(["net/ui/Screen", "net/ui/Navigator", "tween"], function( Screen, Navigat
 			case "touchstone_tip":
 				toggleTip();
 			break;
+			case "btn_resources":
+				updateTipText("Lorem ipsum this should be at least three lines of information. Let's see if the tip dropdown still positions correctly with more lines of text.");
+			break;			
 	        default:
 	        
 	            break;

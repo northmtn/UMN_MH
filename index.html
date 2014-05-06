@@ -10,8 +10,8 @@
     <link href="css/main.css" type="text/css" rel="Stylesheet" />
     <link href="css/mediaelementplayer.css" type="text/css" rel="Stylesheet" />
     <link href="css/pace-theme.css" type="text/css" rel="Stylesheet" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Noto+Serif:300,400,500,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
     <script src="js/require.js" data-main="js/app.js"></script>
     
@@ -40,15 +40,31 @@
    		
    			<div id="views_container" data-role="container">
    			</div>
+   			
+   			<!-- Footer bar -->
+   			<div id="footer_bar" class="fullbleed" data-role="container">
+   				<div id="btn_quit_program" data-role="button">
+   					<h3>QUIT PROGRAM</h3>
+   				</div>
+   			</div>
 			
 			<!-- Header bar -->
 			<div id="header_bar" class="fullbleed" data-role="container">
 			
-				<h2 id="header_title">TOUCHSTONE MENTAL HEALTH</h2>
+				<div id="touchstone_tip" data-role="button" style="display: none;" class="tooltips" >
+					<span><p id="tip_content">Watch the video, then click "2" on top bar to continue.</p><h2 id="tip_title">TOUCHSTONE INSTRUCTIONS</h2>
+						<h3 id="closex" data-role="label">X</h3>
+					</span>
+					
+				</div>
 				
-				<img id="center_leaf" data-role="button" src="img/touchstone/nav_header_center_leaf.png"/>
-				
-				
+				<div id="bar_background" data-role="container">
+					<img id="header_bg_img" data-role="graphic" src="img/touchstone/nav_header_bg.png"/>
+					<img id="center_leaf" data-role="button" src="img/touchstone/nav_header_center_leaf.png"/>
+				</div>
+			
+				<h2 id="header_title" data-role="label">TOUCHSTONE MENTAL HEALTH</h2>
+
 	   			<div id="timeline_nav">
 	   				 <div id="navIcon_0" class="circle-text" data-role="button" data-nav="0"><div>1</div></div>
 	   				 <div id="navIcon_1" class="circle-text" data-role="button" data-nav="1"><div>2</div></div>
@@ -61,12 +77,9 @@
 	   			<div id="btn_resources" data-role="button"><h3 class="pill-text" >RESOURCES</h3></div>
 	   			
 	   			<div id="btn_tips"><div id="btn_tips_inner" class="circle-text" data-role="button" data-nav="3"><div>?</div></div></div>
-	   			
-	   			<div id="touchstone_tip" data-role="button" style="display: none;" class="tooltips" >
-	   			<span><h2 id="tip_title">TOUCHSTONE INSTRUCTIONS</h2><p id="tip_content">Watch the video, then click "2" on top bar to continue.</p></span></div>
-	   				   			
+   			
    			</div>
-
+   			
    		</div>
    		
    		<!-- WILDER MODULE -->
