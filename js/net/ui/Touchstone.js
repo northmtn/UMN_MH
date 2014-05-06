@@ -1,4 +1,4 @@
-define(["net/ui/Screen", "net/ui/Navigator", "tween"], function( Screen, Navigator ){
+define(["libs/pace.min", "net/ui/Screen", "net/ui/Navigator", "net/ui/TimelineNav", "net/ui/View", "net/ui/ViewCollection", "tween"], function( Pace, Screen, Navigator, TimelineNav, View, ViewCollection ){
 
 
 	// I return an initialized object.
@@ -19,7 +19,30 @@ define(["net/ui/Screen", "net/ui/Navigator", "tween"], function( Screen, Navigat
 	var tipShowing = false;
 	var leafHasDropped = false;
 	
+	var timelineNav = {};
+	var viewCollection = {};
+
 	Touchstone.prototype.setup = function() {
+	
+		//setup View Collection
+		var c = $("#screen_touchstone #views_container");
+		viewCollection = new ViewCollection( $(c), "trustone_views");
+		
+		Pace.once("done", this.viewCollectionLoaded, [this]);//listen to default to view  1
+		
+		viewCollection.addView( new View( $(c), "view_1", "touchstone_1") ); // ( containerDiv, contentId, templateId )
+		viewCollection.addView( new View( $(c), "view_2", "view_2") );
+		viewCollection.addView( new View( $(c), "view_3", "view_3") );
+		viewCollection.addView( new View( $(c), "view_4", "touchstone_1") );
+		
+		timelineNav = new TimelineNav( $("#screen_touchstone  #timeline_nav").first(), viewCollection);
+		
+	}
+	
+	Touchstone.prototype.viewCollectionLoaded = function() {
+		
+		//First time view collection is loaded, default to view 1
+		viewCollection.gotoView(0);
 		
 	}
 	
@@ -82,6 +105,16 @@ define(["net/ui/Screen", "net/ui/Navigator", "tween"], function( Screen, Navigat
 		    return;
 		    
 		}
+		
+		if (btnId.substring(0, 8) == "navIcon_") {
+		    	
+    		var navIndex = btnId.substring(8);
+			viewCollection.gotoView(navIndex);
+    		timelineNav.refreshDisplays();
+    		    		
+    	    return;
+    	    
+    	}
 	
 	    //other btns...
 	    switch (btnId) {
