@@ -16,7 +16,7 @@ define(['net/ui/Screen', 'net/ui/Navigator'], function( Screen, Navigator ){
 	MainMenu.prototype = Object.create( Screen.prototype );
 	
 	//Overwrite button handlers
-	MainMenu.prototype.buttonClicked = function(btnId) {
+	MainMenu.prototype.buttonClicked = function(btnId, btnRef) {
 	    				
 		// catch specific types of buttons
 		if (btnId.substring(0, 5) == "goto_") {

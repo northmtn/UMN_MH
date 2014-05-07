@@ -30,7 +30,8 @@ require(['libs/pace.min', 'net/data/AppData', 'net/media/Media', 'net/ui/Navigat
         url: "content/config.xml",
         dataType: "xml",
         success: function (xml) {
-
+        
+			console.log("config xml loaded...");
         	AppData.updateSettings(xml);
         	Media.setupPlayers();
         	initialize();

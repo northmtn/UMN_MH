@@ -19,13 +19,16 @@
 		<!-- Screen 1 -->
 		<view id="view_1" title="Intro">
 			
-			<text id="text_1">Welcome to Touchstone</text>
-			<text id="text_2">Mission</text>
-			<text id="text_3">Touchstone Mental Health's mission is to "Inspire Hope, Healing and Well-Being"</text>
-			<text id="text_4">Vision</text>
-			<text id="text_5">Touchstone Mental Health is a nonprofit center of excellence providing quality programs to assure people living with mental illness can enjoy the highest quality of life. We  build on our history of innovation to deepen, grow and sustain our programs to meet existing and emerging needs.</text>
+			<text id="text_1">Welcome to Touchstone Mental Health</text>
+			<text id="text_2">
+				<![CDATA[<b>Recovery from mental illness and whole person wellness starts at Touchstone Mental Health where our mission is to “inspire hope, healing and well-being.”</b> We consider each person as a whole; integrating treatment, care and resources which support a healthy mind, body, and spirit. We are a point of reference guiding clients, community members and residents toward recovery and well-being. We encourage each person to define their life goals— ]]>
+			</text>
+			<text id="text_3">
+				<![CDATA[physical, mental, emotional, spiritual, social, vocational and interpersonal – and we provide the tools so people achieve them. In this module you’ll have the chance to learn more about our team approach by engaging in an interactive case story about a [fictitious?] Touchstone resident to meet existing and emerging needs.
+				<br/><br/><b>Please watch the video above and then click</b>]]>
+			</text>
 			
-			<video id="video_1">M01_S02V01_D</video>
+			<button id="video_1" video="M01_S02V01_D">WATCH AN INTRODUCTORY VIDEO</button>
 			
 			<tip id="tip_1">Click step one in the right hand column. Make sure your audio player is working.</tip>
 			

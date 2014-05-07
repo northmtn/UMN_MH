@@ -52,7 +52,7 @@ define([], function(){
     
         //Listen for all button clicks...
         $(this.containerDiv).find("div[data-role='button'], button[data-role='button'], img[data-role='button'], p[data-role='button']").on("click", function(event){
-            thisRef.buttonClicked($(this).attr('id'));
+            thisRef.buttonClicked($(this).attr('id'), $(this));
         });
     
     };
@@ -66,7 +66,7 @@ define([], function(){
     	
     }
     
-    Screen.prototype.buttonClicked = function(btnId) {
+    Screen.prototype.buttonClicked = function(btnId, btnRef) {
         	
     	console.log("buttonClicked(btnId): " + btnId);
     

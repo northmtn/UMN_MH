@@ -32,7 +32,6 @@
    		
    		<!-- INTEGRATIVE MODULE -->
    		<div id="screen_integrative" class="fullbleed" data-role="container" style="display: none;">
-
    		</div>
    		
    		<!-- TOUCHSTONE MODULE -->
@@ -88,24 +87,16 @@
    		</div>
    		
    		<!-- VIDEO PLAYER OVERLAY -->
-   		<div id="vid_player_overlay" class="overlay_bg fullbleed" data-role="container" style="display: none;" >
-   			<div id="player_container" width="640" height="360" data-role="container">
-   				<video id="global_player" src="content/video/M01_S02V01_D.mp4" width="640" height="360"></video>
-   			</div>
-   			<button id="v1" onClick="vid1Select(this);">vid 1</button>
-   			<button id="v2" onClick="vid2Select(this);">vid 2</button>
-   			<button id="a1" onClick="aud1Select(this);">audio 1</button>
-   			<button id="a2" onClick="aud2Select(this);">audio 2</button>
-   			<br/>
-   			<button id="circle_mask" onClick="toggleCircular(this);">circle mask</button>
-   			<br/>
-   			<button id="exit" onClick="vidExit(this);">exit</button>
-   		</div>
+   		<div id="vid_player_overlay" class="fullbleed" data-role="container" style="display: none;" >
    		
-   		<!-- SPINNER OVERLAY -->
-   		<div id="spinnerOverlayContainer" data-role="container" class="fullbleed" style="display: none;">
-   			<img id="spinnerBG" class="fullbleed" src="img/GrayOutBox_3x3px.png"></img>
-   			<img id="loadingSpinner" src="img/Loading_Graphic.png" data-role="graphic" />
+   			<div id="player_bg" class="overlay_bg fullbleed" data-role="background" ></div>
+   			
+   			<div id="player_container" class="soft-shadow" width="640" height="360" data-role="container">
+   				<video id="global_player" src="content/video/M01_S02V01_D.mp4" width="640" height="360"></video>
+   				<h3 id="video_title" data-role="label">Touchstone Mental Health</h3>
+   				<h3 id="player_close" data-role="button">CLOSE <span> X</span></h3>
+   			</div>
+   			
    		</div>
 
     </div>

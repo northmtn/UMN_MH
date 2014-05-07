@@ -56,6 +56,25 @@ define(['net/data/AppData'], function(AppData){
     		$(templateDiv).find("#"+txtId).html( txtHTML ); // TODO - should check for CDATA to use html or text? does it matter?
     				
     	}
+    	
+    	// - BUTTON ELEMENTS - //
+    	var btnNodes = $(contentConfig).find("button");
+    	
+    	for (var i = 0; i < btnNodes.size(); i++) {
+    			
+    		var btnId = $(btnNodes[i]).attr('id');
+    		var dataVideo = $(btnNodes[i]).attr('video');
+    		var dataAudio = $(btnNodes[i]).attr('audio');
+    		var btnHTML = $(btnNodes[i]).text();
+    		
+    		//target corresponding element in template html
+    		$(templateDiv).find("#"+btnId).html( btnHTML ); 
+    		//add video link
+    		if (typeof dataVideo !== 'undefined' && dataVideo !== false) $(templateDiv).find("#"+btnId).attr('data-video', dataVideo);
+    		//add audio link
+    		if (typeof dataAudio !== 'undefined' && dataAudio !== false) $(templateDiv).find("#"+btnId).attr('data-audio', dataAudio);
+    		    				
+    	}
     		
     	// - IMAGE ELEMENTS - //
     	var imgNodes = $(contentConfig).find("image");
@@ -110,7 +129,6 @@ define(['net/data/AppData'], function(AppData){
     	
     	//Default to hidden
     	$(templateDiv).hide();
-    	//TODO - dispatch event signaling this view is completed?
     
     }
         

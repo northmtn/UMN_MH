@@ -1,4 +1,4 @@
-define(["libs/pace.min", "net/ui/Screen", "net/ui/Navigator", "net/ui/TimelineNav", "net/ui/View", "net/ui/ViewCollection", "tween"], function( Pace, Screen, Navigator, TimelineNav, View, ViewCollection ){
+define(["libs/pace.min", "net/media/Media", "net/ui/Screen", "net/ui/Navigator", "net/ui/TimelineNav", "net/ui/View", "net/ui/ViewCollection", "tween"], function( Pace, Media, Screen, Navigator, TimelineNav, View, ViewCollection ){
 
 
 	// I return an initialized object.
@@ -21,14 +21,22 @@ define(["libs/pace.min", "net/ui/Screen", "net/ui/Navigator", "net/ui/TimelineNa
 	
 	var timelineNav = {};
 	var viewCollection = {};
-
+	
+	
 	Touchstone.prototype.setup = function() {
 	
 		//setup View Collection
 		var c = $("#screen_touchstone #views_container");
 		viewCollection = new ViewCollection( $(c), "trustone_views");
 		
-		Pace.once("done", this.viewCollectionLoaded, [this]);//listen to default to view  1
+		//First time view collection is loaded, default to view 1
+		var thisRef = this;
+		Pace.once("done", function() {
+		
+			viewCollection.gotoView(0);
+			thisRef.refreshButtonListeners();
+			
+		});
 		
 		viewCollection.addView( new View( $(c), "view_1", "touchstone_1") ); // ( containerDiv, contentId, templateId )
 		viewCollection.addView( new View( $(c), "view_2", "view_2") );
@@ -39,23 +47,16 @@ define(["libs/pace.min", "net/ui/Screen", "net/ui/Navigator", "net/ui/TimelineNa
 		
 	}
 	
-	Touchstone.prototype.viewCollectionLoaded = function() {
-		
-		//First time view collection is loaded, default to view 1
-		viewCollection.gotoView(0);
-		
-	}
-	
 	function toggleTip() {
 		var t = $("#header_bar #touchstone_tip");
 		if (tipShowing == false) {
 			$(t).show();
 			TweenLite.set( $(t), { css: { top: -100 } } );
-			TweenLite.to( $(t), 0.5, { css: { top: 0, opacity:1 }, ease:Power2.easeOut } );
+			TweenLite.to( $(t), 0.5, { css: { top: 0, autoAlpha:1 }, ease:Power2.easeOut } );
 			$("#header_bar #btn_tips_inner").addClass("circle-text-ring");
 			tipShowing = true;
 		}else {
-			TweenLite.to( $(t), 0.5, { css: { top: -100, opacity:0 }, ease:Power2.easeInOut } );
+			TweenLite.to( $(t), 0.5, { css: { top: -100, autoAlpha:0 }, ease:Power2.easeInOut } );
 			$("#header_bar #btn_tips_inner").removeClass("circle-text-ring");
 			tipShowing = false;
 		}
@@ -92,26 +93,37 @@ define(["libs/pace.min", "net/ui/Screen", "net/ui/Navigator", "net/ui/TimelineNa
 
 	
 	//Overwrite button handlers
-	Touchstone.prototype.buttonClicked = function(btnId) {
+	Touchstone.prototype.buttonClicked = function(btnId, btnRef) {
 	
 		console.log("Touchstone btn clicked: "+ btnId);
 	    				
-		// catch specific types of buttons
-		if (btnId.substring(0, 5) == "goto_") {
-		
-			//main menu nav
-			var screenId = btnId.substring(5);
-			Navigator.goToScreen( screenId );
-		    return;
-		    
-		}
-		
+		// catch specific types of buttons...
+		//timeline nav
 		if (btnId.substring(0, 8) == "navIcon_") {
 		    	
     		var navIndex = btnId.substring(8);
 			viewCollection.gotoView(navIndex);
     		timelineNav.refreshDisplays();
     		    		
+    	    return;
+    	    
+    	}
+    	//media buttons
+    	if (btnId.substring(0, 6) == "video_") {
+    	    	
+    		var vidId = btnRef.attr('data-video');
+    		console.log("vidID "+vidId);
+    		Media.launchVideo(vidId);
+    		    		    		
+    	    return;
+    	    
+    	}
+    	//global nav
+    	if (btnId.substring(0, 5) == "goto_") {
+    	
+    		//main menu nav
+    		var screenId = btnId.substring(5);
+    		Navigator.goToScreen( screenId );
     	    return;
     	    
     	}
