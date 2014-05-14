@@ -1,4 +1,4 @@
-define(["net/ui/Navigator"], function(Navigator){
+define([], function(){
 
 
     function AppData(){

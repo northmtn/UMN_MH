@@ -1,6 +1,5 @@
 define(['net/data/AppData'], function(AppData){
 
-
     function View( containerDiv, contentId, templateId){
     	
     	this.containerDiv = containerDiv;

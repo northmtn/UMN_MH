@@ -99,7 +99,6 @@ $(document).ready(function () {
     		var bubTank = new BubbleTank( bubbleContainer );
     		bubTank.addBubbles( [bub1,bub2,bub3,bub4,bub5,bub6,bub7] );
     		
-    		
     		//Set home positions of all bubbles
     		var homePt = [];
     		var offsetX = 200;

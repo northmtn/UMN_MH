@@ -225,7 +225,46 @@ p {
 	-o-transform: skew(4deg) rotate(4deg);
 	transform: skew(4deg) rotate(4deg);
 }
+.portrait-label {
 
+	text-align: center;
+	
+}
+.portrait-label p span {
+
+	position: relative;
+	color: #FFF;
+	background-color:#674624;
+	top: -30px;
+	padding: 0 10px;
+	
+}
+.portrait-label .circle-portrait img {
+
+	-moz-border-radius: 50%; 
+	-webkit-border-radius: 50%; 
+	border-radius: 50%;
+
+	background-color:#674624;
+	border:3px solid #674624;
+	
+}
+.portrait-label.on .circle-portrait img {
+	
+	background-color:#4d8b85;
+	border:3px solid #4d8b85;
+
+}
+.portrait-label.on p span {
+	background-color:#4d8b85;
+}
+.portrait-label.active .circle-portrait img {
+	
+	-webkit-box-shadow: 0px 0px 20px 5px #e5c694;
+	-moz-box-shadow: 0px 0px 20px 5px #e5c694;
+	box-shadow: 0px 0px 20px 5px #e5c694;
+	
+}
 
 /*-----------*/
 /* Main Menu */
@@ -240,9 +279,14 @@ p {
 	top: 100px;
 	
 }
-#screen_mainmenu #menu_container p:hover {
+#screen_mainmenu #menu_container p {
 	
 	color: white;
+	
+}
+#screen_mainmenu #menu_container p:hover {
+	
+	color: gray;
 	
 }
 
@@ -351,6 +395,14 @@ button.rect-button {
 	position: absolute;
 	color: #c4d98e;
 
+}
+
+#screen_touchstone #header_bar .nav-active:after {
+    background: #d9eca6;
+}
+
+#screen_touchstone #header_bar .nav-active div {
+    color: #2e3a14;
 }
 
 #screen_touchstone #header_bar .circle-text:hover div {
@@ -559,30 +611,8 @@ button.rect-button {
 .touchstone_steps #nav_panel_bg {
 	
 	position: absolute;
-	top: 0px;
-	left: 0px;
-	
-}
-
-.touchstone_steps #nav_panel_bg {
-	
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	
-}
-
-.touchstone_steps .banner_portrait {
-
-	text-align: center;
-	
-}
-
-.touchstone_steps .banner_portrait p {
-
-	position: relative;
-	color: red;
-	top: -25px;
+	top: 45px;
+	left: -50px;
 	
 }
 
@@ -592,19 +622,32 @@ button.rect-button {
 		
 }
 
-.touchstone_steps #navigation_bar h3,
+.touchstone_steps .portrait-label .circle-portrait img {
+
+	background-color:#fff;
+	border:3px solid #fff;
+	
+}
+
+.touchstone_steps .portrait-label .circle-portrait p {
+	
+	background-color:#fff;
+	color:#fff;
+	
+}
+
+.touchstone_steps #navigation_bar h2,
 .touchstone_steps #navigation_bar p {
 	margin: 0px;
 	text-align: center;
 	color: white;
 }
 
-.touchstone_steps #navigation_bar #step_buttons_container h3 {
-	padding-top: 20px;
-}
-
-.touchstone_steps #navigation_bar #step_buttons_container p {
+.touchstone_steps #navigation_bar #step_buttons_container h2 {
+	padding-top: 30px;
 	font-style: italic;
+	font-size: 12px;
+	font-weight: 300;
 }
 
 .touchstone_steps #navigation_bar #step_buttons_container .stepBtn {
@@ -628,11 +671,18 @@ button.rect-button {
 	left: 0px;
 }
 
-.touchstone_steps #bubbles_container {
+.touchstone_steps #bubble_tank_container {
 	
-	top: 0px;
-	left: 400px;
+	top: 350px;
+	left: 600px;
+
+}
+
+.touchstone_steps img[data-role="background"]  {
 	
+	top: -100px;
+	left: -65px;
+
 }
 
 .touchstone_steps #stepBtnContainer {
@@ -644,13 +694,12 @@ button.rect-button {
 .bubble {
 
 	width: 300px;
-	height: 300px;
 	text-align: center;
 	
 }
 
 .bubble img {
-	
+
 	left: -145px;
 	top: -145px;
 	
@@ -664,6 +713,39 @@ button.rect-button {
 	top: -43px;
 	color: white;
 	font-weight: 100;
+	
+}
+
+#screen_touchstone #step_content {
+	
+	left: 0px;
+	top: 0px;
+	
+}
+
+#screen_touchstone #step_content h1 {
+	
+	left: 330px;
+	top: 330px;
+	color: yellow;
+	
+}
+
+#screen_touchstone #step_content #btn_feature_close {
+	
+	left: 530px;
+	top: 330px;
+	color: red;
+	font-size: 30px;
+	
+}
+
+#screen_touchstone #step_content .portrait-label p {
+
+	font-family: 'Noto Serif', serif;
+	font-size: 12px;
+	font-style: italic;
+	padding: 0 25px;
 	
 }
 
@@ -694,7 +776,7 @@ button.rect-button {
 	margin: 10px 0px;
 	padding: 0px;
 	font-size: 16px;
-	color: #a6c55f;
+	color: #777777;
 	
 }
 

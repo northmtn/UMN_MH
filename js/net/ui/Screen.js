@@ -9,7 +9,7 @@ define([], function(){
     }
 
     Screen.prototype.init = function(){
-            console.log("screen init");
+            
         if (this.hasBeenInitialized == false) {
         	
         	//do loading and setup
@@ -28,7 +28,7 @@ define([], function(){
     };
     
     Screen.prototype.setup = function() {
-    	//overwrite to setup
+    	//overwrite function to setup
     }
     
     Screen.prototype.enable = function() {

@@ -34,21 +34,69 @@
 			
 		</view>
 		
-		<view id="view_2" title="Touchstone Steps and Bubbles">
+		<view id="view_2" title="Town">
+			
+			<text id="text_1">This Is The Second View.</text>
+			
+		</view>
+		
+		<view id="view_3" title="Touchstone Steps and Bubbles">
 			
 			<text id="text_1">Jenna's Story</text>
 			
-		</view>
-		
-		<view id="view_3" title="Intro 3">
 			
-			<text id="text_1">This is the 3rd view</text>
-			<image id="image_1">img/vid_circle_mask.png</image>
-			<image id="image_2">img/vid_circle_mask.png</image>
-			<image id="image_3">img/vid_circle_mask.png</image>
-			
+			<!-- TOUCHSTONE STEPS -->
+			<touchstone_steps>
+				<step title="Arriving at Touchstone" dimensions="Emotional, Physical">
+				
+					<personnel role="Trainer" audio="SampleAudio"></personnel>
+					<personnel role="Doctor" audio="SampleAudio2"></personnel>
+					<personnel role="Therapist" audio="SampleAudio"></personnel>
+					<personnel role="Instructor" audio="SampleAudio2"></personnel>
+	
+				</step>
+				
+				<step title="Receiving a Cancer Diagonosis" dimensions="Occupational">
+				
+					<personnel role="Doctor" audio="SampleAudio"></personnel>
+					<personnel role="Therapist" audio="SampleAudio"></personnel>
+					<personnel role="Instructor" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem A" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem B" audio="SampleAudio"></personnel>
+	
+				</step>
+				
+				<step title="Increasing Depression" dimensions="Social, Spiritual">
+				
+					<personnel role="Doctor" audio="SampleAudio2"></personnel>
+					<personnel role="Therapist" audio="SampleAudio"></personnel>
+					<personnel role="Instructor" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem A" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem B" audio="SampleAudio2"></personnel>
+	
+				</step>
+	
+				<step title="Team Meeting" dimensions="Environmental">
+				
+					<personnel role="Lorem B" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem C" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem F" audio="SampleAudio2"></personnel>
+					<personnel role="Doctor" audio="SampleAudio"></personnel>
+	
+				</step>
+				
+				<step title="Living with Multiple Chronic Illnesses" dimensions="Financial, Social, Physical">
+				
+					<personnel role="Lorem B" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem C" audio="SampleAudio"></personnel>
+					<personnel role="Instructor" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem A" audio="SampleAudio"></personnel>
+					
+				</step>
+			</touchstone_steps>
+
+
 		</view>
-		
 		
 		<!-- Screen 2 (Bubbles) -->
 		<view id="view_4" title="Bubbles">

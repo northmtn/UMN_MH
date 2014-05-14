@@ -37,20 +37,17 @@ define([], function(){
     		if (i == this.viewCollection.currentViewIndex) {
     			
     			// CURRENT
-    			$(this.navIcons[i]).css("color", "red");
-    			$(this.navIcons[i]).find("#active").show(); 
+    			$(this.navIcons[i]).addClass("nav-active");
     			
     		} else if (i < this.viewCollection.currentViewIndex) {
     			
     			//PREVIOUS
-    			$(this.navIcons[i]).css("color", "black");
-    			$(this.navIcons[i]).find("#seen").show(); 
+    			$(this.navIcons[i]).removeClass("nav-active");
     			
     		} else {
-    			
+    		    			
     			// UNSEEN
-    			$(this.navIcons[i]).css("color", "gray");
-    			$(this.navIcons[i]).find("#unseen").show(); 
+    			$(this.navIcons[i]).removeClass("nav-active");
     			
     		}
     
@@ -90,7 +87,6 @@ define([], function(){
     	if (btnId.substring(0, 7) == "navIcon") {
     	
     		var navIndex = $(event.data.btn).attr('data-nav');
-//    		this.viewCollection.gotoView(navIndex);
     		this.refreshDisplays();
     		
     	    return;

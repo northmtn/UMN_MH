@@ -45,7 +45,11 @@ define(['libs/media/mediaelement-and-player.min', 'libs/soundmanager2/soundmanag
 		//Listen to global close button
 		var thisRef = this;
 		$("#vid_player_overlay #player_close").on("click", function(event){
-			console.log("lcose ide");
+			console.log("close video");
+		    thisRef.killVideo();
+		});
+		$("#vid_player_overlay #player_bg").on("click", function(event){
+			console.log("close video bg");
 		    thisRef.killVideo();
 		});
 										    
@@ -55,12 +59,14 @@ define(['libs/media/mediaelement-and-player.min', 'libs/soundmanager2/soundmanag
 	Media.launchVideo = function( videoId, autoplay ) {
 	
 		var t = $("#vid_player_overlay");
-//		var pl = $("#vid_player_overlay #player_container");
-//		var bg = $("#vid_player_overlay #player_bg");
+		var pl = $("#vid_player_overlay #player_container");
 		
 		$(t).show();
 		TweenLite.set( $(t), { css: { autoAlpha:0 } } );
-		TweenLite.to( $(t), 1.5, { css: { autoAlpha:1 }, ease:Power2.easeOut } );
+		TweenLite.to( $(t), 0.75, { css: { autoAlpha:1 }, ease:Power2.easeOut } );
+		
+		TweenLite.set( $(pl), { css: { autoAlpha:0, scale: 0.85 } } );
+		TweenLite.to( $(pl), 0.5, { css: { autoAlpha:1, scale:1 }, delay:0.25, ease:Power2.easeOut } );
 		
 		console.log("launchVideo:" + AppData.videoFolder + videoId + AppData.videoExtension );
 
@@ -80,8 +86,10 @@ define(['libs/media/mediaelement-and-player.min', 'libs/soundmanager2/soundmanag
 		this.player.pause();
 		
 		var t = $("#vid_player_overlay");
-		TweenLite.to( $(t), 1.5, { css: { autoAlpha:0 }, ease:Power2.easeInOut } );
-					
+		var pl = $("#vid_player_overlay #player_container");
+		TweenLite.to( $(t), 0.5, { css: { autoAlpha:0 }, ease:Power2.easeInOut } );
+		TweenLite.to( $(pl), 0.25, { css: { autoAlpha:0 }, ease:Power2.easeOut } );
+		
 	}
 	
 	
