@@ -114,6 +114,10 @@ p {
 	background: url("../img/gray_alpha_50.png") repeat;
 }
 
+.overlay_bg_white {
+	background: url("../img/white_alpha_40.png") repeat;
+}
+
 
 /*--------*/
 /* CSS FX */
@@ -290,7 +294,6 @@ p {
 	
 }
 
-
 /*------------*/
 /* Touchstone */
 /*------------*/	
@@ -323,11 +326,25 @@ button.rect-button {
 	position:relative;
 	top:1px;
 }
+#screen_touchstone button.rect-button:after {
+	margin-left: 14px;
+	margin-right: 0px;
+	vertical-align: middle;
+}
+/*Add corresponding icons to buttons that have non-empty media attributes*/
+#screen_touchstone button.rect-button:not([data-video=""])[data-video]:after {
+	content: url("../img/icon_video.png");
+}
+#screen_touchstone button.rect-button:not([data-audio=""])[data-audio]:after {
+	content: url("../img/icon_audio.png");
+}
+#screen_touchstone button.rect-button:not([data-quiz=""])[data-quiz]:after {
+	content: url("../img/icon_question.png");
+}
 
 #screen_touchstone #header_bar {
-	
 	height: 50px;
-		
+	z-index: 1;
 }
 
 #screen_touchstone #header_bar h1,
@@ -510,7 +527,7 @@ button.rect-button {
 }
 
 #screen_touchstone #footer_bar #btn_quit_program:hover h3 {
-	color: #FFF;
+	color: #d1c889;
 }
 
 
@@ -599,8 +616,14 @@ button.rect-button {
 .touchstone_steps #navigation_bar {
 	
 	padding-top: 50px;
-	padding-left: 72px;
+	left: 30px;
 	position: relative;
+	background-color: rgba(145,187,43,0.66);
+	height: 700px;
+	
+	-moz-box-shadow:inset 0px -30px 65px 35px rgba(0,0,0,.4);
+	-webkit-box-shadow:inset 0px -30px 65px 35px rgba(0,0,0,.4);
+	box-shadow:inset 0px -30px 65px 35px rgba(0,0,0,.4);
 	
 }
 
@@ -622,20 +645,6 @@ button.rect-button {
 		
 }
 
-.touchstone_steps .portrait-label .circle-portrait img {
-
-	background-color:#fff;
-	border:3px solid #fff;
-	
-}
-
-.touchstone_steps .portrait-label .circle-portrait p {
-	
-	background-color:#fff;
-	color:#fff;
-	
-}
-
 .touchstone_steps #navigation_bar h2,
 .touchstone_steps #navigation_bar p {
 	margin: 0px;
@@ -643,11 +652,32 @@ button.rect-button {
 	color: white;
 }
 
+.touchstone_steps #navigation_bar .portrait-label .circle-portrait img {
+
+	background-color:#fff;
+	border:3px solid #fff;
+
+}
+
+.touchstone_steps #navigation_bar #navigation_header .portrait-label p span {
+	top: -25px;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 5px 15px;
+	color: #000;
+	letter-spacing: 1px;
+	background-color: #FFF;
+}
+
 .touchstone_steps #navigation_bar #step_buttons_container h2 {
-	padding-top: 30px;
+	padding-top: 20px;
 	font-style: italic;
-	font-size: 12px;
+	font-size: 13px;
 	font-weight: 300;
+	
+	width: 140px;
+	margin: 0 auto;
+	
 }
 
 .touchstone_steps #navigation_bar #step_buttons_container .stepBtn {
@@ -655,20 +685,39 @@ button.rect-button {
 	width: 200px;
 	height: 80px;
 	position: relative;
-	border: 1px solid #ccc;
-	background-image: url("../img/touchstone/nav_btn.png");
+	border-bottom: 1px solid #fff;
 	
+}
+
+.touchstone_steps #navigation_bar #step_buttons_container .stepBtn:first-child {
+	border-top: 1px solid #fff;
 }
 
 .touchstone_steps #navigation_bar #step_buttons_container .stepBtn:hover {
 	
-	background-color: rgb(50,100,125);
+	background-color: rgba(0,0,0,0.2);
 	
 }
 
+.touchstone_steps #navigation_bar #step_buttons_container .stepBtn.active {
+	
+	-moz-box-shadow:inset 0px 0px 65px 10px rgba(0,0,0,.5);
+	-webkit-box-shadow:inset 0px 0px 65px 10px rgba(0,0,0,.5);
+	box-shadow:inset 0px 0px 65px 10px rgba(0,0,0,.5);
+		
+}
+
+/*.touchstone_steps #navigation_bar #step_buttons_container .stepBtn.active h2{
+	font-size: 16px;
+	width: 180px;
+	padding-top: 20px;
+}*/
+
 .touchstone_steps #navigation_bar img[data-role="background"] {
+
 	top: 0px;
 	left: 0px;
+	
 }
 
 .touchstone_steps #bubble_tank_container {
@@ -723,21 +772,92 @@ button.rect-button {
 	
 }
 
-#screen_touchstone #step_content h1 {
+#screen_touchstone #step_content #oval_backgrounds {
+	z-index: -1;
+}
+
+#screen_touchstone #step_content #oval_backgrounds img {	
+
+	left: 0px;
+	top: 0px;
 	
-	left: 330px;
-	top: 330px;
-	color: yellow;
+}
+
+#screen_touchstone #step_content h1 {
+	position: absolute;
+	left: 385px;
+	top: 75px;
+	color: #FFF;
+	font-weight: 100;
+	font-size: 26px;
+	width: 250px;
+	text-align: center;
 	
 }
 
 #screen_touchstone #step_content #btn_feature_close {
 	
-	left: 530px;
-	top: 330px;
-	color: red;
+	left: 800px;
+	top: 130px;
 	font-size: 30px;
+	background-color: #674624;
+	color: #FFF;
 	
+}
+
+
+#screen_touchstone #step_content #portrait_Jenna {
+	top: 497px;
+	left: 428px;
+}
+
+#screen_touchstone #step_content #personnel_layer{
+
+}
+#screen_touchstone #step_content .personnel {
+	position: absolute;
+}
+#screen_touchstone #step_content .personnel.active {
+	cursor: pointer;
+}
+
+#screen_touchstone #step_content #personnel_layer .row1 {
+	top: 118px;
+}
+#screen_touchstone #step_content #personnel_layer .row2 {
+	top: 192px;
+}
+#screen_touchstone #step_content #personnel_layer .row3 {
+	top: 304px;
+}
+#screen_touchstone #step_content #personnel_layer .row4 {
+	top: 419px;
+}
+#screen_touchstone #step_content #personnel_layer .row5 {
+	top: 499px;
+}
+
+#screen_touchstone #step_content #personnel_layer .col1 {
+	left: 81px;
+}
+#screen_touchstone #step_content #personnel_layer .col2 {
+	left: 132px;
+}
+#screen_touchstone #step_content #personnel_layer .col3 {
+	left: 232px;
+}
+#screen_touchstone #step_content #personnel_layer .col4 {
+	left: 679px;
+}
+#screen_touchstone #step_content #personnel_layer .col5 {
+	left: 781px;
+}
+#screen_touchstone #step_content #personnel_layer .col6 {
+	left: 832px;
+}
+
+#screen_touchstone #step_content .portrait-label . {
+
 }
 
 #screen_touchstone #step_content .portrait-label p {
@@ -749,16 +869,70 @@ button.rect-button {
 	
 }
 
+#screen_touchstone #step_content #center_oval {
+	
+	text-align: center;
+	top: 240px;
+	left: 310px;
+	width: 400px;
+	height: 280px;
+	
+}
+#screen_touchstone #step_content #center_oval .rect-button {
+
+	width: 350px;
+	
+}
+#screen_touchstone #step_content #center_oval button.rect-button {
+	
+	-moz-box-shadow:inset 0px 0px 0px 1px #fff;
+	-webkit-box-shadow:inset 0px 0px 0px 1px #fff;
+	box-shadow:inset 0px 0px 0px 1px #fff;
+	background-color:#4d8b85;
+	border:7px solid #4d8b85;
+
+}
+#screen_touchstone #step_content #center_oval button.rect-button:hover {
+	background-color:#2a645e;
+}
+#screen_touchstone #step_content #center_oval button.rect-button:active {
+	position:relative;
+	top:1px;
+}
+#screen_touchstone #step_content #center_oval button.rect-button.visited {
+	border:7px solid #2a645e;
+	background-color:#2a645e;
+}
+
+#screen_touchstone #step_content #center_oval h3 {
+	
+	color: #4d8b85;
+	font-size: 20px;
+	margin: 0px;
+	
+}
+
+
+#screen_touchstone #step_content #center_oval p {
+	
+	color: #000;
+	margin: 5px;
+	font-size: 14px;
+
+}
+
+
+
 
 /*--------------*/
 /* Video Player */
 /*--------------*/
-#screen_touchstone .mejs-controls .mejs-time-rail .mejs-time-loaded {
+#vid_player_overlay .mejs-controls .mejs-time-rail .mejs-time-loaded {
     background: linear-gradient(rgba(120,168,53,0.8), rgba(48,64,30,0.8));
 }
 
 #vid_player_overlay {
-	
+	z-index: 2;
 }
 
 #vid_player_overlay #player_container {

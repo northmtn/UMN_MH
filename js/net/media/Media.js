@@ -114,6 +114,67 @@ define(['libs/media/mediaelement-and-player.min', 'libs/soundmanager2/soundmanag
 		
 	}
 	
+	Media.playSound = function( sndId ) {
+		console.log("Media.playSound: "+sndId);
+		if (AppData.isiOS == false) {
+			
+			var s = soundManager.getSoundById( sndId );
+		
+			if (s == null){
+		
+				s = soundManager.createSound({
+					id: sndId,
+					url: AppData.audioFolder + '' + sndId + '' + AppData.audioExtension,
+					
+					onload: function(bSuccess) {
+					    if (!bSuccess) out("ERROR: Sound does not exist at "+ AppData.audioFolder + '' + sndId + '' + AppData.audioExtension );
+					}
+					
+				});
+	
+			}
+			
+			s.play();
+	
+		} else {
+			
+			//deal with iOS audio capabilities
+			
+		}
+				
+	}
+	
+	Media.playTakeoverSound = function (sndId) {//, callbackFunc ){
+		
+		console.log("Media.playTakeoverSound: "+sndId);
+		
+		//Stop all current sounds
+		soundManager.stopAll();
+								
+		if (sndId != "") {
+	
+			soundManager.createSound( {
+				
+				id: sndId,
+				url: AppData.audioFolder + sndId + AppData.audioExtension,
+				
+				onload: function(bSuccess) {
+				    if (!bSuccess){
+						 out("ERROR: Sound does not exist at "+AppData.audioFolder + '' + sndId + '' + AppData.audioExtension);
+					}
+				},
+				
+				//Callback when sound has loaded
+//				onfinish:callbackFunc
+				
+			});
+	
+			soundManager.play( sndId );
+		
+		}
+	
+	}
+	
 	return Media;
     
 });

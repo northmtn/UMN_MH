@@ -2,6 +2,9 @@ define([], function(){
 
 
     function TS_Step( configData ) {
+    
+    	var thisRef = this;
+    	this.configData = configData;
     	
     	//parse config data
     	this.title = $(configData).attr('title');
@@ -21,20 +24,53 @@ define([], function(){
     		this.dimensionsTitle += this.dimensions[i];
     	}
     	
+    	//INNER OVAL CONTENT
+    	this.descriptionTitle = (this.title).toUpperCase();
+    	this.descriptionContent = $(configData).find('#step_description').first().text();
+    	
+    	//INNER OVAL REVIEW
+    	this.reviewBtns = [];
+    	$(configData).find("review button").each(function() {
+
+    		var btnId = $(this).first().text();
+    		var dataVideo = $(this).attr('video');
+    		var dataAudio = $(this).attr('audio');
+    		var dataQA = $(this).attr('quiz');
+				
+			var rBtn = [btnId, dataVideo, dataAudio, dataQA];
+    		thisRef.reviewBtns.push(rBtn);
+    		
+    	});
+    	
     	//PERSONNEL DATA
     	this.personnel = [];
-    	var thisRef = this;
     	$(configData).children("personnel").each(function() {
     	
-    		var p = [$(this).attr('role'), $(this).attr('audio')];
+    		var p = [$(this).attr('role'), $(this).attr('audio'), $(this).attr('audioDelay')];
     		thisRef.personnel.push(p);
     		
     	});
 
     }
     
-    TS_Step.prototype.goToIt = function(  ) {
-		
+    TS_Step.prototype.getQuizById = function( quizId ) {
+    
+    	var matchedQuiz = {};
+    
+		$(this.configData).find("quiz").each( function() {
+			
+			var qId = $(this).attr('id');
+						
+			if ( qId == quizId ) {
+							
+				matchedQuiz = $(this);
+				return $(this);
+			}
+    		
+    	});
+    	
+    	return matchedQuiz;
+
     }
 
     return TS_Step;

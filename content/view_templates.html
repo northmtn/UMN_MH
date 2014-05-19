@@ -76,34 +76,94 @@
 								
 			</div>
 			
-			<div id="steps_feature_bubble" data-role="container" style="display: none;">
-				<div id="feature_bg" class="overlay_bg fullbleed" data-role="background" ></div>
+			<div id="steps_feature_bubble" data-role="container" class="fullbleed" style="display: none;">
+				<div id="feature_bg" class="overlay_bg_white fullbleed" data-role="background" ></div>
 				<div id="step_content" data-role="container">
-					<div id="personnel_layer">
-						<br />
-						<div id="role_Instructor" class="personnel portrait-label">
+					<div id="oval_backgrounds" data-role="container">
+						<img id="bg_physical" src="img/touchstone/feature_bub_beige.png" />
+					</div>
+					<div id="center_oval" data-role="container">
+						<div id="step_description_container">
+							<h3 id="step_title">Step Title Here</h3>
+							<p id="description">Lorem ipsum.</p>
+						</div>
+						<div id="review_container" style="display: none;">
+							<h3 id="step_title">Step Title Here</h3>
+							<p id="review_instructions">Click on each button.</p>
+							<button id="review_btn_1" data-role="button" class="rect-button">REVIEW BTN ONE</button><br/>
+							<button id="review_btn_2" data-role="button" class="rect-button">REVIEW BTN TWO</button><br/>
+							<button id="review_btn_3" data-role="button" class="rect-button">REVIEW BTN THREE</button><br/>
+							<button id="review_btn_4" data-role="button" class="rect-button">REVIEW BTN FOUR</button><br/>
+						</div>
+						<div id="question_answer_container" class="quiz-container" style="display: none;" >
+							<h3 id="question_title">QUESTION 1</h3>
+							<p id="question_text">Lorem Ipsum. What is your answer to this question?</p>
+							<p id="feedback_text">x+x+x</p>
+							<textarea id="answer_area"></textarea>
+							<button id="quiz_button" data-role="button" class="rect-button">DONE</button><br/>
+						</div>
+					</div>
+					<div id="personnel_layer" data-role="container">
+						<div id="role_Instructor" class="personnel portrait-label row1 col3">
 							<div class="circle-portrait">
 								<img id="portrait" src="img/touchstone/portrait_Doctor.png" />
 							</div>
 							<p><span>Instructor</span></p>
 						</div>
-						<div id="role_Trainer" class="personnel portrait-label">
+						<div id="role_Trainer" class="personnel portrait-label row2 col2">
 							<div class="circle-portrait">
 								<img id="portrait" src="img/touchstone/portrait_Doctor.png" />
 							</div>
 							<p><span>Trainer</span></p>
 						</div>
-<!--						<div id="role_Therapist" class="personnel portrait-label">
+						<div id="role_Therapist" class="personnel portrait-label row3 col1">
 							<div class="circle-portrait">
 								<img id="portrait" src="img/touchstone/portrait_Doctor.png" />
 							</div>
 							<p><span>Therapist</span></p>
-						</div>-->
-						<div id="role_Doctor" class="personnel portrait-label">
+						</div>
+						<div id="role_Doctor" class="personnel portrait-label row4 col2">
 							<div class="circle-portrait">
 								<img id="portrait" src="img/touchstone/portrait_Doctor.png" />
 							</div>
 							<p><span>Doctor</span></p>
+						</div>
+						<div id="role_Lorem_A" class="personnel portrait-label row5 col3">
+							<div class="circle-portrait">
+								<img id="portrait" src="img/touchstone/portrait_Doctor.png" />
+							</div>
+							<p><span>Lorem_A</span></p>
+						</div>
+						<!-- Right Side -->
+						<div id="role_Lorem_B" class="personnel portrait-label row1 col4">
+							<div class="circle-portrait">
+								<img id="portrait" src="img/touchstone/portrait_Doctor.png" />
+							</div>
+							<p><span>Lorem_B</span></p>
+						</div>
+						<div id="role_Lorem_C" class="personnel portrait-label row2 col5">
+							<div class="circle-portrait">
+								<img id="portrait" src="img/touchstone/portrait_Doctor.png" />
+							</div>
+							<p><span>Lorem_C</span></p>
+						</div>
+						<div id="role_Lorem_D" class="personnel portrait-label row3 col6">
+							<div class="circle-portrait">
+								<img id="portrait" src="img/touchstone/portrait_Doctor.png" />
+							</div>
+							<p><span>Lorem_D</span></p>
+						</div>
+						<div id="role_Lorem_E" class="personnel portrait-label row4 col5">
+							<div class="circle-portrait">
+								<img id="portrait" src="img/touchstone/portrait_Doctor.png" />
+							</div>
+							<p><span>Lorem_E</span></p>
+						</div>
+						<div id="role_Lorem_F" class="personnel portrait-label row5 col4">
+							<div class="circle-portrait">
+								<img id="portrait" src="img/touchstone/portrait_Doctor.png" />
+							</div>
+							<p><span>Lorem_F</span></p>
 						</div>
 					</div>
 					<div id="portrait_Jenna" class="personnel portrait-label on active">
@@ -112,7 +172,7 @@
 						</div>
 					</div>
 					<h1 id="step_feature_title" data-role="label">X</h1>
-					<div id="btn_feature_close" data-role="button">(X)</div>
+					<div id="btn_feature_close" class="circle-text" data-role="button"><div>X</div></div>
 				</div>
 			</div>
 

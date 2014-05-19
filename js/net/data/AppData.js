@@ -16,7 +16,17 @@ define([], function(){
     	this.videoExtension = $(this.configXML).find('setting[id=videoExtension]').attr('value');
     	this.developerMode = ($(this.configXML).find('setting[id=developerMode]').attr('value') == "true");
     	
+    	this.isiOS = false;
+    	//TODO - do check on browser for ios
+    	
     };
+    
+    AppData.quitProgram = function() {
+    	
+    	//Do any saving or user warnings, then exit program.
+    	$("#wrapper").html("<br/><h2>You have exited the program.</h2><p>You may now close your browser window.</p>");
+    
+    }
 
     return AppData;
     

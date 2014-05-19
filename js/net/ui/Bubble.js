@@ -12,7 +12,8 @@ define([], function(){
     	this.homeX = 0;
     	this.homeY = 0;
     	
-    	this.isActive = true;
+    	this.isActive = false;
+    	this.dimmed = false;
     	
     	this.generateHTML();
 
@@ -60,6 +61,15 @@ define([], function(){
 		
 	}
 	
+	Bubble.prototype.comeToStop = function( ) {
+		
+		var thisRef = this;
+		TweenLite.delayedCall(0.5, function() {
+			thisRef.stopFloat();
+		});
+		
+	}
+	
 	Bubble.prototype.floatX = function( bub ) {
 		
 		//Float "randomly" around home location
@@ -93,12 +103,7 @@ define([], function(){
 			TweenLite.to( $(this.bubbleDiv), 0.25, { css: { scale: 1, zIndex:1 } } ); // scale  up, bring to foreground
 		}
 
-		TweenLite.to( $(this.bubbleDiv).children("#over_inactive"), 0.2, { css: { opacity: 0 } } );
-		
-		//Fade states
-//		$(this.bubbleDiv).children("#over_active").show();
-//		TweenLite.set( $(this.bubbleDiv).children("#over_active"), { css: { opacity: 0 } } );
-//		TweenLite.to( $(this.bubbleDiv).children("#over_active"), 0.4, { css: { opacity: 1 } } );
+		this.colorFadeBold();
 		
 	}
 	
@@ -109,17 +114,59 @@ define([], function(){
 		$(this.bubbleDiv).css("cursor","default");
 				
 		TweenLite.to( $(this.bubbleDiv), 0.25, { css: { scale: 0.65, zIndex:0 } } ); // scale down, send to background
-		
-		TweenLite.to( $(this.bubbleDiv).children("#over_active"), 0.2, { css: { opacity: 0 } } );
-		
-		//Fade states
-//		$(this.bubbleDiv).children("#over_inactive").show();
-//		TweenLite.set( $(this.bubbleDiv).children("#over_inactive"), { css: { opacity: 0 } } );
-//		TweenLite.to( $(this.bubbleDiv).children("#over_inactive"), 0.4, { css: { opacity: 1 } } );
-		
+
+		this.colorFadeDim();
+	
 		this.beginFloat();
 		
 	}
+	
+	// reset() | almost identical to deactivate, but ensures bubbles aren't dimmed
+	Bubble.prototype.reset = function( ) {
+	
+		this.isActive = false;
+		$(this.bubbleDiv).css("cursor","default");
+				
+		TweenLite.to( $(this.bubbleDiv), 0.25, { css: { scale: 0.65, zIndex:0 } } ); // scale down, send to background
+
+		this.colorFadeBold();
+	
+		this.beginFloat();
+		
+	}
+	
+	// colorFadeDim() | 
+	Bubble.prototype.colorFadeDim = function( ) {
+		
+		//Fade states
+		this.dimmed = true;
+		
+		TweenLite.to( $(this.bubbleDiv).children("#over_active"), 0.2, { css: { opacity: 0 } } );
+	
+		$(this.bubbleDiv).children("#over_inactive").show();
+		TweenLite.set( $(this.bubbleDiv).children("#over_inactive"), { css: { opacity: 0 } } );
+		TweenLite.to( $(this.bubbleDiv).children("#over_inactive"), 0.4, { css: { opacity: 1 } } );
+
+//		TweenLite.to( $(this.bubbleDiv), 0.2, { css: { opacity: 0.6 } } );
+		
+	}
+	
+	// colorFadeBold() | 
+	Bubble.prototype.colorFadeBold = function( ) {
+		
+		//Fade states
+		this.dimmed = false;
+	
+		TweenLite.to( $(this.bubbleDiv).children("#over_inactive"), 0.2, { css: { opacity: 0 } } );
+	
+		$(this.bubbleDiv).children("#over_active").show();
+		TweenLite.set( $(this.bubbleDiv).children("#over_active"), { css: { opacity: 0 } } );
+		TweenLite.to( $(this.bubbleDiv).children("#over_active"), 0.4, { css: { opacity: 1 } } );
+
+//		TweenLite.to( $(this.bubbleDiv), 0.2, { css: { opacity: 1.0 } } );
+
+	}
+	
 	
 	// kill() | stop everything and reset
 	Bubble.prototype.kill = function( ) {

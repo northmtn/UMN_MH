@@ -56,6 +56,11 @@ define(['net/ui/Bubble', 'net/util/Geom'], function(Bubble, Geom){
     		
     			this.bubbles[i].activate(cPt);
     			
+    		} else {
+    			
+    			//stop motion of all other bubbles.
+    			this.bubbles[i].comeToStop();
+    			
     		}
     		
     	}
@@ -65,7 +70,7 @@ define(['net/ui/Bubble', 'net/util/Geom'], function(Bubble, Geom){
     // activate() | bring bubble into foreground
     BubbleTank.prototype.activateBubbles = function( bubbleIds ) {
     
-    	this.deactivate();
+    	this.deactivate( );
     	
     	var numActive = bubbleIds.length;
     	var centeredPts = [];
@@ -108,7 +113,20 @@ define(['net/ui/Bubble', 'net/util/Geom'], function(Bubble, Geom){
     
     	for (var i = 0; i < this.numBubbles; i++) {
     		
-    		if (this.bubbles[i].isActive == true) this.bubbles[i].deactivate();
+    		if (this.bubbles[i].dimmed == false) this.bubbles[i].deactivate();
+    		
+    	}
+    
+    	this.isActive = false;
+    	
+    }
+    
+    // reset() | send bubble into background for floating
+    BubbleTank.prototype.reset = function() {
+    
+    	for (var i = 0; i < this.numBubbles; i++) {
+    		
+    		this.bubbles[i].reset();
     		
     	}
     

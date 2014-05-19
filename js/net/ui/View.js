@@ -1,6 +1,6 @@
 define(['net/data/AppData'], function(AppData){
 
-    function View( containerDiv, contentId, templateId){
+    function View( containerDiv, contentId, templateId, viewCompleteCallback){
     	
     	this.containerDiv = containerDiv;
     	this.templateId = templateId;
@@ -8,6 +8,8 @@ define(['net/data/AppData'], function(AppData){
     	
     	this.viewDiv = {};
     	this.viewConfig = {};
+    	
+    	this.viewCompleteCallback = viewCompleteCallback;
     		
     	this.initWithTemplate();
         	
@@ -128,6 +130,9 @@ define(['net/data/AppData'], function(AppData){
     	
     	//Default to hidden
     	$(templateDiv).hide();
+    	
+    	//Notify others the view is loaded and populated..
+    	if (this.viewCompleteCallback != null && this.viewCompleteCallback != undefined) this.viewCompleteCallback();
     
     }
         

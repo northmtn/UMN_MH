@@ -3,13 +3,14 @@ define(["libs/pace.min",
 		"net/media/Media", 
 		"net/ui/Screen", 
 		"net/ui/Navigator", 
-		"net/ui/TimelineNav", 
+		"net/ui/TimelineNav",
+		"net/ui/Tips", 
 		"net/ui/BubbleTank",
 		"net/ui/TS_FeatureBubble",
 		"net/ui/View", 
 		"net/ui/ViewCollection", 
 		"tween"], 
-		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, BubbleTank, TS_FeatureBubble, View, ViewCollection )
+		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, Tips, BubbleTank, TS_FeatureBubble, View, ViewCollection )
 		{
 
 
@@ -45,54 +46,51 @@ define(["libs/pace.min",
 		var c = $("#screen_touchstone #views_container");
 		viewCollection = new ViewCollection( $(c), "trustone_views");
 		
+		//Setup tips
+		Tips.setContainerDiv("#screen_touchstone #touchstone_tip");
+		
 		//First time view collection is loaded, default to view 1
 		var thisRef = this;
 		Pace.once("done", function() {
-
-			//TODO - need to somehow make this part of the loading process
-			bubbleTank = new BubbleTank("#screen_touchstone #bubble_tank_container");
-			bubbleTank.createBubbles(["Physical", "Emotional", "Spiritual", "Social", "Environmental", "Occupational", "Financial"]);
-			bubbleTank.distributeInCircle();
-			bubbleTank.kill();
 			
-			featureBubble = new TS_FeatureBubble("#screen_touchstone #steps_feature_bubble"); // Larger bubble containing expanded step features
-			featureBubble.setupSteps();
-			
-			//update step navigation titles & bubble linkages
-			$("#screen_touchstone #step_buttons_container .stepBtn").each(function (index) {
-				$(this).find("#title").html(featureBubble.steps[index].title);
-			});
-						
 			//All setup and loading finished. go to first view. 
 			viewCollection.gotoView(0);
 			timelineNav.refreshDisplays();
 			thisRef.refreshButtonListeners();
 			
+			Tips.showById("touchstone_start");
+			
 		});
 		
 		viewCollection.addView( new View( $(c), "view_1", "touchstone_1") ); // ( containerDiv, contentId, templateId )
 		viewCollection.addView( new View( $(c), "view_2", "view_2") );
-		viewCollection.addView( new View( $(c), "view_3", "view_3") );
+		viewCollection.addView( new View( $(c), "view_3", "view_3", this.view3Setup) );
 		viewCollection.addView( new View( $(c), "view_4", "touchstone_1") );
 		
 		timelineNav = new TimelineNav( $("#screen_touchstone  #timeline_nav").first(), viewCollection);
-		
-		//Add view specific items
-		//View 1...
-		
-		//View 2...
-		
-		//View 3...
 
-		//View 4...
+	}
+	
+	Touchstone.prototype.view3Setup = function() {
+	
+		bubbleTank = new BubbleTank("#screen_touchstone #bubble_tank_container");
+		bubbleTank.createBubbles(["Physical", "Emotional", "Spiritual", "Social", "Environmental", "Occupational", "Financial"]);
+		bubbleTank.distributeInCircle();
+		bubbleTank.kill();
 		
+		featureBubble = new TS_FeatureBubble("#screen_touchstone #steps_feature_bubble"); // Larger bubble containing expanded step features
+		featureBubble.setupSteps();
 		
+		//update step navigation titles & bubble linkages
+		$("#screen_touchstone #step_buttons_container .stepBtn").each(function (index) {
+			$(this).find("#title").html(featureBubble.steps[index].title);
+		});
+				
 	}
 	
 	function changeView(navIndex) {
 		
 		if (viewCollection.currentViewIndex == 2 && navIndex != 2) {
-			console.log("kill bubs");
 			bubbleTank.kill();
 		}
 		
@@ -100,37 +98,14 @@ define(["libs/pace.min",
 		timelineNav.refreshDisplays();
 		
 		if (viewCollection.currentViewIndex == 2) {
-			console.log("awake bubs");
-			bubbleTank.deactivate(); // reset and start bubbles
+			bubbleTank.reset(); // reset and start bubbles
 		}
 	
 	}
-	
-	function toggleTip() {
-		var t = $("#header_bar #touchstone_tip");
-		if (tipShowing == false) {
-			$(t).show();
-			TweenLite.set( $(t), { css: { top: -100 } } );
-			TweenLite.to( $(t), 0.5, { css: { top: 0, autoAlpha:1 }, ease:Power2.easeOut } );
-			$("#header_bar #btn_tips_inner").addClass("circle-text-ring");
-			tipShowing = true;
-		}else {
-			TweenLite.to( $(t), 0.4, { css: { top: -100, autoAlpha:0 }, ease:Power2.easeIn } );
-			$("#header_bar #btn_tips_inner").removeClass("circle-text-ring");
-			tipShowing = false;
-		}
-	}
-	
-	function updateTipText(tipStr) {
-		
-		var tt = $("#header_bar #touchstone_tip #tip_content");
-		$(tt).text( tipStr );
-		
-	}
-	
+
 	//Bubbles/Steps
 	function activateBubblesForStep(id){
-	
+
 		var dimensions = featureBubble.getAssociatedDimensionsOfStep(id);
 		bubbleTank.activateBubbles(dimensions);
 
@@ -178,15 +153,25 @@ define(["libs/pace.min",
     	if (btnId.substring(0, 6) == "video_") {
     	    	
     		var vidId = btnRef.attr('data-video');
-    		console.log("vidID "+vidId);
     		Media.launchVideo(vidId);
+    		    		    		
+    	    return;
+    	    
+    	}
+    	if (btnId.substring(0, 6) == "audio_") {
+    	    	
+    		var audId = btnRef.attr('data-audio');
+    		Media.playTakeoverSound(audId);
     		    		    		
     	    return;
     	    
     	}
     	//steps/bubble nav
     	if (btnId.substring(0, 5) == "step_") {
-    	
+    		
+    		$("#navigation_bar #step_buttons_container .stepBtn").removeClass('active');
+    		$(btnRef).addClass('active');
+    		console.log("active");
     		currentStepId = $(btnRef).find("#title").text();
     		activateBubblesForStep(currentStepId);
     	    return;
@@ -222,17 +207,20 @@ define(["libs/pace.min",
 	    		}
 			break;
 			case "btn_feature_close":
-				bubbleTank.deactivate();
+				bubbleTank.reset();
 				featureBubble.kill();
 			break;
 			case "btn_tips":
 			case "btn_tips_inner":
 			case "touchstone_tip":
-				toggleTip();
+				Tips.toggle();
 			break;
 			case "btn_resources":
-				updateTipText("Lorem ipsum this should be at least three lines of information. Let's see if the tip dropdown still positions correctly with more lines of text.");
-			break;			
+				Tips.showById("click_step_1");
+			break;
+			case "btn_quit_program":
+				AppData.quitProgram();
+			break;		
 	        default:
 	        
 	            break;

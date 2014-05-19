@@ -49,11 +49,26 @@
 			<touchstone_steps>
 				<step title="Arriving at Touchstone" dimensions="Emotional, Physical">
 				
-					<personnel role="Trainer" audio="SampleAudio"></personnel>
-					<personnel role="Doctor" audio="SampleAudio2"></personnel>
-					<personnel role="Therapist" audio="SampleAudio"></personnel>
-					<personnel role="Instructor" audio="SampleAudio2"></personnel>
-	
+					<text id="step_description"><![CDATA[Jenna is happy that her case manager found Touchstone for her where there are a number of people who work together to support her with managing her illnesses as well as day-to-day living such as meals and housekeeping. In the first few days of being at Touchstone, each person working with Jenna introduced him or herself. They talked to her about how she is an important member of the Touchstone team and that they are going to work together so that she can maintain her independence and wellness.]]>
+					</text>
+				
+					<personnel role="Trainer" audio="SampleAudio" audioDelay="1"></personnel>
+					<personnel role="Doctor" audio="SampleAudio2" audioDelay="0.5"></personnel>
+					<personnel role="Therapist" audio="SampleAudio" audioDelay="0.5"></personnel>
+					<personnel role="Instructor" audio="SampleAudio2" audioDelay="0.25"></personnel>
+					
+					<review>
+						<button id="video_review" video="M01_S02V01_D">HERE'S WHAT I WOULD ASK</button>
+						<button id="audio_review" audio="SampleAudio2">IN MY ROLE</button>
+						<button id="quiz_review" quiz="quiz_1">WHAT WOULD YOU DO</button>
+					</review>
+					
+					<quiz id="quiz_1">
+						<QA title="Question 1" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback."/> 
+						<QA title="Question 2" question="Lorem ipsum this will be question number two of three. What is your answer?" feedback="Lorem ipsum, here is some feedback in response to question two."/> 
+						<QA title="Question 3" question="Lorem ipsum this will be question number three of three. What is your answer?" feedback="Lorem ipsum, here is some feedback for question three."/> 
+					</quiz>
+
 				</step>
 				
 				<step title="Receiving a Cancer Diagonosis" dimensions="Occupational">
@@ -61,38 +76,45 @@
 					<personnel role="Doctor" audio="SampleAudio"></personnel>
 					<personnel role="Therapist" audio="SampleAudio"></personnel>
 					<personnel role="Instructor" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem A" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem B" audio="SampleAudio"></personnel>
+					<personnel role="Lorem_A" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem_B" audio="SampleAudio"></personnel>
 	
 				</step>
 				
 				<step title="Increasing Depression" dimensions="Social, Spiritual">
 				
-					<personnel role="Doctor" audio="SampleAudio2"></personnel>
-					<personnel role="Therapist" audio="SampleAudio"></personnel>
-					<personnel role="Instructor" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem A" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem B" audio="SampleAudio2"></personnel>
-	
+					<personnel role="Therapist" audio="SampleAudio" audioDelay="8"></personnel>
+					<personnel role="Doctor" audio="SampleAudio2" audioDelay="3"></personnel>
+					<personnel role="Instructor" audio="SampleAudio2" audioDelay="7"></personnel>
+					<personnel role="Lorem_A" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem_B" audio="SampleAudio2"></personnel>
+
 				</step>
 	
 				<step title="Team Meeting" dimensions="Environmental">
 				
-					<personnel role="Lorem B" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem C" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem F" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem_A" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem_C" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem_F" audio="SampleAudio2"></personnel>
 					<personnel role="Doctor" audio="SampleAudio"></personnel>
 	
 				</step>
 				
 				<step title="Living with Multiple Chronic Illnesses" dimensions="Financial, Social, Physical">
 				
-					<personnel role="Lorem B" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem C" audio="SampleAudio"></personnel>
+					<personnel role="Lorem_D" audio="SampleAudio2"></personnel>
+					<personnel role="Lorem_C" audio="SampleAudio"></personnel>
 					<personnel role="Instructor" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem A" audio="SampleAudio"></personnel>
+					<personnel role="Lorem_A" audio="SampleAudio"></personnel>
 					
 				</step>
+				
+				<tips>
+					<tip id="touchstone_start" delay="1" duration="5">Watch the video, then click "2" on top bar to continue.</tip>
+					<tip id="click_step_1" delay="4">Click the first step in the left-hand column to see the affected dimensions.</tip>
+					<tip id="step_review_completed" delay="2">Congrats! The review is complete. Please click the "X" close button to return to main activity.</tip>
+				</tips>
+				
 			</touchstone_steps>
 
 
