@@ -1,4 +1,4 @@
-define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/Tips', 'net/media/Media', 'net/ui/Quiz'], function(AppData, TS_Step, Tips, Media, Quiz){
+define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips', 'net/media/Media', 'net/ui/Quiz'], function(AppData, TS_Step, TS_Feedback, Tips, Media, Quiz){
 
 
     function TS_FeatureBubble( containerDiv ){
@@ -13,6 +13,7 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/Tips', 'net/media/Media', 
  		this.curPersonnelDiv = {};
  		this.currentQuiz = {};
  		this.reviewCompleted = false;
+ 		this.waitingFeedback = null;
 
     }
     
@@ -29,14 +30,15 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/Tips', 'net/media/Media', 
     	    
     }
     
-    TS_FeatureBubble.prototype.getAssociatedDimensionsOfStep = function( stepId ) {
+    TS_FeatureBubble.prototype.getStepInfo = function( stepId ) {
     	
     	//update current step config
     	for (var i = 0; i < this.steps.length; i++) {
     				
     		if ( this.steps[i].id == stepId ) {
-    		
-    			return this.steps[i].dimensions;
+    			
+    			//return dimensions array and sound id
+    			return [this.steps[i].dimensions, this.steps[i].introAudioId];
     			
     		}
     		
@@ -74,6 +76,10 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/Tips', 'net/media/Media', 
     	$(this.containerDiv).find("#center_oval #step_title").html( this.currentStep.descriptionTitle );
     	$(this.containerDiv).find("#center_oval #description").html( this.currentStep.descriptionContent );
     	
+    	//show default view on center oval
+    	$(thisRef.containerDiv).find("#center_oval div").hide();
+    	$(thisRef.containerDiv).find("#center_oval #step_description_container").show();   
+    	
     	//review buttons
     	$(this.containerDiv).find("#review_container button.rect-button").each(function (index) {
     		
@@ -85,6 +91,7 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/Tips', 'net/media/Media', 
     			var vSrc = thisRef.currentStep.reviewBtns[index][1];
     			var aSrc = thisRef.currentStep.reviewBtns[index][2];
     			var qSrc = thisRef.currentStep.reviewBtns[index][3];
+    			var rFeedback = thisRef.currentStep.reviewBtns[index][4];
     			
     			//add video link
     			if (typeof vSrc !== 'undefined' && vSrc !== false) {
@@ -103,6 +110,11 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/Tips', 'net/media/Media', 
     				$(this).attr('data-quiz', qSrc);
     			}
     			
+    			//add optional feedback text. Will trigger leaf/feedback box.
+    			if (typeof rFeedback !== 'undefined' && rFeedback !== false) {
+    				$(this).attr('data-feedback', rFeedback);
+    			}
+    			
     			$(this).on( "click", { thisRef: thisRef }, thisRef.reviewBtnClicked );
     			
     		} else {
@@ -119,11 +131,20 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/Tips', 'net/media/Media', 
     	
     		$(this).removeClass("on");
     		$(this).removeClass("active");
+    		//hide colored photo
+    		$(this).find("#portrait_color").hide();
+    		$(this).find("#portrait_bw").show();
     	
     	});
     	for (var i = 0; i < this.currentStep.personnel.length; i++) {
-									
-			$(this.containerDiv).find("#role_" + this.currentStep.personnel[i][0] ).addClass("on");
+    		
+    		var persDiv = $(this.containerDiv).find("#role_" + this.currentStep.personnel[i][0] );
+    		
+    		//show colored photo
+    		$(persDiv).find("#portrait_color").show();
+			$(persDiv).find("#portrait_bw").hide();
+			$(persDiv).addClass("on");
+			
   			this.numActivePersonnel ++;
   			
     	}
@@ -143,13 +164,19 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/Tips', 'net/media/Media', 
     	
     	$(this).addClass('visited');
     	
+    	//check for associated feedback
+    	var fTxt = $(this).attr('data-feedback');
+    	if (typeof fTxt !== 'undefined' && fTxt !== false) {
+    		thisRef.waitingFeedback = fTxt;
+    	}
+    	
     	//check review progress
     	var numVisible = $(this).parent().find("button:visible").length;
     	var numVisited = $(this).parent().find("button.visited").length;
     	if (numVisited >= numVisible) {
     		thisRef.reviewCompleted = true;
     	}
-    
+    	    
     	//if quiz btn
     	var qSrc = $(this).attr('data-quiz');
     	if (typeof qSrc !== 'undefined' && qSrc !== false) {
@@ -164,9 +191,7 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/Tips', 'net/media/Media', 
     }
     
     TS_FeatureBubble.prototype.showQuiz = function( quizId ) {
-    
-    	console.log("showQuiz : "+quizId);
-    	
+        	
     	//Setup up quiz
     	var quizData = this.currentStep.getQuizById( quizId );
     	
@@ -192,7 +217,17 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/Tips', 'net/media/Media', 
     }
     
     TS_FeatureBubble.prototype.checkForReviewCompletion = function( ) {
-
+    
+    	//Drop leaf and show feedback if any is waiting. 
+    	console.log("checkForReviewCompletion "+this.waitingFeedback);
+    	if (this.waitingFeedback != null) {
+    		
+    		TS_Feedback.populateFeedback(this.waitingFeedback);
+    		TS_Feedback.dropLeaf();
+    		this.waitingFeedback = null;
+  		
+    	}
+    	
     	if (this.reviewCompleted == true) {
     		
     		Tips.showById("step_review_completed");
@@ -278,7 +313,7 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/Tips', 'net/media/Media', 
     	if ( this.curPersonnelDiv ) {
     		
     		TweenMax.set( $(this.curPersonnelDiv).find(".circle-portrait img"), { boxShadow:"0px 0px 15px 5px "+glowColor+" " });
-    		TweenMax.to( $(this.curPersonnelDiv).find(".circle-portrait img"), 0.6, { boxShadow:"0px 0px 19px 8px "+glowColor+" ", yoyo:true, repeat:-1, ease:Power1.easeInOut });
+    		TweenMax.to( $(this.curPersonnelDiv).find(".circle-portrait img"), 0.6, { scale: 1.5, boxShadow:"0px 0px 19px 8px "+glowColor+" ", yoyo:true, repeat:-1, ease:Power1.easeInOut });
     		
     	}
     }
@@ -296,6 +331,10 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/Tips', 'net/media/Media', 
 
     // kill() | stop everything
     TS_FeatureBubble.prototype.kill = function( ) {
+    	
+    	Media.killSounds();
+    	
+    	this.killCurrentActivePersonnel();
     	
     	this.transOut();
     	

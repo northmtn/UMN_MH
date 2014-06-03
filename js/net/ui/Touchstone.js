@@ -7,10 +7,11 @@ define(["libs/pace.min",
 		"net/ui/Tips", 
 		"net/ui/BubbleTank",
 		"net/ui/TS_FeatureBubble",
+		"net/ui/TS_Feedback",
 		"net/ui/View", 
 		"net/ui/ViewCollection", 
 		"tween"], 
-		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, Tips, BubbleTank, TS_FeatureBubble, View, ViewCollection )
+		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, Tips, BubbleTank, TS_FeatureBubble, TS_Feedback, View, ViewCollection )
 		{
 
 
@@ -48,6 +49,9 @@ define(["libs/pace.min",
 		
 		//Setup tips
 		Tips.setContainerDiv("#screen_touchstone #touchstone_tip");
+		
+		//Setup feedback
+		TS_Feedback.setup();
 		
 		//First time view collection is loaded, default to view 1
 		var thisRef = this;
@@ -106,33 +110,11 @@ define(["libs/pace.min",
 	//Bubbles/Steps
 	function activateBubblesForStep(id){
 
-		var dimensions = featureBubble.getAssociatedDimensionsOfStep(id);
-		bubbleTank.activateBubbles(dimensions);
+		var stepInfo = featureBubble.getStepInfo(id);
+		bubbleTank.activateBubbles(stepInfo[0]);
+		Media.playTakeoverSound( stepInfo[1] );
 
 	}
-	
-	function resetLeaf() {
-		var leaf = $("#header_bar #center_leaf");
-		TweenLite.set( $(leaf), { css: { top: -158, left: 464, rotation: 0 } } );
-		TweenLite.to( $(leaf), 1.5, { css: { top: -59 }, ease:Power2.easeInOut, onComplete:leafResetComplete } );
-	}
-	
-	function leafResetComplete(){
-		leafHasDropped = false;
-	}
-	
-	
-	function dropLeaf() {
-		var leaf = $("#header_bar #center_leaf");
-		TweenLite.to( $(leaf), 2, { css: { top: 600, left: 150, rotation: 222 }, ease:Power2.easeInOut, onComplete:leafDropComplete } );
-	}
-	
-	function leafDropComplete(){
-	
-		leafHasDropped = true;
-		
-	}
-
 	
 	//Overwrite button handlers
 	Touchstone.prototype.buttonClicked = function(btnId, btnRef) {
@@ -199,12 +181,19 @@ define(["libs/pace.min",
 	
 	    //other btns...
 	    switch (btnId) {
-	    	case "center_leaf":
-	    		if (leafHasDropped == false) {
-	    			dropLeaf();
-	    		}else {
-	    			resetLeaf();
+	    	case "center_leaf": // temp
+
+	    		if (TS_Feedback.leafDropped == false) {
+	    			TS_Feedback.dropLeaf();
+	    		} else {
+	    			TS_Feedback.resetLeaf();
 	    		}
+	    		
+			break;
+			case "leaf_feedback_box":
+				if (TS_Feedback.feedbackShowing == true) {
+					TS_Feedback.closeAndReset();
+				}
 			break;
 			case "btn_feature_close":
 				bubbleTank.reset();

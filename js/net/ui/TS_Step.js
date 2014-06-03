@@ -9,6 +9,8 @@ define([], function(){
     	//parse config data
     	this.title = $(configData).attr('title');
     	this.id = this.title;
+    	
+    	this.introAudioId = $(configData).attr('audio');
     	    	
     	this.dimensionsStr = $(configData).attr('dimensions');
     	this.dimensions = this.dimensionsStr.split(", ");
@@ -36,8 +38,9 @@ define([], function(){
     		var dataVideo = $(this).attr('video');
     		var dataAudio = $(this).attr('audio');
     		var dataQA = $(this).attr('quiz');
+    		var dataFeedback = $(this).attr('feedback');
 				
-			var rBtn = [btnId, dataVideo, dataAudio, dataQA];
+			var rBtn = [btnId, dataVideo, dataAudio, dataQA, dataFeedback];
     		thisRef.reviewBtns.push(rBtn);
     		
     	});
@@ -46,7 +49,7 @@ define([], function(){
     	this.personnel = [];
     	$(configData).children("personnel").each(function() {
     	
-    		var p = [$(this).attr('role'), $(this).attr('audio'), $(this).attr('audioDelay')];
+    		var p = [$(this).attr('role'), $(this).attr('audio'), $(this).attr('duration')];
     		thisRef.personnel.push(p);
     		
     	});

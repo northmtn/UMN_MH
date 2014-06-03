@@ -83,6 +83,14 @@ p {
 	
 }
 
+textarea {
+	overflow: auto;
+	outline: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
 .flipH {
 	-moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -460,6 +468,20 @@ button.rect-button {
 	color: #2e3a14;
 }
 
+#screen_touchstone .quiz-container textarea {
+
+	resize: none;
+	width: 326px;
+	height: 74px;
+	border:7px solid #4d8b85;
+
+    font-family: inherit;
+    font-size: 14px;
+    padding: 5px;
+    margin: 5px;
+
+}
+
 #screen_touchstone #header_bar #touchstone_tip {
 
 	left: 813px;
@@ -504,6 +526,75 @@ button.rect-button {
 	
 }
 
+ /*FEEDBACK BOX*/
+#screen_touchstone #leaf_feedback_box {
+	
+	left: 240px;
+	bottom: 285px;
+	z-index: 1;
+}
+
+#screen_touchstone #leaf_feedback_box span {
+
+	width: 690px;
+	height: 215px;
+	
+}
+
+
+#screen_touchstone #leaf_feedback_box.tooltips span:after {
+  border: none;
+}
+
+#screen_touchstone #leaf_feedback_box h1 {
+	
+	text-align: left;
+	font-size: 26px;
+	font-weight: 400;
+	padding: 0px 20px;
+	margin-bottom: 0px;
+	color: #4d8b85;
+	
+}
+
+#screen_touchstone #leaf_feedback_box p {
+
+	text-align: left;
+	padding: 5px 20px;
+	background: #FFFFFF;
+	color: #000;
+	font-size: 16px;
+	font-weight: 200;
+	margin: 0px;
+	
+}
+
+#screen_touchstone #leaf_feedback_box h2 {
+	
+	text-align: left;
+	font-size: 15px;
+	padding: 5px 0px 0px 70px;
+	background: #90a4a8;
+	color: white;
+	height: 26px;
+	width: 620px;
+	margin: 0px;
+	bottom: 0px;
+	position: absolute;
+	
+}
+
+#screen_touchstone #leaf_feedback_box #closex {
+
+	color: #FFFFFF;
+	left: 50px;
+	bottom: -8px;
+	position: absolute;
+	
+}
+
+
+/* FOOTER */
 #screen_touchstone #footer_bar {
 	
 	height: 35px;
@@ -797,11 +888,24 @@ button.rect-button {
 
 #screen_touchstone #step_content #btn_feature_close {
 	
-	left: 800px;
-	top: 130px;
-	font-size: 30px;
-	background-color: #674624;
-	color: #FFF;
+	left: 797px;
+	top: 131px;
+	width: 36px;
+	height: 36px;
+	
+}
+
+#screen_touchstone #step_content #btn_feature_close.circle-text:after {
+
+	background: #674624; 
+	
+}
+
+#screen_touchstone #step_content #btn_feature_close.circle-text div {
+	
+	left: 9px;
+	content: url("../img/icon_x.png");
+	width: auto;
 	
 }
 
@@ -822,7 +926,7 @@ button.rect-button {
 }
 
 #screen_touchstone #step_content #personnel_layer .row1 {
-	top: 118px;
+	top: 115px;
 }
 #screen_touchstone #step_content #personnel_layer .row2 {
 	top: 192px;
@@ -831,29 +935,29 @@ button.rect-button {
 	top: 304px;
 }
 #screen_touchstone #step_content #personnel_layer .row4 {
-	top: 419px;
+	top: 422px;
 }
 #screen_touchstone #step_content #personnel_layer .row5 {
-	top: 499px;
+	top: 501px;
 }
 
 #screen_touchstone #step_content #personnel_layer .col1 {
-	left: 81px;
+	left: 75px;
 }
 #screen_touchstone #step_content #personnel_layer .col2 {
-	left: 132px;
+	left: 136px;
 }
 #screen_touchstone #step_content #personnel_layer .col3 {
 	left: 232px;
 }
 #screen_touchstone #step_content #personnel_layer .col4 {
-	left: 679px;
+	left: 668px;
 }
 #screen_touchstone #step_content #personnel_layer .col5 {
-	left: 781px;
+	left: 770px;
 }
 #screen_touchstone #step_content #personnel_layer .col6 {
-	left: 832px;
+	left: 828px;
 }
 
 #screen_touchstone #step_content .portrait-label . {

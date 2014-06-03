@@ -4,6 +4,21 @@ define([], function(){
     function Geom(){
 				
     }
+    
+    //Distance between 2 points in 2d space
+    Geom.dist = function( x1, y1, x2, y2 ) {
+      var xs = 0;
+      var ys = 0;
+    
+      xs = x2 - x1;
+      xs = xs * xs;
+    
+      ys = y2 - y1;
+      ys = ys * ys;
+    
+      return Math.sqrt( xs + ys );
+      
+    }
 	
     //Convert degrees to radians
     Geom.deg2Rad = function(degrees) {
@@ -26,7 +41,7 @@ define([], function(){
      Geom.randomPointOnRing = function( radius ) {
     
         var randomAngle = Math.random() * (Math.PI * 2);
-        return getPointOnRing(randomAngle);
+        return this.getPointOnRing(randomAngle, radius);
     
     }
     

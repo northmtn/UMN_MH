@@ -5,8 +5,11 @@ define(['net/ui/Bubble', 'net/util/Geom'], function(Bubble, Geom){
     	
     	this.containerDiv = containerDiv;
     	this.isActive = true;
+    	this.isAlive = true;
     	this.bubbles = [];
     	this.numBubbles = 0;
+    	this.rotationOffset = 0;
+    	
         
     }
     
@@ -17,7 +20,6 @@ define(['net/ui/Bubble', 'net/util/Geom'], function(Bubble, Geom){
     		this.createBubble( barray[i] );
     		
     	}
-    	
     	
     }
 
@@ -35,11 +37,33 @@ define(['net/ui/Bubble', 'net/util/Geom'], function(Bubble, Geom){
     	var distributeRadius = 215;
 		var degreeOffset = 360 / this.numBubbles;
 		var homePt = [];
+		var homeAngle = 0;
 			
 		for (var i = 0; i < this.numBubbles; i++) {
 		
-			homePt = Geom.getPointOnRing( Geom.deg2Rad(degreeOffset) * i, distributeRadius);
-			this.bubbles[i].setHome(homePt[0], homePt[1]);
+			homeAngle = ( Geom.deg2Rad( degreeOffset ) * i ) + Geom.deg2Rad(this.rotationOffset);
+			homePt = Geom.getPointOnRing( homeAngle, distributeRadius );
+			this.bubbles[i].updateHome(homePt[0], homePt[1]);
+			
+		}
+
+    }
+    
+    BubbleTank.prototype.rotateCycle = function() {
+        
+        if (this.isAlive == true) {
+        
+        	var thisRef = this;
+        	
+			TweenLite.delayedCall(0.35, function() {
+			
+				thisRef.rotationOffset += 3;
+				if (thisRef.rotationOffset >= 360) thisRef.rotationOffset = (1+(thisRef.rotationOffset-360));
+				thisRef.distributeInCircle();
+				
+				thisRef.rotateCycle(); //again...
+				
+			});
 			
 		}
 
@@ -64,6 +88,8 @@ define(['net/ui/Bubble', 'net/util/Geom'], function(Bubble, Geom){
     		}
     		
     	}
+    	
+    	this.isAlive = false;
     	
     }
     
@@ -106,6 +132,7 @@ define(['net/ui/Bubble', 'net/util/Geom'], function(Bubble, Geom){
     	}
     	
     	this.isActive = true;
+    	
     }
     
     // deactivate() | send bubble into background for floating
@@ -131,6 +158,8 @@ define(['net/ui/Bubble', 'net/util/Geom'], function(Bubble, Geom){
     	}
     
     	this.isActive = false;
+    	this.isAlive = true;
+    	this.rotateCycle();
     	
     }
     
@@ -142,7 +171,7 @@ define(['net/ui/Bubble', 'net/util/Geom'], function(Bubble, Geom){
     		this.bubbles[i].kill();
     		
     	}
-    
+    	this.isAlive = false;
     	this.isActive = false;
     	
     }

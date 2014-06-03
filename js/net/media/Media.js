@@ -175,6 +175,13 @@ define(['libs/media/mediaelement-and-player.min', 'libs/soundmanager2/soundmanag
 	
 	}
 	
+	Media.killSounds = function () {
+				
+		//Stop all current sounds
+		soundManager.stopAll();
+	
+	}
+	
 	return Media;
     
 });

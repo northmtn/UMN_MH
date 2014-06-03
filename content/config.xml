@@ -29,17 +29,17 @@
 			</text>
 			
 			<button id="video_1" video="M01_S02V01_D">WATCH AN INTRODUCTORY VIDEO</button>
-			
-			<tip id="tip_1">Click step one in the right hand column. Make sure your audio player is working.</tip>
-			
+						
 		</view>
 		
+		<!-- Screen 2 -->
 		<view id="view_2" title="Town">
 			
 			<text id="text_1">This Is The Second View.</text>
 			
 		</view>
 		
+		<!-- Screen 3 -->
 		<view id="view_3" title="Touchstone Steps and Bubbles">
 			
 			<text id="text_1">Jenna's Story</text>
@@ -47,15 +47,15 @@
 			
 			<!-- TOUCHSTONE STEPS -->
 			<touchstone_steps>
-				<step title="Arriving at Touchstone" dimensions="Emotional, Physical">
+				<step title="Arriving at Touchstone" dimensions="Emotional, Physical" audio="SampleAudio">
 				
 					<text id="step_description"><![CDATA[Jenna is happy that her case manager found Touchstone for her where there are a number of people who work together to support her with managing her illnesses as well as day-to-day living such as meals and housekeeping. In the first few days of being at Touchstone, each person working with Jenna introduced him or herself. They talked to her about how she is an important member of the Touchstone team and that they are going to work together so that she can maintain her independence and wellness.]]>
 					</text>
 				
-					<personnel role="Trainer" audio="SampleAudio" audioDelay="1"></personnel>
-					<personnel role="Doctor" audio="SampleAudio2" audioDelay="0.5"></personnel>
-					<personnel role="Therapist" audio="SampleAudio" audioDelay="0.5"></personnel>
-					<personnel role="Instructor" audio="SampleAudio2" audioDelay="0.25"></personnel>
+					<personnel role="Trainer" audio="SampleAudio" duration="42"></personnel>
+					<personnel role="Doctor" audio="SampleAudio2" duration="20"></personnel>
+					<personnel role="Therapist" audio="SampleAudio" duration="42"></personnel>
+					<personnel role="Instructor" audio="SampleAudio2" duration="20"></personnel>
 					
 					<review>
 						<button id="video_review" video="M01_S02V01_D">HERE'S WHAT I WOULD ASK</button>
@@ -71,27 +71,49 @@
 
 				</step>
 				
-				<step title="Receiving a Cancer Diagonosis" dimensions="Occupational">
+				<step title="Receiving a Cancer Diagonosis" dimensions="Occupational" audio="SampleAudio">
 				
-					<personnel role="Doctor" audio="SampleAudio"></personnel>
-					<personnel role="Therapist" audio="SampleAudio"></personnel>
-					<personnel role="Instructor" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem_A" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem_B" audio="SampleAudio"></personnel>
+					<text id="step_description"><![CDATA[DESCRIPTION OF STEP TWO.  Lorem Ipsum her where there are a number of people who work together to support her with managing her illnesses as well as day-to-day living such as meals and housekeeping. In the first few days of being at Touchstone, each person working with Jenna introduced him or herself. They talked to her about how she is an important member of the Touchstone team and that they are going to work together so that she can maintain her independence and wellness.]]>
+					</text>
+
+					<personnel role="Lorem_B" audio="SampleAudio" duration="2"></personnel>
+	<!--				<personnel role="Lorem_A" audio="SampleAudio2" duration="3"></personnel>
+					<personnel role="Therapist" audio="SampleAudio" duration="4"></personnel>
+					<personnel role="Lorem_D" audio="SampleAudio2" duration="1"></personnel>-->
+					<personnel role="Lorem_C" audio="SampleAudio2" duration="1"></personnel>
+					
+					<review>
+						<button id="quiz_review" quiz="cancer_quiz_1">WHAT WOULD YOU DO</button>
+						<button id="video_review" video="M01_S02V01_D">HERE'S WHAT I WOULD ASK</button>
+						<button id="quiz_review" quiz="cancer_quiz_2" feedback="Lorem ipsum... Here is some feedback based on the portion you just did. Here is some feedback based on the portion you just did. Lorem ipsum.">WHAT WOULD YOU DO</button>
+						<button id="video_review" video="M01_S02V01_D">HERE'S WHAT I WOULD ASK</button>
+					</review>
+					
+					<quiz id="cancer_quiz_1">
+						<QA title="Question 1" question="This is 'Receiving a Cancer Diagonosis' question number ONE of quiz 1. What is your answer?"/> 
+						<QA title="Question 2" question="And this is 'Receiving a Cancer Diagonosis' question number TWO of quiz 1. What is your answer?" feedback="Lorem ipsum, here is some feedback in response to question two."/> 
+					</quiz>
+					
+					<quiz id="cancer_quiz_2">
+						<QA title="Question 1" question="Quiz 2 question ONE?" feedback="Q 1 feedback, here is some feedback in response to your answer."/> 
+						<QA title="Question 2" question="Quiz 2 question TWO?" feedback="Q 2 feedback, here is some feedback in response to your answer."/> 
+						<QA title="Question 3" question="Quiz 2 question THREE?" feedback="Q 3 feedback, here is some feedback in response to your answer."/>  
+						<QA title="Question 4" question="Quiz 2 question FOUR?" feedback="Q 4 feedback, here is some feedback in response to your answer."/> 
+					</quiz>
 	
 				</step>
 				
-				<step title="Increasing Depression" dimensions="Social, Spiritual">
+				<step title="Increasing Depression" dimensions="Social, Spiritual" audio="SampleAudio">
 				
-					<personnel role="Therapist" audio="SampleAudio" audioDelay="8"></personnel>
-					<personnel role="Doctor" audio="SampleAudio2" audioDelay="3"></personnel>
-					<personnel role="Instructor" audio="SampleAudio2" audioDelay="7"></personnel>
+					<personnel role="Therapist" audio="SampleAudio" duration="8"></personnel>
+					<personnel role="Doctor" audio="SampleAudio2" duration="3"></personnel>
+					<personnel role="Instructor" audio="SampleAudio2" duration="7"></personnel>
 					<personnel role="Lorem_A" audio="SampleAudio2"></personnel>
 					<personnel role="Lorem_B" audio="SampleAudio2"></personnel>
 
 				</step>
 	
-				<step title="Team Meeting" dimensions="Environmental">
+				<step title="Team Meeting" dimensions="Environmental" audio="SampleAudio">
 				
 					<personnel role="Lorem_A" audio="SampleAudio2"></personnel>
 					<personnel role="Lorem_C" audio="SampleAudio2"></personnel>
@@ -100,7 +122,7 @@
 	
 				</step>
 				
-				<step title="Living with Multiple Chronic Illnesses" dimensions="Financial, Social, Physical">
+				<step title="Living with Multiple Chronic Illnesses" dimensions="Financial, Social, Physical" audio="SampleAudio">
 				
 					<personnel role="Lorem_D" audio="SampleAudio2"></personnel>
 					<personnel role="Lorem_C" audio="SampleAudio"></personnel>
@@ -120,13 +142,20 @@
 
 		</view>
 		
-		<!-- Screen 2 (Bubbles) -->
-		<view id="view_4" title="Bubbles">
+		<!-- Screen 1 -->
+		<view id="view_4" title="Conclusion">
 			
-			<step id="week_1">
-				<video id="video_1">M01_S02V02_D</video>
-			</step>
-		
+			<text id="text_1">In Conclusion</text>
+			<text id="text_2">
+				<![CDATA[<b>Recovery from mental illness and whole person wellness starts at Touchstone Mental Health where our mission is to “inspire hope, healing and well-being.”</b> We consider each person as a whole; integrating treatment, care and resources which support a healthy mind, body, and spirit. We are a point of reference guiding clients, community members and residents toward recovery and well-being. We encourage each person to define their life goals— ]]>
+			</text>
+			<text id="text_3">
+				<![CDATA[physical, mental, emotional, spiritual, social, vocational and interpersonal – and we provide the tools so people achieve them. In this module you’ll have the chance to learn more about our team approach by engaging in an interactive case story about a [fictitious?] Touchstone resident to meet existing and emerging needs.
+				<br/><br/><b>Please watch the video above and then click</b>]]>
+			</text>
+			
+			<button id="video_1" video="M01_S02V01_D">WATCH AN CONCLUSION VIDEO</button>
+						
 		</view>
 		
 	</module>

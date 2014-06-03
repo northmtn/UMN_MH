@@ -51,7 +51,8 @@ define([], function(){
     	$(this.titleDiv).html( this.qa[qIndex][0] );
     	$(this.questionDiv).html( this.qa[qIndex][1] );
     	$(this.feedbackDiv).html( this.qa[qIndex][2] );
-    	$(this.answerDiv).val( "" );//clear text area
+    	$(this.answerDiv).val( 'Type your answer here' );//reset text area to default value
+    	$(this.answerDiv).css('color', '#999')
     	$(this.quizBtn).html("DONE");
     	
     	//default feedback to hidden
