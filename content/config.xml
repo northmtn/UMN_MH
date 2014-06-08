@@ -33,9 +33,16 @@
 		</view>
 		
 		<!-- Screen 2 -->
-		<view id="view_2" title="Town">
+		<view id="view_2" title="Adult Mental Health Continuum of Care">
 			
-			<text id="text_1">This Is The Second View.</text>
+			<text id="text_1">Adult Mental Health Continuum of Care</text>
+			
+			<buildings>
+				<building id="building_1" audio="SampleAudio2" duration="4"></building>
+				<building id="building_2" audio="SampleAudio" duration="2"></building>
+				<building id="building_3" audio="SampleAudio" duration="2"></building>
+				<building id="building_4" audio="SampleAudio2" duration="3"></building>
+			</buildings>
 			
 		</view>
 		
@@ -76,10 +83,10 @@
 					<text id="step_description"><![CDATA[DESCRIPTION OF STEP TWO.  Lorem Ipsum her where there are a number of people who work together to support her with managing her illnesses as well as day-to-day living such as meals and housekeeping. In the first few days of being at Touchstone, each person working with Jenna introduced him or herself. They talked to her about how she is an important member of the Touchstone team and that they are going to work together so that she can maintain her independence and wellness.]]>
 					</text>
 
-					<personnel role="Lorem_B" audio="SampleAudio" duration="2"></personnel>
-	<!--				<personnel role="Lorem_A" audio="SampleAudio2" duration="3"></personnel>
+					<personnel role="Lorem_B" audio="SampleAudio" duration="22"></personnel>
+					<personnel role="Lorem_A" audio="SampleAudio2" duration="3"></personnel>
 					<personnel role="Therapist" audio="SampleAudio" duration="4"></personnel>
-					<personnel role="Lorem_D" audio="SampleAudio2" duration="1"></personnel>-->
+					<personnel role="Lorem_D" audio="SampleAudio2" duration="1"></personnel>
 					<personnel role="Lorem_C" audio="SampleAudio2" duration="1"></personnel>
 					
 					<review>
@@ -130,14 +137,29 @@
 					<personnel role="Lorem_A" audio="SampleAudio"></personnel>
 					
 				</step>
-				
-				<tips>
-					<tip id="touchstone_start" delay="1" duration="5">Watch the video, then click "2" on top bar to continue.</tip>
-					<tip id="click_step_1" delay="4">Click the first step in the left-hand column to see the affected dimensions.</tip>
-					<tip id="step_review_completed" delay="2">Congrats! The review is complete. Please click the "X" close button to return to main activity.</tip>
-				</tips>
-				
+
 			</touchstone_steps>
+			
+			<tips>
+				<tip id="touchstone_entered" delay="2" duration="6">Watch the video, then click "2" on top bar to continue.</tip>
+				<tip id="page_2_start" delay="0" duration="6">Click START to begin activity.</tip>
+				<tip id="page_2_last_building" delay="0" duration="6">Click "3" on top bar for next screen.</tip>
+				<tip id="page_3_step_1" delay="1.5" duration="6">Click Arriving at Touchstone step.</tip>
+				<tip id="page_3_step_1b" delay="0" duration="6">Click the Environmental-Social circles.</tip>
+				<tip id="page_3_step_2" delay="0" duration="6">Click Receiving a Cancer Diagnosis step.</tip>
+				<tip id="page_3_step_2b" delay="0" duration="6">Click the Environmental-Social circles.</tip>
+				<tip id="page_3_step_3" delay="0" duration="6">Click Increasing Depression step.</tip>
+				<tip id="page_3_step_3b" delay="0" duration="6">Click the Environmental-Social circles.</tip>
+				<tip id="page_3_step_4" delay="0" duration="6">Click Team Meeting step.</tip>
+				<tip id="page_3_step_4b" delay="0" duration="6">Click the Environmental-Social circles.</tip>
+				<tip id="page_3_step_5" delay="0" duration="6">Click Living with Multiple Chronic Illnesses step.</tip>
+				<tip id="page_3_step_5b" delay="0" duration="6">Click the Environmental-Social circles.</tip>
+				<tip id="page_3_step_6" delay="0" duration="6">Click "4" on top bar to continue.</tip>
+				<tip id="page_3_personnel" delay="0" duration="6">Click each active photo.</tip>
+				<tip id="page_3_show_review" delay="0" duration="6">Click each blue button.</tip>
+				<tip id="page_3_close_review" delay="0" duration="6">Click brown "X" to select another step.</tip>
+				<tip id="touchstone_end" delay="2" duration="6">Watch the video, then click MAIN MENU to select another module.</tip>
+			</tips>
 
 
 		</view>

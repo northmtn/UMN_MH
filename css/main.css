@@ -277,6 +277,14 @@ textarea {
 	box-shadow: 0px 0px 20px 5px #e5c694;
 	
 }
+.canvas-ring {
+
+	position: absolute;
+	left: 0px;
+	top: -5px;
+	z-index: 0;
+	
+}
 
 /*-----------*/
 /* Main Menu */
@@ -703,6 +711,44 @@ button.rect-button {
 .single_centered_col .mejs-container {
 	width: 480px;
 }
+
+/* - Continuum Buildings -*/
+.continuum h2 {
+	
+	color: yellow;
+
+}
+
+.continuum #intro_message {
+	left: 200px;
+	top: 100px;
+	width: 500px;
+}
+
+.continuum #buildings div[data-role="button"] img {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+}
+
+.continuum #buildings #building_1 {
+	left: 100px;
+	top: 400px;
+}
+.continuum #buildings #building_2 {
+	left: 300px;
+	top: 300px;
+}
+.continuum #buildings #building_3 {
+	left: 500px;
+	top: 400px;
+}
+.continuum #buildings #building_4 {
+	left: 700px;
+	top: 300px;
+}
+
+
 
 .touchstone_steps #navigation_bar {
 	

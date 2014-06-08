@@ -5,13 +5,14 @@ define(["libs/pace.min",
 		"net/ui/Navigator", 
 		"net/ui/TimelineNav",
 		"net/ui/Tips", 
+		"net/ui/TS_BuildingSequence",
 		"net/ui/BubbleTank",
 		"net/ui/TS_FeatureBubble",
 		"net/ui/TS_Feedback",
 		"net/ui/View", 
 		"net/ui/ViewCollection", 
 		"tween"], 
-		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, Tips, BubbleTank, TS_FeatureBubble, TS_Feedback, View, ViewCollection )
+		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, Tips, TS_BuildingSequence, BubbleTank, TS_FeatureBubble, TS_Feedback, View, ViewCollection )
 		{
 
 
@@ -36,7 +37,10 @@ define(["libs/pace.min",
 	var timelineNav = {};
 	var viewCollection = {};
 	
+	var buildingSequence = {};
+	
 	var currentStepId = "";
+	var currentStepNum = 0;
 	var bubbleTank = {};
 	var featureBubble = {};
 	
@@ -62,17 +66,24 @@ define(["libs/pace.min",
 			timelineNav.refreshDisplays();
 			thisRef.refreshButtonListeners();
 			
-			Tips.showById("touchstone_start");
+			Tips.showById("touchstone_entered");
 			
 		});
 		
 		viewCollection.addView( new View( $(c), "view_1", "touchstone_1") ); // ( containerDiv, contentId, templateId )
-		viewCollection.addView( new View( $(c), "view_2", "view_2") );
-		viewCollection.addView( new View( $(c), "view_3", "view_3", this.view3Setup) );
+		viewCollection.addView( new View( $(c), "view_2", "view_2", this.view2Setup ) );
+		viewCollection.addView( new View( $(c), "view_3", "view_3", this.view3Setup ) );
 		viewCollection.addView( new View( $(c), "view_4", "touchstone_1") );
 		
 		timelineNav = new TimelineNav( $("#screen_touchstone  #timeline_nav").first(), viewCollection);
 
+	}
+	
+	Touchstone.prototype.view2Setup = function() {
+	
+		buildingSequence = new TS_BuildingSequence( $("#screen_touchstone #buildings") );
+		buildingSequence.setup();
+				
 	}
 	
 	Touchstone.prototype.view3Setup = function() {
@@ -101,9 +112,27 @@ define(["libs/pace.min",
 		viewCollection.gotoView(navIndex);
 		timelineNav.refreshDisplays();
 		
-		if (viewCollection.currentViewIndex == 2) {
+		console.log("cheers", viewCollection.currentViewIndex);
+		
+		
+		if ( viewCollection.currentViewIndex == 0 ) {
+			
+		} else if ( viewCollection.currentViewIndex == 1 ) {
+			Tips.showById("page_2_start");
+		} else if ( viewCollection.currentViewIndex == 2 ) {
+			Tips.showById("page_3_step_1");
 			bubbleTank.reset(); // reset and start bubbles
+		} else if ( viewCollection.currentViewIndex == 3 ) {
+			Tips.showById("touchstone_end");
 		}
+
+	}
+	
+	//Continuum Sequence
+	function startContinuumSequence() {
+		
+		Media.playTakeoverSound( "SampleAudio" );
+		buildingSequence.nextBuilding();
 	
 	}
 
@@ -153,8 +182,9 @@ define(["libs/pace.min",
     		
     		$("#navigation_bar #step_buttons_container .stepBtn").removeClass('active');
     		$(btnRef).addClass('active');
-    		console.log("active");
     		currentStepId = $(btnRef).find("#title").text();
+    		currentStepNum  = parseInt($(btnRef).attr("data-order"));
+    		Tips.showById("page_3_step_"+currentStepNum+"b");
     		activateBubblesForStep(currentStepId);
     	    return;
     	    
@@ -165,6 +195,7 @@ define(["libs/pace.min",
     		if ($(btnRef).css("cursor") == "pointer") {
     			bubbleTank.collapseActives();
     			featureBubble.setupAndShow( currentStepId );
+    			Tips.showById("page_3_personnel");
     		}
     	    return;
     	    
@@ -181,6 +212,9 @@ define(["libs/pace.min",
 	
 	    //other btns...
 	    switch (btnId) {
+	    	case "continuum_start":
+	    		startContinuumSequence();
+	    	break;
 	    	case "center_leaf": // temp
 
 	    		if (TS_Feedback.leafDropped == false) {
@@ -197,6 +231,7 @@ define(["libs/pace.min",
 			break;
 			case "btn_feature_close":
 				bubbleTank.reset();
+				Tips.showById("page_3_step_"+(currentStepNum+1)); // tell user to click next step
 				featureBubble.kill();
 			break;
 			case "btn_tips":
@@ -205,7 +240,7 @@ define(["libs/pace.min",
 				Tips.toggle();
 			break;
 			case "btn_resources":
-				Tips.showById("click_step_1");
+				//TODO - Go to resources page?
 			break;
 			case "btn_quit_program":
 				AppData.quitProgram();

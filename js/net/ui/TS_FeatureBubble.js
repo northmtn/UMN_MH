@@ -14,6 +14,9 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
  		this.currentQuiz = {};
  		this.reviewCompleted = false;
  		this.waitingFeedback = null;
+ 		
+ 		this.audioProgress = 0.0;
+ 		this.curAudioDuration = 0;
 
     }
     
@@ -230,7 +233,7 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
     	
     	if (this.reviewCompleted == true) {
     		
-    		Tips.showById("step_review_completed");
+    		Tips.showById("page_3_close_review");
     		
     	}
     	
@@ -246,7 +249,11 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
 		thisRef.curPersonnelDiv = $(thisRef.containerDiv).find("#role_" + thisRef.currentStep.personnel[ thisRef.curPersonnelIndex ][0] );
 		
 	 	$(thisRef.curPersonnelDiv).addClass("active");
-	 	TweenLite.to( $(thisRef.curPersonnelDiv), 0.5, { css: { scale:1.2, zIndex:1 },  ease:Power2.easeOut } );
+	 	TweenLite.to( $(thisRef.curPersonnelDiv), 0.5, { css: { scale:1.3, zIndex:1 },  ease:Power2.easeOut, onComplete: function(){
+	 			TweenMax.to( $(thisRef.curPersonnelDiv), 0.6, { scale:1.5, yoyo:true, repeat:-1, ease:Power1.easeInOut });
+	 			console.log("xdxz");
+	 	} } );
+	 	
 	 	this.startActiveGlow( "#e5c694" );
 	 	
 	 	//wait for click
@@ -270,7 +277,8 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
     	
     	//wait for end of audio. 
     	if (sndDelay == 'undefined' || sndDelay == null || sndDelay == undefined) sndDelay = 5; //default to 5 secs.
-    		 	
+    	
+    	//Wait for end of sound
     	TweenLite.delayedCall(sndDelay, function() {
     	
     		if (thisRef.curPersonnelIndex < thisRef.numActivePersonnel-1) {
@@ -284,14 +292,49 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
     			
     			//show review media/quiz
     			$(thisRef.containerDiv).find("#center_oval #step_description_container").hide();   
-    			$(thisRef.containerDiv).find("#center_oval #review_container").show();    		
+    			$(thisRef.containerDiv).find("#center_oval #review_container").show();    
+    			
+    			Tips.showById("page_3_show_review");
+    					
     		}
     		
     	});
     	
+    	//track audio to fill in portrait ring
+    	this.curAudioDuration = sndDelay;
+    	this.curAudioProgress = 0.0;
+    	this.trackAudioProgress();
+    	
     	this.startActiveGlow( "#9dbbc5" );
             
     };
+
+    TS_FeatureBubble.prototype.trackAudioProgress = function( ) {
+//        	
+//    	//Track sound progress (based on given sound duration)
+//    	var thisRef = this;
+//		TweenLite.delayedCall(0.1, function() {
+//		
+//			if ( thisRef.curPersonnelDiv ) {
+//
+//				thisRef.audioProgress += 0.1;
+//				var p = 1 - (thisRef.audioProgress / thisRef.curAudioDuration).toFixed(2);
+//			    	
+//				if (p >= 1.0) {
+//					//sound completed
+//					console.log("sound completed");
+//				} else {
+//					thisRef.trackAudioProgress();
+//				}
+//				
+//				thisRef.drawProgressRing( p );
+//				
+//			}
+//			
+//		});
+
+    		
+    }
     
     TS_FeatureBubble.prototype.killCurrentActivePersonnel = function( ) {
     	
@@ -305,6 +348,8 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
     		//remove click listener
     		$(this.curPersonnelDiv).off();	
     		
+    		this.curPersonnelDiv = null;
+    		
     	}
     }
     
@@ -313,7 +358,7 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
     	if ( this.curPersonnelDiv ) {
     		
     		TweenMax.set( $(this.curPersonnelDiv).find(".circle-portrait img"), { boxShadow:"0px 0px 15px 5px "+glowColor+" " });
-    		TweenMax.to( $(this.curPersonnelDiv).find(".circle-portrait img"), 0.6, { scale: 1.5, boxShadow:"0px 0px 19px 8px "+glowColor+" ", yoyo:true, repeat:-1, ease:Power1.easeInOut });
+    		TweenMax.to( $(this.curPersonnelDiv).find(".circle-portrait img"), 0.6, { boxShadow:"0px 0px 19px 8px "+glowColor+" ", yoyo:true, repeat:-1, ease:Power1.easeInOut });
     		
     	}
     }
@@ -327,6 +372,29 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
     		$(this.curPersonnelDiv).removeClass("active");
     		
     	}
+    }
+    
+    // - TIMER DISPLAY - //
+    TS_FeatureBubble.prototype.drawProgressRing = function(num) {
+    	console.log("drawProgressRing: "+num);
+    
+    	if (num<0.01)num=0.001;
+    	if (num>0.99)num=1.0;
+    	
+    	var cRadius = 54;
+    	var cStroke = 6;
+    	
+    	var c = $(this.curPersonnelDiv).find("#progress_ring").first();
+
+    	var ctx = $(c)[0].getContext('2d');
+    	ctx.beginPath();
+    	
+    	ctx.arc(cRadius+cStroke, cRadius+cStroke, cRadius, 0+(1.5*Math.PI),(2*num*Math.PI)+(1.5*Math.PI),true);
+    	
+    	ctx.strokeStyle = "#dfdfdf";
+    	ctx.lineWidth = cStroke;
+    	ctx.stroke();
+    	
     }
 
     // kill() | stop everything

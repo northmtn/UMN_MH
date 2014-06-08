@@ -28,7 +28,7 @@ define(['net/data/AppData'], function(AppData){
     }
     
     Tips.showById = function( tipId ) {
-    	    	
+    	console.log("tipId "+tipId);
     	var t = this.lookup( tipId );
     	this.showNewTip( t[0], t[1], t[2] );
     	

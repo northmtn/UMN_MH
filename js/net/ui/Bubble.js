@@ -122,7 +122,7 @@ define(['net/util/Geom'], function(Geom){
 		this.stopFloat();
 		
 		if (tp) {
-			TweenLite.to( $(this.bubbleDiv), 0.75, { css: { scale: 1, zIndex:1, left:tp[0] + 44, top:tp[1] + 50 } } ); // scale  up, bring to foreground, position
+			TweenLite.to( $(this.bubbleDiv), 0.75, { css: { scale: 1, zIndex:1, left:tp[0] + 65, top:tp[1] + 10 } } ); // scale  up, bring to foreground, position
 		}else {
 			TweenLite.to( $(this.bubbleDiv), 0.75, { css: { scale: 1, zIndex:1 } } ); // scale  up, bring to foreground
 		}
