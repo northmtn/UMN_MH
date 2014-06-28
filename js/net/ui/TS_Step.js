@@ -1,4 +1,4 @@
-define([], function(){
+define(['net/util/Util'], function( Util ){
 
 
     function TS_Step( configData ) {
@@ -55,6 +55,23 @@ define([], function(){
     	});
 
     }
+    
+     TS_Step.prototype.getPersonnelIndexById = function( pId ) {
+    
+    	var pIndex = -1;
+    
+		for (var i = 0; i < this.personnel.length; i++) {
+			console.log("role_" + Util.removeSpaces(this.personnel[i][0]) +", " + pId );
+			if ( "role_" + Util.removeSpaces(this.personnel[i][0]) == pId ) {
+				pIndex = i;
+				break;
+			}
+		}
+    	
+    	return pIndex;
+
+    }
+    
     
     TS_Step.prototype.getQuizById = function( quizId ) {
     

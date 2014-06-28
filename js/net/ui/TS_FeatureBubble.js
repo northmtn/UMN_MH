@@ -1,4 +1,4 @@
-define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips', 'net/media/Media', 'net/ui/Quiz'], function(AppData, TS_Step, TS_Feedback, Tips, Media, Quiz){
+define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips', 'net/media/Media', 'net/ui/Quiz'], function(AppData, Util, TS_Step, TS_Feedback, Tips, Media, Quiz){
 
 
     function TS_FeatureBubble( containerDiv ){
@@ -8,13 +8,14 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
     	this.steps = [];
     	this.currentStep = {};
     	
-    	this.curPersonnelIndex = 0;
+    	this.curPersonnelIndex = -1;
     	this.numActivePersonnel = 0;
+    	this.personnelOrderInterrupted = false;
  		this.curPersonnelDiv = {};
  		this.currentQuiz = {};
  		this.reviewCompleted = false;
- 		this.waitingFeedback = null;
  		
+ 		this.waitingFeedback = null;
  		this.audioProgress = 0.0;
  		this.curAudioDuration = 0;
 
@@ -65,9 +66,10 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
     	}
     	
     	//Reset data from previous step feature
-    	this.curPersonnelIndex = 0;
+    	this.curPersonnelIndex = -1;
     	this.numActivePersonnel = 0;
     	this.reviewCompleted = false;
+    	this.personnelOrderInterrupted = false;
     			
     	//Setup display based on step config
     	//TODO - bubble color
@@ -130,7 +132,7 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
     	});
 
     	//activate personnel    	
-    	$(this.containerDiv).find("#personnel_layer .personnel").each(function () {
+    	$(this.containerDiv).find("#step_content .personnel").each(function () {
     	
     		$(this).removeClass("on");
     		$(this).removeClass("active");
@@ -141,14 +143,35 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
     	});
     	for (var i = 0; i < this.currentStep.personnel.length; i++) {
     		
-    		var persDiv = $(this.containerDiv).find("#role_" + this.currentStep.personnel[i][0] );
+    		var roleId = Util.removeSpaces( this.currentStep.personnel[i][0] );
+    		var persDiv = $(this.containerDiv).find("#role_" + roleId );
     		
     		//show colored photo
     		$(persDiv).find("#portrait_color").show();
 			$(persDiv).find("#portrait_bw").hide();
 			$(persDiv).addClass("on");
+			$(persDiv).addClass("active");
 			
   			this.numActivePersonnel ++;
+  			
+  			//Active personnel can be clicked at anytime
+  			$(persDiv).on("click", function(event) {
+
+  				var indexClicked  = thisRef.currentStep.getPersonnelIndexById( $(this).attr('id') );
+  				
+  				console.log("active personnel clicked : "+indexClicked + ", current : "+ thisRef.curPersonnelIndex);
+  				
+  				if ( indexClicked != thisRef.curPersonnelIndex ) {
+  				
+  					 thisRef.personnelOrderInterrupted = true;
+  					 thisRef.curPersonnelIndex = indexClicked;
+  					 
+  				}
+				
+				thisRef.callOutPersonnel( thisRef.curPersonnelIndex );
+  			    thisRef.personnelClicked( thisRef.currentStep.personnel[ thisRef.curPersonnelIndex ] );
+  			    
+  			});
   			
     	}
 
@@ -240,34 +263,41 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
     }
     
     TS_FeatureBubble.prototype.callOutNextPersonnel = function( ) {
+    	    	    	
+    	this.curPersonnelIndex ++;
+    	
+    	this.callOutPersonnel( this.curPersonnelIndex );
+  
+    }
+    
+    TS_FeatureBubble.prototype.callOutPersonnel = function( personnelIndex ) {
     	    	
     	var thisRef = this;
-    	
+    	    	
     	//reset previous active personnel
     	this.killCurrentActivePersonnel();
     	
-		thisRef.curPersonnelDiv = $(thisRef.containerDiv).find("#role_" + thisRef.currentStep.personnel[ thisRef.curPersonnelIndex ][0] );
+		thisRef.curPersonnelDiv = $( thisRef.containerDiv ).find( "#role_" + Util.removeSpaces( thisRef.currentStep.personnel[ personnelIndex ][0] ) );
 		
 	 	$(thisRef.curPersonnelDiv).addClass("active");
-	 	TweenLite.to( $(thisRef.curPersonnelDiv), 0.5, { css: { scale:1.3, zIndex:1 },  ease:Power2.easeOut, onComplete: function(){
-	 			TweenMax.to( $(thisRef.curPersonnelDiv), 0.6, { scale:1.5, yoyo:true, repeat:-1, ease:Power1.easeInOut });
-	 			console.log("xdxz");
-	 	} } );
+	 	
+	 	this.liftPortrait( thisRef.curPersonnelDiv );
 	 	
 	 	this.startActiveGlow( "#e5c694" );
 	 	
-	 	//wait for click
-	 	$(thisRef.curPersonnelDiv).on("click", function(event){
-	 	    thisRef.personnelClicked( thisRef.currentStep.personnel[ thisRef.curPersonnelIndex ] );
-	 	});
+	 	//this is now covered by attaching click listeners to all active personnel, no matter order	
+//	 	//wait for click
+//	 	$(thisRef.curPersonnelDiv).on("click", function(event){
+//	 	    thisRef.personnelClicked( thisRef.currentStep.personnel[ thisRef.curPersonnelIndex ] );
+//	 	});
 
     }
-    
+
     TS_FeatureBubble.prototype.personnelClicked = function(personnelData) {
         	
     	console.log( "personnelClicked: "+ personnelData[0]  );
     	console.log( "start audio: "+ personnelData[1] + " for "+personnelData[2] + " secs.");
-    	
+
     	var sndId = personnelData[1];
     	var sndDelay = personnelData[2];
     	var thisRef = this;
@@ -278,26 +308,30 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
     	//wait for end of audio. 
     	if (sndDelay == 'undefined' || sndDelay == null || sndDelay == undefined) sndDelay = 5; //default to 5 secs.
     	
-    	//Wait for end of sound
+    	//Things that happen AFTER end of sound. Can be interrupted.
     	TweenLite.delayedCall(sndDelay, function() {
     	
-    		if (thisRef.curPersonnelIndex < thisRef.numActivePersonnel-1) {
-    			//call out next personnel
-    			thisRef.curPersonnelIndex ++;
-    			thisRef.callOutNextPersonnel();
-
-    		} else {
-    			//was last personnel to call out. 
-    			thisRef.killCurrentActivePersonnel();
-    			
-    			//show review media/quiz
-    			$(thisRef.containerDiv).find("#center_oval #step_description_container").hide();   
-    			$(thisRef.containerDiv).find("#center_oval #review_container").show();    
-    			
-    			Tips.showById("page_3_show_review");
-    					
-    		}
+    		if (thisRef.personnelOrderInterrupted == false) {
     		
+    			if (thisRef.curPersonnelIndex < thisRef.numActivePersonnel-1) {
+	    			//call out next personnel
+	    			
+	    			thisRef.callOutNextPersonnel();
+	
+	    		} else {
+	    			//was last personnel to call out. 
+	    			thisRef.killCurrentActivePersonnel();
+	    			
+	    			//show review media/quiz
+	    			$(thisRef.containerDiv).find("#center_oval #step_description_container").hide();   
+	    			$(thisRef.containerDiv).find("#center_oval #review_container").show();    
+	    			
+	    			Tips.showById("page_3_show_review");
+	    					
+	    		}
+	    		
+    		}
+
     	});
     	
     	//track audio to fill in portrait ring
@@ -345,21 +379,39 @@ define(['net/data/AppData', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips
     		
     		this.killActiveGlow();
     		
+    		//TODO - change to a 'visited' state?
+    		
     		//remove click listener
-    		$(this.curPersonnelDiv).off();	
+    		// removing to allow users to go back and re listen to some
+//    		$(this.curPersonnelDiv).off();	
     		
     		this.curPersonnelDiv = null;
     		
     	}
     }
     
+    TS_FeatureBubble.prototype.liftPortrait = function( portraitDiv ) {
+    	
+    	//Initial scale up to draw attention
+    	TweenLite.set( $(portraitDiv).find(".circle-portrait img"), { boxShadow:"0px 0px 0px 0px rgba(0,0,0,0.3) " });
+    	TweenLite.to( $(portraitDiv).find(".circle-portrait img"), 0.4, { css: { boxShadow:"0px 3px 10px 3px rgba(0,0,0,0.4)" }, delay:0.05,  ease:Power2.easeOut } );
+    	TweenLite.to( $(portraitDiv), 0.4, { css: { scale:1.6, zIndex:1 },  ease:Power2.easeOut, onComplete: 
+    		function(){
+    			//scale back down to less enlarged state
+    			TweenMax.to( $(portraitDiv).find(".circle-portrait img"), .25, { css: { boxShadow:"0px 2px 9px 2px rgba(0,0,0,0.4)" }, ease:Power1.easeIn });
+    			TweenMax.to( $(portraitDiv), .25, { scale:1.3, ease:Power1.easeIn });
+    		} 
+    	});
+    	
+    }
+    
     TS_FeatureBubble.prototype.startActiveGlow = function( glowColor ) {
     	
     	if ( this.curPersonnelDiv ) {
     		
-    		TweenMax.set( $(this.curPersonnelDiv).find(".circle-portrait img"), { boxShadow:"0px 0px 15px 5px "+glowColor+" " });
-    		TweenMax.to( $(this.curPersonnelDiv).find(".circle-portrait img"), 0.6, { boxShadow:"0px 0px 19px 8px "+glowColor+" ", yoyo:true, repeat:-1, ease:Power1.easeInOut });
-    		
+//    		TweenMax.set( $(this.curPersonnelDiv).find(".circle-portrait img"), { boxShadow:"0px 0px 15px 5px "+glowColor+" " });
+//    		TweenMax.to( $(this.curPersonnelDiv).find(".circle-portrait img"), 0.6, { boxShadow:"0px 0px 19px 8px "+glowColor+" ", yoyo:true, repeat:-1, ease:Power1.easeInOut });
+//    		
     	}
     }
     

@@ -272,9 +272,9 @@ textarea {
 }
 .portrait-label.active .circle-portrait img {
 	
-	-webkit-box-shadow: 0px 0px 20px 5px #e5c694;
+/*	-webkit-box-shadow: 0px 0px 20px 5px #e5c694;
 	-moz-box-shadow: 0px 0px 20px 5px #e5c694;
-	box-shadow: 0px 0px 20px 5px #e5c694;
+	box-shadow: 0px 0px 20px 5px #e5c694;*/
 	
 }
 .canvas-ring {
@@ -713,15 +713,17 @@ button.rect-button {
 }
 
 /* - Continuum Buildings -*/
-.continuum h2 {
-	
-	color: yellow;
+.continuum #clouds {
+	top: 250px;
+}
 
+.continuum #text_1 {
+	color: white;
 }
 
 .continuum #intro_message {
-	left: 200px;
-	top: 100px;
+	left: 406px;
+	top: 70px;
 	width: 500px;
 }
 
@@ -732,23 +734,48 @@ button.rect-button {
 }
 
 .continuum #buildings #building_1 {
-	left: 100px;
-	top: 400px;
+	left: 63px;
+	top: 378px;
 }
 .continuum #buildings #building_2 {
-	left: 300px;
-	top: 300px;
+	left: 592px;
+	top: 347px;
 }
 .continuum #buildings #building_3 {
-	left: 500px;
-	top: 400px;
+	left: 316px;
+	top: 379px;
 }
 .continuum #buildings #building_4 {
-	left: 700px;
-	top: 300px;
+	left: 711px;
+	top: 385px;
+}
+.continuum #buildings #building_5 {
+	left: 183px;
+	top: 352px;
+}
+.continuum #buildings #building_6 {
+	left: 462px;
+	top: 327px;
+}
+.continuum #buildings #building_7 {
+	left: 832px;
+	top: 384px;
+}
+.continuum #buildings #building_7 #bw {
+	left: 0px;
+	top: 3px;
 }
 
+.continuum #buildings #callout {
+	text-align: center;
+	width: 220px;
+}
 
+.continuum #buildings #callout h3 {
+	color: rgba(0,0,0,0.6);
+	font-family: 'Open Sans Condensed', sans;
+	font-size: 19px;
+}
 
 .touchstone_steps #navigation_bar {
 	
@@ -956,7 +983,7 @@ button.rect-button {
 }
 
 
-#screen_touchstone #step_content #portrait_Jenna {
+#screen_touchstone #step_content #role_Jenna {
 	top: 497px;
 	left: 428px;
 }

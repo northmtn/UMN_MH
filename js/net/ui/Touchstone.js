@@ -119,6 +119,8 @@ define(["libs/pace.min",
 			
 		} else if ( viewCollection.currentViewIndex == 1 ) {
 			Tips.showById("page_2_start");
+			buildingSequence.reset();
+			startContinuumSequence();
 		} else if ( viewCollection.currentViewIndex == 2 ) {
 			Tips.showById("page_3_step_1");
 			bubbleTank.reset(); // reset and start bubbles
@@ -131,8 +133,10 @@ define(["libs/pace.min",
 	//Continuum Sequence
 	function startContinuumSequence() {
 		
-		Media.playTakeoverSound( "SampleAudio" );
-		buildingSequence.nextBuilding();
+		TweenLite.delayedCall( 2, function() {
+			buildingSequence.startIntro();
+		});
+		
 	
 	}
 
@@ -200,6 +204,12 @@ define(["libs/pace.min",
     	    return;
     	    
     	}
+    	//Buildings
+    	if (btnId.substring(0, 9) == "building_") {
+    		buildingSequence.playBuilding(btnId);
+    	    return;
+    	    
+    	}
     	//global nav
     	if (btnId.substring(0, 5) == "goto_") {
     	
@@ -212,16 +222,13 @@ define(["libs/pace.min",
 	
 	    //other btns...
 	    switch (btnId) {
-	    	case "continuum_start":
-	    		startContinuumSequence();
-	    	break;
 	    	case "center_leaf": // temp
 
-	    		if (TS_Feedback.leafDropped == false) {
-	    			TS_Feedback.dropLeaf();
-	    		} else {
-	    			TS_Feedback.resetLeaf();
-	    		}
+//	    		if (TS_Feedback.leafDropped == false) {
+//	    			TS_Feedback.dropLeaf();
+//	    		} else {
+//	    			TS_Feedback.resetLeaf();
+//	    		}
 	    		
 			break;
 			case "leaf_feedback_box":

@@ -7,7 +7,11 @@ define(['net/data/AppData', 'net/ui/Tips', 'net/media/Media'], function(AppData,
     	
     	this.buildings = [];
     	this.curBuilding = {};
-    	this.curBuildingIndex = 0;
+    	this.curBuildingIndex = -1;
+    	
+    	this.intro = [];
+    	
+    	this.calloutDiv = $(this.containerDiv).find("#callout").first();
 
     }
     
@@ -24,10 +28,39 @@ define(['net/data/AppData', 'net/ui/Tips', 'net/media/Media'], function(AppData,
     		var bId = $(this).attr('id');
     		var audioSrc = $(this).attr('audio');
     		var audioDur = $(this).attr('duration');
-    		thisRef.buildings.push([bId, audioSrc, audioDur]);
-    	
+    		var bHTML = $(this).text();
+    		thisRef.buildings.push([bId, audioSrc, audioDur, bHTML]);
+    		
+    		var bDiv = $(this.containerDiv).find("#"+bId);
+
     	});   
-    	    
+    	
+    	//setup intro
+    	var introConfig = $(AppData.configXML).find("buildings").first();
+    	var audioSrc = $(introConfig).attr('audio');
+    	var audioDur = $(introConfig).attr('duration');
+    	this.intro = ["intro", audioSrc, audioDur];
+  
+    }
+    
+     TS_BuildingSequence.prototype.reset = function() {
+     	
+     	this.curBuildingIndex = -1;
+     	
+     	//last building
+     	var bDiv = $(this.containerDiv).find("#"+this.buildings[this.buildings.length-1][0]);
+     	TweenLite.set( $(bDiv).children("#bw"), { css: { opacity:1 } } ); // on
+     	TweenLite.set( $(bDiv).children("#color"), { css: { opacity:0 } } ); // off
+     	
+     	//callout
+     	TweenLite.set( $(this.calloutDiv), { css: { opacity:0 } } ); // on
+     	
+     }
+    
+    TS_BuildingSequence.prototype.startIntro = function() {
+		
+		this.timedAudio(this.intro[1], this.intro[2]);
+
     }
     
     TS_BuildingSequence.prototype.nextBuilding = function() {
@@ -35,13 +68,49 @@ define(['net/data/AppData', 'net/ui/Tips', 'net/media/Media'], function(AppData,
    		this.curBuilding = this.buildings[this.curBuildingIndex];
     	
     	var bDiv = $(this.containerDiv).find("#"+this.curBuilding[0]);
-    	
-    	TweenLite.to( $(bDiv).children("#bw"), 1, { css: { opacity:0 },  ease:Power2.easeOut } );
-    	
-    	var sndId = this.curBuilding[1];
-    	var sndDelay = this.curBuilding[2];
-    	var thisRef = this;
 
+		TweenMax.to( $(bDiv).children("#bw"), 0.425, { css: { scale:1.25 },  ease:Power2.easeOut, yoyo: true, repeat:1 } ); // SCALE THROB
+		
+		//show bubble callout
+		TweenLite.set( $(this.calloutDiv), { css: { opacity:0 } } ); // on
+		var cLeft = $(bDiv).position().left;
+		cLeft += ($(bDiv).children("#bw").width()/2);
+		cLeft -= ( $(this.calloutDiv).width()/2);
+		$(this.calloutDiv).css('left', cLeft );
+		$(this.calloutDiv).css('top', $(bDiv).position().top - 145);
+		$(this.calloutDiv).children("#callout_txt").html(this.curBuilding[3]);
+		TweenLite.to( $(this.calloutDiv), 0.75, { css: { opacity:1 }, delay:1, ease:Power2.easeOut } ); // FADE IN
+    	
+    	//Wait for this activated building to be clicked ...
+    	
+    }
+    
+    TS_BuildingSequence.prototype.playBuilding = function( bId ) {
+    	
+    	//only allow currently active building to be played
+    	if (bId == this.curBuilding[0]){
+    	
+    		//Last building
+			if (this.curBuildingIndex == this.buildings.length-1) {
+			    
+			    var bDiv = $(this.containerDiv).find("#"+this.curBuilding[0]);
+	    		TweenLite.to( $(bDiv).children("#bw"), 1, { css: { opacity:0 }, delay:0.25,  ease:Power2.easeIn } ); // FADE OUT
+	    		TweenLite.set( $(bDiv).children("#color"), { css: { opacity:0 } } ); // on
+	    		TweenLite.to( $(bDiv).children("#color"), 1, { css: { opacity:1 },  ease:Power2.easeOut } ); // FADE IN
+	
+	    	}
+	    
+	    	var sndId = this.curBuilding[1];
+	    	var sndDelay = this.curBuilding[2];	    	
+	    	this.timedAudio(sndId, sndDelay);
+
+    	}
+    	
+    }
+    
+    TS_BuildingSequence.prototype.timedAudio = function( sndId, sndDelay ) {
+    	var thisRef = this;
+    	
     	//start audio
     	Media.playTakeoverSound( sndId );
     	

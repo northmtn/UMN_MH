@@ -25,30 +25,47 @@
     			</div>
     		</div>
     	</div>
-    	
+    	<!-- TOUCHSTONE VIEW 2 -->
     	<div id="view_2" class="continuum" data-role="container">
-			<img src="img/touchstone/continuum_bg.png" class="fullbleed" data-role="background" ></img>
+			<img id="bg" src="img/touchstone/continuum_bg.png" class="fullbleed" data-role="background" ></img>
+			<img id="clouds" src="img/touchstone/continuum_bg_clouds.png" data-role="graphic" ></img>
 			<div id="buildings" data-role="container">
 				<div id="building_1" data-role="button">
-					<img id="color" src="img/touchstone/continuum_building_1_color.png" />
+					<!--<img id="color" src="img/touchstone/continuum_building_1_color.png" />-->
 					<img id="bw" src="img/touchstone/continuum_building_1_bw.png" />
 				</div>
 				<div id="building_2" data-role="button">
-					<img id="color" src="img/touchstone/continuum_building_2_color.png" />
+					<!--<img id="color" src="img/touchstone/continuum_building_2_color.png" />-->
 					<img id="bw" src="img/touchstone/continuum_building_2_bw.png" />
 				</div>
 				<div id="building_3" data-role="button">
-					<img id="color" src="img/touchstone/continuum_building_3_color.png" />
+					<!--<img id="color" src="img/touchstone/continuum_building_3_color.png" />-->
 					<img id="bw" src="img/touchstone/continuum_building_3_bw.png" />
 				</div>
 				<div id="building_4" data-role="button">
-					<img id="color" src="img/touchstone/continuum_building_4_color.png" />
+					<!--<img id="color" src="img/touchstone/continuum_building_4_color.png" />-->
 					<img id="bw" src="img/touchstone/continuum_building_4_bw.png" />
+				</div>
+				<div id="building_5" data-role="button">
+					<!--<img id="color" src="img/touchstone/continuum_building_5_color.png" />-->
+					<img id="bw" src="img/touchstone/continuum_building_5_bw.png" />
+				</div>
+				<div id="building_6" data-role="button">
+					<!--<img id="color" src="img/touchstone/continuum_building_6_color.png" />-->
+					<img id="bw" src="img/touchstone/continuum_building_6_bw.png" />
+				</div>
+				<div id="building_7" data-role="button">
+					<img id="color" src="img/touchstone/continuum_building_7_color.png" />
+					<img id="bw" src="img/touchstone/continuum_building_7_bw.png" />
+				</div>
+				<div id="callout" data-role="container">
+					<h3 id="callout_txt">BUILDING NAME</h3>
+					<img id="line" src="img/touchstone/callout_line.png" />
 				</div>
 			</div>
 			<div id="intro_message" data-role="container">
-				<h2 id="text_1">X</h3>
-				<button id="continuum_start" data-role="button" class="rect-button">START</button>
+				<h2 id="text_1">X</h2>
+				<!--<button id="continuum_start" data-role="button" class="rect-button">START</button>-->
 			</div>
 			
 			
@@ -126,82 +143,83 @@
 						</div>
 					</div>
 					<div id="personnel_layer" data-role="container">
-						<div id="role_Instructor" class="personnel portrait-label row1 col3">
+						<div id="role_CaseManager" class="personnel portrait-label row1 col3">
 							<div class="circle-portrait">
-								<img id="portrait_bw" src="img/touchstone/portrait_Doctor_inactive.png" />
-								<img id="portrait_color" src="img/touchstone/portrait_Doctor.png" />
+								<img id="portrait_bw" src="img/touchstone/portrait_CaseManager_inactive.png" />
+								<img id="portrait_color" src="img/touchstone/portrait_CaseManager.png" />
 							</div>
-							<p><span>Instructor</span></p>
+							<p><span>Case Manager</span></p>
 						</div>
-						<div id="role_Trainer" class="personnel portrait-label row2 col2">
+						<div id="role_Nurse" class="personnel portrait-label row2 col2">
 							<div class="circle-portrait">
-								<img id="portrait_bw" src="img/touchstone/portrait_Doctor_inactive.png" />
-								<img id="portrait_color" src="img/touchstone/portrait_Doctor.png" />
+								<img id="portrait_bw" src="img/touchstone/portrait_Nurse_inactive.png" />
+								<img id="portrait_color" src="img/touchstone/portrait_Nurse.png" />
 							</div>
-							<p><span>Trainer</span></p>
+							<p><span>Nurse</span></p>
 						</div>
-						<div id="role_Therapist" class="personnel portrait-label row3 col1">
+						<div id="role_Counselor" class="personnel portrait-label row3 col1">
 							<div class="circle-portrait">
-								<img id="portrait_bw" src="img/touchstone/portrait_Doctor_inactive.png" />
-								<img id="portrait_color" src="img/touchstone/portrait_Doctor.png" />
+								<img id="portrait_bw" src="img/touchstone/portrait_Counselor_inactive.png" />
+								<img id="portrait_color" src="img/touchstone/portrait_Counselor.png" />
 							</div>
-							<p><span>Therapist</span></p>
+							<p><span>Counselor</span></p>
 						</div>
-						<div id="role_Doctor" class="personnel portrait-label row4 col2">
+						<div id="role_Oncologist" class="personnel portrait-label row4 col2">
 							<div class="circle-portrait">
-								<img id="portrait_bw" src="img/touchstone/portrait_Doctor_inactive.png" />
-								<img id="portrait_color" src="img/touchstone/portrait_Doctor.png" />
+								<img id="portrait_bw" src="img/touchstone/portrait_Oncologist_inactive.png" />
+								<img id="portrait_color" src="img/touchstone/portrait_Oncologist.png" />
 							</div>
-							<p><span>Doctor</span></p>
+							<p><span>Oncologist</span></p>
 						</div>
-						<div id="role_Lorem_A" class="personnel portrait-label row5 col3">
+						<div id="role_HealingTouchProvider" class="personnel portrait-label row5 col3">
 							<div class="circle-portrait">
-								<img id="portrait_bw" src="img/touchstone/portrait_Doctor_inactive.png" />
-								<img id="portrait_color" src="img/touchstone/portrait_Doctor.png" />
+								<img id="portrait_bw" src="img/touchstone/portrait_HealingTouchProvider_inactive.png" />
+								<img id="portrait_color" src="img/touchstone/portrait_HealingTouchProvider.png" />
 							</div>
-							<p><span>Lorem_A</span></p>
+							<p><span>Healing Touch Provider</span></p>
 						</div>
 						<!-- Right Side -->
-						<div id="role_Lorem_B" class="personnel portrait-label row1 col4">
+						<div id="role_OccupationalTherapist" class="personnel portrait-label row1 col4">
 							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<div class="circle-portrait">
-								<img id="portrait_bw" src="img/touchstone/portrait_Doctor_inactive.png" />
-								<img id="portrait_color" src="img/touchstone/portrait_Doctor.png" />
+								<img id="portrait_bw" src="img/touchstone/portrait_OccupationalTherapist_inactive.png" />
+								<img id="portrait_color" src="img/touchstone/portrait_OccupationalTherapist.png" />
 							</div>
-							<p><span>Lorem_B</span></p>
+							<p><span>Occupational Therapist</span></p>
 						</div>
-						<div id="role_Lorem_C" class="personnel portrait-label row2 col5">
+						<div id="role_Pharmacist" class="personnel portrait-label row2 col5">
 							<div class="circle-portrait">
-								<img id="portrait_bw" src="img/touchstone/portrait_Doctor_inactive.png" />
-								<img id="portrait_color" src="img/touchstone/portrait_Doctor.png" />
+								<img id="portrait_bw" src="img/touchstone/portrait_Pharmacist_inactive.png" />
+								<img id="portrait_color" src="img/touchstone/portrait_Pharmacist.png" />
 							</div>
-							<p><span>Lorem_C</span></p>
+							<p><span>Pharmacist</span></p>
 						</div>
-						<div id="role_Lorem_D" class="personnel portrait-label row3 col6">
+						<div id="role_FitnessSpecialist" class="personnel portrait-label row3 col6">
 							<div class="circle-portrait">
-								<img id="portrait_bw" src="img/touchstone/portrait_Doctor_inactive.png" />
-								<img id="portrait_color" src="img/touchstone/portrait_Doctor.png" />
+								<img id="portrait_bw" src="img/touchstone/portrait_FitnessSpecialist_inactive.png" />
+								<img id="portrait_color" src="img/touchstone/portrait_FitnessSpecialist.png" />
 							</div>
-							<p><span>Lorem_D</span></p>
+							<p><span>Fitness Specialist</span></p>
 						</div>
-						<div id="role_Lorem_E" class="personnel portrait-label row4 col5">
+						<div id="role_PMHNursePractitioner" class="personnel portrait-label row4 col5">
 							<div class="circle-portrait">
-								<img id="portrait_bw" src="img/touchstone/portrait_Doctor_inactive.png" />
-								<img id="portrait_color" src="img/touchstone/portrait_Doctor.png" />
+								<img id="portrait_bw" src="img/touchstone/portrait_PMHNursePractitioner_inactive.png" />
+								<img id="portrait_color" src="img/touchstone/portrait_PMHNursePractitioner.png" />
 							</div>
-							<p><span>Lorem_E</span></p>
+							<p><span>PMH Nurse Practitioner</span></p>
 						</div>
-						<div id="role_Lorem_F" class="personnel portrait-label row5 col4">
+						<div id="role_ActivitiesCoordinator" class="personnel portrait-label row5 col4">
 							<div class="circle-portrait">
-								<img id="portrait_bw" src="img/touchstone/portrait_Doctor_inactive.png" />
-								<img id="portrait_color" src="img/touchstone/portrait_Doctor.png" />
+								<img id="portrait_bw" src="img/touchstone/portrait_ActivitiesCoordinator_inactive.png" />
+								<img id="portrait_color" src="img/touchstone/portrait_ActivitiesCoordinator.png" />
 							</div>
-							<p><span>Lorem_F</span></p>
+							<p><span>Activities Coordinator</span></p>
 						</div>
-					</div>
-					<div id="portrait_Jenna" class="personnel portrait-label on active">
-						<div class="circle-portrait">
-							<img id="portrait" src="img/touchstone/portrait_Jenna.png" />
+						<div id="role_Jenna" class="personnel portrait-label on active">
+							<div class="circle-portrait">
+								<img id="portrait_bw" src="img/touchstone/portrait_Jenna.png" />
+								<img id="portrait_color" src="img/touchstone/portrait_Jenna.png" />
+							</div>
 						</div>
 					</div>
 					<h1 id="step_feature_title" data-role="label">X</h1>

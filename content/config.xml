@@ -35,13 +35,16 @@
 		<!-- Screen 2 -->
 		<view id="view_2" title="Adult Mental Health Continuum of Care">
 			
-			<text id="text_1">Adult Mental Health Continuum of Care</text>
-			
-			<buildings>
-				<building id="building_1" audio="SampleAudio2" duration="4"></building>
-				<building id="building_2" audio="SampleAudio" duration="2"></building>
-				<building id="building_3" audio="SampleAudio" duration="2"></building>
-				<building id="building_4" audio="SampleAudio2" duration="3"></building>
+			<text id="text_1">Jenna's Story</text>
+						
+			<buildings audio="SampleAudio3" duration="6" >
+				<building id="building_1" audio="SampleAudio2" duration="6"><![CDATA[BOARD & LODGE]]></building>
+				<building id="building_2" audio="SampleAudio6" duration="7">COUNTY HOSPITAL</building>
+				<building id="building_3" audio="SampleAudio3" duration="7">CRISIS RESIDENCE</building>
+				<building id="building_4" audio="SampleAudio2" duration="6">IRTS</building>
+				<building id="building_5" audio="SampleAudio4" duration="7">HOMELESS SHELTER</building>
+				<building id="building_6" audio="SampleAudio" duration="7">STATE HOSPITAL</building>
+				<building id="building_7" audio="SampleAudio5" duration="8">TOUCHSTONE CENTER</building>
 			</buildings>
 			
 		</view>
@@ -54,15 +57,13 @@
 			
 			<!-- TOUCHSTONE STEPS -->
 			<touchstone_steps>
-				<step title="Arriving at Touchstone" dimensions="Emotional, Physical" audio="SampleAudio">
+				<step title="Arriving at Touchstone" dimensions="Environmental, Social" audio="SampleAudio4">
 				
 					<text id="step_description"><![CDATA[Jenna is happy that her case manager found Touchstone for her where there are a number of people who work together to support her with managing her illnesses as well as day-to-day living such as meals and housekeeping. In the first few days of being at Touchstone, each person working with Jenna introduced him or herself. They talked to her about how she is an important member of the Touchstone team and that they are going to work together so that she can maintain her independence and wellness.]]>
 					</text>
 				
-					<personnel role="Trainer" audio="SampleAudio" duration="42"></personnel>
-					<personnel role="Doctor" audio="SampleAudio2" duration="20"></personnel>
-					<personnel role="Therapist" audio="SampleAudio" duration="42"></personnel>
-					<personnel role="Instructor" audio="SampleAudio2" duration="20"></personnel>
+					<personnel role="Jenna" audio="SampleAudio4" duration="7"></personnel>
+					<personnel role="Case Manager" audio="SampleAudio3" duration="4"></personnel>
 					
 					<review>
 						<button id="video_review" video="M01_S02V01_D">HERE'S WHAT I WOULD ASK</button>
@@ -78,16 +79,16 @@
 
 				</step>
 				
-				<step title="Receiving a Cancer Diagonosis" dimensions="Occupational" audio="SampleAudio">
+				<step title="Receiving a Cancer Diagonosis" dimensions="Physical, Emotional" audio="SampleAudio6">
 				
 					<text id="step_description"><![CDATA[DESCRIPTION OF STEP TWO.  Lorem Ipsum her where there are a number of people who work together to support her with managing her illnesses as well as day-to-day living such as meals and housekeeping. In the first few days of being at Touchstone, each person working with Jenna introduced him or herself. They talked to her about how she is an important member of the Touchstone team and that they are going to work together so that she can maintain her independence and wellness.]]>
 					</text>
 
-					<personnel role="Lorem_B" audio="SampleAudio" duration="22"></personnel>
-					<personnel role="Lorem_A" audio="SampleAudio2" duration="3"></personnel>
-					<personnel role="Therapist" audio="SampleAudio" duration="4"></personnel>
-					<personnel role="Lorem_D" audio="SampleAudio2" duration="1"></personnel>
-					<personnel role="Lorem_C" audio="SampleAudio2" duration="1"></personnel>
+					<personnel role="Jenna" audio="SampleAudio5" duration="8"></personnel>
+					<personnel role="Oncologist" audio="SampleAudio4" duration="3"></personnel>
+					<personnel role="Nurse" audio="SampleAudio3" duration="7"></personnel>
+					<personnel role="Counselor" audio="SampleAudio2"></personnel>
+					<personnel role="Healing Touch Coordinator" audio="SampleAudio"></personnel>
 					
 					<review>
 						<button id="quiz_review" quiz="cancer_quiz_1">WHAT WOULD YOU DO</button>
@@ -110,31 +111,32 @@
 	
 				</step>
 				
-				<step title="Increasing Depression" dimensions="Social, Spiritual" audio="SampleAudio">
+				<step title="Increasing Depression" dimensions="Emotional, Financial, Physical" audio="SampleAudio4">
 				
-					<personnel role="Therapist" audio="SampleAudio" duration="8"></personnel>
-					<personnel role="Doctor" audio="SampleAudio2" duration="3"></personnel>
-					<personnel role="Instructor" audio="SampleAudio2" duration="7"></personnel>
-					<personnel role="Lorem_A" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem_B" audio="SampleAudio2"></personnel>
-
+					<personnel role="Case Manager" audio="SampleAudio3" duration="8"></personnel>
+					<personnel role="Nurse" audio="SampleAudio5" duration="3"></personnel>
+					<personnel role="PMH Nurse Practitioner" audio="SampleAudio4" duration="7"></personnel>
+					<personnel role="Pharmacist" audio="SampleAudio3"></personnel>
+					<personnel role="Counselor" audio="SampleAudio4"></personnel>
+					<personnel role="Activities Coordinator" audio="SampleAudio"></personnel>
+					
 				</step>
 	
-				<step title="Team Meeting" dimensions="Environmental" audio="SampleAudio">
+				<step title="Team Meeting" dimensions="Emotional, Physical" audio="SampleAudio6">
 				
-					<personnel role="Lorem_A" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem_C" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem_F" audio="SampleAudio2"></personnel>
-					<personnel role="Doctor" audio="SampleAudio"></personnel>
+					<personnel role="Counselor" audio="SampleAudio5"></personnel>
+					<personnel role="Nurse" audio="SampleAudio4"></personnel>
+					<personnel role="Activities Coordinator" audio="SampleAudio3"></personnel>
+					<personnel role="Jenna" audio="SampleAudi2"></personnel>
 	
 				</step>
 				
-				<step title="Living with Multiple Chronic Illnesses" dimensions="Financial, Social, Physical" audio="SampleAudio">
+				<step title="Living with Multiple Chronic Illnesses" dimensions="Emotional, Occupational, Physical" audio="SampleAudio3">
 				
-					<personnel role="Lorem_D" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem_C" audio="SampleAudio"></personnel>
-					<personnel role="Instructor" audio="SampleAudio2"></personnel>
-					<personnel role="Lorem_A" audio="SampleAudio"></personnel>
+					<personnel role="Nurse" audio="SampleAudio" duration="8"></personnel>
+					<personnel role="Fitness Specialist" audio="SampleAudio4" duration="3"></personnel>
+					<personnel role="Occupational Therapist" audio="SampleAudio5" duration="7"></personnel>
+					<personnel role="Counselor" audio="SampleAudio6"></personnel>
 					
 				</step>
 
@@ -142,7 +144,7 @@
 			
 			<tips>
 				<tip id="touchstone_entered" delay="2" duration="6">Watch the video, then click "2" on top bar to continue.</tip>
-				<tip id="page_2_start" delay="0" duration="6">Click START to begin activity.</tip>
+				<tip id="page_2_start" delay="0" duration="6">Click Board and Lodge to begin activity.</tip>
 				<tip id="page_2_last_building" delay="0" duration="6">Click "3" on top bar for next screen.</tip>
 				<tip id="page_3_step_1" delay="1.5" duration="6">Click Arriving at Touchstone step.</tip>
 				<tip id="page_3_step_1b" delay="0" duration="6">Click the Environmental-Social circles.</tip>
