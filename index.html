@@ -15,7 +15,7 @@
     
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Noto+Serif:300,400,500,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Noto+Serif:300,400,500,600,700,100italic,400italic,700italic' rel='stylesheet' type='text/css'>
 
     <script src="js/require.js" data-main="js/app.js"></script>
     
@@ -26,11 +26,42 @@
     	
     	<!-- MAIN MENU SCREEN -->
     	<div id="screen_mainmenu" class="fullbleed" data-role="container">
+    		<img id="bg" src="img/mainmenu_bg.png" class="fullbleed" data-role="background" ></img>
     		<div id="menu_container">
-    			<h1>Main Menu</h1>
-    			<p id="goto_integrative" data-role="button">Intro to Integrative Mental Health</p>
-    			<p id="goto_touchstone" data-role="button" class="tableOfContentsChapter">Intro to Touchstone Mental Health</p>
-    			<p id="goto_wilder" data-role="button" class="tableOfContentsChapter">Intro to Wilder Foundation</p>
+				<button id="goto_integrative" data-role="button" class="rect-button">INTEGRATIVE MENTAL HEALTH</button><br/>
+				<button id="goto_touchstone" data-role="button" class="rect-button">TOUCHSTONE MENTAL HEALTH</button><br/>
+				<button id="goto_wilder" data-role="button" class="rect-button">THE WILDER FOUNDATION</button><br/>
+				<h1>Integrative Mental Healthcare Orientation Modules</h1>
+				<h2>Improving integrative mental healthcare for persons with multiple chronic illnesses through interprofessional collaborative practice and education.</h2>
+				<div id="intro_learnmore" data-role="button"><p>Learn more about this program...</p></div>
+    		</div>
+    		<div id="photo_stack_1" data-role="container">
+    			<img src="img/intro_slide_1.jpg"/>
+    			<img src="img/intro_slide_2.jpg"/>
+    			<img src="img/intro_slide_1.jpg"/>
+    			<img src="img/intro_slide_2.jpg"/>
+    		</div>
+    		<div id="photo_stack_2" data-role="container">
+    			<img src="img/intro_slide_2.jpg"/>
+    			<img src="img/intro_slide_1.jpg"/>
+    			<img src="img/intro_slide_1.jpg"/>
+    			<img src="img/intro_slide_2.jpg"/>
+    		</div>
+    		<div id="learnmore_overlay" class="fullbleed" data-role="container" style="display: none;" >
+    			
+    			<div id="player_bg" class="overlay_bg fullbleed" data-role="background" ></div>
+    			
+    			<div id="learnmore_display" class="soft-shadow" data-role="container">
+    				<div id="learnmore_content">
+    					<h1>Integrative Mental Healthcare Orientation Modules</h1></br>
+    					<h2>Improving integrative mental healthcare for persons with multiple chronic illnesses through interprofessional collaborative practice and education.</h2>
+    					<p id="long_descrip">In these interactive modules you’ll not only gain a better understanding of integrative mental healthcare and interprofessional collaborative practice but you’ll also see how these approaches work together at two different organizations, Touchstone Mental Health and Wilder Foundation’s Children’s Mental Health Services. Through the use of case stories and the insights of many actual providers, you’ll experience how putting the client at the center of the team, considering the whole person, and collaboration among all team members improves care.</p></br>
+    					<p>Click the first button, Integrative Mental Health, to get started.</p></br>
+    					<p id="credits">Supported by ... NAME, NAME, NAME, NAME, NAME, NAME</p>
+    				</div>
+    				<h3 id="learnmore_close" data-role="button">CLOSE <span> X</span></h3>
+    			</div>
+    			
     		</div>
    		</div>
    		

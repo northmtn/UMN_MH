@@ -126,6 +126,50 @@ textarea {
 	background: url("../img/white_alpha_40.png") repeat;
 }
 
+/*Rect Buttons*/
+button.rect-button {
+	
+	color: #FFF;
+	font-size: 14px;
+	font-family:inherit;
+	letter-spacing: 2px;
+	font-weight: 400;
+
+}
+button.rect-button {
+	
+	-moz-box-shadow:inset 0px 0px 0px 1px #a6c55f;
+	-webkit-box-shadow:inset 0px 0px 0px 1px #a6c55f;
+	box-shadow:inset 0px 0px 0px 1px #a6c55f;
+	background-color:#78a500;
+	border:7px solid #78a500;
+	display:inline-block;
+	padding:6px 12px;
+	
+}
+button.rect-button:hover {
+	background-color:#587d00;
+}
+button.rect-button:active {
+	position:relative;
+	top:1px;
+}
+button.rect-button:after {
+	margin-left: 14px;
+	margin-right: 0px;
+	vertical-align: middle;
+}
+/*Add corresponding icons to buttons that have non-empty media attributes*/
+button.rect-button:not([data-video=""])[data-video]:after {
+	content: url("../img/icon_video.png");
+}
+bbutton.rect-button:not([data-audio=""])[data-audio]:after {
+	content: url("../img/icon_audio.png");
+}
+button.rect-button:not([data-quiz=""])[data-quiz]:after {
+	content: url("../img/icon_question.png");
+}
+
 
 /*--------*/
 /* CSS FX */
@@ -295,68 +339,130 @@ textarea {
 #screen_mainmenu #menu_container {
 	
 	position: relative;
-	text-align: center;
-	top: 100px;
+	text-align: left;
+	top: 154px;
+	left: 115px;
+	width: 370px;
 	
+}
+#screen_mainmenu h1 {
+	color: #664524;
+	font-size: 28px;
+	font-weight: 500;
+	margin: 10px 0px 5px 0px;
+	line-height: 34px;
+	
+}
+#screen_mainmenu  h2 {
+	color: #39230c;
+	font-size: 17px;
+	line-height: 24px;
+	font-style: italic;
+	font-weight: 100;
+	margin: 0px 0px 10px 0px;
+		
 }
 #screen_mainmenu #menu_container p {
+	color: #2f8890;
+	font-style: italic;
+	margin: 0px;
+}
+
+#screen_mainmenu .rect-button {
+	width: 350px;
+	margin-bottom: 10px;
+}
+#screen_mainmenu button.rect-button {
 	
-	color: white;
+	-moz-box-shadow:inset 0px 0px 0px 1px #fff;
+	-webkit-box-shadow:inset 0px 0px 0px 1px #fff;
+	box-shadow:inset 0px 0px 0px 1px #fff;
+	background-color:#b38d40;
+	border:5px solid #b38d40;
+
+}
+#screen_mainmenu button.rect-button:hover {
+	background-color:#7d5e00;
+}
+#screen_mainmenu button.rect-button:active {
+	position:relative;
+	top:1px;
+}
+#screen_mainmenu button.rect-button.visited {
+	border:7px solid #7d5e00;
+	background-color:#7d5e00;
+}
+
+#screen_mainmenu #photo_stack_1 {
+	
+	top: 100px;
+	left: 650px;
 	
 }
-#screen_mainmenu #menu_container p:hover {
+#screen_mainmenu #photo_stack_2 {
 	
-	color: gray;
+	top: 360px;
+	left: 650px;
 	
 }
+#screen_mainmenu #photo_stack img {
+	
+	-moz-box-shadow:inset 0px 0px 0px 1px #fff;
+	-webkit-box-shadow:inset 0px 0px 0px 1px #fff;
+	box-shadow:inset 0px 0px 0px 1px #fff;
+	background-color:#fff;
+	border:20px solid #fff;
+
+}
+
+#screen_mainmenu #learnmore_overlay {
+	top: 0px;
+}
+
+#screen_mainmenu #learnmore_display {
+	
+	top: 100px;
+	left: 115px;
+	width: 800px;
+	height: 485px;
+	background: white;
+	
+}
+
+#screen_mainmenu #learnmore_content {
+	
+	margin: 50px;
+	width: 700px;
+	
+}
+
+#screen_mainmenu #learnmore_display #long_descrip {
+	color: #39230c;
+	font-style: normal;
+	margin-top: 10px;
+	font-weight: 200;
+}
+#screen_mainmenu #learnmore_display #credits {
+	color: #39230c;
+}
+
+#screen_mainmenu #learnmore_display p {
+	color: #2f8890;
+	font-style: italic;
+	margin: 0px;
+}
+
+#screen_mainmenu #learnmore_close {
+	right: 10px;
+	bottom: 0px;
+	position: absolute;
+	margin-right: 10px;
+}
+
 
 /*------------*/
 /* Touchstone */
 /*------------*/	
-
-button.rect-button {
-	
-	color: #FFF;
-	font-size: 14px;
-	font-family:inherit;
-	letter-spacing: 2px;
-	font-weight: 400;
-
-}
-
-#screen_touchstone button.rect-button {
-	
-	-moz-box-shadow:inset 0px 0px 0px 1px #a6c55f;
-	-webkit-box-shadow:inset 0px 0px 0px 1px #a6c55f;
-	box-shadow:inset 0px 0px 0px 1px #a6c55f;
-	background-color:#78a500;
-	border:7px solid #78a500;
-	display:inline-block;
-	padding:6px 12px;
-	
-}
-#screen_touchstone button.rect-button:hover {
-	background-color:#587d00;
-}
-#screen_touchstone button.rect-button:active {
-	position:relative;
-	top:1px;
-}
-#screen_touchstone button.rect-button:after {
-	margin-left: 14px;
-	margin-right: 0px;
-	vertical-align: middle;
-}
-/*Add corresponding icons to buttons that have non-empty media attributes*/
-#screen_touchstone button.rect-button:not([data-video=""])[data-video]:after {
-	content: url("../img/icon_video.png");
-}
-#screen_touchstone button.rect-button:not([data-audio=""])[data-audio]:after {
-	content: url("../img/icon_audio.png");
-}
-#screen_touchstone button.rect-button:not([data-quiz=""])[data-quiz]:after {
-	content: url("../img/icon_question.png");
-}
 
 #screen_touchstone #header_bar {
 	height: 50px;

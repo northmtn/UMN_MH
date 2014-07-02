@@ -8,6 +8,7 @@ define(['net/data/AppData'], function(AppData){
     
     	this.containerDiv = div;
     	this.tipText = $(this.containerDiv).find("#tip_content");
+    	this.curTipStr = "";
     	this.tipShowing = false;
     	this.allowTimedClose = false;
     	
@@ -28,7 +29,7 @@ define(['net/data/AppData'], function(AppData){
     }
     
     Tips.showById = function( tipId ) {
-    	console.log("tipId "+tipId);
+    	
     	var t = this.lookup( tipId );
     	this.showNewTip( t[0], t[1], t[2] );
     	
@@ -36,6 +37,7 @@ define(['net/data/AppData'], function(AppData){
     
     Tips.updateText = function( tipStr ) {
     	
+    	this.curTipStr = tipStr;
     	$( this.tipText ).text( tipStr );
     	
     }
@@ -67,6 +69,8 @@ define(['net/data/AppData'], function(AppData){
     	
     	var thisRef = this;
     	
+    	console.log(" Tips.updateAndShow : "+tipStr, duration);
+    	
     	if (this.tipShowing == false) {
     	
     		//update and open
@@ -83,7 +87,7 @@ define(['net/data/AppData'], function(AppData){
 	    			//close if tip has not changed or been interacted with
 	    			if ( thisRef.allowTimedClose == true ){
 	    			
-	    				thisRef.hide();
+	    				thisRef.hide(tipStr);
 	    			
 	    			}
 	    			
@@ -118,7 +122,11 @@ define(['net/data/AppData'], function(AppData){
     	
     }
     
-    Tips.hide = function() {
+    Tips.hide = function(tipStr) {
+    
+    	//default tipStr to curTipStr
+    	tipStr = typeof tipStr !== 'undefined' ? tipStr : this.curTipStr;
+    	if (tipStr != this.curTipStr) return;
     	
 		TweenLite.to( $(this.containerDiv), 0.4, { css: { top: -100, autoAlpha:0 }, ease:Power2.easeIn } );
 		

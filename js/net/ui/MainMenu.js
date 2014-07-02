@@ -1,4 +1,4 @@
-define(['net/ui/Screen', 'net/ui/Navigator'], function( Screen, Navigator ){
+define(['net/ui/Screen', 'net/ui/Navigator', 'net/ui/PhotoStack'], function( Screen, Navigator, PhotoStack ){
 
 
 	// I return an initialized object.
@@ -15,6 +15,16 @@ define(['net/ui/Screen', 'net/ui/Navigator'], function( Screen, Navigator ){
 	// The MainMenu class extends the base Screen class.
 	MainMenu.prototype = Object.create( Screen.prototype );
 	
+	MainMenu.prototype.setup = function() {
+				
+		var c = $( this.containerDiv ).find("#photo_stack_1").first();
+		this.photoStack1 = new PhotoStack( $(c) );
+		
+		var cc = $( this.containerDiv ).find("#photo_stack_2").first();
+		this.photoStack2 = new PhotoStack( $(cc) );
+		
+	}
+
 	//Overwrite button handlers
 	MainMenu.prototype.buttonClicked = function(btnId, btnRef) {
 	    				
@@ -31,8 +41,9 @@ define(['net/ui/Screen', 'net/ui/Navigator'], function( Screen, Navigator ){
 	
 	    //other btns...
 	    switch (btnId) {
-	    	case "btn_id_1":
-	    		
+	    	case "intro_learnmore":
+	    	case "learnmore_close":
+	    		$(this.containerDiv).find("#learnmore_overlay").first().toggle();
 			break;
 	        default:
 	        

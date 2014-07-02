@@ -118,7 +118,6 @@ define(["libs/pace.min",
 		if ( viewCollection.currentViewIndex == 0 ) {
 			
 		} else if ( viewCollection.currentViewIndex == 1 ) {
-			Tips.showById("page_2_start");
 			buildingSequence.reset();
 			startContinuumSequence();
 		} else if ( viewCollection.currentViewIndex == 2 ) {
@@ -133,7 +132,7 @@ define(["libs/pace.min",
 	//Continuum Sequence
 	function startContinuumSequence() {
 		
-		TweenLite.delayedCall( 2, function() {
+		TweenLite.delayedCall( 0.75, function() {
 			buildingSequence.startIntro();
 		});
 		

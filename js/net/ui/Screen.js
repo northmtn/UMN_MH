@@ -51,7 +51,7 @@ define([], function(){
     	this.disableButtonListeners();
     
         //Listen for all button clicks...
-        $(this.containerDiv).find("div[data-role='button'], button[data-role='button'], img[data-role='button'], p[data-role='button']").on("click", function(event){
+        $(this.containerDiv).find("div[data-role='button'], button[data-role='button'], img[data-role='button'], p[data-role='button'], h3[data-role='button']").on("click", function(event){
             thisRef.buttonClicked($(this).attr('id'), $(this));
         });
     
@@ -60,7 +60,7 @@ define([], function(){
     Screen.prototype.disableButtonListeners = function() {
     
     	//Removes all existing listeners to avoid layering listeners
-    	$(this.containerDiv).find("div[data-role='button'], button[data-role='button'], img[data-role='button'], p[data-role='button']").each( function () {
+    	$(this.containerDiv).find("div[data-role='button'], button[data-role='button'], img[data-role='button'], p[data-role='button'], h3[data-role='button']").each( function () {
     		$(this).off();	
     	});
     	

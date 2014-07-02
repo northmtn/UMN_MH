@@ -123,10 +123,18 @@ define(['net/data/AppData', 'net/ui/Tips', 'net/media/Media'], function(AppData,
     			//call out next building
     			thisRef.curBuildingIndex ++;
     			thisRef.nextBuilding();
+    			
+    			//Show Tip
+    			console.log(" show tip "+ thisRef.curBuildingIndex);
+    			if ( thisRef.curBuildingIndex == 0 ) {
+    				Tips.showById("page_2_start");
+    			} else {
+    				Tips.showById("page_2_active_building");
+    			}
+    			
 
     		} else {
     			//was last building
-    			console.log("last building completed"); 
     			Tips.showById("page_2_last_building");		
     		}
     		
