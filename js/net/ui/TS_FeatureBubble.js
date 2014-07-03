@@ -408,10 +408,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     TS_FeatureBubble.prototype.startActiveGlow = function( glowColor ) {
     	
     	if ( this.curPersonnelDiv ) {
-    		
-//    		TweenMax.set( $(this.curPersonnelDiv).find(".circle-portrait img"), { boxShadow:"0px 0px 15px 5px "+glowColor+" " });
-//    		TweenMax.to( $(this.curPersonnelDiv).find(".circle-portrait img"), 0.6, { boxShadow:"0px 0px 19px 8px "+glowColor+" ", yoyo:true, repeat:-1, ease:Power1.easeInOut });
-//    		
+
     	}
     }
     

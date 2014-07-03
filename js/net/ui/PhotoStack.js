@@ -50,9 +50,7 @@ define([], function(){
     		
     		var bottomPhoto = $(thisRef.containerDiv).children("img").first();
     		$(bottomPhoto).parent().append(bottomPhoto);
-    		
-    		console.log("nextPhoto "+$(bottomPhoto).attr('id'));
-    		
+    		    		
     		thisRef.nextPhoto();
     		
     	});

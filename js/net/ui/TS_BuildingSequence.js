@@ -55,6 +55,7 @@ define(['net/data/AppData', 'net/ui/Tips', 'net/media/Media'], function(AppData,
      	//callout
      	TweenLite.set( $(this.calloutDiv), { css: { opacity:0 } } ); // on
      	
+     	     	
      }
     
     TS_BuildingSequence.prototype.startIntro = function() {
@@ -68,6 +69,9 @@ define(['net/data/AppData', 'net/ui/Tips', 'net/media/Media'], function(AppData,
    		this.curBuilding = this.buildings[this.curBuildingIndex];
     	
     	var bDiv = $(this.containerDiv).find("#"+this.curBuilding[0]);
+    	//deactivate
+    	$(this.containerDiv).children("div").removeClass("activated");
+    	$(bDiv).addClass("activated");
 
 		TweenMax.to( $(bDiv).children("#bw"), 0.425, { css: { scale:1.25 },  ease:Power2.easeOut, yoyo: true, repeat:1 } ); // SCALE THROB
 		

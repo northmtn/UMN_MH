@@ -34,6 +34,7 @@ require(['libs/pace.min', 'net/data/AppData', 'net/media/Media', 'net/ui/Navigat
         	AppData.updateSettings(xml);
         	Media.setupPlayers();
         	initialize();
+        	autoSize();
 			
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -55,6 +56,30 @@ require(['libs/pace.min', 'net/data/AppData', 'net/media/Media', 'net/ui/Navigat
     	
     	Navigator.goToScreen("mainmenu");
     	    
+    }
+    
+    function autoSize() {
+    	$( window ).resize(function() {
+    	  resize();
+    	});
+    	resize();
+    }
+    
+    function resize() {
+    
+    	//scale down content when browser window is smaller than designed size
+		var newScale = scaleForBox( 1024, 700, $(window).width(), $(window).height() );
+		if (newScale > 1) newScale = 1;
+		TweenLite.set( $("#wrapper").first(), { css: { scale:newScale, transformOrigin:"top center" } } );
+    		
+    }
+    
+    function scaleForBox( originalWidth, originalHeight, boxWidth, boxHeight ) {
+    
+    	var widthScale = boxWidth / originalWidth;
+    	var heightScale = boxHeight / originalHeight;
+    	return Math.min( widthScale, heightScale );
+   
     }
 
 
