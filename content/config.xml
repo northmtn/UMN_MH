@@ -88,7 +88,7 @@
 					<personnel role="Oncologist" audio="SampleAudio4" duration="3"></personnel>
 					<personnel role="Nurse" audio="SampleAudio3" duration="7"></personnel>
 					<personnel role="Counselor" audio="SampleAudio2"></personnel>
-					<personnel role="Healing Touch Coordinator" audio="SampleAudio"></personnel>
+					<personnel role="Healing Touch Provider" audio="SampleAudio"></personnel>
 					
 					<review>
 						<button id="quiz_review" quiz="cancer_quiz_1">WHAT WOULD YOU DO</button>

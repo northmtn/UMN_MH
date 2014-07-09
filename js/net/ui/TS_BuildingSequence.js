@@ -35,7 +35,7 @@ define(['net/data/AppData', 'net/ui/Tips', 'net/media/Media'], function(AppData,
 
     	});   
     	
-    	//setup intro
+    	//Setup intro
     	var introConfig = $(AppData.configXML).find("buildings").first();
     	var audioSrc = $(introConfig).attr('audio');
     	var audioDur = $(introConfig).attr('duration');
@@ -43,7 +43,7 @@ define(['net/data/AppData', 'net/ui/Tips', 'net/media/Media'], function(AppData,
   
     }
     
-     TS_BuildingSequence.prototype.reset = function() {
+    TS_BuildingSequence.prototype.reset = function() {
      	
      	this.curBuildingIndex = -1;
      	
@@ -55,8 +55,7 @@ define(['net/data/AppData', 'net/ui/Tips', 'net/media/Media'], function(AppData,
      	//callout
      	TweenLite.set( $(this.calloutDiv), { css: { opacity:0 } } ); // on
      	
-     	     	
-     }
+    }
     
     TS_BuildingSequence.prototype.startIntro = function() {
 		

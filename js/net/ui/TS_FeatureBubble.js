@@ -168,7 +168,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
   					 
   				}
 				
-				thisRef.callOutPersonnel( thisRef.curPersonnelIndex );
+				thisRef.callOutPersonnel( thisRef.curPersonnelIndex, false );
   			    thisRef.personnelClicked( thisRef.currentStep.personnel[ thisRef.curPersonnelIndex ] );
   			    
   			});
@@ -177,8 +177,12 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
 
 		this.transIn();
 		
+		//Show delayed scale up of active portraits, to draw attention
+		TweenLite.set( $(this.containerDiv).find("#step_content .personnel"), { css: { scale:0.875 } } );
+		TweenLite.to( $(this.containerDiv).find("#step_content .personnel.active"), 0.5, { css: { scale:1 }, delay:1.75,  ease:Elastic.easeOut });
+		
 		//Trigger first personnel
-		TweenLite.delayedCall(2, function() { 
+		TweenLite.delayedCall(2.5, function() { 
 			thisRef.callOutNextPersonnel();
 		});
     	
@@ -266,11 +270,11 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	    	    	
     	this.curPersonnelIndex ++;
     	
-    	this.callOutPersonnel( this.curPersonnelIndex );
+    	this.callOutPersonnel( this.curPersonnelIndex, true );
   
     }
     
-    TS_FeatureBubble.prototype.callOutPersonnel = function( personnelIndex ) {
+    TS_FeatureBubble.prototype.callOutPersonnel = function( personnelIndex, doScale ) {
     	    	
     	var thisRef = this;
     	    	
@@ -278,18 +282,9 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	this.killCurrentActivePersonnel();
     	
 		thisRef.curPersonnelDiv = $( thisRef.containerDiv ).find( "#role_" + Util.removeSpaces( thisRef.currentStep.personnel[ personnelIndex ][0] ) );
-		
 	 	$(thisRef.curPersonnelDiv).addClass("active");
-	 	
-	 	this.liftPortrait( thisRef.curPersonnelDiv );
-	 	
-	 	this.startActiveGlow( "#e5c694" );
-	 	
-	 	//this is now covered by attaching click listeners to all active personnel, no matter order	
-//	 	//wait for click
-//	 	$(thisRef.curPersonnelDiv).on("click", function(event){
-//	 	    thisRef.personnelClicked( thisRef.currentStep.personnel[ thisRef.curPersonnelIndex ] );
-//	 	});
+	 	this.liftPortrait( thisRef.curPersonnelDiv, doScale );
+	 	this.startActiveGlow( "#e5c694", false );
 
     }
 
@@ -339,7 +334,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	this.curAudioProgress = 0.0;
     	this.trackAudioProgress();
     	
-    	this.startActiveGlow( "#9dbbc5" );
+    	this.startActiveGlow( "#9dbbc5", true );
             
     };
 
@@ -390,26 +385,40 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	}
     }
     
-    TS_FeatureBubble.prototype.liftPortrait = function( portraitDiv ) {
+    TS_FeatureBubble.prototype.liftPortrait = function( portraitDiv, doFullScale ) {
     	
-    	//Initial scale up to draw attention
-    	TweenLite.set( $(portraitDiv).find(".circle-portrait img"), { boxShadow:"0px 0px 0px 0px rgba(0,0,0,0.3) " });
-    	TweenLite.to( $(portraitDiv).find(".circle-portrait img"), 0.4, { css: { boxShadow:"0px 3px 10px 3px rgba(0,0,0,0.4)" }, delay:0.05,  ease:Power2.easeOut } );
-    	TweenLite.to( $(portraitDiv), 0.4, { css: { scale:1.6, zIndex:1 },  ease:Power2.easeOut, onComplete: 
-    		function(){
-    			//scale back down to less enlarged state
-    			TweenMax.to( $(portraitDiv).find(".circle-portrait img"), .25, { css: { boxShadow:"0px 2px 9px 2px rgba(0,0,0,0.4)" }, ease:Power1.easeIn });
-    			TweenMax.to( $(portraitDiv), .25, { scale:1.3, ease:Power1.easeIn });
-    		} 
-    	});
+    	if (doFullScale){
+    		//Initial scale up to draw attention
+    		TweenLite.set( $(portraitDiv).find(".circle-portrait img"), { boxShadow:"0px 0px 0px 0px rgba(0,0,0,0.2)" });
+    		TweenLite.to( $(portraitDiv).find(".circle-portrait img"), 0.3, { css: { boxShadow:"0px 3px 10px 3px rgba(0,0,0,0.7)" }, delay:0.05,  ease:Power2.easeOut } );
+    		TweenLite.to( $(portraitDiv), 0.3, { css: { scale:1.5, zIndex:1 },  ease:Power2.easeOut, onComplete: 
+    			function(){
+    				//scale back down to less enlarged state
+    				TweenMax.to( $(portraitDiv).find(".circle-portrait img"), .25, { css: { boxShadow:"0px 2px 9px 2px rgba(0,0,0,0.5)" }, ease:Power1.easeIn });
+    				TweenMax.to( $(portraitDiv), .25, { scale:1, ease:Power1.easeIn });
+    			} 
+    		});    	
+    	} else {
+    		//only add shadow
+    		TweenMax.to( $(portraitDiv).find(".circle-portrait img"), .25, { css: { boxShadow:"0px 2px 9px 2px rgba(0,0,0,0.5)" }, ease:Power1.easeIn });
+    	}
     	
+	
     }
     
-    TS_FeatureBubble.prototype.startActiveGlow = function( glowColor ) {
+    TS_FeatureBubble.prototype.startActiveGlow = function( glowColor, wobble ) {
     	
     	if ( this.curPersonnelDiv ) {
-
+    		
+    		if (wobble == true) {
+    		    		
+    			//Make portrait 'wobble' as it talks
+    			TweenMax.set( $(this.curPersonnelDiv).find(".circle-portrait img"), { css: { rotation:-3 } } ); 
+    			TweenMax.to( $(this.curPersonnelDiv).find(".circle-portrait img"), 0.75, { css: { rotation:3 },  ease:Power1.easeInOut, yoyo: true, repeat:99 } ); // Teetering rotation
+    		
+    		}
     	}
+    	
     }
     
     TS_FeatureBubble.prototype.killActiveGlow = function( ) {
