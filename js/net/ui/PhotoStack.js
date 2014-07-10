@@ -51,8 +51,8 @@ define([], function(){
 
 		var bottomPhoto = $(this.containerDiv).children("img").first();
 		
-		TweenMax.to( $(bottomPhoto), this.shuffleSpeed, { css: { left:350, top:Math.random()*100-50 },  ease:Power1.easeOut, yoyo: true, repeat:1 } );
-		TweenLite.delayedCall( this.shuffleSpeed/2, function() { $(bottomPhoto).parent().append(bottomPhoto); });
+		TweenMax.to( $(bottomPhoto), this.shuffleSpeed, { css: { left:315, top:Math.random()*100-50 },  ease:Power2.easeInOut, yoyo: true, repeat:1 } );
+		TweenLite.delayedCall( this.shuffleSpeed, function() { $(bottomPhoto).parent().append(bottomPhoto); });
 
     }
     
