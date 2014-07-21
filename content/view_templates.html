@@ -86,6 +86,7 @@
 				
 					<div id="navigation_header">
 						<div id="portrait_Jenna" class="personnel portrait-label">
+							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<div class="circle-portrait">
 								<img id="portrait" src="img/touchstone/portrait_Jenna.png" />
 							</div>
@@ -121,6 +122,8 @@
 					<div id="oval_backgrounds" data-role="container">
 						<img id="bg_physical" src="img/touchstone/feature_bub_beige.png" />
 					</div>
+					<img id="speech_tri" src="img/touchstone/speech_tri.png" style="display: none;" />
+					<img id="speech_bubble" src="img/touchstone/speech_bubble.png" style="display: none;" />
 					<div id="center_oval" data-role="container">
 						<div id="step_description_container">
 							<h3 id="step_title">Step Title Here</h3>
@@ -137,20 +140,22 @@
 						<div id="question_answer_container" class="quiz-container" style="display: none;" >
 							<h3 id="question_title">QUESTION 1</h3>
 							<p id="question_text">Lorem Ipsum. What is your answer to this question?</p>
-							<p id="feedback_text">x+x+x</p>
 							<textarea id="answer_area" value="Type your answer here"  onfocus="if(this.value=='Type your answer here') {this.value='', this.style.color='#333'};" onblur="if(this.value=='') {this.value='Type your answer here', this.style.color='#999';}"></textarea>
+							<p id="feedback_text">x+x+x</p>
 							<button id="quiz_button" data-role="button" class="rect-button">DONE</button><br/>
 						</div>
 					</div>
 					<div id="personnel_layer" data-role="container">
 						<div id="role_CaseManager" class="personnel portrait-label row1 col3">
+							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<div class="circle-portrait">
 								<img id="portrait_bw" src="img/touchstone/portrait_CaseManager_inactive.png" />
 								<img id="portrait_color" src="img/touchstone/portrait_CaseManager.png" />
 							</div>
-							<p><span>Case Manager</span></p>
+							<p><span>Case Mgr</span></p>
 						</div>
 						<div id="role_Nurse" class="personnel portrait-label row2 col2">
+							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<div class="circle-portrait">
 								<img id="portrait_bw" src="img/touchstone/portrait_Nurse_inactive.png" />
 								<img id="portrait_color" src="img/touchstone/portrait_Nurse.png" />
@@ -158,6 +163,7 @@
 							<p><span>Nurse</span></p>
 						</div>
 						<div id="role_Counselor" class="personnel portrait-label row3 col1">
+							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<div class="circle-portrait">
 								<img id="portrait_bw" src="img/touchstone/portrait_Counselor_inactive.png" />
 								<img id="portrait_color" src="img/touchstone/portrait_Counselor.png" />
@@ -165,6 +171,7 @@
 							<p><span>Counselor</span></p>
 						</div>
 						<div id="role_Oncologist" class="personnel portrait-label row4 col2">
+							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<div class="circle-portrait">
 								<img id="portrait_bw" src="img/touchstone/portrait_Oncologist_inactive.png" />
 								<img id="portrait_color" src="img/touchstone/portrait_Oncologist.png" />
@@ -172,22 +179,25 @@
 							<p><span>Oncologist</span></p>
 						</div>
 						<div id="role_HealingTouchProvider" class="personnel portrait-label row5 col3">
+							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<div class="circle-portrait">
 								<img id="portrait_bw" src="img/touchstone/portrait_HealingTouchProvider_inactive.png" />
 								<img id="portrait_color" src="img/touchstone/portrait_HealingTouchProvider.png" />
 							</div>
-							<p><span>Healing Touch Provider</span></p>
+							<p><span>Healing Touch</span></p>
 						</div>
 						<!-- Right Side -->
 						<div id="role_OccupationalTherapist" class="personnel portrait-label row1 col4">
+							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<div class="circle-portrait">
 								<img id="portrait_bw" src="img/touchstone/portrait_OccupationalTherapist_inactive.png" />
 								<img id="portrait_color" src="img/touchstone/portrait_OccupationalTherapist.png" />
 							</div>
-							<p><span>Occupational Therapist</span></p>
+							<p><span>OT</span></p>
 						</div>
 						<div id="role_Pharmacist" class="personnel portrait-label row2 col5">
+							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<div class="circle-portrait">
 								<img id="portrait_bw" src="img/touchstone/portrait_Pharmacist_inactive.png" />
 								<img id="portrait_color" src="img/touchstone/portrait_Pharmacist.png" />
@@ -195,27 +205,31 @@
 							<p><span>Pharmacist</span></p>
 						</div>
 						<div id="role_FitnessSpecialist" class="personnel portrait-label row3 col6">
+							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<div class="circle-portrait">
 								<img id="portrait_bw" src="img/touchstone/portrait_FitnessSpecialist_inactive.png" />
 								<img id="portrait_color" src="img/touchstone/portrait_FitnessSpecialist.png" />
 							</div>
-							<p><span>Fitness Specialist</span></p>
+							<p><span>Fitness</span></p>
 						</div>
 						<div id="role_PMHNursePractitioner" class="personnel portrait-label row4 col5">
+							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<div class="circle-portrait">
 								<img id="portrait_bw" src="img/touchstone/portrait_PMHNursePractitioner_inactive.png" />
 								<img id="portrait_color" src="img/touchstone/portrait_PMHNursePractitioner.png" />
 							</div>
-							<p><span>PMH Nurse Practitioner</span></p>
+							<p><span>PMH NP</span></p>
 						</div>
 						<div id="role_ActivitiesCoordinator" class="personnel portrait-label row5 col4">
+							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<div class="circle-portrait">
 								<img id="portrait_bw" src="img/touchstone/portrait_ActivitiesCoordinator_inactive.png" />
 								<img id="portrait_color" src="img/touchstone/portrait_ActivitiesCoordinator.png" />
 							</div>
-							<p><span>Activities Coordinator</span></p>
+							<p><span>Activities</span></p>
 						</div>
 						<div id="role_Jenna" class="personnel portrait-label on active">
+							<canvas id="progress_ring" class="canvas-ring"></canvas>
 							<div class="circle-portrait">
 								<img id="portrait_bw" src="img/touchstone/portrait_Jenna.png" />
 								<img id="portrait_color" src="img/touchstone/portrait_Jenna.png" />

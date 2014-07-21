@@ -48,12 +48,15 @@ define([], function(){
 
     Quiz.prototype.showQuestion = function( qIndex ) {
     
+    	$(this.containerDiv).find("#text_area_window").show();
+    	
     	$(this.titleDiv).html( this.qa[qIndex][0] );
     	$(this.questionDiv).html( this.qa[qIndex][1] );
     	$(this.feedbackDiv).html( this.qa[qIndex][2] );
     	$(this.answerDiv).val( 'Type your answer here' );//reset text area to default value
     	$(this.answerDiv).css('color', '#999')
     	$(this.quizBtn).html("DONE");
+    	$(this.quizBtn).removeClass("next");
     	
     	//default feedback to hidden
     	$(this.feedbackDiv).hide();
@@ -65,13 +68,15 @@ define([], function(){
     
     Quiz.prototype.showFeedback = function( ) {
     
-    	//assume feedback text is already set.
-    	$(this.feedbackDiv).show();
+    	//assumes feedback text is already set.
+    	$(this.feedbackDiv).show('slow');
     	this.feedbackShown = true;
     	
     	if ( this.onLastQuestion() == false ) {
     		$(this.quizBtn).html("NEXT");
+    		$(this.quizBtn).addClass("next");
     	} else {
+    		$(this.quizBtn).removeClass("next");
     		$(this.quizBtn).html("FINISH");
     	}
     

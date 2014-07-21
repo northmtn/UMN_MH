@@ -38,7 +38,7 @@ define(['net/util/Util'], function( Util ){
     		var dataVideo = $(this).attr('video');
     		var dataAudio = $(this).attr('audio');
     		var dataQA = $(this).attr('quiz');
-    		var dataFeedback = $(this).attr('feedback');
+    		var dataFeedback = $(this).attr('feedback_popup');
 				
 			var rBtn = [btnId, dataVideo, dataAudio, dataQA, dataFeedback];
     		thisRef.reviewBtns.push(rBtn);
@@ -49,7 +49,7 @@ define(['net/util/Util'], function( Util ){
     	this.personnel = [];
     	$(configData).children("personnel").each(function() {
     	
-    		var p = [$(this).attr('role'), $(this).attr('audio'), $(this).attr('duration')];
+    		var p = [$(this).attr('role'), $(this).attr('audio'), $(this).attr('duration'), $(this).attr('feedback_popup')];
     		thisRef.personnel.push(p);
     		
     	});

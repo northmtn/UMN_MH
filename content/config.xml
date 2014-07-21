@@ -21,7 +21,7 @@
 			
 			<text id="text_1">Welcome to Touchstone Mental Health</text>
 			<text id="text_2">
-				<![CDATA[<b>Recovery from mental illness and whole person wellness starts at Touchstone Mental Health where our mission is to “inspire hope, healing and well-being.”</b> We consider each person as a whole; integrating treatment, care and resources which support a healthy mind, body, and spirit. We are a point of reference guiding clients, community members and residents toward recovery and well-being. We encourage each person to define their life goals— ]]>
+				<![CDATA[Recovery from mental illness and whole person wellness starts at Touchstone Mental Health where our mission is to “inspire hope, healing and well-being.” We consider each person as a whole; integrating treatment, care and resources which support a healthy mind, body, and spirit. We are a point of reference guiding clients, community members and residents toward recovery and well-being. We encourage each person to define their life goals— ]]>
 			</text>
 			<text id="text_3">
 				<![CDATA[physical, mental, emotional, spiritual, social, vocational and interpersonal – and we provide the tools so people achieve them. In this module you’ll have the chance to learn more about our team approach by engaging in an interactive case story about a [fictitious?] Touchstone resident to meet existing and emerging needs.
@@ -39,12 +39,15 @@
 						
 			<buildings audio="SampleAudio3" duration="6" >
 				<building id="building_1" audio="SampleAudio2" duration="6"><![CDATA[BOARD & LODGE]]></building>
-				<building id="building_2" audio="SampleAudio6" duration="7">COUNTY HOSPITAL</building>
+				<building id="building_2" audio="SampleAudio6" duration="7"><![CDATA[COUNTY HOSPITAL</br>ACUTE PSYCHIATRIC SERVICES (APS)]]></building>
 				<building id="building_3" audio="SampleAudio3" duration="7">CRISIS RESIDENCE</building>
-				<building id="building_4" audio="SampleAudio2" duration="6">IRTS</building>
-				<building id="building_5" audio="SampleAudio4" duration="7">HOMELESS SHELTER</building>
-				<building id="building_6" audio="SampleAudio" duration="7">STATE HOSPITAL</building>
-				<building id="building_7" audio="SampleAudio5" duration="8">TOUCHSTONE CENTER</building>
+				<building id="building_4" audio="SampleAudio2" duration="6"><![CDATA[INTENSIVE RESIDENTIAL</br>TREATMENT SERVICES (IRTS)]]></building>
+				<building id="building_2" audio="SampleAudio6" duration="7"><![CDATA[COUNTY HOSPITAL</br>ACUTE PSYCHIATRIC SERVICES (APS)]]></building>
+				<building id="building_5" audio="SampleAudio4" duration="7">SHELTER</building>
+				<building id="building_2" audio="SampleAudio6" duration="7"><![CDATA[COUNTY HOSPITAL</br>ACUTE PSYCHIATRIC SERVICES (APS)]]></building>
+				<building id="building_6" audio="SampleAudio" duration="7">STATE PSYCHIATRIC HOSPITAL</building>
+				<building id="building_4" audio="SampleAudio2" duration="6"><![CDATA[INTENSIVE RESIDENTIAL</br>TREATMENT SERVICES (IRTS)]]></building>
+				<building id="building_7" audio="SampleAudio5" duration="8"><![CDATA[TOUCHSTONE RISING</br>CEDAR APARTMENTS]]></building>
 			</buildings>
 			
 		</view>
@@ -57,18 +60,19 @@
 			
 			<!-- TOUCHSTONE STEPS -->
 			<touchstone_steps>
+				<!-- TOUCHSTONE STEP 1 -->
 				<step title="Arriving at Touchstone" dimensions="Environmental, Social" audio="SampleAudio4">
 				
 					<text id="step_description"><![CDATA[Jenna is happy that her case manager found Touchstone for her where there are a number of people who work together to support her with managing her illnesses as well as day-to-day living such as meals and housekeeping. In the first few days of being at Touchstone, each person working with Jenna introduced him or herself. They talked to her about how she is an important member of the Touchstone team and that they are going to work together so that she can maintain her independence and wellness.]]>
 					</text>
 				
 					<personnel role="Jenna" audio="SampleAudio4" duration="7"></personnel>
-					<personnel role="Case Manager" audio="SampleAudio3" duration="4"></personnel>
+					<personnel role="Case Manager" audio="SampleAudio3" duration="4" feedback_popup="Feedback shows after Case Manager audio completes."></personnel>
 					
 					<review>
 						<button id="video_review" video="M01_S02V01_D">HERE'S WHAT I WOULD ASK</button>
 						<button id="audio_review" audio="SampleAudio2">IN MY ROLE</button>
-						<button id="quiz_review" quiz="quiz_1">WHAT WOULD YOU DO</button>
+						<button id="quiz_review" quiz="quiz_1" feedback_popup="This feedback will show after the review quiz.">WHAT WOULD YOU DO</button>
 					</review>
 					
 					<quiz id="quiz_1">
@@ -79,39 +83,35 @@
 
 				</step>
 				
+				<!-- TOUCHSTONE STEP 2 -->
 				<step title="Receiving a Cancer Diagonosis" dimensions="Physical, Emotional" audio="SampleAudio6">
 				
-					<text id="step_description"><![CDATA[DESCRIPTION OF STEP TWO.  Lorem Ipsum her where there are a number of people who work together to support her with managing her illnesses as well as day-to-day living such as meals and housekeeping. In the first few days of being at Touchstone, each person working with Jenna introduced him or herself. They talked to her about how she is an important member of the Touchstone team and that they are going to work together so that she can maintain her independence and wellness.]]>
+					<text id="step_description"><![CDATA[Jenna’s skin cancer was caught early and is treatable. But this news has triggered some emotions that are making it difficult for her to cope with the cancer and other responsibilities in her life. She is anxious and becoming more depressed.]]>
 					</text>
 
 					<personnel role="Jenna" audio="SampleAudio5" duration="8"></personnel>
-					<personnel role="Oncologist" audio="SampleAudio4" duration="3"></personnel>
+					<personnel role="Oncologist" audio="SampleAudio4" duration="3" feedback_popup="This feedback will show after the Oncologist audio completes."></personnel>
 					<personnel role="Nurse" audio="SampleAudio3" duration="7"></personnel>
 					<personnel role="Counselor" audio="SampleAudio2"></personnel>
 					<personnel role="Healing Touch Provider" audio="SampleAudio"></personnel>
 					
 					<review>
-						<button id="quiz_review" quiz="cancer_quiz_1">WHAT WOULD YOU DO</button>
-						<button id="video_review" video="M01_S02V01_D">HERE'S WHAT I WOULD ASK</button>
-						<button id="quiz_review" quiz="cancer_quiz_2" feedback="Lorem ipsum... Here is some feedback based on the portion you just did. Here is some feedback based on the portion you just did. Lorem ipsum.">WHAT WOULD YOU DO</button>
-						<button id="video_review" video="M01_S02V01_D">HERE'S WHAT I WOULD ASK</button>
+						<button id="video_review" video="M01_S02V01_D">COMMENT ON THE COUNSELOR GOALS</button>
+						<button id="video_review" video="M01_S02V01_D">HOW WOULD YOU APPROACH HEALING TOUCH?</button>
+						<button id="quiz_review" quiz="step2_in_review">IN REVIEW</button>
 					</review>
 					
-					<quiz id="cancer_quiz_1">
-						<QA title="Question 1" question="This is 'Receiving a Cancer Diagonosis' question number ONE of quiz 1. What is your answer?"/> 
-						<QA title="Question 2" question="And this is 'Receiving a Cancer Diagonosis' question number TWO of quiz 1. What is your answer?" feedback="Lorem ipsum, here is some feedback in response to question two."/> 
+					<quiz id="step2_in_review">
+						<QA title="Don't know?" question="Don't know again." feedback="This is the feedback to I don't know."/> 
+						<QA title="Don't know part 2?" question="Don't know again. part 2" feedback="This is the feedback to I don't know. part 2"/> 
 					</quiz>
 					
-					<quiz id="cancer_quiz_2">
-						<QA title="Question 1" question="Quiz 2 question ONE?" feedback="Q 1 feedback, here is some feedback in response to your answer."/> 
-						<QA title="Question 2" question="Quiz 2 question TWO?" feedback="Q 2 feedback, here is some feedback in response to your answer."/> 
-						<QA title="Question 3" question="Quiz 2 question THREE?" feedback="Q 3 feedback, here is some feedback in response to your answer."/>  
-						<QA title="Question 4" question="Quiz 2 question FOUR?" feedback="Q 4 feedback, here is some feedback in response to your answer."/> 
-					</quiz>
-	
 				</step>
 				
 				<step title="Increasing Depression" dimensions="Emotional, Financial, Physical" audio="SampleAudio4">
+
+					<text id="step_description"><![CDATA[Jenna’s skin cancer triggered what appears to be a major depressive episode and anxiety symptoms, nearly as bad as one she had in her twenties. Medications are an important aspect to treating Jenna’s mental illness as well as her diabetes, fibromyalgia, and now her cancer. Managing the safety and effectiveness of multiple medications is complicated and good communication among her providers is essential. Alternative treatments to medication are also an important part of Jenna’s treatment.]]>
+					</text>
 				
 					<personnel role="Case Manager" audio="SampleAudio3" duration="8"></personnel>
 					<personnel role="Nurse" audio="SampleAudio5" duration="3"></personnel>
@@ -119,14 +119,27 @@
 					<personnel role="Pharmacist" audio="SampleAudio3"></personnel>
 					<personnel role="Counselor" audio="SampleAudio4"></personnel>
 					<personnel role="Activities Coordinator" audio="SampleAudio"></personnel>
+
+					<review>
+						<button id="video_review" video="M01_S02V01_D">WHY IS THE GARDENING ACTIVITY SIGNIFICANT?</button>
+						<button id="video_review" video="M01_S02V01_D">AS A COUNSELOR, WHAT WOULD YOU DO?</button>
+						<button id="video_review" video="M01_S02V01_D">HERE'S WHAT I WOULD ASK</button>
+						<button id="quiz_review" quiz="step3_in_review">WHAT WOULD YOU DO</button>
+					</review>
+
+					<quiz id="step3_in_review">
+						<QA title="Question 1" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback."/> 
+						<QA title="Question 2" question="Lorem ipsum this will be question number two of three. What is your answer?" feedback="Lorem ipsum, here is some feedback in response to question two."/> 
+						<QA title="Question 3" question="Lorem ipsum this will be question number three of three. What is your answer?" feedback="Lorem ipsum, here is some feedback for question three."/> 
+					</quiz>
 					
 				</step>
 	
 				<step title="Team Meeting" dimensions="Emotional, Physical" audio="SampleAudio6">
 				
 					<personnel role="Counselor" audio="SampleAudio5"></personnel>
-					<personnel role="Nurse" audio="SampleAudio4"></personnel>
 					<personnel role="Activities Coordinator" audio="SampleAudio3"></personnel>
+					<personnel role="Nurse" audio="SampleAudio4"></personnel>
 					<personnel role="Jenna" audio="SampleAudi2"></personnel>
 	
 				</step>

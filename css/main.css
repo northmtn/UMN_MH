@@ -161,12 +161,19 @@ button.rect-button:after {
 button.rect-button:not([data-video=""])[data-video]:after {
 	content: url("../img/icon_video.png");
 }
-bbutton.rect-button:not([data-audio=""])[data-audio]:after {
+button.rect-button:not([data-audio=""])[data-audio]:after {
 	content: url("../img/icon_audio.png");
 }
 button.rect-button:not([data-quiz=""])[data-quiz]:after {
 	content: url("../img/icon_question.png");
 }
+button.rect-button.next:after {
+	content: url("../img/icon_next.png");
+}
+button.rect-button.prev:before {
+	content: url("../img/icon_prev.png");
+}
+
 
 
 /*--------*/
@@ -322,8 +329,8 @@ button.rect-button:not([data-quiz=""])[data-quiz]:after {
 .canvas-ring {
 
 	position: absolute;
-	left: 0px;
-	top: -5px;
+	left: 22px;
+	top: -7px;
 	z-index: 0;
 	
 }
@@ -393,23 +400,22 @@ button.rect-button:not([data-quiz=""])[data-quiz]:after {
 
 #screen_mainmenu #photo_stack_1 {
 	
-	top: 55px;
+	top: 215px;
 	left: 630px;
 	
 }
-#screen_mainmenu #photo_stack_2 {
-	
-	top: 380px;
-	left: 650px;
-	
-}
+
 #screen_mainmenu .photo_stack img {
 	
 	-moz-box-shadow:inset 0px 0px 0px 1px #fff;
 	-webkit-box-shadow:inset 0px 0px 0px 1px #fff;
 	box-shadow:inset 0px 0px 0px 1px #fff;
 	background-color:#fff;
-	border: 7px solid #fff;
+	border: 28px solid #fff;
+	
+	-webkit-box-shadow: 0 1px 11px 1px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 1px 11px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 1px 11px 1px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -591,6 +597,17 @@ button.rect-button:not([data-quiz=""])[data-quiz]:after {
     font-size: 14px;
     padding: 5px;
     margin: 5px;
+
+}
+
+#screen_touchstone .quiz-container #feedback_text {
+	
+	background-color: #4d8b85;
+	
+	/*width: 328px;
+	height: 76px;*/
+	padding: 5px;
+	margin: 5px;
 
 }
 
@@ -941,21 +958,21 @@ button.rect-button:not([data-quiz=""])[data-quiz]:after {
 
 .touchstone_steps #navigation_bar #navigation_header .portrait-label p span {
 	top: -25px;
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 600;
 	padding: 5px 15px;
 	color: #000;
-	letter-spacing: 1px;
 	background-color: #FFF;
 }
 
 .touchstone_steps #navigation_bar #step_buttons_container h2 {
 	padding-top: 20px;
 	font-style: italic;
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: 300;
+	letter-spacing: 0.75px;
 	
-	width: 140px;
+	width: 136px;
 	margin: 0 auto;
 	
 }
@@ -1101,11 +1118,16 @@ button.rect-button:not([data-quiz=""])[data-quiz]:after {
 
 #screen_touchstone #step_content #role_Jenna {
 	top: 497px;
-	left: 428px;
+	left: 444px;
+}
+
+#screen_touchstone #step_content #role_Jenna p {
+	font-size: 16px;
+	margin-top: 10px;
 }
 
 #screen_touchstone #step_content #personnel_layer{
-
+	left: -25px;
 }
 #screen_touchstone #step_content .personnel {
 	position: absolute;
@@ -1154,8 +1176,13 @@ button.rect-button:not([data-quiz=""])[data-quiz]:after {
 	left: 828px;
 }
 
-#screen_touchstone #step_content .portrait-label . {
-
+#screen_touchstone #step_content #speech_tri {
+	position: absolute;
+}
+#screen_touchstone #step_content #speech_bubble {
+	position: absolute;
+	left: 243px;
+	top: 183px;
 }
 
 #screen_touchstone #step_content .portrait-label p {
@@ -1164,6 +1191,7 @@ button.rect-button:not([data-quiz=""])[data-quiz]:after {
 	font-size: 12px;
 	font-style: italic;
 	padding: 0 25px;
+	width: 120px;
 	
 }
 

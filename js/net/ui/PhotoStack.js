@@ -4,16 +4,22 @@ define([], function(){
     
 		this.containerDiv = containerDiv; 
 				
-		this.speed = 10;
+		this.speed = 7;
 		this.maxRotation = 20;
 		this.xSpread = 20;
-		this.ySpread = 20;
+		this.ySpread = 120;
 		
-		this.shuffleSpeed = 0.5;
+		this.shuffleSpeed = 1;
+		
+		this.transitionMode = 0;
 					
 		this.setup();
 				     	
     }
+    
+    //constants
+    PhotoStack.MODE_SLIDE = 0;
+    PhotoStack.MODE_FADE = 1;
 
     PhotoStack.prototype.setup = function(){
 
@@ -46,14 +52,29 @@ define([], function(){
     	
     }
     
-    PhotoStack.prototype.nextPhoto = function(){
+    PhotoStack.prototype.setTransitionMode = function(mode){
+   		
+   		this.transitionMode = mode;
+    	
+    }
     
+    
+    PhotoStack.prototype.nextPhoto = function(){
 
 		var bottomPhoto = $(this.containerDiv).children("img").first();
+				
+		switch(this.transitionMode) {
+			case PhotoStack.MODE_SLIDE:
+				TweenMax.to( $(bottomPhoto), this.shuffleSpeed, { css: { left:315, top:Math.random()*100-50 },  ease:Power2.easeInOut, yoyo: true, repeat:1 } );
+				TweenLite.delayedCall( this.shuffleSpeed, function() { $(bottomPhoto).parent().append(bottomPhoto); });
+			break;
+			case PhotoStack.MODE_FADE:
+				TweenMax.set( $(bottomPhoto), { css: { opacity:0 } } );
+				$(bottomPhoto).parent().append(bottomPhoto);
+				TweenMax.to( $(bottomPhoto), this.shuffleSpeed, { css: { opacity:1 },  ease:Power2.easeOut} );
+			break;
+		}
 		
-		TweenMax.to( $(bottomPhoto), this.shuffleSpeed, { css: { left:315, top:Math.random()*100-50 },  ease:Power2.easeInOut, yoyo: true, repeat:1 } );
-		TweenLite.delayedCall( this.shuffleSpeed, function() { $(bottomPhoto).parent().append(bottomPhoto); });
-
     }
     
     PhotoStack.prototype.stop = function(){

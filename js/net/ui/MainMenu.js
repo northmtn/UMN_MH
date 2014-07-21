@@ -19,15 +19,8 @@ define(['net/ui/Screen', 'net/ui/Navigator', 'net/ui/PhotoStack'], function( Scr
 		
 		var c1 = $( this.containerDiv ).find("#photo_stack_1").first();
 		this.photoStack1 = new PhotoStack( $(c1) );
+		this.photoStack1.setTransitionMode( PhotoStack.MODE_FADE );
 		this.photoStack1.start();
-		
-		var c2 = $( this.containerDiv ).find("#photo_stack_2").first();
-		this.photoStack2 = new PhotoStack( $(c2) );
-		var thisRef = this;
-		TweenLite.delayedCall( 5, function() {
-			thisRef.photoStack2.start();
-			thisRef.photoStack2.nextPhoto();
-		});
 
 	}
 
@@ -42,7 +35,6 @@ define(['net/ui/Screen', 'net/ui/Navigator', 'net/ui/PhotoStack'], function( Scr
 			Navigator.goToScreen( screenId );
 			
 		    return;
-		    
 		}
 	
 	    //other btns...
