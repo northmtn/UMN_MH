@@ -33,13 +33,15 @@ define([], function(){
     
     Screen.prototype.enable = function() {
     	
-    	this.refreshButtonListeners()
+    	this.refreshButtonListeners();
+    	console.log("scrn enable");
     	
     }
     
     Screen.prototype.disable = function(){
     		
     	this.disableButtonListeners();
+    	console.log("scrn disable");
     		
     }
     

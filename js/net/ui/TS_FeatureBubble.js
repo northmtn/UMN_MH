@@ -87,10 +87,13 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	$(thisRef.containerDiv).find("#center_oval #step_description_container").show();   
     	
     	//review buttons
-    	$(this.containerDiv).find("#review_container button.rect-button").each(function (index) {
+    	$(this.containerDiv).find("#review_container button.rect-button").each( function (index) {
+    		
+    		//Remove any previous review click listeners
+    		$(this).off( "click", thisRef.reviewBtnClicked );
     		
     		if (index < thisRef.currentStep.reviewBtns.length) {
-    			
+
     			//set button text
     			$(this).html(thisRef.currentStep.reviewBtns[index][0]);
     			
@@ -99,7 +102,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     			var qSrc = thisRef.currentStep.reviewBtns[index][3];
     			var rFeedback = thisRef.currentStep.reviewBtns[index][4];
     			
-    			//add video link
+    			//add video links
     			if (typeof vSrc !== 'undefined' && vSrc !== false) {
     				$(this).attr('data-video', vSrc);
     				$(this).attr('id', 'video_'+index);
@@ -121,11 +124,13 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     				$(this).attr('data-feedback', rFeedback);
     			}
     			
+    			$(this).show();
     			$(this).on( "click", { thisRef: thisRef }, thisRef.reviewBtnClicked );
     			
     		} else {
+    		
     			$(this).hide();
-    			$(this).off();
+    			
     		}
     		
     		$(this).removeClass('visited');
@@ -195,6 +200,8 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	var thisRef = event.data.thisRef;
     	
     	$(this).addClass('visited');
+    	
+    	console.log("reviewBtnClicked");
     	
     	//check for associated feedback
     	var fTxt = $(this).attr('data-feedback');
@@ -362,8 +369,9 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	
     	ctx.clearRect ( 0 , 0 , (cRadius+cStroke)*2, (cRadius+cStroke)*2 );
     	
-    	ctx.strokeStyle = "#ff0";//"#4d8b85";
+    	ctx.strokeStyle = "#2a645e";//"#4d8b85";
     	ctx.lineWidth = cStroke;
+    	ctx.webkitImageSmoothingEnabled=true;
     	
     	
     	this.curProgressRingTween = TweenLite.to( this, this.curAudioDuration, { curAudioProgress: 1,  ease:Linear.easeNone, onUpdate: 
@@ -377,17 +385,12 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     			ctx.arc(cRadius+cStroke, cRadius+cStroke, cRadius, 0+(1.5*Math.PI),(2*num*Math.PI)+(1.5*Math.PI),true);
     			ctx.stroke();
     			
+    			
     		} 
     	});  
     	
     }
-    
-    TS_FeatureBubble.prototype.drawProgressRing = function( ctx, num ) {
-                
-        	
-        	
-    }
-    
+
     TS_FeatureBubble.prototype.killCurrentActivePersonnel = function( ) {
     	
     	if ( this.curPersonnelDiv ) {
@@ -396,13 +399,6 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     		TweenMax.killTweensOf( $(this.curPersonnelDiv).find(".circle-portrait img") );
     		
     		this.killActiveGlow();
-    		
-    		//TODO - change to a 'visited' state?
-    		
-    		//remove click listener
-    		// removing to allow users to go back and re listen to some
-//    		$(this.curPersonnelDiv).off();	
-    		
     		this.curPersonnelDiv = null;
     		
     	}
@@ -415,7 +411,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     		var portraitImg = $(portraitDiv).find(".circle-portrait img");
     		TweenLite.set( $(portraitImg), { boxShadow:"0px 0px 0px 0px rgba(0,0,0,0.2)", zIndex:1 });
     		TweenMax.to( $(portraitImg), 0.3, { css: { boxShadow:"0px 3px 10px 3px rgba(0,0,0,0.7)" }, delay:0.05,  ease:Power2.easeOut } );
-    		TweenMax.from( $(portraitImg), 1.5, { css: { scale:1.05 },  ease:Elastic.easeOut, repeatDelay:0.5, repeat:99 } );    	
+    		TweenMax.from( $(portraitImg), 1.5, { css: { scale:1.05, boxShadow:"0px 0px 0px 0px rgba(0,0,0,0.2)" },  ease:Elastic.easeOut, repeatDelay:1, repeat:99 } );    	
     	} else {
     		//Only add shadow
     		TweenMax.to( $(portraitDiv).find(".circle-portrait img"), .25, { css: { boxShadow:"0px 2px 9px 2px rgba(0,0,0,0.5)" }, ease:Power1.easeIn });
@@ -502,12 +498,22 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     			}
 				
     			TweenMax.set( $(tri), { css: { left:tX, top:tY, rotation:tR } } ); 
+    			
+    			//Populate speech text
+    			var speechTitle = this.currentStep.personnel[ this.curPersonnelIndex ][0] + ":";
+    			var speechTxt = this.currentStep.personnel[ this.curPersonnelIndex ][4];
+    			$(this.containerDiv).find("#center_oval #step_title").html( speechTitle );
+    			$(this.containerDiv).find("#center_oval #description").html( speechTxt );
     			    		
     		} else {
     			
     			//Hide speech bubble
     			$(this.containerDiv).find("#speech_tri").hide();
     			$(this.containerDiv).find("#speech_bubble").hide();
+    			
+    			//Reset center oval text
+    			$(this.containerDiv).find("#center_oval #step_title").html( this.currentStep.descriptionTitle );
+    			$(this.containerDiv).find("#center_oval #description").html( this.currentStep.descriptionContent );
     			
     		}
     		

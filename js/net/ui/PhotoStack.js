@@ -9,9 +9,10 @@ define([], function(){
 		this.xSpread = 20;
 		this.ySpread = 120;
 		
-		this.shuffleSpeed = 1;
+		this.shuffleSpeed = 0.75;
 		
 		this.transitionMode = 0;
+		this.nextCycle = {};
 					
 		this.setup();
 				     	
@@ -45,12 +46,14 @@ define([], function(){
     PhotoStack.prototype.start = function(){
     	
     	var thisRef = this;
-    	TweenLite.delayedCall( this.speed, function() {
+    	
+    	this.nextCycle = TweenLite.delayedCall( this.speed, function() {
     		thisRef.nextPhoto();
     		thisRef.start();
     	});
     	
     }
+    
     
     PhotoStack.prototype.setTransitionMode = function(mode){
    		
@@ -69,20 +72,21 @@ define([], function(){
 				TweenLite.delayedCall( this.shuffleSpeed, function() { $(bottomPhoto).parent().append(bottomPhoto); });
 			break;
 			case PhotoStack.MODE_FADE:
-				TweenMax.set( $(bottomPhoto), { css: { opacity:0 } } );
-				$(bottomPhoto).parent().append(bottomPhoto);
-				TweenMax.to( $(bottomPhoto), this.shuffleSpeed, { css: { opacity:1 },  ease:Power2.easeOut} );
+				TweenMax.to( $(bottomPhoto), this.shuffleSpeed, { css: { opacity:0 },  ease:Power2.easeOut, yoyo: true, repeat:1 } );
+				TweenLite.delayedCall( this.shuffleSpeed, function() { $(bottomPhoto).parent().append(bottomPhoto); });
 			break;
 		}
 		
     }
     
     PhotoStack.prototype.stop = function(){
-    
+    	
+    	TweenMax.killTweensOf();
+    	TweenMax.killTweensOf(this.nextCycle);
+    	
     }
 
     PhotoStack.prototype.resetStack = function(){
-        
     	
     };
    

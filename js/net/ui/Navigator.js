@@ -17,9 +17,7 @@ define(['libs/pace.min'], function(pace){
     }
     
     Navigator.goToScreen = function( screenContainerId ) {
-    
-  	 	console.log("goToScreen: " + screenContainerId);
-        						
+            						
 		//hide current screen
 		if(this.currentScreen) {
 			this.currentScreen.disable();

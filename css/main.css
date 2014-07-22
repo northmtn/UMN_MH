@@ -504,6 +504,7 @@ button.rect-button.prev:before {
 
 	left: 464px;
 	top: -59px;
+	pointer-events:none;
 		
 }
 
@@ -603,11 +604,21 @@ button.rect-button.prev:before {
 #screen_touchstone .quiz-container #feedback_text {
 	
 	background-color: #4d8b85;
+	text-align: left;
 	
-	/*width: 328px;
-	height: 76px;*/
-	padding: 5px;
+	width: 326px;
+	height: 76px;
+	padding: 6px;
 	margin: 5px;
+	position: absolute;
+	left: 25px;
+	top: 80px;
+
+}
+
+#screen_touchstone .quiz-container #feedback_text.feedback_text {
+	
+	color: white;
 
 }
 

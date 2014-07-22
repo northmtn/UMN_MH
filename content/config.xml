@@ -66,19 +66,19 @@
 					<text id="step_description"><![CDATA[Jenna is happy that her case manager found Touchstone for her where there are a number of people who work together to support her with managing her illnesses as well as day-to-day living such as meals and housekeeping. In the first few days of being at Touchstone, each person working with Jenna introduced him or herself. They talked to her about how she is an important member of the Touchstone team and that they are going to work together so that she can maintain her independence and wellness.]]>
 					</text>
 				
-					<personnel role="Jenna" audio="SampleAudio4" duration="7"></personnel>
-					<personnel role="Case Manager" audio="SampleAudio3" duration="4" feedback_popup="Feedback shows after Case Manager audio completes."></personnel>
+					<personnel role="Jenna" audio="SampleAudio4" duration="7">This is Jenna's Dialog. Here are the words Jenna says. This is Jenna's Dialog. Here are the words Jenna says.  </personnel>
+					<personnel role="Case Manager" audio="SampleAudio3" duration="4" feedback_popup="Feedback shows after Case Manager audio completes.">Here is the dialog of the Case Manager. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in mauris nibh. Praesent dui magna, auctor quis gravida sed, cursus sit amet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </personnel>
 					
 					<review>
 						<button id="video_review" video="M01_S02V01_D">HERE'S WHAT I WOULD ASK</button>
 						<button id="audio_review" audio="SampleAudio2">IN MY ROLE</button>
-						<button id="quiz_review" quiz="quiz_1" feedback_popup="This feedback will show after the review quiz.">WHAT WOULD YOU DO</button>
+						<button id="quiz_review" quiz="quiz_1">WHAT WOULD YOU DO</button>
 					</review>
 					
 					<quiz id="quiz_1">
 						<QA title="Question 1" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback."/> 
 						<QA title="Question 2" question="Lorem ipsum this will be question number two of three. What is your answer?" feedback="Lorem ipsum, here is some feedback in response to question two."/> 
-						<QA title="Question 3" question="Lorem ipsum this will be question number three of three. What is your answer?" feedback="Lorem ipsum, here is some feedback for question three."/> 
+						<QA title="Question 3" question="Q3. What is your answer?" feedback="Lorem ipsum, here is some feedback for question three."/> 
 					</quiz>
 
 				</step>
@@ -108,6 +108,7 @@
 					
 				</step>
 				
+				<!-- TOUCHSTONE STEP 3 -->
 				<step title="Increasing Depression" dimensions="Emotional, Financial, Physical" audio="SampleAudio4">
 
 					<text id="step_description"><![CDATA[Jenna’s skin cancer triggered what appears to be a major depressive episode and anxiety symptoms, nearly as bad as one she had in her twenties. Medications are an important aspect to treating Jenna’s mental illness as well as her diabetes, fibromyalgia, and now her cancer. Managing the safety and effectiveness of multiple medications is complicated and good communication among her providers is essential. Alternative treatments to medication are also an important part of Jenna’s treatment.]]>
@@ -135,6 +136,7 @@
 					
 				</step>
 	
+				<!-- TOUCHSTONE STEP 4 -->
 				<step title="Team Meeting" dimensions="Emotional, Physical" audio="SampleAudio6">
 				
 					<personnel role="Counselor" audio="SampleAudio5"></personnel>

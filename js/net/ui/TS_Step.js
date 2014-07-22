@@ -49,7 +49,7 @@ define(['net/util/Util'], function( Util ){
     	this.personnel = [];
     	$(configData).children("personnel").each(function() {
     	
-    		var p = [$(this).attr('role'), $(this).attr('audio'), $(this).attr('duration'), $(this).attr('feedback_popup')];
+    		var p = [$(this).attr('role'), $(this).attr('audio'), $(this).attr('duration'), $(this).attr('feedback_popup'), $(this).text() ];
     		thisRef.personnel.push(p);
     		
     	});
