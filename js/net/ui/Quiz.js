@@ -53,35 +53,30 @@ define([], function(){
     	
     	$(this.titleDiv).html( this.qa[qIndex][0] );
     	$(this.questionDiv).html( this.qa[qIndex][1] );
+    	
     	$(this.feedbackDiv).html( this.qa[qIndex][2] );
     	this.feedbackText = this.qa[qIndex][2];
+    	
     	$(this.answerDiv).val( 'Type your answer here' );//reset text area to default value
     	$(this.answerDiv).css('color', '#999');
     	$(this.answerDiv).css('background-color', '#fff');
+    	
     	$(this.quizBtn).html("DONE");
     	$(this.quizBtn).removeClass("next");
     	
     	//default feedback to hidden
     	$(this.feedbackDiv).hide();
     	this.feedbackShown = false;
-    	
     	this.curQuestionIndex = qIndex;
     
     }
     
     Quiz.prototype.showFeedback = function( ) {
-    
-    	//assumes feedback text is already set.
-//    	$(this.answerDiv).css('background-color', '#2a645e');
-//    	$(this.answerDiv).css('color', '#fff');
-//    	$(this.answerDiv).val( this.feedbackText );
-    	
+
     	$(this.feedbackDiv).fadeIn('slow');
     	this.feedbackShown = true;
     	$(this.feedbackDiv).css('top', parseInt( $(this.answerDiv).position().top ) + 4 );
-    	
-    	console.log(":: "+ $(this.answerDiv).position().top + ", " + $(this.answerDiv).offset().top);
-    	
+    	    	
     	if ( this.onLastQuestion() == false ) {
     		$(this.quizBtn).html("NEXT");
     		$(this.quizBtn).addClass("next");

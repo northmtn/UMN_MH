@@ -24,11 +24,11 @@
 				<![CDATA[Recovery from mental illness and whole person wellness starts at Touchstone Mental Health where our mission is to “inspire hope, healing and well-being.” We consider each person as a whole; integrating treatment, care and resources which support a healthy mind, body, and spirit. We are a point of reference guiding clients, community members and residents toward recovery and well-being. We encourage each person to define their life goals— ]]>
 			</text>
 			<text id="text_3">
-				<![CDATA[physical, mental, emotional, spiritual, social, vocational and interpersonal – and we provide the tools so people achieve them. In this module you’ll have the chance to learn more about our team approach by engaging in an interactive case story about a [fictitious?] Touchstone resident to meet existing and emerging needs.
-				<br/><br/><b>Please watch the video above and then click</b>]]>
+				<![CDATA[physical, mental, emotional, spiritual, social, vocational and interpersonal – and we provide the tools so people achieve them. In this module you’ll have the chance to learn more about our team approach by engaging in an interactive case story about a typical Touchstone resident.
+				<br/><br/><b>Watch the video and then click 2 on the top bar to continue.</b>]]>
 			</text>
 			
-			<button id="video_1" video="M01_S02V01_D">WATCH AN INTRODUCTORY VIDEO</button>
+			<button id="video_1" video="TMH_S1_V01">WATCH AN INTRODUCTORY VIDEO</button>
 						
 		</view>
 		
@@ -37,17 +37,17 @@
 			
 			<text id="text_1">Jenna's Story</text>
 						
-			<buildings audio="SampleAudio3" duration="6" >
-				<building id="building_1" audio="SampleAudio2" duration="6"><![CDATA[BOARD & LODGE]]></building>
-				<building id="building_2" audio="SampleAudio6" duration="7"><![CDATA[COUNTY HOSPITAL</br>ACUTE PSYCHIATRIC SERVICES (APS)]]></building>
-				<building id="building_3" audio="SampleAudio3" duration="7">CRISIS RESIDENCE</building>
-				<building id="building_4" audio="SampleAudio2" duration="6"><![CDATA[INTENSIVE RESIDENTIAL</br>TREATMENT SERVICES (IRTS)]]></building>
-				<building id="building_2" audio="SampleAudio6" duration="7"><![CDATA[COUNTY HOSPITAL</br>ACUTE PSYCHIATRIC SERVICES (APS)]]></building>
-				<building id="building_5" audio="SampleAudio4" duration="7">SHELTER</building>
-				<building id="building_2" audio="SampleAudio6" duration="7"><![CDATA[COUNTY HOSPITAL</br>ACUTE PSYCHIATRIC SERVICES (APS)]]></building>
-				<building id="building_6" audio="SampleAudio" duration="7">STATE PSYCHIATRIC HOSPITAL</building>
-				<building id="building_4" audio="SampleAudio2" duration="6"><![CDATA[INTENSIVE RESIDENTIAL</br>TREATMENT SERVICES (IRTS)]]></building>
-				<building id="building_7" audio="SampleAudio5" duration="8"><![CDATA[TOUCHSTONE RISING</br>CEDAR APARTMENTS]]></building>
+			<buildings audio="TMH_S02_01" duration="6" >
+				<building id="building_1" audio="TMH_S02_02" duration="6"><![CDATA[BOARD & LODGE]]></building>
+				<building id="building_2" audio="TMH_S02_03" duration="7"><![CDATA[COUNTY HOSPITAL</br>ACUTE PSYCHIATRIC SERVICES (APS)]]></building>
+				<building id="building_3" audio="TMH_S02_04" duration="7">CRISIS RESIDENCE</building>
+				<building id="building_4" audio="TMH_S02_05" duration="6"><![CDATA[INTENSIVE RESIDENTIAL</br>TREATMENT SERVICES (IRTS)]]></building>
+				<building id="building_2" audio="TMH_S02_06" duration="7"><![CDATA[COUNTY HOSPITAL</br>ACUTE PSYCHIATRIC SERVICES (APS)]]></building>
+				<building id="building_5" audio="TMH_S02_07" duration="7">SHELTER</building>
+				<building id="building_2" audio="TMH_S02_08" duration="7"><![CDATA[COUNTY HOSPITAL</br>ACUTE PSYCHIATRIC SERVICES (APS)]]></building>
+				<building id="building_6" audio="TMH_S02_09" duration="7">STATE PSYCHIATRIC HOSPITAL</building>
+				<building id="building_4" audio="TMH_S02_10" duration="6"><![CDATA[INTENSIVE RESIDENTIAL</br>TREATMENT SERVICES (IRTS)]]></building>
+				<building id="building_7" audio="TMH_S02_11" duration="8"><![CDATA[TOUCHSTONE RISING</br>CEDAR APARTMENTS]]></building>
 			</buildings>
 			
 		</view>
@@ -61,21 +61,24 @@
 			<!-- TOUCHSTONE STEPS -->
 			<touchstone_steps>
 				<!-- TOUCHSTONE STEP 1 -->
-				<step title="Arriving at Touchstone" dimensions="Environmental, Social" audio="SampleAudio4">
+				<step title="Arriving at Touchstone" dimensions="Environmental, Social" audio="TMH_S03_ST01_01">
 				
-					<text id="step_description"><![CDATA[Jenna is happy that her case manager found Touchstone for her where there are a number of people who work together to support her with managing her illnesses as well as day-to-day living such as meals and housekeeping. In the first few days of being at Touchstone, each person working with Jenna introduced him or herself. They talked to her about how she is an important member of the Touchstone team and that they are going to work together so that she can maintain her independence and wellness.]]>
+					<text id="step_description" audio="SampleAudio2"><![CDATA[Jenna reports feeling happy that her case manager found Touchstone for her because of the number of people who work together to support her with managing her illnesses and day-to-day living, such as meals, transportation, and housekeeping. In her first few days of being at Touchstone, each person working with Jenna introduced him or herself. They talked to her about how she is at the center of her Touchstone team.]]>
 					</text>
 				
-					<personnel role="Jenna" audio="SampleAudio4" duration="7">This is Jenna's Dialog. Here are the words Jenna says. This is Jenna's Dialog. Here are the words Jenna says.  </personnel>
-					<personnel role="Case Manager" audio="SampleAudio3" duration="4" feedback_popup="Feedback shows after Case Manager audio completes.">Here is the dialog of the Case Manager. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in mauris nibh. Praesent dui magna, auctor quis gravida sed, cursus sit amet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </personnel>
+					<personnel role="Jenna" audio="TMH_S03_ST01_03" duration="7">From my first day at Touchstone I felt safe, partly because people told me who they are and what they do, and made me feel like I am part of the team. Now I have nurses and counselors who help me when I have trouble managing my bipolar symptoms, fibromyalgia, and diabetes on my own. There are even people helping me learn how to live independently. I like to call them “Team Jenna!”  A friend of mine, who also has multiple health problems, wanted to know where Team Jenna works. I told her that they are not from the same clinic. Instead, I signed releases of information so that different providers, clinics, and agencies can communicate with each other and even meet with me together at times. My apartment is beautiful. I’ve never had such a nice place that I can call my own and can keep. I don’t have to go from place to place anymore, because I can do it all here at my new home.</personnel>
+
+					<personnel role="Case Manager" audio="TMH_S03_ST01_04" duration="4">Right now I’m assisting Jenna with maintaining her benefits which includes keeping her health care affordable – and I can help her with general financial planning. I’m also available to help Jenna coordinate care and will make sure she knows that she should keep seeing her primary care provider and psychiatric nurse practitioner. </personnel>
 					
+					<personnel role="Nurse Practitioner" audio="TMH_S03_ST01_05" duration="4" feedback_popup="Feedback shows after Case Manager audio completes.">In my first visit with Jenna, I want to hear her story and learn about her top concerns as far as her health and wellness. Then I can tell her about the options available to address these issues and together we can come up with a plan that will likely include various interventions such as mind-body connection, nutrition, movement, sleep, purpose, spirituality, environment and relationships. I can refer her to other members of the Health and Wellness team like the dietitian, fitness specialist, acupuncturist, health coach or massage therapist. I may also collaborate with her primary care provider as needed and may order some labs, supplements or medications. My focus is not on managing disease for Jenna but rather on optimizing her level of health. </personnel>
+
 					<review>
-						<button id="video_review" video="M01_S02V01_D">HERE'S WHAT I WOULD ASK</button>
+						<button id="video_review" video="TMH_S03_ST01_V01">"TEAM JENNA"</button>
 						<button id="audio_review" audio="SampleAudio2">IN MY ROLE</button>
-						<button id="quiz_review" quiz="quiz_1">WHAT WOULD YOU DO</button>
+						<button id="quiz_review" quiz="step1_in_review">IN REVIEW</button>
 					</review>
 					
-					<quiz id="quiz_1">
+					<quiz id="step1_in_review">
 						<QA title="Question 1" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback."/> 
 						<QA title="Question 2" question="Lorem ipsum this will be question number two of three. What is your answer?" feedback="Lorem ipsum, here is some feedback in response to question two."/> 
 						<QA title="Question 3" question="Q3. What is your answer?" feedback="Lorem ipsum, here is some feedback for question three."/> 
@@ -84,20 +87,24 @@
 				</step>
 				
 				<!-- TOUCHSTONE STEP 2 -->
-				<step title="Receiving a Cancer Diagonosis" dimensions="Physical, Emotional" audio="SampleAudio6">
+				<step title="Receiving a Cancer Diagonosis" dimensions="Physical, Emotional" audio="TMH_S03_ST02_01">
 				
-					<text id="step_description"><![CDATA[Jenna’s skin cancer was caught early and is treatable. But this news has triggered some emotions that are making it difficult for her to cope with the cancer and other responsibilities in her life. She is anxious and becoming more depressed.]]>
+					<text id="step_description" audio="SampleAudio2"><![CDATA[Jenna’s skin cancer was caught early and is treatable. But this news has triggered some emotions that are making it difficult for her to cope with the cancer and other responsibilities in her life. She's anxious and becoming more depressed.]]>
 					</text>
 
-					<personnel role="Jenna" audio="SampleAudio5" duration="8"></personnel>
-					<personnel role="Oncologist" audio="SampleAudio4" duration="3" feedback_popup="This feedback will show after the Oncologist audio completes."></personnel>
-					<personnel role="Nurse" audio="SampleAudio3" duration="7"></personnel>
-					<personnel role="Counselor" audio="SampleAudio2"></personnel>
-					<personnel role="Healing Touch Provider" audio="SampleAudio"></personnel>
+					<personnel role="Jenna" audio="TMH_S03_ST02_03" duration="8">Today I met with an oncologist who told me that the red area on my shoulder is cancer. When I heard that I felt queasy and my insides did a summersault. The doctor said they can take care of it with surgery and it’s pretty routine, nothing to worry about. Nothing to worry about! Surgery sounds like something to worry about. And lots of people act like my fibromyalgia is nothing but it is something, it’s very real. I don’t know…I don’t know if I can handle this. </personnel>
+					
+					<personnel role="Oncologist" audio="TMH_S03_ST02_04" duration="3" feedback_popup="This feedback will show after the Oncologist audio completes.">Of course the word “cancer” is scary, but when I explained to Jenna that her basal cell carcinoma is not life threatening and that we can treat it easily with minor surgery, she still looked stunned. When I mentioned that we should get started on treatment sooner rather than later, she didn’t say much and left rather abruptly. I’ll make a note about her response to the diagnosis and her fear about the surgery in her appointment form which goes back to Touchstone.</personnel>
+
+					<personnel role="Nurse" audio="TMH_S03_ST02_05" duration="7">When I read the oncologist’s note about Jenna’s reaction to learning that she had basal cell carcinoma, I became concerned. In working with Jenna over the past four weeks I’ve learned that her anxiety and depression can become severe pretty quickly when she feels overwhelmed. I called her counselor, Julia, and she said she would contact her right away. Then, I talked to Jenna about seeing a healing touch provider to help her not feel so anxious. She agreed to give it a try and we made the appointment together.</personnel>
+
+					<personnel role="Counselor" audio="TMH_S03_ST02_06" duration="3">Maria, a nurse who has been working with Jenna, mentioned that she was concerned that Jenna might be misperceiving her skin cancer as something more serious or even terminal. But when I met with Jenna, what I learned is that, in the past, she felt like her fibromyalgia pain was often just minimized because of her mental illness diagnosis. When the oncologist was trying to ease her fears about the type of cancer she has, it might have appeared to Jenna that she was downplaying the cancer which triggered some of the feelings she has when people downplay her fibromyalgia – and her fibromyalgia is very real and painful for her.</personnel>
+
+					<personnel role="Healing Touch Provider" audio="TMH_S03_ST02_07" duration="3">I just had my first session with Jenna. I explained the benefits and risks of healing touch and how it can help with her immune system as well as helping her manage the pain of her fibromyalgia. Jenna appreciated how relaxing the treatment was and scheduled a return visit. I will let Jenna’s counselor know that the first session went well and that I recommend she continue with a few more especially as the surgery date gets closer.</personnel>
 					
 					<review>
-						<button id="video_review" video="M01_S02V01_D">COMMENT ON THE COUNSELOR GOALS</button>
-						<button id="video_review" video="M01_S02V01_D">HOW WOULD YOU APPROACH HEALING TOUCH?</button>
+						<button id="video_review" video="TMH_S03_ST02_V01">COUNSELOR GOALS</button>
+						<button id="video_review" video="TMH_S03_ST02_V02">HEALING TOUCH</button>
 						<button id="quiz_review" quiz="step2_in_review">IN REVIEW</button>
 					</review>
 					
@@ -109,23 +116,24 @@
 				</step>
 				
 				<!-- TOUCHSTONE STEP 3 -->
-				<step title="Increasing Depression" dimensions="Emotional, Financial, Physical" audio="SampleAudio4">
+				<step title="Increasing Depression" dimensions="Emotional, Financial, Physical" audio="TMH_S03_ST03_01">
 
-					<text id="step_description"><![CDATA[Jenna’s skin cancer triggered what appears to be a major depressive episode and anxiety symptoms, nearly as bad as one she had in her twenties. Medications are an important aspect to treating Jenna’s mental illness as well as her diabetes, fibromyalgia, and now her cancer. Managing the safety and effectiveness of multiple medications is complicated and good communication among her providers is essential. Alternative treatments to medication are also an important part of Jenna’s treatment.]]>
+					<text id="step_description" audio="SampleAudio2"><![CDATA[Jenna’s skin cancer triggered what appears to be a major depressive episode and anxiety symptoms, nearly as bad as one she had in her twenties. Medications are an important aspect to treating Jenna’s mental illness as well as her diabetes, fibromyalgia, and now her cancer. Managing the safety and effectiveness of multiple medications is complicated and good communication among her providers is essential. Alternative treatments to medication are also an important part of Jenna’s treatment.]]>
 					</text>
 				
-					<personnel role="Case Manager" audio="SampleAudio3" duration="8"></personnel>
-					<personnel role="Nurse" audio="SampleAudio5" duration="3"></personnel>
-					<personnel role="PMH Nurse Practitioner" audio="SampleAudio4" duration="7"></personnel>
-					<personnel role="Pharmacist" audio="SampleAudio3"></personnel>
-					<personnel role="Counselor" audio="SampleAudio4"></personnel>
-					<personnel role="Activities Coordinator" audio="SampleAudio"></personnel>
+					<personnel role="Case Manager" audio="TMH_S03_ST03_03" duration="8">I talked to Jenna’s counselor so I know she’s been working with Jenna on taking small steps toward the things she needs to do to cope with the cancer diagnosis and manage her depressive symptoms. Jenna hasn’t been showing up at her part-time job for the past two weeks and they just fired her. Jenna’s finances are very limited, so today I met with her and she assisted me with calling the county to identify what she can do to stay on MA-EPD, a program for persons on Medical Assistance who have a limited employment-based income.</personnel>
+					<personnel role="Nurse" audio="TMH_S03_ST03_04" duration="3">I reminded Jenna that she needs to schedule her surgery appointment, and she said to me, “I think that can wait, I have so much on my plate right now.”  I explained that putting it off is not a good idea and asked her if she is worried about the procedure itself. She said, “Yes, I’m really scared, and if the cancer isn’t that bad, I don’t see why I have to rush.” I told her that I know it can be scary, but you really need to get through this next step, and I asked her if I can make the appointment for her. She agreed but doesn’t want to know when it will be until the week of so she doesn’t have to worry so long. I told her I’d attend the appointment with her. I’ll share our conversation with Julia, her counselor, and connect with her psych nurse practitioner.</personnel>
+					<personnel role="PMH Nurse Practitioner" audio="TMH_S03_ST03_05" duration="7">Jenna has been a patient of mine for the last couple of years. Maria, her nurse, told me that Jenna was recently diagnosed with cancer and there has been an increase in anxiety and depressive symptoms. Jenna and I will have to work together to manage her symptoms and be sure the medications work for her during this added time of stress. I asked Maria to send me her current list of fibromyalgia and diabetes medications to see if there have been any changes. And before I change any prescriptions, I’ll also connect with a pharmacist to discuss drug interactions.</personnel>
+					<personnel role="Pharmacist" audio="TMH_S03_ST03_06" duration="3">The psych nurse practitioner called me about some changes she’d like to make to Jenna’s current medications. I’m concerned about overwhelming Jenna with a complex medication regimen. I have some recommendations for how we can optimize Jenna’s clinical outcomes, while also simplifying her regimen. I want to make sure that when Jenna goes to fill the prescriptions there are no problems at the pharmacy with dispensing so I’ll work out any insurance requirements (such as prior authorizations) or medical assistance issues in advance. I know that Jenna is interested in using dietary supplements and herbal products. I can work with Jenna and the mental health nurse practitioner to choose agents that are from reputable manufacturers and are also safe to use with her other therapies and conditions. In the end, it’ll be important to empower Jenna by providing her with information about her options, potential risks and benefits, and other resources that might be helpful.</personnel>
+					<personnel role="Counselor" audio="TMH_S03_ST03_07" duration="3">I met with Jenna this morning. Her nurse, Maria, emailed me, so I knew how anxious she was about the surgery. I helped her to understand that avoidance was part of a pattern common in how she relates to others and to important events in her life. Jenna said that every time she thought about the appointment she thought, “I’ll die from the treatment, and maybe I would just be better off dead now.” We talked about how the treatment might involve some pain but will help her stay healthy long term, but she doesn’t seem convinced yet. I reminded Jenna that she’s coped well before, has many supporters on her team, and she can do this!</personnel>
+					<personnel role="Activities Coordinator" audio="TMH_S03_ST03_08" duration="3">This afternoon Jenna and a few of her neighbors participated in a gardening activity that I had planned. Jenna had shared the news about her cancer during the activity and one neighbor made a comment about how Jenna was being over dramatic and unrealistic about her skin cancer. Well, this was hard for Jenna to hear and she began crying. Other neighbors stopped gardening and offered Jenna their support, which appeared to help Jenna feel better. In fact, Jenna planted a flower and named it “hope” and said she will be by to care for and water it daily – which I noted in Jenna’s chart.</personnel>
 
 					<review>
-						<button id="video_review" video="M01_S02V01_D">WHY IS THE GARDENING ACTIVITY SIGNIFICANT?</button>
-						<button id="video_review" video="M01_S02V01_D">AS A COUNSELOR, WHAT WOULD YOU DO?</button>
-						<button id="video_review" video="M01_S02V01_D">HERE'S WHAT I WOULD ASK</button>
-						<button id="quiz_review" quiz="step3_in_review">WHAT WOULD YOU DO</button>
+						<button id="video_review" video="TMH_S03_ST03_V01">JENNA'S FINANCES</button>
+						<button id="video_review" video="TMH_S03_ST03_V02">GARDENING ACTIVITY</button>
+						<button id="video_review" video="TMH_S03_ST03_V03">ASSESSING DEPRESSION</button>
+						<button id="video_review" video="TMH_S03_ST03_V04">JENNA'S APPOINTMENT</button>
+						<button id="quiz_review" quiz="step3_in_review">IN REVIEW</button>
 					</review>
 
 					<quiz id="step3_in_review">
@@ -137,21 +145,54 @@
 				</step>
 	
 				<!-- TOUCHSTONE STEP 4 -->
-				<step title="Team Meeting" dimensions="Emotional, Physical" audio="SampleAudio6">
+				<step title="Team Meeting" dimensions="Emotional, Physical" audio="TMH_S03_ST04_01">
+
+					<text id="step_description" audio="SampleAudio2"><![CDATA[One week after the gardening activity, several members of “Team Jenna” gathered to re-address her upcoming surgery appointment and Jenna’s need for this experience to be as positive as possible. The team also prepared a written care plan that includes the roles, responsibilities, and action items for each member. Jenna reported feeling less depressed after her neighbors offered support. She also said she feels less worried due to using Healing Touch to relax more regularly, and stated that the change in medications was helping too.]]>
+					</text>
 				
-					<personnel role="Counselor" audio="SampleAudio5"></personnel>
-					<personnel role="Activities Coordinator" audio="SampleAudio3"></personnel>
-					<personnel role="Nurse" audio="SampleAudio4"></personnel>
-					<personnel role="Jenna" audio="SampleAudi2"></personnel>
+					<personnel role="Counselor" audio="TMH_S03_ST04_03" duration="3">After learning the specifics about Jenna’s surgery day, I offered to go with her to the appointment. Jenna really liked this idea. In fact, she asked if I could drive her there and back so that she doesn’t get too scared and leave.</personnel>
+					<personnel role="Activities Coordinator" audio="TMH_S03_ST04_04" duration="3">I told Jenna I would make sure that her flower was watered the day she was at her appointment. I know how committed she has been to taking care of it and I wanted her to know that it’s important to me too.</personnel>
+					<personnel role="Nurse" audio="TMH_S03_ST04_05" duration="3">I told Jenna I could help her prepare all of the medical forms and would pack the medications that she needs to bring to the surgery. There are quite a few forms to complete and Jenna seemed relieved that I could help her.</personnel>
+					<personnel role="Jenna" audio="TMH_S03_ST04_06" duration="3">I’m still a little worried about the surgery, but everyone at the meeting was trying hard to take care of my needs so I’m going to try hard too.</personnel>
+
+					<review>
+						<button id="video_review" video="TMH_S03_ST04_V01">CARE TEAM MEETING</button>
+						<button id="video_review" video="TMH_S03_ST04_V02">THE FLOWER</button>
+						<button id="video_review" video="TMH_S03_ST04_V03">ATTENDING THE APPOINTMENT</button>
+						<button id="quiz_review" quiz="step4_in_review">IN REVIEW</button>
+					</review>
+
+					<quiz id="step4_in_review">
+						<QA title="Question 1" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback."/> 
+						<QA title="Question 2" question="Lorem ipsum this will be question number two of three. What is your answer?" feedback="Lorem ipsum, here is some feedback in response to question two."/> 
+						<QA title="Question 3" question="Lorem ipsum this will be question number three of three. What is your answer?" feedback="Lorem ipsum, here is some feedback for question three."/> 
+					</quiz>
 	
 				</step>
+
+				<!-- TOUCHSTONE STEP 5 -->
+				<step title="Living with Multiple Chronic Illnesses" dimensions="Emotional, Occupational, Physical" audio="STMH_S03_ST05_01">
+
+					<text id="step_description" audio="SampleAudio2"><![CDATA[Jenna has done better coping with stress and managing her health and other aspects of her life since having the surgery for her skin cancer. It’s an up and down process and each day is different, but being a part of the team at Touchstone has helped her to heal in many ways and increase her independence.]]>
+					</text>
 				
-				<step title="Living with Multiple Chronic Illnesses" dimensions="Emotional, Occupational, Physical" audio="SampleAudio3">
-				
-					<personnel role="Nurse" audio="SampleAudio" duration="8"></personnel>
-					<personnel role="Fitness Specialist" audio="SampleAudio4" duration="3"></personnel>
-					<personnel role="Occupational Therapist" audio="SampleAudio5" duration="7"></personnel>
-					<personnel role="Counselor" audio="SampleAudio6"></personnel>
+					<personnel role="Nurse" audio="TMH_S03_ST05_03" duration="8">An important aspect of managing diabetes is keeping blood sugar levels stable, and stress can greatly impact those levels. The stress of the cancer news wreaked havoc with Jenna’s blood sugars and made her fibromyalgia pain much worse. It’s important for Jenna to review coping skills that have worked for her in the past to manage stressful situations that come up. I am continuing to work closely with Julia, her counselor, who is helping Jenna to create a coping skills toolbox and add to her options for the future. Of course, exercise also helps to reduce stress, and Jenna will need some guidance on this post surgery. I reached out to our fitness specialist to help her with that. I’ll work with Jenna to help her manage all of her medical conditions on an ongoing basis and will pay close attention to whether she stops taking any medications.</personnel>
+					<personnel role="Fitness Specialist" audio="TMH_S03_ST05_04" duration="3">Jenna told me about her cancer. One of the nurses also shared the oncologist’s note about easing back into exercise after surgery so as not to put pressure on her stitches. Jenna has not exercised regularly in the past, so I decided to use her “down time” after surgery to just talk about a fitness routine and the types of things she likes to do as well as the things that will support her overall health. Getting excited about a fitness routine and making a mental commitment is half the battle. Once her stitches heal, I want her to be excited about starting.</personnel>
+					<personnel role="Occupational Therapist" audio="TMH_S03_ST05_05" duration="7">Jenna has experienced some significant disruptions to her daily schedule and life roles. It’s important for her to take some control of her daily routine and build structure into her days now that she’s not working. This will not only keep her from further spiraling into anxiety, but will also keep her “work ready” for when she is able to return to employment. </personnel>
+					<personnel role="Counselor" audio="TMH_S03_ST05_06" duration="3">I think it’s important for Jenna to stay connected with her peers. Several of her neighbors have continued to be supportive of her and that seems to lift Jenna’s spirits. I also want to see her continue to water and take care of her flower, as well as attend more sessions with our Healing Touch Provider.</personnel>
+
+					<review>
+						<button id="video_review" video="TMH_S03_ST05_V01">JENNA'S MENTAL AND PHYSICAL HEALTH</button>
+						<button id="video_review" video="TMH_S03_ST05_V02">EXERCISE AND DIET</button>
+						<button id="video_review" video="TMH_S03_ST05_V03">RETURNING TO WORK</button>
+						<button id="quiz_review" quiz="step5_in_review">IN REVIEW</button>
+					</review>
+
+					<quiz id="step5_in_review">
+						<QA title="Question 1" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback."/> 
+						<QA title="Question 2" question="Lorem ipsum this will be question number two of three. What is your answer?" feedback="Lorem ipsum, here is some feedback in response to question two."/> 
+						<QA title="Question 3" question="Lorem ipsum this will be question number three of three. What is your answer?" feedback="Lorem ipsum, here is some feedback for question three."/> 
+					</quiz>
 					
 				</step>
 

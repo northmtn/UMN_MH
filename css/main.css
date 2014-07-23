@@ -416,6 +416,8 @@ button.rect-button.prev:before {
 	-webkit-box-shadow: 0 1px 11px 1px rgba(0, 0, 0, 0.2);
 	-moz-box-shadow: 0 1px 11px 1px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 1px 11px 1px rgba(0, 0, 0, 0.2);
+	
+	position: absolute;
 
 }
 
@@ -1093,12 +1095,12 @@ button.rect-button.prev:before {
 
 #screen_touchstone #step_content h1 {
 	position: absolute;
-	left: 385px;
+	left: 360px;
 	top: 75px;
 	color: #FFF;
 	font-weight: 100;
 	font-size: 26px;
-	width: 250px;
+	width: 300px;
 	text-align: center;
 	
 }
@@ -1215,6 +1217,7 @@ button.rect-button.prev:before {
 	height: 280px;
 	
 }
+
 #screen_touchstone #step_content #center_oval .rect-button {
 
 	width: 350px;
@@ -1257,6 +1260,14 @@ button.rect-button.prev:before {
 	font-size: 14px;
 
 }
+
+#screen_touchstone #step_content #center_oval #description {
+
+	overflow-y: scroll;
+	height: 215px;
+
+}
+
 
 
 

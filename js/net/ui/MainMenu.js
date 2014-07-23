@@ -20,6 +20,8 @@ define(['net/ui/Screen', 'net/ui/Navigator', 'net/ui/PhotoStack'], function( Scr
 		var c1 = $( this.containerDiv ).find("#photo_stack_1").first();
 		this.photoStack1 = new PhotoStack( $(c1) );
 		this.photoStack1.setTransitionMode( PhotoStack.MODE_FADE );
+		
+		this.photoStack1.start();
 
 	}
 
@@ -32,6 +34,8 @@ define(['net/ui/Screen', 'net/ui/Navigator', 'net/ui/PhotoStack'], function( Scr
 			//main menu nav
 			var screenId = btnId.substring(5);			
 			Navigator.goToScreen( screenId );
+			
+			this.photoStack1.stop();
 			
 		    return;
 		}
@@ -48,6 +52,7 @@ define(['net/ui/Screen', 'net/ui/Navigator', 'net/ui/PhotoStack'], function( Scr
 	    }
 	        
 	};
+	
 //	
 //	MainMenu.prototype.enable = function() {
 //

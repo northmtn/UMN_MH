@@ -55,14 +55,14 @@ define([], function(){
     }
     
     
-    PhotoStack.prototype.setTransitionMode = function(mode){
+    PhotoStack.prototype.setTransitionMode = function(mode) {
    		
    		this.transitionMode = mode;
     	
     }
     
     
-    PhotoStack.prototype.nextPhoto = function(){
+    PhotoStack.prototype.nextPhoto = function() {
 
 		var bottomPhoto = $(this.containerDiv).children("img").first();
 				

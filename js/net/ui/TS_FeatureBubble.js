@@ -102,6 +102,12 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     			var qSrc = thisRef.currentStep.reviewBtns[index][3];
     			var rFeedback = thisRef.currentStep.reviewBtns[index][4];
     			
+    			//clear previous meta data
+    			$(this).removeAttr( 'data-video' );
+    			$(this).removeAttr( 'data-audio' );
+    			$(this).removeAttr( 'data-quiz' );
+    			$(this).removeAttr( 'data-feedback' );
+    			
     			//add video links
     			if (typeof vSrc !== 'undefined' && vSrc !== false) {
     				$(this).attr('data-video', vSrc);
@@ -117,6 +123,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     			//add Question/Answer link
     			if (typeof qSrc !== 'undefined' && qSrc !== false) {
     				$(this).attr('data-quiz', qSrc);
+    				$(this).attr('id', 'quiz_'+index);
     			}
     			
     			//add optional feedback text. Will trigger leaf/feedback box.
@@ -142,6 +149,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	
     		$(this).removeClass("on");
     		$(this).removeClass("active");
+    		$(this).removeClass('visited');
     		//hide colored photo
     		$(this).find("#portrait_color").hide();
     		$(this).find("#portrait_bw").show();
@@ -149,10 +157,21 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     		$(this).find("#progress_ring").hide();
     	
     	});
+    	
+    	//NP/Oncologist exception: Default to NP displaying unless we find Oncologist as an active role
+    	$(this.containerDiv).find( "#role_NursePractitioner" ).show();
+    	$(this.containerDiv).find( "#role_Oncologist" ).hide();
+    	
     	for (var i = 0; i < this.currentStep.personnel.length; i++) {
     		
     		var roleId = Util.removeSpaces( this.currentStep.personnel[i][0] );
     		var persDiv = $(this.containerDiv).find("#role_" + roleId );
+    		
+    		//Catch NP/Oncologist exception
+    		if (roleId == "Oncologist") {
+    			$(persDiv).show();
+    			$(this.containerDiv).find( "#role_NursePractitioner" ).hide();
+    		}
     		
     		//show colored photo
     		$(persDiv).find("#portrait_color").show();
@@ -200,9 +219,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	var thisRef = event.data.thisRef;
     	
     	$(this).addClass('visited');
-    	
-    	console.log("reviewBtnClicked");
-    	
+    	    	
     	//check for associated feedback
     	var fTxt = $(this).attr('data-feedback');
     	if (typeof fTxt !== 'undefined' && fTxt !== false) {
@@ -305,14 +322,24 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	var sndDelay = personnelData[2];
     	var thisRef = this;
     	
-    	//start audio
+    	//Start audio
     	Media.playTakeoverSound( sndId );
     	
-    	//wait for end of audio. 
-    	if (sndDelay == 'undefined' || sndDelay == null || sndDelay == undefined) sndDelay = 5; //default to 5 secs.
+    	//Visually activate portrait
+    	this.startPortraitProgressRing( sndDelay );
+    	this.startActivePortrait( "#9dbbc5", true );
     	
+    	//Hide review if already showing
+    	$(thisRef.containerDiv).find("#center_oval #step_description_container").show();   
+    	$(thisRef.containerDiv).find("#center_oval #review_container").hide();    
+    	
+    	//Wait for end of audio. 
+    	if (sndDelay == 'undefined' || sndDelay == null || sndDelay == undefined) sndDelay = 5; //default to 5 secs.
+    	var clickedIndex = this.curPersonnelIndex;
     	//Things that happen AFTER end of sound. Can be interrupted.
-    	TweenLite.delayedCall(sndDelay, function() {
+    	TweenLite.delayedCall(sndDelay, function(clickedIndex, thisRef) {
+    	
+    		if (clickedIndex != thisRef.curPersonnelIndex) return; // If this portrait is no longer the active one, exit delayed call.
     	
     		//drop leaf if there is feedback associated
     		var fTxt = personnelData[3];
@@ -321,39 +348,52 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     			thisRef.triggerAwaitingFeedback();
     		}
     		
-    		if (thisRef.personnelOrderInterrupted == false) {
-    		
-    			if (thisRef.curPersonnelIndex < thisRef.numActivePersonnel-1) {
+			if ( thisRef.allActivePersonnelClicked() == false ) {
+			
+    			//call out next personnel
+    			thisRef.callOutNextPersonnel();
+
+    		} else {
     			
-	    			//call out next personnel
-	    			thisRef.callOutNextPersonnel();
-	
-	    		} else {
-	    			//was last personnel to call out. 
-	    			thisRef.killCurrentActivePersonnel();
-	    			
-	    			//show review media/quiz
-	    			$(thisRef.containerDiv).find("#center_oval #step_description_container").hide();   
-	    			$(thisRef.containerDiv).find("#center_oval #review_container").show();    
-	    			
-	    			Tips.showById("page_3_show_review");
-	    					
-	    		}
-	    		
+    			//was last personnel to call out. 
+    			thisRef.killCurrentActivePersonnel();
+    			
+    			//kill speech bubble
+    			thisRef.killSpeechBubble();
+    			
+    			//show review media/quiz
+    			$(thisRef.containerDiv).find("#center_oval #step_description_container").hide();   
+    			$(thisRef.containerDiv).find("#center_oval #review_container").show();    
+    			
+    			Tips.showById("page_3_show_review");
+    					
     		}
+	    		
+    	}, [clickedIndex, thisRef]);
 
-    	});
-
-    	this.startPortraitProgressRing( sndDelay );
-    	this.startActivePortrait( "#9dbbc5", true );
-            
     };
+    
+    TS_FeatureBubble.prototype.allActivePersonnelClicked = function( ) {
+    	
+    	var numClicked = parseInt($(this.containerDiv).find("#step_content .personnel.visited").length);
+    	    	
+    	if ( numClicked < this.numActivePersonnel ) {
+    	
+    		return false;
+    		
+    	} else {
+    	
+    		return true;
+    		
+    	}
+    	
+    }
     
     TS_FeatureBubble.prototype.startPortraitProgressRing = function( sndDelay ) {
     
     	//stop current progress ring if any
     	TweenLite.killTweensOf(this);
-    	
+
     	var thisRef = this;
     	
     	//track audio to fill in portrait ring
@@ -362,6 +402,11 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
 
     	var cRadius = 54;
     	var cStroke = 9;
+    	//exception if Jenna
+    	if ($(this.curPersonnelDiv).attr("id") == "role_Jenna" ) {
+			//Exit, don't draw ring
+			return;
+    	}
     	
     	$(this.curPersonnelDiv).find("#progress_ring").show(); //show progress ring
     	var c = $(this.curPersonnelDiv).find("#progress_ring").first();
@@ -372,12 +417,14 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	ctx.strokeStyle = "#2a645e";//"#4d8b85";
     	ctx.lineWidth = cStroke;
     	ctx.webkitImageSmoothingEnabled=true;
-    	
-    	
+
     	this.curProgressRingTween = TweenLite.to( this, this.curAudioDuration, { curAudioProgress: 1,  ease:Linear.easeNone, onUpdate: 
     		function(){
     			
-    			var num = 1 - thisRef.curAudioProgress;    			
+    			var num = 1 - thisRef.curAudioProgress;    
+    			
+    			console.log("draw ring: " + num + " - " + thisRef.curPersonnelDiv.attr('id') );	
+    					
     			if (num<0.01)num=0.001;
     			if (num>0.99)num=1.0;
     			
@@ -422,8 +469,11 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     TS_FeatureBubble.prototype.startActivePortrait = function( glowColor, isSpeaking ) {
     	
     	if ( this.curPersonnelDiv ) {
-    		
+
     		if (isSpeaking == true) {
+    		
+    			//Mark this div as visited until reset
+    			$(this.curPersonnelDiv).addClass('visited');
     		    		
     			//Make portrait 'wobble' as it talks
     			TweenMax.set( $(this.curPersonnelDiv).find(".circle-portrait img"), { css: { rotation:-3 } } ); 
@@ -455,6 +505,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     					tR = -90;
     				break;
     				case 'role_Oncologist':
+    				case 'role_NursePractitioner':
     					tX += 125;
     					tY -= 5;
     					tR = -115;
@@ -500,24 +551,32 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     			TweenMax.set( $(tri), { css: { left:tX, top:tY, rotation:tR } } ); 
     			
     			//Populate speech text
-    			var speechTitle = this.currentStep.personnel[ this.curPersonnelIndex ][0] + ":";
+    			var speechTitle = this.currentStep.personnel[ this.curPersonnelIndex ][0] + "";
     			var speechTxt = this.currentStep.personnel[ this.curPersonnelIndex ][4];
-    			$(this.containerDiv).find("#center_oval #step_title").html( speechTitle );
+    			$(this.containerDiv).find("#center_oval #step_title").html( speechTitle.toUpperCase() );
     			$(this.containerDiv).find("#center_oval #description").html( speechTxt );
     			    		
     		} else {
-    			
-    			//Hide speech bubble
-    			$(this.containerDiv).find("#speech_tri").hide();
-    			$(this.containerDiv).find("#speech_bubble").hide();
-    			
-    			//Reset center oval text
-    			$(this.containerDiv).find("#center_oval #step_title").html( this.currentStep.descriptionTitle );
-    			$(this.containerDiv).find("#center_oval #description").html( this.currentStep.descriptionContent );
-    			
+    		
+    			/*
+    			this.killSpeechBubble();
+				*/
+				
     		}
     		
     	}
+    	
+    }
+    
+    TS_FeatureBubble.prototype.killSpeechBubble = function( ) {
+    
+    	//Hide speech bubble
+    	$(this.containerDiv).find("#speech_tri").hide();
+    	$(this.containerDiv).find("#speech_bubble").hide();
+    	
+    	//Reset center oval text
+    	$(this.containerDiv).find("#center_oval #step_title").html( this.currentStep.descriptionTitle );
+    	$(this.containerDiv).find("#center_oval #description").html( this.currentStep.descriptionContent );
     	
     }
     
@@ -528,11 +587,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     		TweenMax.killTweensOf( $(this.curPersonnelDiv).find(".circle-portrait img") );
     		TweenMax.set( $(this.curPersonnelDiv).find(".circle-portrait img"), { boxShadow:"0px 0px 0px 0px #e5c694" });
     		$(this.curPersonnelDiv).removeClass("active");
-    		
-    		//Hide speech bubble
-    		$(this.containerDiv).find("#speech_tri").hide();
-    		$(this.containerDiv).find("#speech_bubble").hide();
-    		
+
     	}
     }
 
