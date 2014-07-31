@@ -77,8 +77,8 @@ define(['net/data/AppData', 'net/ui/Tips', 'net/media/Media'], function(AppData,
 		//show bubble callout
 		TweenLite.set( $(this.calloutDiv), { css: { opacity:0 } } ); // on
 		var cLeft = $(bDiv).position().left;
-		cLeft += ($(bDiv).children("#bw").width()/2);
-		cLeft -= ( $(this.calloutDiv).width()/2);
+		cLeft += ($(bDiv).children("#bw").width()/2 );
+		cLeft -= ( $(this.calloutDiv).width()/2 );
 		$(this.calloutDiv).css('left', cLeft );
 		$(this.calloutDiv).css('top', $(bDiv).position().top - 145);
 		$(this.calloutDiv).children("#callout_txt").html(this.curBuilding[3]);
@@ -91,17 +91,21 @@ define(['net/data/AppData', 'net/ui/Tips', 'net/media/Media'], function(AppData,
     TS_BuildingSequence.prototype.playBuilding = function( bId ) {
     	
     	//only allow currently active building to be played
-    	if (bId == this.curBuilding[0]){
+    	if (bId == this.curBuilding[0] && $(this.containerDiv).find("#"+this.curBuilding[0]).hasClass("activated") == true ){
+    	
+    		var bDiv = $(this.containerDiv).find("#"+this.curBuilding[0]);
     	
     		//Last building
 			if (this.curBuildingIndex == this.buildings.length-1) {
 			    
-			    var bDiv = $(this.containerDiv).find("#"+this.curBuilding[0]);
 	    		TweenLite.to( $(bDiv).children("#bw"), 1, { css: { opacity:0 }, delay:0.25,  ease:Power2.easeIn } ); // FADE OUT
 	    		TweenLite.set( $(bDiv).children("#color"), { css: { opacity:0 } } ); // on
 	    		TweenLite.to( $(bDiv).children("#color"), 1, { css: { opacity:1 },  ease:Power2.easeOut } ); // FADE IN
 	
 	    	}
+	    	
+	    	//deactivate
+	    	$(bDiv).removeClass("activated");
 	    
 	    	var sndId = this.curBuilding[1];
 	    	var sndDelay = this.curBuilding[2];	    	

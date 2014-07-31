@@ -73,7 +73,7 @@ define([], function(){
     
     Quiz.prototype.showFeedback = function( ) {
 
-    	$(this.feedbackDiv).fadeIn('slow');
+    	$(this.feedbackDiv).fadeIn('fast');
     	this.feedbackShown = true;
     	$(this.feedbackDiv).css('top', parseInt( $(this.answerDiv).position().top ) + 4 );
     	    	

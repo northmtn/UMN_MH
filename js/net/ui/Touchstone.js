@@ -167,7 +167,7 @@ define(["libs/pace.min",
     	if (btnId.substring(0, 6) == "video_") {
     	    	
     		var vidId = btnRef.attr('data-video');
-    		Media.launchVideo(vidId);
+    		Media.launchVideo(vidId, true);
     		    		    		
     	    return;
     	    
@@ -221,15 +221,6 @@ define(["libs/pace.min",
 	
 	    //other btns...
 	    switch (btnId) {
-	    	case "center_leaf": // temp
-
-//	    		if (TS_Feedback.leafDropped == false) {
-//	    			TS_Feedback.dropLeaf();
-//	    		} else {
-//	    			TS_Feedback.resetLeaf();
-//	    		}
-	    		
-			break;
 			case "leaf_feedback_box":
 				if (TS_Feedback.feedbackShowing == true) {
 					TS_Feedback.closeAndReset();

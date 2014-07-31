@@ -104,12 +104,17 @@ define(['libs/media/mediaelement-and-player.min', 'libs/soundmanager2/soundmanag
 		soundManager.setup({
 			 url: 'js/libs/soundmanager2/',
 			 // ignore Flash where possible, use 100% HTML5 mode
-			 preferFlash: false,
+			 preferFlash: true,
+//			 useHTML5Audio: true,
 			 onready: function() {
 			   // Ready to use; soundManager.createSound() etc. can now be called.
 			   console.log("soundManager ready...");
 			  	
-			 }
+			 },
+			defaultOptions: {
+				// set global default volume for all sound objects
+				volume: 55
+			}
 		});
 		
 	}

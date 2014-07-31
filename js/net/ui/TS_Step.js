@@ -29,6 +29,7 @@ define(['net/util/Util'], function( Util ){
     	//INNER OVAL CONTENT
     	this.descriptionTitle = (this.title).toUpperCase();
     	this.descriptionContent = $(configData).find('#step_description').first().text();
+    	this.descriptionSoundId = $(configData).find('#step_description').first().attr('audio');
     	
     	//INNER OVAL REVIEW
     	this.reviewBtns = [];

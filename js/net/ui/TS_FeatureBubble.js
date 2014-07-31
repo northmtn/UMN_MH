@@ -201,6 +201,9 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
   			
     	}
 
+		//Play step intro description sound
+		Media.playTakeoverSound( this.currentStep.descriptionSoundId );
+		
 		this.transIn();
 		
 		//Show delayed scale up of active portraits, to draw attention
@@ -211,7 +214,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
 		TweenLite.delayedCall(2.5, function() { 
 			thisRef.callOutNextPersonnel();
 		});
-    	
+
     }
     
     TS_FeatureBubble.prototype.reviewBtnClicked = function( event ) {
@@ -400,8 +403,12 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	this.curAudioDuration = sndDelay;
     	this.curAudioProgress = 0.0;
 
+//    	var cRadius = 54;
+//    	var cStroke = 9;
+    	
     	var cRadius = 54;
-    	var cStroke = 9;
+    	var cStroke = 15;
+    	
     	//exception if Jenna
     	if ($(this.curPersonnelDiv).attr("id") == "role_Jenna" ) {
 			//Exit, don't draw ring
@@ -414,16 +421,24 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	
     	ctx.clearRect ( 0 , 0 , (cRadius+cStroke)*2, (cRadius+cStroke)*2 );
     	
-    	ctx.strokeStyle = "#2a645e";//"#4d8b85";
+    	ctx.strokeStyle = "#DDD";
     	ctx.lineWidth = cStroke;
     	ctx.webkitImageSmoothingEnabled=true;
+    	
+    	//draw full ring first
+    	var num = 0.001; 
+    	ctx.beginPath();
+    	ctx.arc(cRadius+cStroke, cRadius+cStroke, cRadius, 0+(1.5*Math.PI),(2*num*Math.PI)+(1.5*Math.PI),true);
+    	ctx.stroke();
+    	
+    	ctx.strokeStyle = "#2a645e";
 
     	this.curProgressRingTween = TweenLite.to( this, this.curAudioDuration, { curAudioProgress: 1,  ease:Linear.easeNone, onUpdate: 
     		function(){
     			
     			var num = 1 - thisRef.curAudioProgress;    
     			
-    			console.log("draw ring: " + num + " - " + thisRef.curPersonnelDiv.attr('id') );	
+//    			console.log("draw ring: " + num + " - " + thisRef.curPersonnelDiv.attr('id') );	
     					
     			if (num<0.01)num=0.001;
     			if (num>0.99)num=1.0;

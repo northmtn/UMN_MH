@@ -15,6 +15,7 @@ define([], function(){
     	this.videoFolder = $(this.configXML).find('setting[id=videoFolder]').attr('value');
     	this.videoExtension = $(this.configXML).find('setting[id=videoExtension]').attr('value');
     	this.developerMode = ($(this.configXML).find('setting[id=developerMode]').attr('value') == "true");
+    	this.resourcesURL = $(this.configXML).find('setting[id=resourcesURL]').attr('value');
     	
     	this.isiOS = false;
     	//TODO - do check on browser for ios
