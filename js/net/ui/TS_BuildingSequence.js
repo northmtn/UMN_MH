@@ -59,7 +59,7 @@ define(['net/data/AppData', 'net/ui/Tips', 'net/media/Media'], function(AppData,
     
     TS_BuildingSequence.prototype.startIntro = function() {
 		
-		this.timedAudio(this.intro[1], this.intro[2]);
+		this.timedAudio( this.intro[1], this.intro[2] );
 
     }
     
@@ -76,12 +76,14 @@ define(['net/data/AppData', 'net/ui/Tips', 'net/media/Media'], function(AppData,
 		
 		//show bubble callout
 		TweenLite.set( $(this.calloutDiv), { css: { opacity:0 } } ); // on
-		var cLeft = $(bDiv).position().left;
-		cLeft += ($(bDiv).children("#bw").width()/2 );
-		cLeft -= ( $(this.calloutDiv).width()/2 );
-		$(this.calloutDiv).css('left', cLeft );
-		$(this.calloutDiv).css('top', $(bDiv).position().top - 145);
+		
 		$(this.calloutDiv).children("#callout_txt").html(this.curBuilding[3]);
+		var txtHeight = parseInt( $(this.calloutDiv).children("#callout_txt").height() );
+		
+		var cLeft = $(bDiv).position().left + ($(bDiv).children("#bw").width()/2 ) - ( $(this.calloutDiv).width()/2 );
+		$(this.calloutDiv).css('left', cLeft );
+		$(this.calloutDiv).css('top', $(bDiv).position().top - (txtHeight/2) - 160);
+		
 		TweenLite.to( $(this.calloutDiv), 0.75, { css: { opacity:1 }, delay:1, ease:Power2.easeOut } ); // FADE IN
     	
     	//Wait for this activated building to be clicked ...

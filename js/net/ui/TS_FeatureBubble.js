@@ -71,10 +71,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	this.numActivePersonnel = 0;
     	this.reviewCompleted = false;
     	this.personnelOrderInterrupted = false;
-    			
-    	//Setup display based on step config
-    	//TODO - bubble color
-    	
+
     	//title
     	$(this.containerDiv).find("#step_feature_title").html( this.currentStep.dimensionsTitle );
     	
@@ -150,6 +147,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     		$(this).removeClass("on");
     		$(this).removeClass("active");
     		$(this).removeClass('visited');
+    		$(this).removeClass('highlight');
     		//hide colored photo
     		$(this).find("#portrait_color").hide();
     		$(this).find("#portrait_bw").show();
@@ -182,11 +180,13 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
   			this.numActivePersonnel ++;
   			
   			//Active personnel can be clicked at anytime
-  			$(persDiv).off();
-  			$(persDiv).on("click", function(event) {
+  			$(persDiv).find("#hit").off();
+  			$(persDiv).find("#hit").on("click", function(event) {
 
-  				var indexClicked  = thisRef.currentStep.getPersonnelIndexById( $(this).attr('id') );
-  				  				
+  				var indexClicked  = thisRef.currentStep.getPersonnelIndexById( $(this).parent().attr('id') );
+  				
+  				console.log("indexClicked "+indexClicked);  				
+  				
   				if ( indexClicked != thisRef.curPersonnelIndex ) {
   				
   					 thisRef.personnelOrderInterrupted = true;
@@ -198,8 +198,19 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
   			    thisRef.personnelClicked( thisRef.currentStep.personnel[ thisRef.curPersonnelIndex ] );
   			    
   			});
+  			//Circular rollovers
+  			$(persDiv).find("#hit").on( {
+				mouseenter: function() {
+					$( this ).parent().addClass( "highlight" );
+				}, mouseleave: function() {
+					$( this ).parent().removeClass( "highlight" );
+				}
+  			});
   			
     	}
+    	
+    	//Ensure speech bubble is disabled
+    	this.killSpeechBubble();
 
 		//Play step intro description sound
 		Media.playTakeoverSound( this.currentStep.descriptionSoundId );
@@ -403,16 +414,14 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	this.curAudioDuration = sndDelay;
     	this.curAudioProgress = 0.0;
 
-//    	var cRadius = 54;
-//    	var cStroke = 9;
-    	
     	var cRadius = 54;
     	var cStroke = 15;
     	
     	//exception if Jenna
     	if ($(this.curPersonnelDiv).attr("id") == "role_Jenna" ) {
-			//Exit, don't draw ring
-			return;
+			//Draw larger ring
+			cRadius = 84;
+			cStroke = 15;
     	}
     	
     	$(this.curPersonnelDiv).find("#progress_ring").show(); //show progress ring
@@ -437,16 +446,13 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     		function(){
     			
     			var num = 1 - thisRef.curAudioProgress;    
-    			
-//    			console.log("draw ring: " + num + " - " + thisRef.curPersonnelDiv.attr('id') );	
-    					
+    			    					
     			if (num<0.01)num=0.001;
     			if (num>0.99)num=1.0;
     			
     			ctx.beginPath();
     			ctx.arc(cRadius+cStroke, cRadius+cStroke, cRadius, 0+(1.5*Math.PI),(2*num*Math.PI)+(1.5*Math.PI),true);
     			ctx.stroke();
-    			
     			
     		} 
     	});  
@@ -460,6 +466,9 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     		TweenLite.to( $(this.curPersonnelDiv), 0.5, { css: { scale:1, zIndex:0 },  ease:Power2.easeOut } );
     		TweenMax.killTweensOf( $(this.curPersonnelDiv).find(".circle-portrait img") );
     		
+    		//Hide progress ring
+    		$(this.curPersonnelDiv).find("#progress_ring").hide();
+    		
     		this.killActiveGlow();
     		this.curPersonnelDiv = null;
     		
@@ -471,7 +480,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	if (doFullScale){
     		//Initial scale up to draw attention
     		var portraitImg = $(portraitDiv).find(".circle-portrait img");
-    		TweenLite.set( $(portraitImg), { boxShadow:"0px 0px 0px 0px rgba(0,0,0,0.2)", zIndex:1 });
+    		TweenLite.set( $(portraitImg), { boxShadow:"0px 0px 0px 0px rgba(0,0,0,0.2)" });
     		TweenMax.to( $(portraitImg), 0.3, { css: { boxShadow:"0px 3px 10px 3px rgba(0,0,0,0.7)" }, delay:0.05,  ease:Power2.easeOut } );
     		TweenMax.from( $(portraitImg), 1.5, { css: { scale:1.05, boxShadow:"0px 0px 0px 0px rgba(0,0,0,0.2)" },  ease:Elastic.easeOut, repeatDelay:1, repeat:99 } );    	
     	} else {

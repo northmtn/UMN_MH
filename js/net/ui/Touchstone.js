@@ -111,9 +111,7 @@ define(["libs/pace.min",
 		
 		viewCollection.gotoView(navIndex);
 		timelineNav.refreshDisplays();
-		
-		console.log("cheers", viewCollection.currentViewIndex);
-		
+		Media.killSounds(); //Don't allow sounds to bleed into next view.		
 		
 		if ( viewCollection.currentViewIndex == 0 ) {
 			

@@ -1,4 +1,4 @@
-define(['libs/media/mediaelement-and-player.min', 'libs/soundmanager2/soundmanager2', 'net/data/AppData'], function(me, sm, AppData){
+define([ 'net/data/AppData', 'libs/media/mediaelement-and-player.min', 'libs/soundmanager2/soundmanager2'], function(AppData){
 
 
 	function Media(){
@@ -30,7 +30,7 @@ define(['libs/media/mediaelement-and-player.min', 'libs/soundmanager2/soundmanag
 											    // specify to force MediaElement to use a particular video or audio type
 											    type: '',
 											    // path to Flash and Silverlight plugins
-											    pluginPath: '/js/libs/media/',
+											    pluginPath: '../js/libs/media/',
 											    // name of flash file
 											    flashName: 'flashmediaelement.swf',
 											    // name of silverlight file
@@ -41,6 +41,7 @@ define(['libs/media/mediaelement-and-player.min', 'libs/soundmanager2/soundmanag
 											    defaultVideoHeight: 360
 											    
 										    });
+		
 										    
 		//Listen to global close button
 		var thisRef = this;
@@ -100,23 +101,20 @@ define(['libs/media/mediaelement-and-player.min', 'libs/soundmanager2/soundmanag
 	/* --(SoundManager2)--- */
 	
 	Media.setupSoundManager = function() {
-		
+	
 		soundManager.setup({
-			 url: 'js/libs/soundmanager2/',
-			 // ignore Flash where possible, use 100% HTML5 mode
-			 preferFlash: true,
-//			 useHTML5Audio: true,
-			 onready: function() {
-			   // Ready to use; soundManager.createSound() etc. can now be called.
-			   console.log("soundManager ready...");
-			  	
-			 },
+			url: 'js/libs/soundmanager2/swf/',
+			flashVersion: 9, // optional: shiny features (default = 8)
+			onready: function() {
+				// Ready to use; soundManager.createSound() etc. can now be called.
+				console.log("Sound Manager ready...");
+			},
 			defaultOptions: {
 				// set global default volume for all sound objects
 				volume: 55
 			}
 		});
-		
+	
 	}
 	
 	Media.playSound = function( sndId ) {
@@ -161,16 +159,15 @@ define(['libs/media/mediaelement-and-player.min', 'libs/soundmanager2/soundmanag
 			soundManager.createSound( {
 				
 				id: sndId,
-				url: AppData.audioFolder + sndId + AppData.audioExtension,
+//				url: AppData.audioFolder + sndId + AppData.audioExtension,
+				
+				url: [AppData.audioFolder + sndId + '.ogg', AppData.audioFolder + sndId + '.mp3'],
 				
 				onload: function(bSuccess) {
 				    if (!bSuccess){
 						 out("ERROR: Sound does not exist at "+AppData.audioFolder + '' + sndId + '' + AppData.audioExtension);
 					}
-				},
-				
-				//Callback when sound has loaded
-//				onfinish:callbackFunc
+				}
 				
 			});
 	

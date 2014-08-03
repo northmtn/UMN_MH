@@ -34,7 +34,7 @@ require(['libs/pace.min', 'net/data/AppData', 'net/media/Media', 'net/ui/Navigat
         	AppData.updateSettings(xml);
         	Media.setupPlayers();
         	initialize();
-        	autoSize();
+//        	autoSize();
 			
         },
         error: function (jqXHR, textStatus, errorThrown) {

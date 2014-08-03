@@ -4,7 +4,7 @@ define([], function(){
     
 		this.containerDiv = containerDiv; 
 				
-		this.speed = 7;
+		this.speed = 3.75;
 		this.maxRotation = 20;
 		this.xSpread = 20;
 		this.ySpread = 120;

@@ -31,27 +31,21 @@
 			<img id="clouds" src="img/touchstone/continuum_bg_clouds.png" data-role="graphic" ></img>
 			<div id="buildings" data-role="container">
 				<div id="building_1" data-role="button">
-					<!--<img id="color" src="img/touchstone/continuum_building_1_color.png" />-->
 					<img id="bw" src="img/touchstone/continuum_building_1_bw.png" />
 				</div>
 				<div id="building_2" data-role="button">
-					<!--<img id="color" src="img/touchstone/continuum_building_2_color.png" />-->
 					<img id="bw" src="img/touchstone/continuum_building_2_bw.png" />
 				</div>
 				<div id="building_3" data-role="button">
-					<!--<img id="color" src="img/touchstone/continuum_building_3_color.png" />-->
 					<img id="bw" src="img/touchstone/continuum_building_3_bw.png" />
 				</div>
 				<div id="building_4" data-role="button">
-					<!--<img id="color" src="img/touchstone/continuum_building_4_color.png" />-->
 					<img id="bw" src="img/touchstone/continuum_building_4_bw.png" />
 				</div>
 				<div id="building_5" data-role="button">
-					<!--<img id="color" src="img/touchstone/continuum_building_5_color.png" />-->
 					<img id="bw" src="img/touchstone/continuum_building_5_bw.png" />
 				</div>
 				<div id="building_6" data-role="button">
-					<!--<img id="color" src="img/touchstone/continuum_building_6_color.png" />-->
 					<img id="bw" src="img/touchstone/continuum_building_6_bw.png" />
 				</div>
 				<div id="building_7" data-role="button">
@@ -64,8 +58,7 @@
 				</div>
 			</div>
 			<div id="intro_message" data-role="container">
-				<h2 id="text_1">X</h2>
-				<!--<button id="continuum_start" data-role="button" class="rect-button">START</button>-->
+				<h2 id="text_1">Jenna's Story</h2>
 			</div>
 			
 			
@@ -153,6 +146,7 @@
 								<img id="portrait_color" src="img/touchstone/portrait_CaseManager.png" />
 							</div>
 							<p><span>Case Mgr</span></p>
+							<div id="hit"></div>
 						</div>
 						<div id="role_Nurse" class="personnel portrait-label row2 col2">
 							<canvas id="progress_ring" class="canvas-ring"></canvas>
@@ -161,6 +155,7 @@
 								<img id="portrait_color" src="img/touchstone/portrait_Nurse.png" />
 							</div>
 							<p><span>Nurse</span></p>
+							<div id="hit"></div>
 						</div>
 						<div id="role_Counselor" class="personnel portrait-label row3 col1">
 							<canvas id="progress_ring" class="canvas-ring"></canvas>
@@ -169,6 +164,7 @@
 								<img id="portrait_color" src="img/touchstone/portrait_Counselor.png" />
 							</div>
 							<p><span>Counselor</span></p>
+							<div id="hit"></div>
 						</div>
 						<div id="role_Oncologist" class="personnel portrait-label row4 col2">
 							<canvas id="progress_ring" class="canvas-ring"></canvas>
@@ -177,6 +173,7 @@
 								<img id="portrait_color" src="img/touchstone/portrait_Oncologist.png" />
 							</div>
 							<p><span>Oncologist</span></p>
+							<div id="hit"></div>
 						</div>
 						<div id="role_NursePractitioner" class="personnel portrait-label row4 col2">
 							<canvas id="progress_ring" class="canvas-ring"></canvas>
@@ -185,6 +182,7 @@
 								<img id="portrait_color" src="img/touchstone/portrait_NursePractitioner.png" />
 							</div>
 							<p><span>NP</span></p>
+							<div id="hit"></div>
 						</div>
 						<div id="role_HealingTouchProvider" class="personnel portrait-label row5 col3">
 							<canvas id="progress_ring" class="canvas-ring"></canvas>
@@ -193,6 +191,7 @@
 								<img id="portrait_color" src="img/touchstone/portrait_HealingTouchProvider.png" />
 							</div>
 							<p><span>Healing Touch</span></p>
+							<div id="hit"></div>
 						</div>
 						<!-- Right Side -->
 						<div id="role_OccupationalTherapist" class="personnel portrait-label row1 col4">
@@ -203,6 +202,7 @@
 								<img id="portrait_color" src="img/touchstone/portrait_OccupationalTherapist.png" />
 							</div>
 							<p><span>OT</span></p>
+							<div id="hit"></div>
 						</div>
 						<div id="role_Pharmacist" class="personnel portrait-label row2 col5">
 							<canvas id="progress_ring" class="canvas-ring"></canvas>
@@ -211,6 +211,7 @@
 								<img id="portrait_color" src="img/touchstone/portrait_Pharmacist.png" />
 							</div>
 							<p><span>Pharmacist</span></p>
+							<div id="hit"></div>
 						</div>
 						<div id="role_FitnessSpecialist" class="personnel portrait-label row3 col6">
 							<canvas id="progress_ring" class="canvas-ring"></canvas>
@@ -219,6 +220,7 @@
 								<img id="portrait_color" src="img/touchstone/portrait_FitnessSpecialist.png" />
 							</div>
 							<p><span>Fitness</span></p>
+							<div id="hit"></div>
 						</div>
 						<div id="role_PMHNursePractitioner" class="personnel portrait-label row4 col5">
 							<canvas id="progress_ring" class="canvas-ring"></canvas>
@@ -227,6 +229,7 @@
 								<img id="portrait_color" src="img/touchstone/portrait_PMHNursePractitioner.png" />
 							</div>
 							<p><span>PMH NP</span></p>
+							<div id="hit"></div>
 						</div>
 						<div id="role_ActivitiesCoordinator" class="personnel portrait-label row5 col4">
 							<canvas id="progress_ring" class="canvas-ring"></canvas>
@@ -235,18 +238,20 @@
 								<img id="portrait_color" src="img/touchstone/portrait_ActivitiesCoordinator.png" />
 							</div>
 							<p><span>Activities</span></p>
+							<div id="hit"></div>
 						</div>
 						<div id="role_Jenna" class="personnel portrait-label on active">
-							<canvas id="progress_ring" class="canvas-ring"></canvas>
+							<canvas id="progress_ring" class="canvas-ring" width="200" height="200"></canvas>
 							<div class="circle-portrait">
 								<img id="portrait_bw" src="img/touchstone/portrait_Jenna.png" />
 								<img id="portrait_color" src="img/touchstone/portrait_Jenna.png" />
 							</div>
 							<p><span>Jenna</span></p>
+							<div id="hit"></div>
 						</div>
 					</div>
 					<h1 id="step_feature_title" data-role="label">X</h1>
-					<div id="btn_feature_close" class="circle-text" data-role="button"><div>X</div></div>
+					<div id="btn_feature_close" class="circle-text" data-role="button"><div></div></div>
 				</div>
 			</div>
 
