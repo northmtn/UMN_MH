@@ -103,7 +103,7 @@ define([ 'net/data/AppData', 'libs/media/mediaelement-and-player.min', 'libs/sou
 	Media.setupSoundManager = function() {
 	
 		soundManager.setup({
-			url: 'js/libs/soundmanager2/swf/',
+			url: '/js/libs/soundmanager2/swf/',
 			flashVersion: 9, // optional: shiny features (default = 8)
 			onready: function() {
 				// Ready to use; soundManager.createSound() etc. can now be called.
