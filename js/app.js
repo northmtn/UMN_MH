@@ -16,7 +16,7 @@ require.config({
 });
 
 
-require(['libs/pace.min', 'net/data/AppData', 'net/media/Media', 'net/ui/Navigator', 'net/ui/MainMenu', 'net/ui/Touchstone', 'jquery'], function( pace, AppData, Media, Navigator, MainMenu, Touchstone ) {
+require(['jquery', 'libs/pace.min', 'net/data/AppData', 'net/media/Media', 'net/ui/Navigator', 'net/ui/MainMenu', 'net/ui/Touchstone'], function( $, pace, AppData, Media, Navigator, MainMenu, Touchstone ) {
 
 	/*--------------*/
 	/* Initial Load */
@@ -35,6 +35,7 @@ require(['libs/pace.min', 'net/data/AppData', 'net/media/Media', 'net/ui/Navigat
         	Media.setupPlayers();
         	initialize();
 //        	autoSize();
+			
 			
         },
         error: function (jqXHR, textStatus, errorThrown) {

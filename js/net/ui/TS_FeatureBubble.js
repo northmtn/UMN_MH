@@ -73,7 +73,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	this.personnelOrderInterrupted = false;
 
     	//title
-    	$(this.containerDiv).find("#step_feature_title").html( this.currentStep.dimensionsTitle );
+    	$(this.containerDiv).find("#step_feature_title").html( this.currentStep.title );
     	
     	//center oval content
     	$(this.containerDiv).find("#center_oval #step_title").html( this.currentStep.descriptionTitle );

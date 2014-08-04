@@ -1,4 +1,4 @@
-define([ 'net/data/AppData', 'libs/media/mediaelement-and-player.min', 'libs/soundmanager2/soundmanager2'], function(AppData){
+define([ 'net/data/AppData', 'libs/media/mediaelement-and-player', 'libs/soundmanager2/soundmanager2'], function(AppData){
 
 
 	function Media(){
@@ -30,7 +30,7 @@ define([ 'net/data/AppData', 'libs/media/mediaelement-and-player.min', 'libs/sou
 											    // specify to force MediaElement to use a particular video or audio type
 											    type: '',
 											    // path to Flash and Silverlight plugins
-											    pluginPath: '../js/libs/media/',
+											    pluginPath: '/js/libs/media/',
 											    // name of flash file
 											    flashName: 'flashmediaelement.swf',
 											    // name of silverlight file
@@ -127,7 +127,7 @@ define([ 'net/data/AppData', 'libs/media/mediaelement-and-player.min', 'libs/sou
 		
 				s = soundManager.createSound({
 					id: sndId,
-					url: AppData.audioFolder + '' + sndId + '' + AppData.audioExtension,
+					url: [AppData.audioFolder + sndId + '.ogg', AppData.audioFolder + sndId + '.mp3'],
 					
 					onload: function(bSuccess) {
 					    if (!bSuccess) out("ERROR: Sound does not exist at "+ AppData.audioFolder + '' + sndId + '' + AppData.audioExtension );
@@ -158,9 +158,7 @@ define([ 'net/data/AppData', 'libs/media/mediaelement-and-player.min', 'libs/sou
 	
 			soundManager.createSound( {
 				
-				id: sndId,
-//				url: AppData.audioFolder + sndId + AppData.audioExtension,
-				
+				id: sndId,				
 				url: [AppData.audioFolder + sndId + '.ogg', AppData.audioFolder + sndId + '.mp3'],
 				
 				onload: function(bSuccess) {
