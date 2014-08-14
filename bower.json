@@ -1,0 +1,16 @@
+{
+
+  "name": "umn_mental_health",
+
+  "dependencies": {
+
+    "gsap": 			"latest",
+    "soundmanager2": 	"latest",
+    "mediaelement": 	"latest",
+    "jquery": 			"latest",
+    "requirejs": 		"latest",
+    "pace": 			"latest"
+
+  }
+
+}

@@ -17,7 +17,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Noto+Serif:300,400,500,600,700,100italic,400italic,700italic' rel='stylesheet' type='text/css'>
 
-    <script src="js/require.js" data-main="js/app.js"></script>
+    <script src="js/libs/requirejs/require.js" data-main="js/app.js"></script>
     
          
 </head>
@@ -60,19 +60,21 @@
     			
     		</div>
    		</div>
-   		
+   		<!------------------------>
    		<!-- INTEGRATIVE MODULE -->
+   		<!------------------------>
    		<div id="screen_integrative" class="fullbleed" data-role="container" style="display: none;">
    		</div>
-   		
+   		<!----------------------->
    		<!-- TOUCHSTONE MODULE -->
+   		<!----------------------->
    		<div id="screen_touchstone" class="fullbleed" data-role="container" style="display: none;">
    		
    			<div id="views_container" data-role="container">
    			</div>
    			
    			<!-- Footer bar -->
-   			<div id="footer_bar" class="fullbleed" data-role="container">
+   			<div id="footer_bar" class="fullbleed footer-bar" data-role="container">
    				<div id="btn_quit_program" data-role="button">
    					<h3>QUIT PROGRAM</h3>
    				</div>
@@ -86,9 +88,9 @@
    			</div>
 			
 			<!-- Header bar -->
-			<div id="header_bar" class="fullbleed" data-role="container">
+			<div id="header_bar" class="fullbleed header-bar" data-role="container">
 			
-				<div id="touchstone_tip" data-role="button" style="display: none;" class="tooltips" >
+				<div id="tips_container" data-role="button" style="display: none;" class="tooltips" >
 					<span><p id="tip_content">Tips and instructions will go here.</p><h2 id="tip_title">TOUCHSTONE INSTRUCTIONS</h2>
 						<h3 id="closex" data-role="label">X</h3>
 					</span>
@@ -111,10 +113,43 @@
    			</div>
    			
    		</div>
-   		
+   		<!------------------->
    		<!-- WILDER MODULE -->
+   		<!------------------->
    		<div id="screen_wilder" class="fullbleed" data-role="container" style="display: none;">
-   		
+   			<div id="views_container" data-role="container">
+			</div>
+			
+			<!-- Footer bar -->
+			<div id="footer_bar" class="fullbleed footer-bar" data-role="container">
+				<div id="btn_quit_program" data-role="button">
+					<h3>QUIT PROGRAM</h3>
+				</div>
+			</div>
+
+			<!-- Header bar -->
+			<div id="header_bar" class="fullbleed header-bar" data-role="container">
+			
+				<div id="tips_container" data-role="button" style="display: none;" class="tooltips" >
+					<span><p id="tip_content">Tips and instructions will go here.</p><h2 id="tip_title">WILDER INSTRUCTIONS</h2>
+						<h3 id="closex" data-role="label">X</h3>
+					</span>
+				</div>
+				<div id="bar_background" data-role="container">
+					<img id="header_bg_img" data-role="graphic" src="img/wilder/nav_header_bg.png"/>
+				</div>
+				<h2 id="header_title" data-role="label">THE AMHERST H. WILDER FOUNDATION</h2>
+					<div id="timeline_nav">
+						 <div id="navIcon_0" class="circle-text" data-role="button"><div>1</div></div>
+						 <div id="navIcon_1" class="circle-text" data-role="button"><div>2</div></div>
+						 <div id="navIcon_2" class="circle-text" data-role="button"><div>3</div></div>
+					</div>
+					<div id="goto_mainmenu" data-role="button"><h3 class="pill-text">MAIN MENU</h3></div>
+					<div id="btn_resources" data-role="button"><h3 class="pill-text" >RESOURCES</h3></div>
+					<div id="btn_tips"><div id="btn_tips_inner" class="circle-text" data-role="button" data-nav="3"><div>?</div></div></div>
+				
+			</div>
+	
    		</div>
    		
    		<!-- VIDEO PLAYER OVERLAY -->
@@ -124,7 +159,7 @@
    			
    			<div id="player_container" class="soft-shadow" width="640" height="360" data-role="container">
    				<video id="global_player" src="content/video/TMH_S01_V01.mp4" width="640" height="360"></video>
-   				<h3 id="video_title" data-role="label">Touchstone Mental Health</h3>
+   				<h3 id="video_title" data-role="label">Wilder Foundation</h3>
    				<h3 id="player_close" data-role="button">CLOSE <span> X</span></h3>
    			</div>
    			

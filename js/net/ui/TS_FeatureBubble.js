@@ -1,4 +1,4 @@
-define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips', 'net/media/Media', 'net/ui/Quiz'], function(AppData, Util, TS_Step, TS_Feedback, Tips, Media, Quiz){
+define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedback', 'net/ui/Tips', 'net/media/Media', 'net/ui/Quiz', 'net/ui/ProgressRing'], function(AppData, Util, TS_Step, TS_Feedback, Tips, Media, Quiz, ProgressRing){
 
 
     function TS_FeatureBubble( containerDiv ){
@@ -16,9 +16,9 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
  		this.reviewCompleted = false;
  		
  		this.waitingFeedback = null;
- 		this.curAudioDuration = 0;
- 		this.curAudioProgress = 0;
- 		this.curProgressRingTween = {};
+ 		
+ 		//Set colors for progress ring
+ 		ProgressRing.setup(54, 15,"#DDD", "#2a645e");
 
     }
     
@@ -208,7 +208,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
   			});
   			
     	}
-    	
+
     	//Ensure speech bubble is disabled
     	this.killSpeechBubble();
 
@@ -405,57 +405,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     
     TS_FeatureBubble.prototype.startPortraitProgressRing = function( sndDelay ) {
     
-    	//stop current progress ring if any
-    	TweenLite.killTweensOf(this);
-
-    	var thisRef = this;
-    	
-    	//track audio to fill in portrait ring
-    	this.curAudioDuration = sndDelay;
-    	this.curAudioProgress = 0.0;
-
-    	var cRadius = 54;
-    	var cStroke = 15;
-    	
-    	//exception if Jenna
-    	if ($(this.curPersonnelDiv).attr("id") == "role_Jenna" ) {
-			//Draw larger ring
-			cRadius = 84;
-			cStroke = 15;
-    	}
-    	
-    	$(this.curPersonnelDiv).find("#progress_ring").show(); //show progress ring
-    	var c = $(this.curPersonnelDiv).find("#progress_ring").first();
-    	var ctx = $(c)[0].getContext('2d');
-    	
-    	ctx.clearRect ( 0 , 0 , (cRadius+cStroke)*2, (cRadius+cStroke)*2 );
-    	
-    	ctx.strokeStyle = "#DDD";
-    	ctx.lineWidth = cStroke;
-    	ctx.webkitImageSmoothingEnabled=true;
-    	
-    	//draw full ring first
-    	var num = 0.001; 
-    	ctx.beginPath();
-    	ctx.arc(cRadius+cStroke, cRadius+cStroke, cRadius, 0+(1.5*Math.PI),(2*num*Math.PI)+(1.5*Math.PI),true);
-    	ctx.stroke();
-    	
-    	ctx.strokeStyle = "#2a645e";
-
-    	this.curProgressRingTween = TweenLite.to( this, this.curAudioDuration, { curAudioProgress: 1,  ease:Linear.easeNone, onUpdate: 
-    		function(){
-    			
-    			var num = 1 - thisRef.curAudioProgress;    
-    			    					
-    			if (num<0.01)num=0.001;
-    			if (num>0.99)num=1.0;
-    			
-    			ctx.beginPath();
-    			ctx.arc(cRadius+cStroke, cRadius+cStroke, cRadius, 0+(1.5*Math.PI),(2*num*Math.PI)+(1.5*Math.PI),true);
-    			ctx.stroke();
-    			
-    		} 
-    	});  
+    	ProgressRing.startProgress( sndDelay, this.curPersonnelDiv );
     	
     }
 

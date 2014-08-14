@@ -1,4 +1,4 @@
-define([ 'net/data/AppData', 'libs/media/mediaelement-and-player', 'libs/soundmanager2/soundmanager2'], function(AppData){
+define([ 'net/data/AppData', 'libs/mediaelement/build/mediaelement-and-player', 'libs/soundmanager2/script/soundmanager2'], function(AppData){
 
 
 	function Media(){
@@ -30,7 +30,7 @@ define([ 'net/data/AppData', 'libs/media/mediaelement-and-player', 'libs/soundma
 											    // specify to force MediaElement to use a particular video or audio type
 											    type: '',
 											    // path to Flash and Silverlight plugins
-											    pluginPath: '/js/libs/media/',
+											    pluginPath: 'js/libs/mediaelement/build/',
 											    // name of flash file
 											    flashName: 'flashmediaelement.swf',
 											    // name of silverlight file
@@ -103,7 +103,7 @@ define([ 'net/data/AppData', 'libs/media/mediaelement-and-player', 'libs/soundma
 	Media.setupSoundManager = function() {
 	
 		soundManager.setup({
-			url: '/js/libs/soundmanager2/swf/',
+			url: '/js/libs/soundmanager2/script/swf/',
 			flashVersion: 9, // optional: shiny features (default = 8)
 			onready: function() {
 				// Ready to use; soundManager.createSound() etc. can now be called.

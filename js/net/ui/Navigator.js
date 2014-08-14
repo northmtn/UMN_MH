@@ -1,4 +1,4 @@
-define(['libs/pace.min'], function(pace){
+define(['libs/pace/pace.min'], function(pace){
 
 
     function Navigator(){
@@ -28,6 +28,8 @@ define(['libs/pace.min'], function(pace){
 			});
 		}
 		
+		console.log("gotoscreen: "+screenContainerId);
+		
 		pace.restart(); // show load bar
 		
 		switch (screenContainerId) {
@@ -35,10 +37,10 @@ define(['libs/pace.min'], function(pace){
 			case 'mainmenu':
 				this.currentScreen = this.screens[0];
 			break;
-			case 'touchstone':
+			case 'integrative':
 				this.currentScreen = this.screens[1];
 			break;
-			case 'integrative':
+			case 'touchstone':
 				this.currentScreen = this.screens[2];
 			break;
 			case 'wilder':
@@ -52,7 +54,6 @@ define(['libs/pace.min'], function(pace){
 		
 		//IF this screen (module) has not already been initialized, do so now. Otherwise just reset and show.
 		this.currentScreen.init();
-			
 					
     }
     

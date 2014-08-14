@@ -1,4 +1,4 @@
-define(["libs/pace.min", 
+define(["libs/pace/pace.min", 
 		"net/data/AppData",
 		"net/media/Media", 
 		"net/ui/Screen", 
@@ -52,7 +52,7 @@ define(["libs/pace.min",
 		viewCollection = new ViewCollection( $(c), "trustone_views");
 		
 		//Setup tips
-		Tips.setContainerDiv("#screen_touchstone #touchstone_tip");
+		Tips.setContainerDiv("#screen_touchstone #tips_container");
 		
 		//Setup feedback
 		TS_Feedback.setup();
@@ -73,7 +73,7 @@ define(["libs/pace.min",
 		viewCollection.addView( new View( $(c), "view_1", "touchstone_1") ); // ( containerDiv, contentId, templateId )
 		viewCollection.addView( new View( $(c), "view_2", "view_2", this.view2Setup ) );
 		viewCollection.addView( new View( $(c), "view_3", "view_3", this.view3Setup ) );
-		viewCollection.addView( new View( $(c), "view_4", "touchstone_1") );
+		viewCollection.addView( new View( $(c), "view_4", "touchstone_4") );
 		
 		timelineNav = new TimelineNav( $("#screen_touchstone  #timeline_nav").first(), viewCollection);
 
@@ -231,7 +231,7 @@ define(["libs/pace.min",
 			break;
 			case "btn_tips":
 			case "btn_tips_inner":
-			case "touchstone_tip":
+			case "tips_container":
 				Tips.toggle();
 			break;
 			case "btn_resources":
