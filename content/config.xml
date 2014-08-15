@@ -283,7 +283,10 @@
 		<!-- Screen 2 -->
 		<view id="view_2" title="Story">
 			
-			<text id="text_1">Jason's Story</text>
+			<text id="text_1"><![CDATA[Jason's Life & Community]]></text>
+			
+			<text id="story_intro"><![CDATA[<b>Jason is a 7-year-old boy referred to Wilder because teachers would like him evaluated for ADHD.</b> Jason has all of the “classic” signs of ADHD. He can’t seem to sit still, finds it hard to concentrate, becomes aggressive with other kids, on occasion hits his teachers, and has a hard time when he changes classrooms, for example, going from recess to science, from science to reading, and so on.]]></text>
+			
 						
 			
 			
