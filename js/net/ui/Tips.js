@@ -17,8 +17,7 @@ define(['net/data/AppData'], function(AppData){
     Tips.lookup = function( tipId ) {
     	    	
     	//Search tip configs for to retrieve tip text.
-    	//TODO - should probably narrow search to only tips under current module's config
-    	var t = $(AppData.configXML).find("tips tip[id='"+tipId+"']").first();
+    	var t = $(AppData.configXML).find("module[id='"+AppData.currentModuleId+"'] tips tip[id='"+tipId+"']").first();
     	
     	var tText = $(t).text();
     	var tDelay = $(t).attr('delay');

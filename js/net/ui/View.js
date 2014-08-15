@@ -18,7 +18,7 @@ define(['net/data/AppData'], function(AppData){
     View.prototype.initWithTemplate = function() {
     
     	//Find content info for this view
-    	var contentConfig = $(AppData.configXML).find('#'+this.contentId).first(); // TODO - search specific to module?
+    	var contentConfig = $(AppData.configXML).find('module[id="'+AppData.currentModuleId+'"] #'+this.contentId).first(); // searches specific to module.
     		
     	var viewRef = this;
     	var wrapperId = "wrapper_"+this.contentId;
@@ -92,7 +92,7 @@ define(['net/data/AppData'], function(AppData){
     		//target corresponding element in template html
     		$(templateDiv).find("#"+imgId).attr('src', imgSrc); // TODO - should check for delayed img loading?
     		$(templateDiv).find("#"+imgId).attr('delay', delay);
-    		$(templateDiv).find("#"+imgId).css('display', 'block');
+//    		$(templateDiv).find("#"+imgId).css('display', 'block'); // why were we doing this?
     	
     	}
     	

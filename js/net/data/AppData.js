@@ -22,6 +22,12 @@ define([], function(){
     	
     };
     
+    AppData.setCurrentModule = function(moduleId){
+    
+    	this.currentModuleId = moduleId;
+    	
+    };
+    
     AppData.quitProgram = function() {
     	
     	//Do any saving or user warnings, then exit program.

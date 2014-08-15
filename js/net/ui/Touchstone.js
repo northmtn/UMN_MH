@@ -70,10 +70,10 @@ define(["libs/pace/pace.min",
 			
 		});
 		
-		viewCollection.addView( new View( $(c), "view_1", "touchstone_1") ); // ( containerDiv, contentId, templateId )
-		viewCollection.addView( new View( $(c), "view_2", "view_2", this.view2Setup ) );
-		viewCollection.addView( new View( $(c), "view_3", "view_3", this.view3Setup ) );
-		viewCollection.addView( new View( $(c), "view_4", "touchstone_4") );
+		viewCollection.addView( new View( $(c), "view_1", "two_column_intro") ); // ( containerDiv, contentId, templateId )
+		viewCollection.addView( new View( $(c), "view_2", "touchstone_buildings", this.view2Setup ) );
+		viewCollection.addView( new View( $(c), "view_3", "touchstone_steps", this.view3Setup ) );
+		viewCollection.addView( new View( $(c), "view_4", "two_column_conclusion") );
 		
 		timelineNav = new TimelineNav( $("#screen_touchstone  #timeline_nav").first(), viewCollection);
 

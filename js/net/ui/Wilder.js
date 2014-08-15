@@ -36,11 +36,11 @@ define(["libs/pace/pace.min",
 	Wilder.prototype.setup = function() {
 	
 		//setup View Collection
-		var c = $("#screen_Wilder #views_container");
+		var c = $("#screen_wilder #views_container");
 		viewCollection = new ViewCollection( $(c), "wilder_views");
 		
 		//Setup tips
-		Tips.setContainerDiv("#screen_Wilder #tips_container");
+		Tips.setContainerDiv("#screen_wilder #tips_container");
 
 		//First time view collection is loaded, default to view 1
 		var thisRef = this;
@@ -51,15 +51,15 @@ define(["libs/pace/pace.min",
 			timelineNav.refreshDisplays();
 			thisRef.refreshButtonListeners();
 			
-			Tips.showById("Wilder_entered");
+			Tips.showById("wilder_entered");
 			
 		});
 		
-		viewCollection.addView( new View( $(c), "view_1", "view_1", this.view1Setup) ); 
-		viewCollection.addView( new View( $(c), "view_2", "view_2", this.view2Setup ) );
-		viewCollection.addView( new View( $(c), "view_3", "view_3", this.view3Setup ) );
+		viewCollection.addView( new View( $(c), "view_1", "two_column_intro", this.view1Setup) ); 
+		viewCollection.addView( new View( $(c), "view_2", "wilder_circle", this.view2Setup ) );
+		viewCollection.addView( new View( $(c), "view_3", "two_column_conclusion", this.view3Setup ) );
 		
-		timelineNav = new TimelineNav( $("#screen_Wilder  #timeline_nav").first(), viewCollection);
+		timelineNav = new TimelineNav( $("#screen_wilder  #timeline_nav").first(), viewCollection);
 
 	}
 	

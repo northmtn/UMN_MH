@@ -1,4 +1,4 @@
-define(['libs/pace/pace.min'], function(pace){
+define(['libs/pace/pace.min', 'net/data/AppData'], function(pace, AppData){
 
 
     function Navigator(){
@@ -27,9 +27,7 @@ define(['libs/pace/pace.min'], function(pace){
 				$(this).hide();
 			});
 		}
-		
-		console.log("gotoscreen: "+screenContainerId);
-		
+				
 		pace.restart(); // show load bar
 		
 		switch (screenContainerId) {
@@ -48,6 +46,9 @@ define(['libs/pace/pace.min'], function(pace){
 			break;
 		  	
 		}
+		
+		//update app data
+		AppData.setCurrentModule(screenContainerId);
 		
 		//show new screen
 		$(this.currentScreen.containerDiv).show();
