@@ -273,38 +273,105 @@
 
 		<!-- WILDER VIEW 2 -->
 		<div id="wilder_circle" class="wilder_circle" data-role="container">
-			<img id="bg" src="img/touchstone/continuum_bg.png" class="fullbleed" data-role="background" ></img>
-			<img id="clouds" src="img/touchstone/continuum_bg_clouds.png" data-role="graphic" ></img>
-			<div id="buildings" data-role="container">
-				<div id="building_1" data-role="button">
-					<img id="bw" src="img/touchstone/continuum_building_1_bw.png" />
+			<img id="bg" src="img/wilder/wheel_bg_tile.png" class="fullbleed" data-role="background" ></img>
+			<img id="wheel" src="img/wilder/buildings_wheel.png" data-role="graphic" ></img>
+			<div id="inner_wheel_container" data-role="container">
+				<!-- intro -->
+				<div id="intro" data-role="container">
+					<div class="circle-portrait">
+						<img id="portrait_jason" src="img/touchstone/portrait_Jason.png" />
+					</div>
+					<p id="story_intro">X</p>
+					<button id="intro_btn_start" data-role="button" class="rect-button">START</button><br/>
 				</div>
-				<div id="building_2" data-role="button">
-					<img id="bw" src="img/touchstone/continuum_building_2_bw.png" />
+				<!-- people -->
+				<div id="people" data-role="container" style="display: none;">
+					<div id="person_SocialWorker" class="personnel portrait-label row2 col1">
+						<canvas id="progress_ring" class="canvas-ring"></canvas>
+						<div class="circle-portrait">
+							<img id="portrait_color" src="img/wilder/portrait_SocialWorker.png" />
+						</div>
+						<p><span>Mr. Lee Social Worker</span></p>
+						<div id="hit"></div>
+					</div>
+					<div id="person_Jason" class="personnel portrait-label row1 col2">
+						<canvas id="progress_ring" class="canvas-ring"></canvas>
+						<div class="circle-portrait">
+							<img id="portrait_color" src="img/wilder/portrait_Jason.png" />
+						</div>
+						<p><span>Jason</span></p>
+						<div id="hit"></div>
+					</div>
+					<div id="person_X" class="personnel portrait-label row2 col3">
+						<canvas id="progress_ring" class="canvas-ring"></canvas>
+						<div class="circle-portrait">
+							<img id="portrait_color" src="img/wilder/portrait_SocialWorker.png" />
+						</div>
+						<p><span>Mr. X</span></p>
+						<div id="hit"></div>
+					</div>
+					<div id="person_Mom" class="personnel portrait-label row1 col4">
+						<canvas id="progress_ring" class="canvas-ring"></canvas>
+						<div class="circle-portrait">
+							<img id="portrait_color" src="img/wilder/portrait_Mom.png" />
+						</div>
+						<p><span>Jason's Mom</span></p>
+						<div id="hit"></div>
+					</div>
+					<div id="person_Teacher" class="personnel portrait-label row2 col5">
+						<canvas id="progress_ring" class="canvas-ring"></canvas>
+						<div class="circle-portrait">
+							<img id="portrait_color" src="img/wilder/portrait_Teacher.png" />
+						</div>
+						<p><span>Miss Wilson Teacher</span></p>
+						<div id="hit"></div>
+					</div>
+					<button id="people_btn_next" data-role="button" class="rect-button">NEXT</button><br/>
+					<!-- person feature -->
+					<div id="person_feature" data-role="container">
+						<p id="person_feature_dialog">X</p>
+						<button id="person_feature_btn_back" data-role="button" class="rect-button">BACK</button><br/>
+					</div>
 				</div>
-				<div id="building_3" data-role="button">
-					<img id="bw" src="img/touchstone/continuum_building_3_bw.png" />
+				<!-- review -->
+				<div id="review" data-role="container" style="display: none;">
+					<!-- btn list -->
+					<div id="review_list" data-role="container">
+						<div class="circle-portrait">
+							<img id="portrait_jason" src="img/touchstone/portrait_Jason.png" />
+						</div>
+						<button id="review_btn_1" data-role="button" class="rect-button">REVIEW BTN ONE</button><br/>
+						<button id="review_btn_2" data-role="button" class="rect-button">REVIEW BTN TWO</button><br/>
+						<button id="review_btn_3" data-role="button" class="rect-button">REVIEW BTN THREE</button><br/>
+						<button id="review_btn_4" data-role="button" class="rect-button">REVIEW BTN FOUR</button><br/>
+						<div id="review_footer_btns" data-role="container">
+							<button id="review_btn_back" data-role="button" class="foot-btn left">BACK</button>
+							<button id="review_btn_next" data-role="button" class="foot-btn right">NEXT</button>
+						</div>
+					</div>
+					<!-- QA -->
+					<div id="question_answer_container" class="quiz-container" style="display: none;">
+						<h3 id="question_title">QUESTION 1</h3>
+						<p id="question_text">Lorem Ipsum. What is your answer to this question?</p>
+						<textarea id="answer_area" value="Type your answer here"  onfocus="if(this.value=='Type your answer here') {this.value='', this.style.color='#333'};" onblur="if(this.value=='') {this.value='Type your answer here', this.style.color='#999';}"></textarea>
+						<p id="feedback_text" class="feedback_text">x+x+x</p>
+						<div id="review_footer_btns" data-role="container">
+							<button id="review_QA_btn_back" data-role="button" class="foot-btn left">BACK</button>
+						</div>
+					</div>
+					<!-- text block -->
+					<div id="review_text" style="display: none;" >
+						<h3 id="title">Text Headiline</h3>
+						<p id="main">Lorem Ipsum. Here is a block of text</p>
+						<div id="review_footer_btns" data-role="container">
+							<button id="review_text_btn_back" data-role="button" class="foot-btn left">BACK</button>
+						</div>
+					</div>
 				</div>
-				<div id="building_4" data-role="button">
-					<img id="bw" src="img/touchstone/continuum_building_4_bw.png" />
-				</div>
-				<div id="building_5" data-role="button">
-					<img id="bw" src="img/touchstone/continuum_building_5_bw.png" />
-				</div>
-				<div id="building_6" data-role="button">
-					<img id="bw" src="img/touchstone/continuum_building_6_bw.png" />
-				</div>
-				<div id="building_7" data-role="button">
-					<img id="color" src="img/touchstone/continuum_building_7_color.png" />
-					<img id="bw" src="img/touchstone/continuum_building_7_bw.png" />
-				</div>
-				<div id="callout" data-role="container">
-					<h3 id="callout_txt">BUILDING NAME</h3>
-					<img id="line" src="img/touchstone/callout_line.png" />
-				</div>
+				
 			</div>
 			<div id="intro_message" data-role="container">
-				<h2 id="text_1">Jenna's Story</h2>
+				<h2 id="text_1">Jason's School</h2>
 			</div>
 			
 			

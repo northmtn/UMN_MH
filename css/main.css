@@ -1387,7 +1387,12 @@ button.rect-button.prev:before {
 #screen_wilder .footer-bar #btn_quit_program:hover h3 {
 	color: #f3eeda;
 }
-
+#screen_wilder .header-bar #tips_container.tooltips span:after {
+  border-bottom: 12px solid #d29773;
+}
+#screen_wilder .header-bar #tips_container h2 {
+	background: #d29773;
+}
 /* Buttons */
 #screen_wilder button.rect-button {
 	-moz-box-shadow:inset 0px 0px 0px 1px #fff;
@@ -1401,7 +1406,6 @@ button.rect-button.prev:before {
 #screen_wilder button.rect-button:hover {
 	background-color:#ab511b;
 }
-
 /* Fonts */
 #screen_wilder h2,
 #screen_wilder p {
@@ -1409,16 +1413,25 @@ button.rect-button.prev:before {
 	color: #043b41;
 
 }
+/* Screens */
 #screen_wilder .single_centered_col .two-col p {
 	
 	color: #043b41;
 	
 }
-
-
 #screen_wilder .single_centered_col .two-col {
 	
 	height: 290px;
+	
+}
+#screen_wilder #intro_message {
+
+	left: 66px;
+	top: 70px;
+	width: 500px;
+	background-image: url("../img/wilder/headline_bg.png");
+	background-repeat: no-repeat;
+	background-position:50px 24px; 
 	
 }
 

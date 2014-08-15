@@ -142,6 +142,9 @@ define(["libs/pace/pace.min",
 			case "tips_container":
 				Tips.toggle();
 			break;
+			case "intro_btn_start":
+				TweenMax.to( $(this.containerDiv).find("#wheel"), 0.75, { css: { rotation:"+=90" },  ease:Power1.easeInOut } );
+			break;
 			case "btn_resources":
 				//TODO - Go to resources page?
 			break;

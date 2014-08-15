@@ -251,7 +251,7 @@
 			<tip id="page_3_personnel" delay="0" duration="12">Click each active photo.</tip>
 			<tip id="page_3_show_review" delay="0" duration="6">Click each blue button.</tip>
 			<tip id="page_3_close_review" delay="0" duration="6">Click brown "X" to select another step.</tip>
-			<tip id="touchstone_end" delay="2" duration="6">Watch the video, then click MAIN MENU to select another module.</tip>
+			<tip id="touchstone_end" delay="2" duration="6">Click MAIN MENU to select another module.</tip>
 		</tips>
 		
 	</module>
@@ -310,7 +310,12 @@
 		<!-- Wilder Tips -->
 		<tips>
 			<tip id="wilder_entered" delay="2" duration="6">Watch the video, then click "2" on top bar to continue.</tip>
-			<tip id="wilder_end" delay="2" duration="6">Watch the video, then click MAIN MENU to select another module.</tip>
+			<tip id="wilder_page_2_intro_complete" delay="0" duration="6">Click START to begin the activity.</tip>
+			<tip id="wilder_new_building" delay="0" duration="6">Click on each person.</tip>
+			<tip id="wilder_last_person_completed" delay="0" duration="6">Click on NEXT.</tip>
+			<tip id="wilder_review_start" delay="0" duration="6">Click each orange button. When you are finished, click NEXT.</tip>
+			<tip id="wilder_review_complete" delay="0" duration="6">Click "3" on top bar to continue.</tip>
+			<tip id="wilder_end" delay="2" duration="6">Click Main Menu to select another module.</tip>
 		</tips>
 	</module>
 
