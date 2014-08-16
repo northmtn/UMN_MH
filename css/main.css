@@ -1145,10 +1145,6 @@ button.rect-button.prev:before {
 #screen_touchstone #step_content .personnel.active #hit {
 	cursor: pointer;
 }
-#screen_touchstone #step_content .personnel.active:hover img {
-	/*background-color:#ccc;
-	border-color: #fff;*/
-}
 #screen_touchstone #step_content .personnel.active.highlight img  {
 	background-color:#ccc;
 	border-color: #fff;
@@ -1343,7 +1339,7 @@ button.rect-button.prev:before {
 
 /* Wrapper Styling (header/nav/footer) */
 #screen_wilder .header-bar #header_title {
-	color: #f3eeda;	
+	color: #fff;	
 }
 #screen_wilder .header-bar #timeline_nav {
 	left: 613px;
@@ -1454,14 +1450,134 @@ button.rect-button.prev:before {
 	font-weight: 200;
 	margin-top: 5px;
 	margin-bottom: 20px;
+	
 }
-#screen_wilder .portrait-label .circle-portrait img {
+#screen_wilder .circle-portrait img {
 
 	background-color:#ab511b;
 	border:3px solid #ab511b;
 
 }
+#screen_wilder .personnel p {
+	width: 200px;
+}
+#screen_wilder .personnel p span {
+	top: -24px;
+	font-size: 11px;
+	font-weight: 300;
+	padding: 2px 9px 3px 9px;
+	background-color: #ab511b;
+}
+
+#screen_wilder #inner_wheel_container #people {
+	position: absolute;
+}
+#screen_wilder #inner_wheel_container #personnel_layer {
+	left: -38px;
+}
 #screen_wilder #inner_wheel_container button.rect-button {
 	width: 350px;
+}
+#screen_wilder #people #person_feature_dialog {
+	top:  94px;
+	position: absolute;
+	width: 350px;
+}
+
+
+
+#screen_wilder .personnel {
+	position: absolute;
+}
+#screen_wilder .personnel #hit {
+	display:block;
+	width:112px;
+	height:171px;
+	top:0px;
+	left:29px;
+	position: absolute;
+	border-radius:56px;
+	background:rgba(0,44,0,0);
+}
+#screen_wilder #people .personnel #hit {
+	cursor: pointer;
+}
+#screen_wilder #inner_wheel_container #people .row1 {
+	top: 45px;
+}
+#screen_wilder #inner_wheel_container #people .row2 {
+	top: 171px;
+}
+
+#screen_wilder #inner_wheel_container #people .col1 {
+	left: -85px;
+}
+#screen_wilder #inner_wheel_container #people .col2 {
+	left: 2px;
+}
+#screen_wilder #inner_wheel_container #people .col3 {
+	left: 88px;
+}
+#screen_wilder #inner_wheel_container #people .col4 {
+	left: 174px;
+}
+#screen_wilder #inner_wheel_container #people .col5 {
+	left: 261px;
+}
+
+#screen_wilder #inner_wheel_container #people #people_btn_next{
+	top: 336px;
+	position: absolute;
+}
+#screen_wilder #inner_wheel_container #people #person_feature_btn_back{
+	top: 314px;
+	position: absolute;
+}
+
+#screen_wilder #inner_wheel_container #review_footer_btns{
+	width: 100%
+}
+#screen_wilder #inner_wheel_container .foot-btn{
+	position: absolute;
+	
+		background: #999; 
+		-moz-border-radius: 30px 30px 30px 30px;
+		-webkit-border-radius: 30px 30px 30px 30px; 
+	    border-radius: 30px 30px 30px 30px;
+	    display:inline-block;
+	    padding:1px 14px;
+	
+}
+#screen_wilder .foot-btn {
+	
+	color: #FFF;
+	font-size: 12px;
+	letter-spacing: 2px;
+	font-weight: 600;
+
+	-moz-box-shadow:inset 0px 0px 0px 1px #74afb5;
+	-webkit-box-shadow:inset 0px 0px 0px 1px #74afb5;
+	box-shadow:inset 0px 0px 0px 1px #74afb5;
+	background-color:#74afb5;
+	border:none;
+	display:inline-block;
+	
+}
+#screen_wilder #inner_wheel_container .foot-btn:hover {
+	background-color:#043b41;
+}
+.foot-btn:active {
+	position:relative;
+	top:1px;
+}
+#screen_wilder #inner_wheel_container .foot-btn {
+	background-color:#74afb5;
+	padding: 7px 17px;
+}
+#screen_wilder #inner_wheel_container .foot-btn.left {
+	left: -3px;
+}
+#screen_wilder #inner_wheel_container .foot-btn.right {
+	right: -3px;
 }
 

@@ -287,9 +287,10 @@
 			
 			<text id="story_intro"><![CDATA[<b>Jason is a 7-year-old boy referred to Wilder because teachers would like him evaluated for ADHD.</b> Jason has all of the “classic” signs of ADHD. He can’t seem to sit still, finds it hard to concentrate, becomes aggressive with other kids, on occasion hits his teachers, and has a hard time when he changes classrooms, for example, going from recess to science, from science to reading, and so on.]]></text>
 			
-						
+			<text id="person_feature_dialog"><![CDATA[Jason is a very sweet, likeable boy. All the other kids and teachers like him when he’s having a good day. I know he’s smart, but he just can’t seem to sit still long enough to learn. His restlessness and getting out of his seat disturbs other students. The more I try to help him control his behaviors, the more frustrated he gets, and then it escalates from there. Sometimes it even triggers an asthma attack. ]]></text>
 			
 			
+
 		</view>
 		
 		<!-- Screen 3 -->

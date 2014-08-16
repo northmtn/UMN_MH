@@ -68,6 +68,9 @@ define(["libs/pace/pace.min",
 	}
 	
 	Wilder.prototype.view2Setup = function() {
+		
+		//temp
+		$("#screen_wilder #views_container #inner_wheel_container #review").show();
 	
 	}
 	
@@ -146,6 +149,32 @@ define(["libs/pace/pace.min",
 				var rotations = [0, 90, 180, 270];
 				var r = rotations[Math.floor(Math.random()*rotations.length)] + "_short";
 				TweenMax.to( $(this.containerDiv).find("#wheel"), 0.75, { css: { rotation:r },  ease:Power1.easeInOut } );
+			break;
+			case "person_feature_btn_back":
+				//return from person feature
+				$("#screen_wilder #personnel_layer").show();
+				$("#screen_wilder #person_feature").hide();
+			break;
+			case "people_btn_next":
+				//continue after all people visited
+				 $("#screen_wilder #person_feature").show();
+				 $("#screen_wilder #personnel_layer").hide();
+			break;
+			case "review_btn_back":
+				// return to people photos
+				 
+			break;
+			case "review_btn_next":
+				// continue to next building section
+				 
+			break;
+			case "review_QA_btn_back":
+				// return to review list from QUIZ
+				 
+			break;
+			case "review_text_btn_back":
+				// return to review list from TEXT 
+				 
 			break;
 			case "btn_resources":
 				//TODO - Go to resources page?
