@@ -62,7 +62,6 @@ define(['net/util/Util'], function( Util ){
     	var pIndex = -1;
     
 		for (var i = 0; i < this.personnel.length; i++) {
-			console.log("role_" + Util.removeSpaces(this.personnel[i][0]) +", " + pId );
 			if ( "role_" + Util.removeSpaces(this.personnel[i][0]) == pId ) {
 				pIndex = i;
 				break;

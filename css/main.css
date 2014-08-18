@@ -1207,8 +1207,8 @@ button.rect-button.prev:before {
 
 #screen_touchstone #step_content #center_oval #step_title {
 	
-	padding-left: 35px;
-	padding-right: 35px;
+	padding-left: 0px;
+	padding-right: 0px;
 
 }
 
@@ -1445,11 +1445,18 @@ button.rect-button.prev:before {
 	height: 400px;
 	
 }
-#screen_wilder #inner_wheel_container p{
+#screen_wilder #inner_wheel_container p.column{
+
 	font-size: 16px;
 	font-weight: 200;
 	margin-top: 5px;
 	margin-bottom: 20px;
+
+}
+#screen_wilder #inner_wheel_container p.column{
+
+	height: 200px;
+	overflow-y: auto;
 	
 }
 #screen_wilder .circle-portrait img {
@@ -1469,6 +1476,15 @@ button.rect-button.prev:before {
 	background-color: #ab511b;
 }
 
+#screen_wilder #inner_wheel_container #intro .personnel,
+#screen_wilder #inner_wheel_container #review .personnel {
+	position: relative;
+}
+#screen_wilder #inner_wheel_container #review [data-role="button"] {
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
 #screen_wilder #inner_wheel_container #people {
 	position: absolute;
 }
@@ -1482,9 +1498,8 @@ button.rect-button.prev:before {
 	top:  94px;
 	position: absolute;
 	width: 350px;
+	
 }
-
-
 
 #screen_wilder .personnel {
 	position: absolute;
@@ -1525,28 +1540,28 @@ button.rect-button.prev:before {
 	left: 261px;
 }
 
-#screen_wilder #inner_wheel_container #people #people_btn_next{
+#screen_wilder #inner_wheel_container #people #people_btn_next {
 	top: 336px;
 	position: absolute;
 }
-#screen_wilder #inner_wheel_container #people #person_feature_btn_back{
+#screen_wilder #inner_wheel_container #people #person_feature_btn_back {
 	top: 314px;
 	position: absolute;
 }
 
-#screen_wilder #inner_wheel_container #review_footer_btns{
+#screen_wilder #inner_wheel_container #review_footer_btns {
 	width: 100%
 }
-#screen_wilder #inner_wheel_container .foot-btn{
+#screen_wilder #inner_wheel_container .foot-btn {
+
 	position: absolute;
-	
-		background: #999; 
-		-moz-border-radius: 30px 30px 30px 30px;
-		-webkit-border-radius: 30px 30px 30px 30px; 
-	    border-radius: 30px 30px 30px 30px;
-	    display:inline-block;
-	    padding:1px 14px;
-	
+	background: #999; 
+	-moz-border-radius: 30px 30px 30px 30px;
+	-webkit-border-radius: 30px 30px 30px 30px; 
+	border-radius: 30px 30px 30px 30px;
+	display:inline-block;
+	padding:1px 14px;
+
 }
 #screen_wilder .foot-btn {
 	
@@ -1564,6 +1579,9 @@ button.rect-button.prev:before {
 	
 }
 #screen_wilder #inner_wheel_container .foot-btn:hover {
+	-moz-box-shadow:inset 0px 0px 0px 1px #043b41;
+	-webkit-box-shadow:inset 0px 0px 0px 1px #043b41;
+	box-shadow:inset 0px 0px 0px 1px #043b41;
 	background-color:#043b41;
 }
 .foot-btn:active {

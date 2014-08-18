@@ -11,6 +11,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	this.curPersonnelIndex = -1;
     	this.numActivePersonnel = 0;
     	this.personnelOrderInterrupted = false;
+    	this.portraitsClicked = 0;
  		this.curPersonnelDiv = {};
  		this.currentQuiz = {};
  		this.reviewCompleted = false;
@@ -71,6 +72,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	this.numActivePersonnel = 0;
     	this.reviewCompleted = false;
     	this.personnelOrderInterrupted = false;
+    	this.portraitsClicked = 0;
 
     	//title
     	$(this.containerDiv).find("#step_feature_title").html( this.currentStep.title );
@@ -184,9 +186,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
   			$(persDiv).find("#hit").on("click", function(event) {
 
   				var indexClicked  = thisRef.currentStep.getPersonnelIndexById( $(this).parent().attr('id') );
-  				
-  				console.log("indexClicked "+indexClicked);  				
-  				
+  				  				
   				if ( indexClicked != thisRef.curPersonnelIndex ) {
   				
   					 thisRef.personnelOrderInterrupted = true;
@@ -350,10 +350,12 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	//Wait for end of audio. 
     	if (sndDelay == 'undefined' || sndDelay == null || sndDelay == undefined) sndDelay = 5; //default to 5 secs.
     	var clickedIndex = this.curPersonnelIndex;
+    	this.portraitsClicked ++;
+    	var numClicked = this.portraitsClicked;
     	//Things that happen AFTER end of sound. Can be interrupted.
-    	TweenLite.delayedCall(sndDelay, function(clickedIndex, thisRef) {
-    	
-    		if (clickedIndex != thisRef.curPersonnelIndex) return; // If this portrait is no longer the active one, exit delayed call.
+    	TweenLite.delayedCall(sndDelay, function(clickedIndex, thisRef, numClicked) {
+    	    		
+    		if (clickedIndex != thisRef.curPersonnelIndex || thisRef.portraitsClicked != numClicked  ) return; // If this portrait is no longer the active one, exit delayed call.
     	
     		//drop leaf if there is feedback associated
     		var fTxt = personnelData[3];
@@ -383,7 +385,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     					
     		}
 	    		
-    	}, [clickedIndex, thisRef]);
+    	}, [clickedIndex, thisRef, numClicked]);
 
     };
     
@@ -417,7 +419,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     		TweenMax.killTweensOf( $(this.curPersonnelDiv).find(".circle-portrait img") );
     		
     		//Hide progress ring
-    		$(this.curPersonnelDiv).find("#progress_ring").hide();
+//    		$(this.curPersonnelDiv).find("#progress_ring").hide();
     		
     		this.killActiveGlow();
     		this.curPersonnelDiv = null;

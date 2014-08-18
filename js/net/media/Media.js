@@ -1,4 +1,4 @@
-define([ 'net/data/AppData', 'libs/mediaelement/build/mediaelement-and-player', 'libs/soundmanager2/script/soundmanager2'], function(AppData){
+define([ 'net/data/AppData', 'libs/mediaelement/build/mediaelement-and-player', 'libs/soundmanager2/script/soundmanager2-nodebug-jsmin'], function(AppData){
 
 
 	function Media(){

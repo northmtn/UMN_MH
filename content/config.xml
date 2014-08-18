@@ -87,7 +87,6 @@
 
 					<review>
 						<button id="video_review" video="TMH_S03_ST01_V01">"TEAM JENNA"</button>
-						<button id="audio_review" audio="SampleAudio2">IN MY ROLE</button>
 						<button id="quiz_review" quiz="step1_in_review">IN REVIEW</button>
 					</review>
 					
@@ -195,7 +194,7 @@
 					<personnel role="Counselor" audio="TMH_S03_ST05_06" duration="17">I think it’s important for Jenna to stay connected with her peers. Several of her neighbors have continued to be supportive of her and that seems to lift Jenna’s spirits. I also want to see her continue to water and take care of her flower, as well as attend more sessions with our Healing Touch Provider.</personnel>
 
 					<review>
-						<button id="video_review" video="TMH_S03_ST05_V01">JENNA'S MENTAL AND PHYSICAL HEALTH</button>
+						<button id="video_review" video="TMH_S03_ST05_V01">MENTAL AND PHYSICAL HEALTH</button>
 						<button id="video_review" video="TMH_S03_ST05_V02">EXERCISE AND DIET</button>
 						<button id="video_review" video="TMH_S03_ST05_V03">RETURNING TO WORK</button>
 						<button id="quiz_review" quiz="step5_in_review">IN REVIEW</button>
@@ -283,13 +282,316 @@
 		<!-- Screen 2 -->
 		<view id="view_2" title="Story">
 			
-			<text id="text_1"><![CDATA[Jason's Life & Community]]></text>
+			<text id="intro_title"><![CDATA[Jason's Life & Community]]></text>
+			<text id="intro_text" audio="TMH_S03_ST05_05" duration="5"><![CDATA[<b>Jason is a 7-year-old boy referred to Wilder because teachers would like him evaluated for ADHD.</b> Jason has all of the “classic” signs of ADHD. He can’t seem to sit still, finds it hard to concentrate, becomes aggressive with other kids, on occasion hits his teachers, and has a hard time when he changes classrooms, for example, going from recess to science, from science to reading, and so on.
+			It often takes him up to half an hour to calm down, and by then, the class is typically almost over. Jason struggles with boundaries and often becomes emotionally distressed if told “no,” sometimes running out of the classroom or crying. Jason has also been diagnosed with asthma, and when he becomes upset, the crying can trigger his asthma symptoms. Jason is really bright and despite what appears to be ADHD, when he’s calm, does well academically. He is also engaging, and most people, including other kids, really like him.]]>
+			</text>
+
+			<stops>
 			
-			<text id="story_intro"><![CDATA[<b>Jason is a 7-year-old boy referred to Wilder because teachers would like him evaluated for ADHD.</b> Jason has all of the “classic” signs of ADHD. He can’t seem to sit still, finds it hard to concentrate, becomes aggressive with other kids, on occasion hits his teachers, and has a hard time when he changes classrooms, for example, going from recess to science, from science to reading, and so on.]]></text>
+			<!-- All the building stops are listed inside <stops> -->
 			
-			<text id="person_feature_dialog"><![CDATA[Jason is a very sweet, likeable boy. All the other kids and teachers like him when he’s having a good day. I know he’s smart, but he just can’t seem to sit still long enough to learn. His restlessness and getting out of his seat disturbs other students. The more I try to help him control his behaviors, the more frustrated he gets, and then it escalates from there. Sometimes it even triggers an asthma attack. ]]></text>
+			<!-- Possible Building IDs: -->
+			<!-- community, home, school, wilder -->
 			
+			<!-- Possible Person IDs: -->
+			<!-- jason, social_worker, therapist, occupational_therapist, teacher, mom, pharmacist, pastor, neighbor, case_manager, psych_nurse -->
 			
+				<!-- Stop 1 | School -->
+				<stop id="stop_1" building="school">
+					
+					<text id="stop_title"><![CDATA[Jason's School]]></text>
+					
+					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[Jason attends school in the neighborhood and is in the 1st grade. He likes school, especially recess and lunch.]]>
+					</text>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[Jason is a very sweet, likeable boy. All the other kids and teachers like him when he’s having a good day. I know he’s smart, but he just can’t seem to sit still long enough to learn. His restlessness and getting out of his seat disturbs other students. The more I try to help him control his behaviors, the more frustrated he gets, and then it escalates from there. Sometimes it even triggers an asthma attack and he has to use his inhaler. I can tell he always feels so bad about getting upset.
+					]]>
+					</person>
+					
+					<person id="social_worker" audio="TMH_S03_ST05_04" duration="5"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula. Mauris ultricies euismod metus quis lacinia. Curabitur luctus dolor velit, et lacinia tortor scelerisque non. Quisque tristique dapibus odio, a pellentesque justo commodo non. In eu nunc eget diam facilisis aliquam.
+					]]>
+					</person>
+					
+					<person id="jason" audio="TMH_S03_ST05_05" duration="5"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula. Mauris ultricies euismod metus quis lacinia. Curabitur luctus dolor velit, et lacinia tortor scelerisque non. Quisque tristique dapibus odio, a pellentesque justo commodo non. In eu nunc eget diam facilisis aliquam.
+					]]>
+					</person>
+					
+					<person id="occupational_therapist" audio="TMH_S03_ST05_03" duration="5">
+					<![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula. Mauris ultricies euismod metus quis lacinia. Curabitur luctus dolor velit, et lacinia tortor scelerisque non. Quisque tristique dapibus odio, a pellentesque justo commodo non. In eu nunc eget diam facilisis aliquam.]]>
+					</person>
+					
+					<review>
+						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
+						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
+						<button id="reading_review" quiz="stop1_reading">IN THEIR SHOES</button>
+						<button id="quiz_review" quiz="stop1_in_review">WHAT WOULD YOU DO?</button>
+					</review>
+					
+					<reading id="stop1_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
+						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
+					</reading>
+					
+					<quiz id="stop1_in_review">
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
+					</quiz>
+					
+				</stop>
+				
+				<!-- Stop 2 | Home -->
+				<stop id="stop_2" building="home">
+					
+					<text id="stop_title"><![CDATA[Jason's School]]></text>
+					
+					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[INTRO TEXT FOR THIS STOP. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.]]>
+					</text>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<review>
+						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
+						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
+						<button id="reading_review" quiz="stop2_reading">IN THEIR SHOES</button>
+						<button id="quiz_review" quiz="stop2_in_review">WHAT WOULD YOU DO?</button>
+					</review>
+					
+					<reading id="stop2_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
+						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
+					</reading>
+					
+					<quiz id="stop2_in_review">
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
+					</quiz>
+					
+				</stop>
+				
+				<!-- Stop 3 | Community -->
+				<stop id="stop_3" building="community">
+					
+					<text id="stop_title"><![CDATA[Jason's School]]></text>
+					
+					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[INTRO TEXT FOR THIS STOP. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.]]>
+					</text>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<review>
+						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
+						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
+						<button id="reading_review" quiz="stop3_reading">IN THEIR SHOES</button>
+						<button id="quiz_review" quiz="stop3_in_review">WHAT WOULD YOU DO?</button>
+					</review>
+					
+					<reading id="stop3_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
+						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
+					</reading>
+					
+					<quiz id="stop3_in_review">
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
+					</quiz>
+					
+				</stop>
+				
+				<!-- Stop 4 | Wilder -->
+				<stop id="stop_4" building="wilder">
+					
+					<text id="stop_title"><![CDATA[Jason's School]]></text>
+					
+					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[INTRO TEXT FOR THIS STOP. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.]]>
+					</text>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<review>
+						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
+						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
+						<button id="reading_review" quiz="stop4_reading">IN THEIR SHOES</button>
+						<button id="quiz_review" quiz="stop4_in_review">WHAT WOULD YOU DO?</button>
+					</review>
+					
+					<reading id="stop4_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
+						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
+					</reading>
+					
+					<quiz id="stop4_in_review">
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
+					</quiz>
+					
+				</stop>
+								
+				<!-- Stop 5 | Wilder -->
+				<stop id="stop_5" building="wilder">
+					
+					<text id="stop_title"><![CDATA[Jason's School]]></text>
+					
+					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[INTRO TEXT FOR THIS STOP. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.]]>
+					</text>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<review>
+						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
+						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
+						<button id="reading_review" quiz="stop5_reading">IN THEIR SHOES</button>
+						<button id="quiz_review" quiz="stop5_in_review">WHAT WOULD YOU DO?</button>
+					</review>
+					
+					<reading id="stop5_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
+						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
+					</reading>
+					
+					<quiz id="stop5_in_review">
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
+					</quiz>
+					
+				</stop>
+				
+				<!-- Stop 6 | School 2 -->
+				<stop id="stop_6" building="school">
+					
+					<text id="stop_title"><![CDATA[Jason's School]]></text>
+					
+					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[INTRO TEXT FOR THIS STOP. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.]]>
+					</text>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<review>
+						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
+						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
+						<button id="reading_review" quiz="stop6_reading">IN THEIR SHOES</button>
+						<button id="quiz_review" quiz="stop6_in_review">WHAT WOULD YOU DO?</button>
+					</review>
+					
+					<reading id="stop6_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
+						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
+					</reading>
+					
+					<quiz id="stop6_in_review">
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
+					</quiz>
+					
+				</stop>
+				
+				<!-- Stop 7 | Home 2 -->
+				<stop id="stop_7" building="home">
+					
+					<text id="stop_title"><![CDATA[Jason's School]]></text>
+					
+					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[INTRO TEXT FOR THIS STOP. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.]]>
+					</text>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					]]>
+					</person>
+					
+					<review>
+						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
+						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
+						<button id="reading_review" quiz="stop7_reading">IN THEIR SHOES</button>
+						<button id="quiz_review" quiz="stop7_in_review">WHAT WOULD YOU DO?</button>
+					</review>
+					
+					<reading id="stop7_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
+						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
+					</reading>
+					
+					<quiz id="stop7_in_review">
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
+					</quiz>
+					
+				</stop>
+
+			</stops>
 
 		</view>
 		
