@@ -123,7 +123,7 @@ define(["libs/pace/pace.min",
 		
 		//Get all steps from global config
 		var thisRef = this;
-		var stepConfigs = $(AppData.configXML).find("module[id='wilder'] stops stop").each(function () {
+		var stopConfigs = $(AppData.configXML).find("module[id='wilder'] stops stop").each(function () {
 			
 			var st = new WI_Stop( $(this) );
 			thisRef.stops.push(st);
@@ -140,9 +140,11 @@ define(["libs/pace/pace.min",
 	}
 
 	Wilder.prototype.goToStop = function (stopNum) {
-	
+		
+		var thisRef = this;
 		this.currentStop = this.stops[stopNum];	
 		
+		console.log("==== GO tO sToP: "+stopNum);
 		console.log("stops: "+this.stops.length);
 		
 		// - setup stop content - //
@@ -151,28 +153,57 @@ define(["libs/pace/pace.min",
 		$("#screen_wilder #inner_wheel_container #intro #story_intro").html( this.currentStop.introText ); // set main text
 		Media.playTakeoverSound( this.currentStop.introAudioId );
 		
-		/*
 		//people
-		$(this.containerDiv).find("#screen_wilder #inner_wheel_container .personnel").each(function () {
+		$(this.containerDiv).find("#personnel_layer .personnel").each(function () {
 			//reset all people  
-			$(this).removeClass('visited');
-			$(this).removeClass('highlight');
+			$(this).removeClass('visited highlight row1 row2 col1 col2 col3 col4 col5');
 			$(this).find("#progress_ring").hide();
 			$(this).hide();
+			
+			console.log("hiding: "+ $(this).attr('id'));
 		
 		});
 		//Enable people portraits for this stop
 		for (var i = 0; i < this.currentStop.people.length; i++) {
     		
-    		var roleId = Util.removeSpaces( this.currentStep.people[i][0] );
+    		var roleId = this.currentStop.people[i][0];
     		var persDiv = $(this.containerDiv).find("#person_" + roleId );
+    		
+    		console.log("showing: "+ $(persDiv).attr('id'));
+    		
+    		$(persDiv).show();
+    		
+    		//add positioning classes
+    		var posRowIndex = ( ( i + 1 ) % 2 ) + 1;
+    		var posColIndex = i + 1;
+    		if (this.currentStop.people.length == 3) {
+    			
+    			if ( i==1 ) {
+    				posRowIndex = 1;
+    				posColIndex = 3;
+    			} else if ( i==2 ) {
+    				posRowIndex = 2;
+    				posColIndex = 5;
+    			}
+    			
+    		} else if (this.currentStop.people.length == 4) {
+    			
+    			if ( i > 1 ) {
+    				posColIndex ++;
+    				posRowIndex = ( i % 2 ) + 1;
+    			}
+    			
+    		}
+    		
+    		$(persDiv).addClass("row" + posRowIndex);
+    		$(persDiv).addClass( "col" + posColIndex);
   			
   			//Active people can be clicked at anytime
   			$(persDiv).find("#hit").off();
   			$(persDiv).find("#hit").on("click", function(event) {
 
   				var indexClicked  = thisRef.currentStop.getPersonIndexById( $(this).parent().attr('id') );
-  			    thisRef.personClicked( thisRef.currentStep.people[ indexClicked ] );
+  			    thisRef.personClicked( thisRef.currentStop.people[ indexClicked ] );
   			    
   			});
   			//Circular rollovers
@@ -184,15 +215,16 @@ define(["libs/pace/pace.min",
 				}
   			});
   			
-  			
     	}
-		*/
 			
 		//review
 		
 		
 		//spin
 		this.spinToBuilding(this.currentStop.buildingId);
+		
+		//display intro
+		this.showIntro();
 
 	}
 	
@@ -253,7 +285,9 @@ define(["libs/pace/pace.min",
 	}
 	
 	Wilder.prototype.personClicked = function( personData ){
-
+		
+		console.log("person clicked: "+ personData[0] );
+		
 		var thisRef = this;
     	var sndId = personData[1];
     	var sndDelay = personData[2];
@@ -385,7 +419,7 @@ define(["libs/pace/pace.min",
 			break;
 			case "review_btn_next":
 				// continue to next building section
-				 this.goToNextStop();
+				this.goToNextStop();
 			break;
 			case "review_QA_btn_back":
 				// return to review list from QUIZ

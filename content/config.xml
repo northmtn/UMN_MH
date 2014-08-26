@@ -268,23 +268,31 @@
 			
 			<text id="text_1">Welcome to the Wilder Foundation</text>
 			<text id="text_2">
-				<![CDATA[THIS IS THE LEFT SIDE Of THE INTRO TO WILDER ... on wellness starts at Touchstone Mental Health where our mission is to “inspire hope, healing and well-being.” We consider each person as a whole; integrating treatment, care and resources which support a healthy mind, body, and spirit. We are a point of reference guiding clients, community members and residents toward recovery and well-being. We are a point of reference guiding clients, community members and residents toward recovery and well-being. We encourage each person to define their life goals— ]]>
+				<![CDATA[The Amherst H. Wilder Foundation is a nonprofit community organization that helps children, families and older adults in the greater east metro area of Saint Paul through direct service programs, research, leadership development and community building. The Wilder legacy was established by Amherst H. Wilder, a successful Saint Paul businessman, his wife Fanny Spencer Wilder and their daughter, Cornelia Day Wilder Appleby. The Wilder family willed their estate over a century ago to help the poor, sick and needy of Saint Paul, beginning a legacy of service. 
+				The Amherst H. Wilder Foundation believes that investing in people, enhancing the relationships we have with one other, and working to promote health and resilience will help create a vibrant community. Through our direct service programs, Wilder Research, and community building, we are helping people reach their full potential.]]>
 			</text>
 			<text id="text_3">
-				<![CDATA[THIS IS THE RIGHT SIDE Of THE INTRO TO WILDER – and we provide the tools so people achieve them. We are a point of reference guiding clients, community members and residents toward recovery and well-being. In this module you’ll have the chance to learn more about our team approach by engaging in an interactive case story about a typical Touchstone resident.
-				<br/><br/><b>Watch the video and then click 2 on the top bar to continue.</b>]]>
+				<![CDATA[The purpose of this educational module is to help you better understand our unique approach to mental health services. Click Resources on the top bar for an overview of the following:
+				Trauma-Informed Care
+				Children and Family Mental Heath
+				Southeast Asian Services
+
+				In this module you will learn more about Wilder’s approach to children and family mental healthcare by engaging in an interactive case story. 
+
+				<br/><br/><b>Please watch the introductory video and then click “2” on the top bar to continue.</b>]]>
 			</text>
 			
-			<button id="video_1" video="TMH_S01_V01">WATCH AN INTRODUCTORY VIDEO</button>
+			<button id="video_1" video="W_S01_V01">WATCH AN INTRODUCTORY VIDEO</button>
 						
 		</view>
 		
 		<!-- Screen 2 -->
 		<view id="view_2" title="Story">
 			
-			<text id="intro_title"><![CDATA[Jason's Life & Community]]></text>
-			<text id="intro_text" audio="TMH_S03_ST05_05" duration="5"><![CDATA[<b>Jason is a 7-year-old boy referred to Wilder because teachers would like him evaluated for ADHD.</b> Jason has all of the “classic” signs of ADHD. He can’t seem to sit still, finds it hard to concentrate, becomes aggressive with other kids, on occasion hits his teachers, and has a hard time when he changes classrooms, for example, going from recess to science, from science to reading, and so on.
-			It often takes him up to half an hour to calm down, and by then, the class is typically almost over. Jason struggles with boundaries and often becomes emotionally distressed if told “no,” sometimes running out of the classroom or crying. Jason has also been diagnosed with asthma, and when he becomes upset, the crying can trigger his asthma symptoms. Jason is really bright and despite what appears to be ADHD, when he’s calm, does well academically. He is also engaging, and most people, including other kids, really like him.]]>
+			<text id="intro_title"><![CDATA[Jason's Life]]></text>
+			<text id="intro_text" audio="W_S02_01" duration="67"><![CDATA[<b>Jason is a 7-year-old boy referred to Wilder because teachers would like him evaluated for ADHD. Jason has all of the “classic” signs of ADHD. He can’t seem to sit still, finds it hard to concentrate, becomes aggressive with other kids, on occasion hits his teachers, and has a hard time when he changes classrooms, for example, going from recess to science, from science to reading, and so on.
+			It often takes him up to half an hour to calm down, and by then, the class is typically almost over. Jason struggles with boundaries and often becomes emotionally distressed if told “no,” sometimes running out of the classroom or crying. Jason has also been diagnosed with asthma, and when he becomes upset, the crying can trigger his asthma symptoms. Jason is really bright and despite what appears to be ADHD, when he’s calm, does well academically. He is also engaging, and most people, including other kids, really like him. 
+]]>
 			</text>
 
 			<stops>
@@ -302,36 +310,32 @@
 					
 					<text id="stop_title"><![CDATA[Jason's School]]></text>
 					
-					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[Jason attends school in the neighborhood and is in the 1st grade. He likes school, especially recess and lunch.]]>
+					<text id="stop_intro" audio="W_S02_ST01_01" duration="7"><![CDATA[Jason attends school in the neighborhood and is in the 1st grade. He likes school, especially recess and lunch.]]>
 					</text>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[Jason is a very sweet, likeable boy. All the other kids and teachers like him when he’s having a good day. I know he’s smart, but he just can’t seem to sit still long enough to learn. His restlessness and getting out of his seat disturbs other students. The more I try to help him control his behaviors, the more frustrated he gets, and then it escalates from there. Sometimes it even triggers an asthma attack and he has to use his inhaler. I can tell he always feels so bad about getting upset.
+					<person id="teacher" audio="W_S02_ST01_02" duration="30"><![CDATA[Jason is a very sweet, likeable boy. All the other kids and teachers like him when he’s having a good day. I know he’s smart, but he just can’t seem to sit still long enough to learn. His restlessness and getting out of his seat disturbs other students. The more I try to help him control his behaviors, the more frustrated he gets, and then it escalates from there. Sometimes it even triggers an asthma attack and he has to use his inhaler. I can tell he always feels so bad about getting upset. 
 					]]>
 					</person>
 					
-					<person id="social_worker" audio="TMH_S03_ST05_04" duration="5"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula. Mauris ultricies euismod metus quis lacinia. Curabitur luctus dolor velit, et lacinia tortor scelerisque non. Quisque tristique dapibus odio, a pellentesque justo commodo non. In eu nunc eget diam facilisis aliquam.
+					<person id="social_worker" audio="W_S02_ST01_03" duration="16"><![CDATA[I can tell that there’s more going on for Jason than just the typical ADHD, but I don’t know what else to call it. His teacher contacted me because she was concerned about his aggressive behaviors. When I’ve talked to Jason and his mom, it sounds like the family has been through some really tough times.
 					]]>
 					</person>
 					
-					<person id="jason" audio="TMH_S03_ST05_05" duration="5"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula. Mauris ultricies euismod metus quis lacinia. Curabitur luctus dolor velit, et lacinia tortor scelerisque non. Quisque tristique dapibus odio, a pellentesque justo commodo non. In eu nunc eget diam facilisis aliquam.
+					<person id="jason" audio="W_S02_ST01_04" duration="14"><![CDATA[I like Miss Wilson, but my favorite person at school is Mr. Lee. He lets me go in his office and play with his toys. It helps me when I can’t control my body. I’m trying to be good, but sometimes my body just won’t listen to me. 
 					]]>
 					</person>
 					
-					<person id="occupational_therapist" audio="TMH_S03_ST05_03" duration="5">
-					<![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula. Mauris ultricies euismod metus quis lacinia. Curabitur luctus dolor velit, et lacinia tortor scelerisque non. Quisque tristique dapibus odio, a pellentesque justo commodo non. In eu nunc eget diam facilisis aliquam.]]>
+					<person id="occupational_therapist" audio="W_S02_ST01_05" duration="32">
+					<![CDATA[I’d like to spend time talking to Jason’s teacher so that I can learn more about what happens at school and how it’s structured. For example, does he have more issues in the cafeteria at lunchtime or in really noisy environments?  Does he have issues when the class activities are seated at the desk tabletop or is it harder when people are talking and the environment is louder?  I’d also like to speak with Mr. Lee about what he sees when Jason visits him. Jason says he likes to see Mr. Lee and I wonder if the quieter, less stimulating space is a factor of this.]]>
 					</person>
 					
 					<review>
-						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
-						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
-						<button id="reading_review" quiz="stop1_reading">IN THEIR SHOES</button>
-						<button id="quiz_review" quiz="stop1_in_review">WHAT WOULD YOU DO?</button>
+						<button id="video_review" video="W_S02_ST01_V01">TRANSITIONS</button>
+						<button id="video_review" video="W_S02_ST01_V02">AN OT PERSPECITVE</button>
+						<button id="video_review" video="W_S02_ST01_V02">TEAM GOAL</button>
+						<button id="quiz_review" quiz="stop1_in_review">IN REVIEW</button>
 					</review>
 					
-					<reading id="stop1_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
-						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
-					</reading>
 					
 					<quiz id="stop1_in_review">
 						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
@@ -342,32 +346,31 @@
 				<!-- Stop 2 | Home -->
 				<stop id="stop_2" building="home">
 					
-					<text id="stop_title"><![CDATA[Jason's School]]></text>
+					<text id="stop_title"><![CDATA[Home]]></text>
 					
-					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[INTRO TEXT FOR THIS STOP. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.]]>
+					<text id="stop_intro" audio="W_S02_ST02_01" duration="7"><![CDATA[The team of providers gather information from mom and one another to better understand Jason and his needs.]]>
 					</text>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="mom" audio="W_S02_ST02_02" duration="22"><![CDATA[Jason’s my little helper at home. I know Jason is smart, and I don’t understand why he’s acting this way at school. I don’t see this at home. He has a hard time sometimes when I tell him no and sometimes he does need to cry it out but ADHD?  I just don’t understand what’s going on at school and why he’s having such a hard time.
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="psych_nurse" audio="W_S02_ST02_03" duration="34"><![CDATA[mom sounds confused about why Jason is having a much harder time at school than at home. I’d like to talk to her about his ability to pay attention to tasks and how well he can focus at home, at church, and in other environments  because learning more about what Jason’s behaviors are like across all these environments will help me tease out if his behaviors are school related, home related or something else. This will give the team of professionals who care about Jason a clearer picture of what’s going on with him and the impact these behaviors have on his physical wellbeing and his asthma.
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="occupational_therapist" audio="W_S02_ST02_04" duration="39"><![CDATA[The Psychiatric Advanced Practice nurse contacted me about Jason and the concerns at school. I’ll work with the team by talking with mom to learn where Jason is at with things like self-care and willingness to do chores at home. I’d like to learn about all of the different factors that are impacting his ability to participate successfully in his ”occupations,” meaning school, self care, play, interaction with peers, interaction with siblings, other family and neighbors. If there’s great disparity in the way he participates and interacts in the different settings of his life, it could help me understand some of the underlying issues of Jason’s challenges.
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="pharmacist" audio="W_S02_ST02_05" duration="26"><![CDATA[We will want to discuss with mom if Jason uses any supplements or home, herbal or alternative remedies and how these might affect how he feels. Herbals and supplements can have strong effects and, if Jason does take any, I can help sort out the benefits as well as the risks to them. Jason’s case manager and I talked last week about insurance and how to provide help to pay for his asthma medications including his inhaler and any nutritional supplements. 
 					]]>
 					</person>
 					
 					<review>
-						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
-						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
+						<button id="video_review" video="W_S02_ST02_V01">THE HOME ENVIRONMENT</button>
 						<button id="reading_review" quiz="stop2_reading">IN THEIR SHOES</button>
-						<button id="quiz_review" quiz="stop2_in_review">WHAT WOULD YOU DO?</button>
+						<button id="quiz_review" quiz="stop2_in_review">IN REVIEW</button>
 					</review>
 					
 					<reading id="stop2_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
@@ -384,38 +387,35 @@
 				<!-- Stop 3 | Community -->
 				<stop id="stop_3" building="community">
 					
-					<text id="stop_title"><![CDATA[Jason's School]]></text>
+					<text id="stop_title"><![CDATA[Community]]></text>
 					
-					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[INTRO TEXT FOR THIS STOP. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.]]>
+					<text id="stop_intro" audio="W_S02_ST03_01" duration="6"><![CDATA[Despite the unsafe neighborhood, mom has found people who understand and support her and her family.]]>
 					</text>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="mom" audio="W_S02_ST03_02" duration="35"><![CDATA[I was desperate and this was the only place we could afford. It’s a beautiful duplex – not a dump like some of places we’ve stayed, and here, Jason has his own space. I just wish we weren’t in such a bad neighborhood. I know that there are gangs around and I’m constantly terrified that they’ll try to get my kids, or try to influence them somehow or that they’ll get caught in the middle of things. While Jason’s young, I’m going to do my best to get us out of here and someplace else so that doesn’t become a problem. For now, I’m just really pushing the kids to be safe and for them to know that they can’t be out in the neighborhood without me. 
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="pastor" audio="W_S02_ST03_03" duration="29"><![CDATA[Jason and his family have just started coming, but already they are committed members of our congregation. I know that that family has been through some bad times, but I’m glad we are able to support them here. I know it’s hard for mom to trust, but I think we’re getting there slowly, day by day. In fact mom and Jason have joined one of our support groups here that I think will help her to know that she isn’t alone and that other people are here to help her and Jason. 
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="jason" audio="W_S02_ST03_04" duration="27"><![CDATA[Mommy says we can’t go out because there are bad people around by our new house. One time I saw some people beating on others. It was really scary. I don’t want anyone beating on me. It’s hard for me to sleep at night because I hear the police cars all the time. Mommy says at least we have a place to live. She is right. I do like this better than staying at the shelter. At least I have my own room and someplace to play.
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="neighbor" audio="W_S02_ST03_05" duration="53"><![CDATA[I’ve known Jason and his mom now for a few months. His mom is really trying, but it’s hard to with little ones when you’re still struggling yourself. So I go over, I check in, see if she wants me to take the kids so that she can get a break, and she checks in on me and makes sure the kids come over now and then to help get my mail. 
+					Jason comes over when his mom goes to her church meetings. When he comes here he has fun playing with the toys I have for him. But, he sure has a hard time letting his mommy out of his sight. He cries and pulls on her clothes to get her to stay. Once she is gone, I give him a snack and he seems to feel better. 
 					]]>
 					</person>
 					
 					<review>
-						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
-						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
-						<button id="reading_review" quiz="stop3_reading">IN THEIR SHOES</button>
-						<button id="quiz_review" quiz="stop3_in_review">WHAT WOULD YOU DO?</button>
+						<button id="video_review" video="W_S02_ST03_V01">BUILDING RELATIONSHIPS</button>
+						<button id="video_review" video="W_S02_ST03_V02">THE IMPACT OF TRAUMA</button>
+						<button id="video_review" video="W_S02_ST03_V03">PHYSICAL ACTIVITY</button>
+						<button id="quiz_review" quiz="stop3_in_review">IN REVIEW</button>
 					</review>
 					
-					<reading id="stop3_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
-						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
-					</reading>
 					
 					<quiz id="stop3_in_review">
 						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
@@ -426,38 +426,31 @@
 				<!-- Stop 4 | Wilder -->
 				<stop id="stop_4" building="wilder">
 					
-					<text id="stop_title"><![CDATA[Jason's School]]></text>
+					<text id="stop_title"><![CDATA[Wilder]]></text>
 					
-					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[INTRO TEXT FOR THIS STOP. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.]]>
+					<text id="stop_intro" audio="W_S02_ST04_01" duration="10"><![CDATA[Jane, a therapist at Wilder, helps mom to understand possible connections between Jason’s past and his behavior at school and other places.
+					]]>
 					</text>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="mom" audio="W_S02_ST04_02" duration="28"><![CDATA[I’m learning to understand how overwhelmed Jason has been and that how he’s acting is because of all the things he’s seen and been through. I didn’t think that he’d remember that stuff from when he was a baby, but Jane is helping me understand that maybe he reacts like this because of trauma. Jane says there’s a lot we can do to help him continue to be stronger and I’m glad. I’m more determined than ever to figure out what I have to do to help him get over the past and how I can protect him from now on.
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="therapist" audio="W_S02_ST04_03" duration="85"><![CDATA[Jason and his mom really have a wonderful relationship and I see how well mom is able to help calm and coach him when given the right support and tools. Mom is really getting that Jason’s ADHD-like behaviors may really be a response to the trauma experienced in his life such as witnessing abuse between mom and dad, financial stressors, neighborhood safety issues, multiple family moves, and the sudden death of his dad, which the family has not really talked about. She herself is keeping a pretty tight lid on her emotions and completely avoids the topic of his dad, something I know Jason has a lot of feelings and thoughts about – it comes out in his play all the time. The challenge for me is how to help mom figure out how her own trauma responses are impacting how she is helping Jason. Mom has been so supportive of Jason and my fear is that as we get closer to the traumas experienced that are shared by mom, it may get harder for her to stay engaged as she’s made it clear that she’s not ready to go there herself. I’m also working with Jason’s school and other service providers to try and figure out a different plan for him at school to help with some of the things that seem really hard for him. Making these accommodations and watching Jason’s response is the least invasive approach. If there is no change in a month, we should re-evaluate. 
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="jason" audio="W_S02_ST04_04" duration="19"><![CDATA[My favorite time is when I see Jane. We play and laugh and my mom plays with us too. Jane tells me that I’m not a bad boy. She said that someday, I’ll learn to help my body and brain listen to each other so that they can be friends. Mommy comes and has fun too. I like it when she laughs.
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
-					]]>
-					</person>
 					
 					<review>
-						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
-						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
-						<button id="reading_review" quiz="stop4_reading">IN THEIR SHOES</button>
-						<button id="quiz_review" quiz="stop4_in_review">WHAT WOULD YOU DO?</button>
+						<button id="video_review" video="W_S02_ST04_V01">MOM'S STRATEGIES</button>
+						<button id="video_review" video="W_S02_ST04_V02">PARENTAL TRAUMA</button>
+						<button id="video_review" video="W_S02_ST04_V03">RELATIONSHIPS WITH FAMILIES</button>
+						<button id="quiz_review" quiz="stop4_in_review">IN REVIEW</button>
 					</review>
-					
-					<reading id="stop4_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
-						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
-					</reading>
 					
 					<quiz id="stop4_in_review">
 						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
@@ -468,32 +461,30 @@
 				<!-- Stop 5 | Wilder -->
 				<stop id="stop_5" building="wilder">
 					
-					<text id="stop_title"><![CDATA[Jason's School]]></text>
+					<text id="stop_title"><![CDATA[Wilder]]></text>
 					
-					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[INTRO TEXT FOR THIS STOP. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.]]>
+					<text id="stop_intro" audio="W_S02_ST05_01" duration="9"><![CDATA[Providers work interprofessionally by discussing Jason’s case in team meetings and using the electronic medical record to communicate with each other.
+					]]>
 					</text>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="pharmacist" audio="W_S02_ST05_02" duration="40"><![CDATA[Jason’s primary care provider informed us that Jason has asthma and is taking some regularly scheduled medications.  As a team, we can work with mom to ensure that all medications in the household are safely and properly stored. Jason is only 7 years old, and I agree with the team to try alternative approaches to work with his behaviors at school. ADHD is a possible diagnosis and we need to explore other reasons for his school problems. Also, medications for ADHD can worsen other symptoms. I will be in close conversations with Jason’s care providers to ensure that any medication therapy is both safe and effective.
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="occupational_therapist" audio="W_S02_ST05_03" duration="30"><![CDATA[Jason is a delightful boy who can focus when he is highly engaged. We’ve been working on self-regulation strategies and are using the Alert Program ‘How does your engine run?’ teaching Jason to “self-assess” so he can be better prepared to participate in classroom activities at school. His therapist, teacher and I are working together to incorporate sensory activities to prepare Jason for productive work. And, we’ll begin working with mom to teach her strategies from the Alert program. 
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="case_manager" audio="W_S02_ST05_04" duration="54"><![CDATA[My job is to help mom, Jason, and other service providers assess what services are going well, what aren’t, and what additional services I can put in place to support Jason. Sometimes this means I have to really support mom and help her figure out things so that it’s not so overwhelming. I also help all of the folks involved communicate with each other and with Jason and mom so that we’re always on the same page about what direction we’re moving and how we’re supporting Jason and mom and each other. I can partner more closely with mom helping her manage her own feelings of guilt and helping her understand what she can do to work with Jason at home. I also feel like my part in this is to really support mom so that she feels like someone is really listening to her – she’s got some amazing strengths, and the information and collaboration could really be working both ways, not just from the providers to her. She can also share her wisdom to inform what they are doing with Jason.
 					]]>
 					</person>
-					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
-					]]>
-					</person>
+				
 					
 					<review>
-						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
-						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
+						<button id="video_review" video="W_S02_ST05_V01">LEAST INTRUSIVE APPROACH</button>
+						<button id="video_review" video="W_S02_ST05_V02">MEDICATIONS</button>
 						<button id="reading_review" quiz="stop5_reading">IN THEIR SHOES</button>
-						<button id="quiz_review" quiz="stop5_in_review">WHAT WOULD YOU DO?</button>
+						<button id="quiz_review" quiz="stop5_in_review">IN REVIEW</button>
 					</review>
 					
 					<reading id="stop5_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
@@ -512,36 +503,28 @@
 					
 					<text id="stop_title"><![CDATA[Jason's School]]></text>
 					
-					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[INTRO TEXT FOR THIS STOP. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.]]>
+					<text id="stop_intro" audio="W_S02_ST06_01" duration="8"><![CDATA[Providers continue to work together to identify approaches and problem solving techniques that Jason can use at school and at home.]]>
 					</text>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="occupational_therapist" audio="W_S02_ST06_02" duration="23"><![CDATA[From my observation, and hearing from the rest of the team, mom has a wonderful calming effect on Jason. We’ve seen her intervene when he is anxious and having difficulty with self-control and she helps him to regain control. We can work with Jason’s school staff to identify how some of these approaches can be brought into the school to help him when he becomes emotionally distressed. 
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="teacher" audio="W_S02_ST06_03" duration="25"><![CDATA[We’re working with Jason to focus on small steps and asking for help when he’s frustrated, when he makes mistakes, or when a particular step seems too hard. A concern at this point is his response to feedback and some of the overreactions that occur with limits, like being told “No.” We are helping him learn to problem solve when he encounters difficulties with the materials, and to stay with the task in the time he has allotted.
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="therapist" audio="W_S02_ST06_04" duration="29"><![CDATA[It does appear that there is more going on with Jason than things directly related to ADHD. Mom’s identification of Jason as her little helper leads to additional questions about school and home environmental factors and their impact on his ability to be successful at home and at school. The Wilder care team, teachers, and other community partners will continue to work with Jason and his family to further understand all of the factors impacting him.
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
-					]]>
-					</person>
 					
 					<review>
-						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
-						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
-						<button id="reading_review" quiz="stop6_reading">IN THEIR SHOES</button>
-						<button id="quiz_review" quiz="stop6_in_review">WHAT WOULD YOU DO?</button>
+						<button id="video_review" video="W_S02_ST06_V01">MY LITTLE HELPER</button>
+						<button id="video_review" video="W_S02_ST06_V02">HOME AND SCHOOL</button>
+						<button id="video_review" video="W_S02_ST06_V03">COLLABORATION</button>
+						<button id="quiz_review" quiz="stop6_in_review">IN REVIEW</button>
 					</review>
-					
-					<reading id="stop6_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
-						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
-					</reading>
 					
 					<quiz id="stop6_in_review">
 						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
@@ -552,39 +535,41 @@
 				<!-- Stop 7 | Home 2 -->
 				<stop id="stop_7" building="home">
 					
-					<text id="stop_title"><![CDATA[Jason's School]]></text>
+					<text id="stop_title"><![CDATA[Home]]></text>
 					
-					<text id="stop_intro" audio="TMH_S03_ST05_06" duration="7"><![CDATA[INTRO TEXT FOR THIS STOP. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.]]>
+					<text id="stop_intro" audio="W_S02_ST07_01" duration="7"><![CDATA[Incorporating holistic approaches like proper diet and nutrition are important to mom and the rest of the team.]]>
 					</text>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="nutritionist" audio="W_S02_ST07_02" duration="68"><![CDATA[mom asked that I visit with her about Jason’s diet and nutrition. Jason doesn’t have any food allergies and he has a good appetite!  Healthy diets are important for brain development, mood, attention, and overall feeling of well-being. mom enjoys cooking vegetables and traditional Asian foods, which are high in omega 3 fatty acids. We discussed the importance of limiting processed foods and foods that have refined sugar and high fructose corn syrup. 
+					Jason’s family accesses food from the local food shelf, and mom doesn’t understand all the directions of how to prepare some of the food her family receives. We talked about how she can prepare healthy meals using food that she gets from the food shelf. I think her case manager and neighbors can make sure she receives good food for her family. 
+					I would like to support mom in her attempts to have family meals together with no TV or electronic distractions in order to foster positive social interactions at meal time. I’ll work with Jason’s care providers to provide holistic care for Jason.
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="mom" audio="W_S02_ST07_03" duration="30"><![CDATA[In my family, medications are usually the last thing we think about. I’m glad I could talk with the nutritionist because her ideas fit closely with what I’m already trying to include in Jason’s daily life. For example, I try to limit the use of his inhaler at home by keeping things as calm as possible so he doesn’t have an attack. But, if he doesn’t get better and needs some medications, I am pretty sure that his psychiatric nurse practitioner will talk to me about the medicines that will help him the most and she’ll watch for side effects. 
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="psych_nurse " audio="W_S02_ST07_04" duration="29"><![CDATA[I appreciated learning from Sandra, the nutritionist, that mom is intentional about preparing healthy foods. Also, I was glad to hear Jason doesn’t have any food or seasonal allergies that could be affecting his mood and behaviors. We’ll also assess his diet for caffeine, and follow up with his mom about limiting processed foods. In order to help control his asthma symptoms, I want to find out if Jason is exposed to smoking at home, at Mrs. V’s house, his neighbor, or anywhere else.
 					]]>
 					</person>
 					
-					<person id="teacher" audio="TMH_S03_ST05_05" duration="5"><![CDATA[THIS IS THE TEXT FOR THIS PERSON. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et porttitor magna. Sed scelerisque odio ut nibh tempus, at dapibus ante ultrices. Pellentesque eu lorem ligula.
+					<person id="case_manager" audio="W_S02_ST07_05" duration="14"><![CDATA[Speaking of food, accessing healthy food for nutritious meals is sometimes a real issue for Jason’s family. I can continue to work with mom to help her access the food her family needs so that Jason can be successful in school, community, and home.
+					]]>
+					</person>
+
+					<person id="mom_2" audio="W_S02_ST07_06" duration="29"><![CDATA[Our family has gone through so much. I know Jason sometimes does struggle with frustration, paying attention, and staying in control of his body. I love him so much, and it’s hard to trust that professionals will really take the time to listen to our story and our needs. Now I feel that he has a team of people who will listen, understand, and will see what a wonderful boy Jason is. I’m so thankful for the team at Wilder who will help us!
 					]]>
 					</person>
 					
 					<review>
-						<button id="video_review" video="TMH_S03_ST04_V02">BUILDING TRUST AND RELATIONSHIPS</button>
-						<button id="video_review" video="TMH_S03_ST04_V03">THE IMPACT OF TRAUMA</button>
-						<button id="reading_review" quiz="stop7_reading">IN THEIR SHOES</button>
-						<button id="quiz_review" quiz="stop7_in_review">WHAT WOULD YOU DO?</button>
+						<button id="video_review" video="W_S02_ST07_V01">MEALTIME</button>
+						<button id="video_review" video="W_S02_ST07_V02">ACCESS TO FOOD</button>
+						<button id="video_review" video="W_S02_ST07_V03">INTERPROFESSIONAL APPROACH</button>
+						<button id="quiz_review" quiz="stop7_in_review">IN REVIEW</button>
 					</review>
 					
-					<reading id="stop7_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
-						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
-					</reading>
-					
+				
 					<quiz id="stop7_in_review">
 						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
 					</quiz>
@@ -602,10 +587,10 @@
 			
 			<text id="text_1">In Conclusion</text>
 			<text id="text_2">
-				<![CDATA[</br>THIS IS LEFT SIDE OF WILDER CONCLUSION team is a unique experience. You not only have the opportunity to empower individuals living with mental illness to live healthy and productive lives, but you also have the opportunity to learn and grow professionally by interacting with a diverse group of health and wellness practitioners.]]>
+				<![CDATA[</br>Behavioral and mental health issues can be difficult to understand and navigate. At Wilder we help families understand the healing process from diagnosis to treatment and everything in between. We work with the entire family to reinforce skills and tools to support people at home and we connect families to helpful resources.]]>
 			</text>
 			<text id="text_3">
-				<![CDATA[</br>THIS IS RIGHT SIDE OF WILDER CONCLUSION, person-centered care with individuals whose lives are affected by mental illness. We transform how services for mental, physical and social health intersect to achieve optimal wellness.]]>
+				<![CDATA[</br>We do this by learning about each family’s cultural perspectives on what will be helpful. We are constantly adapting our bicultural bilingual services to adapt to emerging needs as new cultural groups move to our community.]]>
 			</text>
 			
 			<button id="video_1" video="M01_S02V01_D">WATCH AN CONCLUSION VIDEO</button>

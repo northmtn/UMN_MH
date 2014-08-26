@@ -69,7 +69,7 @@ define([ 'net/data/AppData', 'libs/mediaelement/build/mediaelement-and-player', 
 		TweenLite.set( $(pl), { css: { autoAlpha:0, scale: 0.85 } } );
 		TweenLite.to( $(pl), 0.5, { css: { autoAlpha:1, scale:1 }, delay:0.25, ease:Power2.easeOut } );
 		
-		console.log("launchVideo:" + AppData.videoFolder + videoId + AppData.videoExtension );
+//		console.log("launchVideo:" + AppData.videoFolder + videoId + AppData.videoExtension );
 
 		this.player.pause();
 		this.player.setSrc( AppData.videoFolder + videoId + AppData.videoExtension );
@@ -130,7 +130,7 @@ define([ 'net/data/AppData', 'libs/mediaelement/build/mediaelement-and-player', 
 					url: [AppData.audioFolder + sndId + '.ogg', AppData.audioFolder + sndId + '.mp3'],
 					
 					onload: function(bSuccess) {
-					    if (!bSuccess) out("ERROR: Sound does not exist at "+ AppData.audioFolder + '' + sndId + '' + AppData.audioExtension );
+					    if (!bSuccess) console.log("ERROR: Sound does not exist at "+ AppData.audioFolder + '' + sndId + '' + AppData.audioExtension );
 					}
 					
 				});
@@ -163,7 +163,7 @@ define([ 'net/data/AppData', 'libs/mediaelement/build/mediaelement-and-player', 
 				
 				onload: function(bSuccess) {
 				    if (!bSuccess){
-						 out("ERROR: Sound does not exist at "+AppData.audioFolder + '' + sndId + '' + AppData.audioExtension);
+						 console.log("ERROR: Sound does not exist at "+AppData.audioFolder + '' + sndId + '' + AppData.audioExtension);
 					}
 				}
 				
