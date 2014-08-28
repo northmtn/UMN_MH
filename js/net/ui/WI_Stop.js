@@ -12,6 +12,7 @@ define(['net/util/Util'], function( Util ){
     	//Intro
     	this.introText =  $(configData).find("text[id='stop_intro']").first().text();
     	this.introAudioId = $(configData).find("text[id='stop_intro']").first().attr('audio');
+    	this.introAudioDelay = $(configData).find("text[id='stop_intro']").first().attr('duration');
 
     	//PEOPLE DATA
     	this.people = [];
@@ -50,6 +51,7 @@ define(['net/util/Util'], function( Util ){
 				pIndex = i;
 				break;
 			}
+			
 		}
     	
     	return pIndex;

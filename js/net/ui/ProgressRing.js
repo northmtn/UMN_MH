@@ -19,7 +19,7 @@ define(['net/util/Geom'], function(Geom){
 	}
 	
 	ProgressRing.startProgress = function( completionDelay, canvasParentDiv ) {
-	   		
+		   		
 		//stop current progress ring if any
 		TweenLite.killTweensOf(this);
 
@@ -59,12 +59,12 @@ define(['net/util/Geom'], function(Geom){
 
     	this.curProgressRingTween = TweenLite.to( this, this.curDuration, { curProgress: 1,  ease:Linear.easeNone, onUpdate: 
     		function(){
-    			
+
     			var num = 1 - thisRef.curProgress;    
     			    					
     			if (num<0.01)num=0.001;
     			if (num>0.99)num=1.0;
-    			
+    			    			
     			ctx.beginPath();
     			ctx.arc(thisRef.cRadius+thisRef.cStroke, thisRef.cRadius+thisRef.cStroke, thisRef.cRadius, 0+(1.5*Math.PI),(2*num*Math.PI)+(1.5*Math.PI),true);
     			ctx.stroke();

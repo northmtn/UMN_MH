@@ -430,7 +430,7 @@ button.rect-button.prev:before {
 .portrait-label.on p span {
 	background-color:#4d8b85;
 }
-.portrait-label .canvas-ring {
+.canvas-ring {
 	position: absolute;
 	left: 17px;
 	top: -13px;
@@ -489,6 +489,7 @@ button.rect-button.prev:before {
 #screen_mainmenu button.rect-button:hover {
 	background-color:#7d5e00;
 }
+
 #screen_mainmenu button.rect-button.visited {
 	border:7px solid #7d5e00;
 	background-color:#7d5e00;
@@ -571,7 +572,6 @@ button.rect-button.prev:before {
 	background-position:0px 31px; 
 
 }
-
 
 /* Wrapper coloring */
 #screen_touchstone .circle-text:after {
@@ -1407,6 +1407,9 @@ button.rect-button.prev:before {
 
 }
 /* Screens */
+#screen_wilder .portrait-label .canvas-ring {
+	z-index: 99;
+}
 #screen_wilder .single_centered_col .two-col p {
 	
 	color: #043b41;
@@ -1427,7 +1430,7 @@ button.rect-button.prev:before {
 	background-position:50px 7px; 
 	
 }
-#screen_wilder #intro_message h2 {
+#screen_wilder h2 {
 
 	font-size: 24px;
 	text-align: center;
@@ -1520,6 +1523,17 @@ button.rect-button.prev:before {
 	cursor: pointer;
 	z-index: 2;
 }
+#screen_wilder .personnel #progress_ring {
+	height: 200px;
+	width: 200px;
+	z-index: 4;
+}
+
+#screen_wilder .personnel.highlight img  {
+	background-color:#ccc;
+	border-color: #ff0;
+}
+
 #screen_wilder #inner_wheel_container #people .row1 {
 	top: 45px;
 }
@@ -1550,6 +1564,59 @@ button.rect-button.prev:before {
 #screen_wilder #inner_wheel_container #people #person_feature_btn_back {
 	top: 314px;
 	position: absolute;
+}
+
+#screen_wilder #inner_wheel_container #question_title{
+
+	padding-top: 50px;
+	margin: 0px;
+
+}
+#screen_wilder #inner_wheel_container #question_text{
+	
+	margin:0px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	
+}
+#screen_wilder .quiz-container textarea {
+
+	resize: none;
+	width: 340px;
+	height: 190px;
+	border:4px solid #d29773;
+
+    font-family: inherit;
+    font-size: 14px;
+    padding: 5px;
+    margin: 0px;
+
+}
+#screen_wilder .quiz-container #feedback_text {
+	background-color: #d29773;
+	text-align: left;
+	font-family: inherit;
+	color: white !important;
+	width: 338px;
+	height: 180px;
+	padding: 10px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	margin-top: 0px;
+}
+#screen_wilder #inner_wheel_container #title{
+
+	padding-top: 50px;
+	margin: 0px;
+
+}
+#screen_wilder #inner_wheel_container #review_text #main{
+
+	font-size: 14px;
+	height: 222px;
+	overflow-y: auto;
+
 }
 
 #screen_wilder #inner_wheel_container #review_footer_btns {

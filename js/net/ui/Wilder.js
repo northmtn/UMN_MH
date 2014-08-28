@@ -9,8 +9,10 @@ define(["libs/pace/pace.min",
 		"net/ui/ViewCollection", 
 		"net/util/Util",
 		"net/ui/WI_Stop", 
+		"net/ui/ProgressRing", 
+		"net/ui/Quiz", 
 		"tween"], 
-		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, Tips, View, ViewCollection, Util, WI_Stop )
+		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, Tips, View, ViewCollection, Util, WI_Stop, ProgressRing, Quiz )
 		{
 
 
@@ -26,6 +28,16 @@ define(["libs/pace/pace.min",
 		this.stops = [];
 		this.currentStop = {};
 		this.currentStopIndex = -1;
+		
+		this.curPersonDiv = {};
+		
+		this.currentReading = {};
+		this.currentQuiz = {};
+		this.reviewCompleted = false;
+		this.waitingFeedback = null;
+		
+		//Set colors for progress ring
+		ProgressRing.setup(54, 15,"#DD0", "#2a045e");
 
 	}
 
@@ -94,11 +106,19 @@ define(["libs/pace/pace.min",
 		if ( viewCollection.currentViewIndex == 0 ) {
 			
 		} else if ( viewCollection.currentViewIndex == 1 ) {
-
-		} else if ( viewCollection.currentViewIndex == 2 ) {
-
-		} else if ( viewCollection.currentViewIndex == 3 ) {
 			
+			var introAudioId = ""+$(AppData.configXML).find("module[id='wilder'] text[id='intro_text']").first().attr('audio');
+			var introAudioDelay = ""+$(AppData.configXML).find("module[id='wilder'] text[id='intro_text']").first().attr('duration');
+			Media.playTakeoverSound( introAudioId );
+			//Display tip if user doesn't skip intro
+			TweenLite.delayedCall(introAudioDelay, function() {
+					if ( $("#screen_wilder #inner_wheel_container #intro").is(':visible') == true) Tips.showById("wilder_page_2_intro_complete");
+			});
+			
+			
+		} else if ( viewCollection.currentViewIndex == 2 ) {
+			
+			Tips.showById("wilder_end");
 		}
 
 	}
@@ -144,16 +164,15 @@ define(["libs/pace/pace.min",
 		var thisRef = this;
 		this.currentStop = this.stops[stopNum];	
 		
-		console.log("==== GO tO sToP: "+stopNum);
-		console.log("stops: "+this.stops.length);
-		
 		// - setup stop content - //
 		//intro		
 		$("#screen_wilder #intro_message #title").html( this.currentStop.title ); // set current title
 		$("#screen_wilder #inner_wheel_container #intro #story_intro").html( this.currentStop.introText ); // set main text
 		Media.playTakeoverSound( this.currentStop.introAudioId );
 		
+		
 		//people
+		$("#screen_wilder #views_container #inner_wheel_container #people_btn_next").hide();//don't show next btn until all people visited
 		$(this.containerDiv).find("#personnel_layer .personnel").each(function () {
 			//reset all people  
 			$(this).removeClass('visited highlight row1 row2 col1 col2 col3 col4 col5');
@@ -168,9 +187,7 @@ define(["libs/pace/pace.min",
     		
     		var roleId = this.currentStop.people[i][0];
     		var persDiv = $(this.containerDiv).find("#person_" + roleId );
-    		
-    		console.log("showing: "+ $(persDiv).attr('id'));
-    		
+    		    		
     		$(persDiv).show();
     		
     		//add positioning classes
@@ -218,13 +235,81 @@ define(["libs/pace/pace.min",
     	}
 			
 		//review
+		//review buttons
+		$(this.containerDiv).find("#review_list button.rect-button").each( function (index) {
+			
+			//Remove any previous review click listeners
+			$(this).off( "click", thisRef.reviewBtnClicked );
+			
+			if (index < thisRef.currentStop.reviewBtns.length) {
+	
+				//set button text
+				$(this).html(thisRef.currentStop.reviewBtns[index][0]);
+				
+				var vSrc = thisRef.currentStop.reviewBtns[index][1];//video
+				var aSrc = thisRef.currentStop.reviewBtns[index][2];//audio
+				var rSrc = thisRef.currentStop.reviewBtns[index][3];//reading
+				var qSrc = thisRef.currentStop.reviewBtns[index][4];//quiz
+				var rFeedback = thisRef.currentStop.reviewBtns[index][5];//feedback
+				
+				console.log("setup reviw btn: "+vSrc);
+				
+				//clear previous meta data
+				$(this).removeAttr( 'data-video' );
+				$(this).removeAttr( 'data-audio' );
+				$(this).removeAttr( 'data-reading' );
+				$(this).removeAttr( 'data-quiz' );
+				$(this).removeAttr( 'data-feedback' );
+								
+				//add video links
+				if (typeof vSrc !== 'undefined' && vSrc !== false) {
+					$(this).attr('data-video', vSrc);
+					$(this).attr('id', 'video_'+index);
+				}
+				
+				//add audio link
+				if (typeof aSrc !== 'undefined' && aSrc !== false) {
+					$(this).attr('data-audio', aSrc);
+					$(this).attr('id', 'audio_'+index);
+				}
+				
+				//add reading link
+				if (typeof rSrc !== 'undefined' && rSrc !== false) {
+					$(this).attr('data-reading', rSrc);
+					$(this).attr('id', 'reading_'+index);
+				}
+				
+				//add Question/Answer link
+				if (typeof qSrc !== 'undefined' && qSrc !== false) {
+					$(this).attr('data-quiz', qSrc);
+					$(this).attr('id', 'quiz_'+index);
+				}
+				
+				//add optional feedback text. Will trigger leaf/feedback box.
+				if (typeof rFeedback !== 'undefined' && rFeedback !== false) {
+					$(this).attr('data-feedback', rFeedback);
+				}
+				
+				$(this).show();
+				$(this).on( "click", { thisRef: thisRef }, thisRef.reviewBtnClicked );
+				
+			} else {
+			
+				$(this).hide();
+				
+			}
+			
+			$(this).removeClass('visited');
 		
+		});
+
 		
 		//spin
 		this.spinToBuilding(this.currentStop.buildingId);
+		Tips.showById("wilder_new_building");
 		
 		//display intro
-		this.showIntro();
+		this.showPeople();
 
 	}
 	
@@ -272,6 +357,8 @@ define(["libs/pace/pace.min",
 		
 		this.transitionInnerCircleTo("review");
 		
+		Tips.showById("wilder_review_start");
+		
 	}
 	
 	Wilder.prototype.transitionInnerCircleTo = function (containerId) {
@@ -295,13 +382,14 @@ define(["libs/pace/pace.min",
     	//Start audio
     	Media.playTakeoverSound( sndId );
     	
-    	
-    	/*
-    	
+    	this.killCurrentActivePersonnel();
+       	this.curPersonDiv = $(this.containerDiv).find("#person_" + personData[0] ).first();
+    	this.startActivePortrait();
+
     	//Move portrait activate portrait
     	this.startPortraitProgressRing( sndDelay );
     	
-    	
+    	/*
     	
     	//Wait for end of audio. 
     	if (sndDelay == 'undefined' || sndDelay == null || sndDelay == undefined) sndDelay = 5; //default to 5 secs.
@@ -345,7 +433,182 @@ define(["libs/pace/pace.min",
     	}, [clickedIndex, thisRef, numClicked]);
 
 		*/
+		
+		//Check if all people have been visited
+		var numVisited = 0;
+		for (var i = 0; i < this.currentStop.people.length; i++) {
+			
+			var roleId = this.currentStop.people[i][0];
+			var persDiv = $(this.containerDiv).find("#person_" + roleId );
+			if ($(persDiv).hasClass("visited")) numVisited++;
+			
+		}
+		if (numVisited == this.currentStop.people.length) {
+			//show next btn
+			$("#screen_wilder #views_container #inner_wheel_container #people_btn_next").fadeIn('slow');
+			Tips.showById("wilder_last_person_completed");
+		}
+		
+		
     };
+    
+    Wilder.prototype.startPortraitProgressRing = function( sndDelay ) {
+    
+    	ProgressRing.startProgress( sndDelay, this.curPersonDiv );
+    	
+    }
+    
+    Wilder.prototype.startActivePortrait = function( ) {
+    	
+    	if ( this.curPersonDiv ) {
+    			
+			//Mark this div as visited until reset
+			$(this.curPersonDiv).addClass('visited');
+		    		
+			//Make portrait 'wobble' as it talks
+			TweenMax.set( $(this.curPersonDiv).find(".circle-portrait img"), { css: { rotation:-3 } } ); 
+			TweenMax.to( $(this.curPersonDiv).find(".circle-portrait img"), 0.75, { css: { rotation:3 },  ease:Power1.easeInOut, yoyo: true, repeat:99 } ); // Teetering rotation
+			
+			//Populate speech text
+//			var speechTitle = this.currentStop.people[ this.curPersonIndex ][0] + "";
+//			var speechTxt = this.currentStop.people[ this.curPersonIndex ][4];
+//			$(this.containerDiv).find("#center_oval #step_title").html( speechTitle.toUpperCase() );
+//			$(this.containerDiv).find("#center_oval #description").html( speechTxt );
+//			    		    		
+			    		    		
+    	}
+    	
+    }
+    
+    Wilder.prototype.killCurrentActivePersonnel = function( ) {
+        	
+        	if ( this.curPersonDiv ) {
+        		
+        		TweenLite.to( $(this.curPersonDiv), 0.5, { css: { scale:1, zIndex:0 },  ease:Power2.easeOut } );
+        		TweenMax.killTweensOf( $(this.curPersonDiv).find(".circle-portrait img") );
+
+        		this.curPersonnelDiv = null;
+        		
+        	}
+        }
+    
+    Wilder.prototype.reviewBtnClicked = function( event ) {
+    	
+    	var thisRef = event.data.thisRef;
+    	
+    	$(this).addClass('visited');
+    	    	
+    	//check for associated feedback
+    	var fTxt = $(this).attr('data-feedback');
+    	if (typeof fTxt !== 'undefined' && fTxt !== false) {
+    		thisRef.waitingFeedback = fTxt;
+    	}
+    	
+    	//check review progress
+    	var numVisible = $(this).parent().find("button:visible").length;
+    	var numVisited = $(this).parent().find("button.visited").length;
+    	if (numVisited >= numVisible) {
+    		thisRef.reviewCompleted = true;
+    	}
+    	
+    	//if reading btn or quiz btn
+    	var rSrc = $(this).attr('data-reading');
+    	var qSrc = $(this).attr('data-quiz');
+    	if (typeof rSrc !== 'undefined' && rSrc !== false) {
+    		thisRef.showReading( rSrc );
+    		
+    	} else if (typeof qSrc !== 'undefined' && qSrc !== false) {
+    		thisRef.showQuiz( qSrc );
+    		
+    	} else {
+    		//not quiz, no need to delay completion check
+    		thisRef.checkForReviewCompletion();
+    		
+    	}
+
+    }
+
+    Wilder.prototype.checkForReviewCompletion = function( ) {
+        
+    	//Drop leaf and show feedback if any is waiting. 
+    	this.triggerAwaitingFeedback();
+
+    	if (this.reviewCompleted == true) {
+    		
+    		Tips.showById("wilder_review_complete");
+    		
+    	}
+    	
+    }
+    
+    Wilder.prototype.triggerAwaitingFeedback = function() {
+    
+    	if (this.waitingFeedback != null) {
+        	WI_Feedback.populateFeedback(this.waitingFeedback);
+        	WI_Feedback.dropLeaf();
+        	this.waitingFeedback = null;
+    	}
+    	
+    }
+    
+    Wilder.prototype.showQuiz = function( quizId ) {
+        	
+    	//Setup up quiz
+    	var quizData = this.currentStop.getQuizById( quizId );
+    	
+    	this.currentQuiz = new Quiz( $(this.containerDiv).find("#inner_wheel_container #question_answer_container"), $(quizData), this );
+    	this.currentQuiz.setFinishHideMode(true);
+		this.currentQuiz.reset();
+    	
+    	//show review media/quiz
+    	$(this.containerDiv).find("#inner_wheel_container #review_list").hide();   
+    	$(this.containerDiv).find("#inner_wheel_container #question_answer_container").show();  
+
+    }
+    
+     Wilder.prototype.hideQuiz = function( ) {
+        	
+    	//hide  media/quiz
+    	$(this.containerDiv).find("#inner_wheel_container #review_list").show();   
+    	$(this.containerDiv).find("#inner_wheel_container #question_answer_container").hide();  
+
+    }
+    
+    Wilder.prototype.onQuizFinished = function( ) {
+    
+    	// keep for quiz callback
+
+    }
+    
+    Wilder.prototype.showReading = function( readingId ) {
+        	
+    	//Setup up quiz
+    	var readingData = this.currentStop.getReadingById( readingId );
+    	var title = $(readingData).attr('title');
+    	var audio = $(readingData).attr('audio');
+    	var duration = $(readingData).attr('duration');
+    	var main = $(readingData).text();
+    	
+    	//Set reading text
+    	$(this.containerDiv).find("#inner_wheel_container #review_text #title").html( title ); //title
+    	$(this.containerDiv).find("#inner_wheel_container #review_text #main").html( main ); //main
+    	
+    	//show review media/quiz
+    	$(this.containerDiv).find("#inner_wheel_container #review_list").hide();   
+    	$(this.containerDiv).find("#inner_wheel_container #review_text").show();  
+    	
+    	//Play media
+    	Media.playTakeoverSound(audio);
+
+    }
+    
+    Wilder.prototype.hideReading = function( ) {
+
+    	//show review media/quiz
+    	$(this.containerDiv).find("#inner_wheel_container #review_list").show();   
+    	$(this.containerDiv).find("#inner_wheel_container #review_text").hide();  
+
+    }
 
 	//Overwrite button handlers
 	Wilder.prototype.buttonClicked = function(btnId, btnRef) {
@@ -423,11 +686,11 @@ define(["libs/pace/pace.min",
 			break;
 			case "review_QA_btn_back":
 				// return to review list from QUIZ
-				
+				this.hideQuiz();
 			break;
 			case "review_text_btn_back":
 				// return to review list from TEXT 
-				 
+				this.hideReading();
 			break;
 			case "btn_resources":
 				//TODO - Go to resources page?

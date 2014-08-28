@@ -369,7 +369,7 @@
 					
 					<review>
 						<button id="video_review" video="W_S02_ST02_V01">THE HOME ENVIRONMENT</button>
-						<button id="reading_review" quiz="stop2_reading">IN THEIR SHOES</button>
+						<button id="reading_review" reading="stop2_reading">IN THEIR SHOES</button>
 						<button id="quiz_review" quiz="stop2_in_review">IN REVIEW</button>
 					</review>
 					
@@ -483,7 +483,7 @@
 					<review>
 						<button id="video_review" video="W_S02_ST05_V01">LEAST INTRUSIVE APPROACH</button>
 						<button id="video_review" video="W_S02_ST05_V02">MEDICATIONS</button>
-						<button id="reading_review" quiz="stop5_reading">IN THEIR SHOES</button>
+						<button id="reading_review" reading="stop5_reading">IN THEIR SHOES</button>
 						<button id="quiz_review" quiz="stop5_in_review">IN REVIEW</button>
 					</review>
 					
@@ -602,7 +602,7 @@
 		<tips>
 			<tip id="wilder_entered" delay="2" duration="6">Watch the video, then click "2" on top bar to continue.</tip>
 			<tip id="wilder_page_2_intro_complete" delay="0" duration="6">Click START to begin the activity.</tip>
-			<tip id="wilder_new_building" delay="0" duration="6">Click on each person.</tip>
+			<tip id="wilder_new_building" delay="1.5" duration="6">Click on each person.</tip>
 			<tip id="wilder_last_person_completed" delay="0" duration="6">Click on NEXT.</tip>
 			<tip id="wilder_review_start" delay="0" duration="6">Click each orange button. When you are finished, click NEXT.</tip>
 			<tip id="wilder_review_complete" delay="0" duration="6">Click "3" on top bar to continue.</tip>

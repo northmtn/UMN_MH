@@ -31,20 +31,28 @@ define([], function(){
     	this.feedbackShown = false;
     	this.feedbackText = "";
     	
+    	this.hideFinish = false;
+    	
     	$(this.quizBtn).on( "click", { thisRef: thisRef }, thisRef.quizBtnClicked );
 			        	
+    }
+    
+    Quiz.prototype.setFinishHideMode = function( value ) {
+    
+    	this.hideFinish = value;
+    	
     }
     
     Quiz.prototype.reset = function( ) {
     
     	this.showQuestion(0);
-    
+    	
     }
     
     Quiz.prototype.nextQuestion = function( ) {
     
     	this.showQuestion( this.curQuestionIndex + 1 );
-    
+    	
     }
 
     Quiz.prototype.showQuestion = function( qIndex ) {
@@ -63,6 +71,7 @@ define([], function(){
     	
     	$(this.quizBtn).html("DONE");
     	$(this.quizBtn).removeClass("next");
+    	$(this.quizBtn).show();
     	
     	//default feedback to hidden
     	$(this.feedbackDiv).hide();
@@ -81,8 +90,17 @@ define([], function(){
     		$(this.quizBtn).html("NEXT");
     		$(this.quizBtn).addClass("next");
     	} else {
-    		$(this.quizBtn).removeClass("next");
-    		$(this.quizBtn).html("FINISH");
+    		if (this.hideFinish == true){
+    			
+    			$(this.quizBtn).hide();
+    			
+    		}else{
+    		
+    			$(this.quizBtn).removeClass("next");
+    			$(this.quizBtn).html("FINISH");
+    		
+    		}
+    		
     	}
     
     }
