@@ -1408,7 +1408,7 @@ button.rect-button.prev:before {
 }
 /* Screens */
 #screen_wilder .portrait-label .canvas-ring {
-	z-index: 99;
+	
 }
 #screen_wilder .single_centered_col .two-col p {
 	
@@ -1524,14 +1524,12 @@ button.rect-button.prev:before {
 	z-index: 2;
 }
 #screen_wilder .personnel #progress_ring {
-	height: 200px;
-	width: 200px;
-	z-index: 4;
+ left: 71px;
 }
 
 #screen_wilder .personnel.highlight img  {
 	background-color:#ccc;
-	border-color: #ff0;
+	border-color: #cdcdcd;
 }
 
 #screen_wilder #inner_wheel_container #people .row1 {

@@ -21,9 +21,6 @@ define(["libs/pace/pace.min",
 
 		// Call the super constructor.
 		Screen.call( this, containerDiv );
-
-		// Return this object reference.
-		return( this );
 		
 		this.stops = [];
 		this.currentStop = {};
@@ -35,9 +32,9 @@ define(["libs/pace/pace.min",
 		this.currentQuiz = {};
 		this.reviewCompleted = false;
 		this.waitingFeedback = null;
-		
-		//Set colors for progress ring
-		ProgressRing.setup(54, 15,"#DD0", "#2a045e");
+
+		// Return this object reference.
+		return( this );
 
 	}
 
@@ -58,6 +55,9 @@ define(["libs/pace/pace.min",
 		
 		//Setup tips
 		Tips.setContainerDiv("#screen_wilder #tips_container");
+		
+		//Set colors for progress ring
+		ProgressRing.setup(54, 15,"#ddd", "#d29773");
 
 		//First time view collection is loaded, default to view 1
 		var thisRef = this;
@@ -178,9 +178,7 @@ define(["libs/pace/pace.min",
 			$(this).removeClass('visited highlight row1 row2 col1 col2 col3 col4 col5');
 			$(this).find("#progress_ring").hide();
 			$(this).hide();
-			
-			console.log("hiding: "+ $(this).attr('id'));
-		
+					
 		});
 		//Enable people portraits for this stop
 		for (var i = 0; i < this.currentStop.people.length; i++) {
