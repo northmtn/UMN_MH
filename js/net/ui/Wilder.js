@@ -212,6 +212,7 @@ define(["libs/pace/pace.min",
     		
     		$(persDiv).addClass("row" + posRowIndex);
     		$(persDiv).addClass( "col" + posColIndex);
+    		$(persDiv).addClass( "active" );
   			
   			//Active people can be clicked at anytime
   			$(persDiv).find("#hit").off();
@@ -377,78 +378,64 @@ define(["libs/pace/pace.min",
     	var sndId = personData[1];
     	var sndDelay = personData[2];
     	
-    	//Start audio
-    	Media.playTakeoverSound( sndId );
-    	
     	this.killCurrentActivePersonnel();
-       	this.curPersonDiv = $(this.containerDiv).find("#person_" + personData[0] ).first();
+    	
+    	$("#screen_wilder #person_feature .personnel").remove();
+    	
+    	$(this.containerDiv).find("#person_" + personData[0] ).first().addClass('visited');
+    	
+    	var chosenDiv = $(this.containerDiv).find("#person_" + personData[0] ).first();
+    	this.curPersonDiv = $( chosenDiv ).clone().appendTo( "#screen_wilder #person_feature" );
+    	
+    	//set person dialog
+    	$("#screen_wilder #person_feature #person_feature_dialog").html(personData[4]);
     	this.startActivePortrait();
+    	this.disablePortraits();
 
+    	//Transition to featured portrait
+//       	TweenLite.to( $(this.curPersonDiv), 1, { css: { top:50, left:50 },  ease:Power2.easeInOut } );
+    	
+    	$("#screen_wilder #personnel_layer").fadeOut('slow');
+    	$("#screen_wilder #person_feature").fadeIn('slow');
+    	
+    	$(this.curPersonDiv).removeClass('row1 row2 row3 col1 col2 col3 col4 col5');
+		
+		//Start audio
+		Media.playTakeoverSound( sndId );
+		
     	//Move portrait activate portrait
     	this.startPortraitProgressRing( sndDelay );
-    	
-    	/*
-    	
-    	//Wait for end of audio. 
-    	if (sndDelay == 'undefined' || sndDelay == null || sndDelay == undefined) sndDelay = 5; //default to 5 secs.
-    	var clickedIndex = this.curPersonnelIndex;
-    	this.portraitsClicked ++;
-    	var numClicked = this.portraitsClicked;
-    	
-    	//Things that happen AFTER end of sound. Can be interrupted.
-    	TweenLite.delayedCall(sndDelay, function(clickedIndex, thisRef, numClicked) {
-    	    		
-    		if (clickedIndex != thisRef.curPersonnelIndex || thisRef.portraitsClicked != numClicked  ) return; // If this portrait is no longer the active one, exit delayed call.
-    	
-    		//drop leaf if there is feedback associated
-    		var fTxt = personnelData[3];
-    		if (typeof fTxt !== 'undefined' && fTxt !== false) {
-    			thisRef.waitingFeedback = fTxt;
-    			thisRef.triggerAwaitingFeedback();
-    		}
-    		
-			if ( thisRef.allActivePersonnelClicked() == false ) {
-			
-    			//call out next personnel
-    			thisRef.callOutNextPersonnel();
 
-    		} else {
-    			
-    			//was last personnel to call out. 
-    			thisRef.killCurrentActivePersonnel();
-    			
-    			//kill speech bubble
-    			thisRef.killSpeechBubble();
-    			
-    			//show review media/quiz
-    			$(thisRef.containerDiv).find("#center_oval #step_description_container").hide();   
-    			$(thisRef.containerDiv).find("#center_oval #review_container").show();    
-    			
-    			Tips.showById("page_3_show_review");
-    					
-    		}
-	    		
-    	}, [clickedIndex, thisRef, numClicked]);
-
-		*/
-		
-		//Check if all people have been visited
-		var numVisited = 0;
-		for (var i = 0; i < this.currentStop.people.length; i++) {
-			
-			var roleId = this.currentStop.people[i][0];
-			var persDiv = $(this.containerDiv).find("#person_" + roleId );
-			if ($(persDiv).hasClass("visited")) numVisited++;
-			
-		}
-		if (numVisited == this.currentStop.people.length) {
-			//show next btn
-			$("#screen_wilder #views_container #inner_wheel_container #people_btn_next").fadeIn('slow');
-			Tips.showById("wilder_last_person_completed");
-		}
-		
-		
     };
+    
+    Wilder.prototype.checkPortraitsCompletion = function( ) {
+    	//Check if all people have been visited
+    	var numVisited = 0;
+    	for (var i = 0; i < this.currentStop.people.length; i++) {
+    		
+    		var roleId = this.currentStop.people[i][0];
+    		var persDiv = $(this.containerDiv).find("#person_" + roleId );
+    		if ($(persDiv).hasClass("visited")) numVisited++;
+    		
+    	}
+    	if (numVisited == this.currentStop.people.length) {
+    		//show next btn
+    		$("#screen_wilder #views_container #inner_wheel_container #people_btn_next").fadeIn('slow');
+    		Tips.showById("wilder_last_person_completed");
+    	}
+    }
+    
+    Wilder.prototype.enablePortraits = function( ) {
+    
+    	$("#screen_wilder #inner_wheel_container #people .personnel.active #hit").css('pointer-events', 'none');
+    	
+    }
+    
+    Wilder.prototype.disablePortraits = function( ) {
+    	console.log($("#screen_wilder #inner_wheel_container #people .personnel.active #hit").length);
+    	$("#screen_wilder #inner_wheel_container #people .personnel.active #hit").css('pointer-events', 'auto');
+    	
+    }
     
     Wilder.prototype.startPortraitProgressRing = function( sndDelay ) {
     
@@ -466,14 +453,7 @@ define(["libs/pace/pace.min",
 			//Make portrait 'wobble' as it talks
 			TweenMax.set( $(this.curPersonDiv).find(".circle-portrait img"), { css: { rotation:-3 } } ); 
 			TweenMax.to( $(this.curPersonDiv).find(".circle-portrait img"), 0.75, { css: { rotation:3 },  ease:Power1.easeInOut, yoyo: true, repeat:99 } ); // Teetering rotation
-			
-			//Populate speech text
-//			var speechTitle = this.currentStop.people[ this.curPersonIndex ][0] + "";
-//			var speechTxt = this.currentStop.people[ this.curPersonIndex ][4];
-//			$(this.containerDiv).find("#center_oval #step_title").html( speechTitle.toUpperCase() );
-//			$(this.containerDiv).find("#center_oval #description").html( speechTxt );
-//			    		    		
-			    		    		
+    		    		
     	}
     	
     }
@@ -666,11 +646,14 @@ define(["libs/pace/pace.min",
 			break;
 			case "person_feature_btn_back":
 				//return from person feature
-				$("#screen_wilder #personnel_layer").show();
-				$("#screen_wilder #person_feature").hide();
+				$("#screen_wilder #personnel_layer").fadeIn('slow');
+				$("#screen_wilder #person_feature").fadeOut('slow');
+				this.checkPortraitsCompletion();
+				this.disablePortraits();
 			break;
 			case "people_btn_next":
 				//continue after all people visited
+				this.killCurrentActivePersonnel();
 				this.showReview();
 			break;
 			case "review_btn_back":

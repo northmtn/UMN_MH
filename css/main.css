@@ -1496,6 +1496,13 @@ button.rect-button.prev:before {
 #screen_wilder #inner_wheel_container button.rect-button {
 	width: 350px;
 }
+#screen_wilder #people #person_feature {
+	
+}
+#screen_wilder #people #person_feature .personnel {
+	left: 20px;
+	top: 20px;
+}
 #screen_wilder #people #person_feature_dialog {
 	top:  94px;
 	position: absolute;
@@ -1528,8 +1535,8 @@ button.rect-button.prev:before {
 }
 
 #screen_wilder .personnel.highlight img  {
-	background-color:#ccc;
-	border-color: #cdcdcd;
+	background-color:#d29773;
+	border-color: #d29773;
 }
 
 #screen_wilder #inner_wheel_container #people .row1 {
