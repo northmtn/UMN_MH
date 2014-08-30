@@ -51,7 +51,7 @@ require(['jquery', 'libs/pace/pace.min', 'net/data/AppData', 'net/media/Media', 
     	Navigator.init();
     	
     	var mm = new MainMenu( $("#wrapper #screen_mainmenu"), this );
-    	var imh = new Touchstone( $("#wrapper #screen_integrative"), this );
+    	var imh = new Integrative( $("#wrapper #screen_integrative"), this );
     	var ts = new Touchstone( $("#wrapper #screen_touchstone"), this );
     	var wi = new Wilder( $("#wrapper #screen_wilder"), this );
     	

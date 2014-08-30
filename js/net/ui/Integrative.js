@@ -7,8 +7,9 @@ define(["libs/pace/pace.min",
 		"net/ui/Tips", 
 		"net/ui/View", 
 		"net/ui/ViewCollection", 
+		"net/util/Util",
 		"tween"], 
-		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, Tips, TS_BuildingSequence, BubbleTank, TS_FeatureBubble, TS_Feedback, View, ViewCollection )
+		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, Tips, View, ViewCollection, Util )
 		{
 
 
@@ -17,6 +18,17 @@ define(["libs/pace/pace.min",
 
 		// Call the super constructor.
 		Screen.call( this, containerDiv );
+		
+		this.stops = [];
+		this.currentStop = {};
+		this.currentStopIndex = -1;
+		
+		this.curPersonDiv = {};
+		
+		this.currentReading = {};
+		this.currentQuiz = {};
+		this.reviewCompleted = false;
+		this.waitingFeedback = null;
 
 		// Return this object reference.
 		return( this );
@@ -32,19 +44,15 @@ define(["libs/pace/pace.min",
 	var timelineNav = {};
 	var viewCollection = {};
 	
-	
 	Integrative.prototype.setup = function() {
 	
 		//setup View Collection
-		var c = $("#screen_Integrative #views_container");
-		viewCollection = new ViewCollection( $(c), "trustone_views");
+		var c = $("#screen_integrative #views_container");
+		viewCollection = new ViewCollection( $(c), "integrative_views");
 		
 		//Setup tips
-		Tips.setContainerDiv("#screen_Integrative #tips_container");
-		
-		//Setup feedback
-		TS_Feedback.setup();
-		
+		Tips.setContainerDiv("#screen_integrative #tips_container");
+
 		//First time view collection is loaded, default to view 1
 		var thisRef = this;
 		Pace.once("done", function() {
@@ -54,20 +62,20 @@ define(["libs/pace/pace.min",
 			timelineNav.refreshDisplays();
 			thisRef.refreshButtonListeners();
 			
-			Tips.showById("Integrative_entered");
+			Tips.showById("integrative_entered");
 			
 		});
 		
-		viewCollection.addView( new View( $(c), "view_1", "view_1", this.view1Setup) ); 
-		viewCollection.addView( new View( $(c), "view_2", "view_2", this.view2Setup ) );
-		viewCollection.addView( new View( $(c), "view_3", "view_3", this.view3Setup ) );
+		viewCollection.addView( new View( $(c), "view_1", "two_column_intro_b", this.view1Setup) ); 
+		viewCollection.addView( new View( $(c), "view_2", "integrative_circle", this.view2Setup ) );
+		viewCollection.addView( new View( $(c), "view_3", "two_column_conclusion", this.view3Setup ) );
 		
-		timelineNav = new TimelineNav( $("#screen_Integrative  #timeline_nav").first(), viewCollection);
-
+		timelineNav = new TimelineNav( $("#screen_integrative  #timeline_nav").first(), viewCollection);
+		
 	}
 	
 	Integrative.prototype.view1Setup = function() {
-	
+		
 	}
 	
 	Integrative.prototype.view2Setup = function() {
@@ -87,11 +95,9 @@ define(["libs/pace/pace.min",
 		if ( viewCollection.currentViewIndex == 0 ) {
 			
 		} else if ( viewCollection.currentViewIndex == 1 ) {
-
-		} else if ( viewCollection.currentViewIndex == 2 ) {
-
-		} else if ( viewCollection.currentViewIndex == 3 ) {
 			
+		} else if ( viewCollection.currentViewIndex == 2 ) {
+						
 		}
 
 	}
@@ -144,6 +150,9 @@ define(["libs/pace/pace.min",
 			case "btn_tips_inner":
 			case "tips_container":
 				Tips.toggle();
+			break;
+			case "intro_btn_start":
+				
 			break;
 			case "btn_resources":
 				//TODO - Go to resources page?

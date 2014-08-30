@@ -18,6 +18,38 @@
 	<!-- INTEGRATIVE -->
 	<!-- ––––––––––– -->
 	<module id="integrative" title="Integrative">
+	
+		<!-- Screen 1 -->
+		<view id="view_1" title="Intro">
+			<image id="image_1">img/touchstone/touchstone_logo_1.png</image>
+			
+			<text id="text_1">Welcome to Touchstone Mental Health</text>
+			<text id="text_2">
+				<![CDATA[Recovery from mental illness and whole person wellness starts at Touchstone Mental Health where our mission is to “inspire hope, healing and well-being.” We consider each person as a whole; integrating treatment, care and resources which support a healthy mind, body, and spirit. We are a point of reference guiding clients, community members and residents toward recovery and well-being. We encourage each person to define their life goals— ]]>
+			</text>
+			<text id="text_3">
+				<![CDATA[physical, mental, emotional, spiritual, social, vocational and interpersonal – and we provide the tools so people achieve them. In this module you’ll have the chance to learn more about our team approach by engaging in an interactive case story about a typical Touchstone resident.
+				<br/><br/><b>Watch the video and then click 2 on the top bar to continue.</b>]]>
+			</text>
+			
+			<button id="video_1" video="TMH_S01_V01">WATCH AN INTRODUCTORY VIDEO</button>
+		</view>
+		
+		<!-- Screen 2 -->
+		<view id="view_2" title="Profiles">
+			
+		</view>
+		
+		<!-- Screen 3 -->
+		<view id="view_3" title="Conclusion">
+	
+		</view>
+	
+		<!-- Integrative Tips -->
+		<tips>
+			<tip id="wilder_tip1" delay="2" duration="6">Watch the video, then click "2" on top bar to continue.</tip>
+			<tip id="wilder_tip2" delay="2" duration="6">Click MAIN MENU to select another module.</tip>
+		</tips>
 	</module>
 	
 	

@@ -561,6 +561,87 @@ button.rect-button.prev:before {
 }
 
 
+/*-------------*/
+/* Integrative */
+/*-------------*/
+#screen_integrative {
+	
+	background-image: url("../img/integrative/integrative_bg_tile.png");
+	background-repeat: repeat-x;
+	background-position:0px 31px; 
+
+}
+
+/* Wrapper Styling (header/nav/footer) */
+#screen_integrative .header-bar #header_title {
+	color: #fff;	
+}
+#screen_integrative .header-bar #timeline_nav {
+	left: 613px;
+}
+#screen_integrative .circle-text:after {
+    background: #6e320f;    
+}
+#screen_integrative .header-bar .circle-text:hover:after {
+    background: #f3eeda;
+}
+#screen_integrative .circle-text div {
+	position: absolute;
+	color: #f3eeda;
+}
+#screen_integrative .header-bar .nav-active:after {
+    background: #f3eeda;
+}
+#screen_integrative .header-bar .nav-active div {
+    color: #6e320f;
+}
+#screen_integrative .header-bar .circle-text:hover div {
+	color: #043b41;
+}
+#screen_integrative .header-bar .pill-text:hover {
+    background: #f3eeda;
+    color: #043b41;
+}
+#screen_integrative .header-bar .pill-text {
+    background: #6e320f;
+    color: #f3eeda;
+}
+#screen_integrative .footer-bar {
+	background-image: url("../img/integrative/integrative_footer_tab.png");
+}
+#screen_integrative .footer-bar #btn_quit_program h3 {
+	color: #f3eeda;
+}
+#screen_integrative .footer-bar #btn_quit_program:hover h3 {
+	color: #fff;
+}
+#screen_integrative .header-bar #tips_container.tooltips span:after {
+  border-bottom: 12px solid #cbb09f;
+}
+#screen_integrative .header-bar #tips_container h2 {
+	background: #cbb09f;
+}
+/* Buttons */
+#screen_integrative button.rect-button {
+	-moz-box-shadow:inset 0px 0px 0px 1px #fff;
+	-webkit-box-shadow:inset 0px 0px 0px 1px #fff;
+	box-shadow:inset 0px 0px 0px 1px #fff;
+	background-color:#cbb09f;
+	border:7px solid #cbb09f;
+	display: inline-block;
+	padding:6px 12px;	
+}
+#screen_integrative button.rect-button:hover {
+	background-color:#6e320f;
+}
+/* Fonts */
+#screen_integrative h2,
+#screen_integrative p {
+	
+	color: #617ca1;
+
+}
+
 /*------------*/
 /* Touchstone */
 /*------------*/	
@@ -1500,11 +1581,11 @@ button.rect-button.prev:before {
 	
 }
 #screen_wilder #people #person_feature .personnel {
-	left: 20px;
-	top: 20px;
+	left: 30px;
+	top: -23px;
 }
 #screen_wilder #people #person_feature_dialog {
-	top:  94px;
+	top:  105px;
 	position: absolute;
 	width: 350px;
 	
