@@ -26,6 +26,7 @@ define(["libs/pace/pace.min",
 		this.currentStop = {};
 		this.currentStopIndex = -1;
 		
+		
 		this.curPersonDiv = {};
 		
 		this.currentReading = {};
@@ -107,15 +108,19 @@ define(["libs/pace/pace.min",
 			
 		} else if ( viewCollection.currentViewIndex == 1 ) {
 			
-			var introAudioId = ""+$(AppData.configXML).find("module[id='wilder'] text[id='intro_text']").first().attr('audio');
-			var introAudioDelay = ""+$(AppData.configXML).find("module[id='wilder'] text[id='intro_text']").first().attr('duration');
-			Media.playTakeoverSound( introAudioId );
-			//Display tip if user doesn't skip intro
-			TweenLite.delayedCall(introAudioDelay, function() {
+			//Play intro audio if is still on intro screen
+			if ( $("#screen_wilder #inner_wheel_container #intro").is(':visible') == true){
+			
+				var introAudioId = ""+$(AppData.configXML).find("module[id='wilder'] text[id='intro_text']").first().attr('audio');
+				var introAudioDelay = ""+$(AppData.configXML).find("module[id='wilder'] text[id='intro_text']").first().attr('duration');
+				Media.playTakeoverSound( introAudioId );
+				//Display tip if user doesn't skip intro
+				TweenLite.delayedCall(introAudioDelay, function() {
 					if ( $("#screen_wilder #inner_wheel_container #intro").is(':visible') == true) Tips.showById("wilder_page_2_intro_complete");
-			});
-			
-			
+				});
+				
+			}
+
 		} else if ( viewCollection.currentViewIndex == 2 ) {
 			
 			Tips.showById("wilder_end");
@@ -340,7 +345,7 @@ define(["libs/pace/pace.min",
 	Wilder.prototype.showIntro = function () {
 		
 		this.transitionInnerCircleTo("intro");
-		
+
 	}
 	
 	Wilder.prototype.showPeople = function () {
@@ -420,8 +425,10 @@ define(["libs/pace/pace.min",
     	}
     	if (numVisited == this.currentStop.people.length) {
     		//show next btn
-    		$("#screen_wilder #views_container #inner_wheel_container #people_btn_next").fadeIn('slow');
-    		Tips.showById("wilder_last_person_completed");
+    		TweenLite.delayedCall(0.5, function() {
+				$("#screen_wilder #views_container #inner_wheel_container #people_btn_next").fadeIn('slow');
+				Tips.showById("wilder_last_person_completed");
+    		});
     	}
     }
     
@@ -648,6 +655,7 @@ define(["libs/pace/pace.min",
 				//return from person feature
 				$("#screen_wilder #personnel_layer").fadeIn('slow');
 				$("#screen_wilder #person_feature").fadeOut('slow');
+				Media.killSounds(); 
 				this.checkPortraitsCompletion();
 				this.disablePortraits();
 			break;
@@ -655,14 +663,17 @@ define(["libs/pace/pace.min",
 				//continue after all people visited
 				this.killCurrentActivePersonnel();
 				this.showReview();
+				Media.killSounds(); 
 			break;
 			case "review_btn_back":
 				// return to people photos
 				$("#screen_wilder #intro").show();
 				$("#screen_wilder #review").hide();
+				Media.killSounds(); 
 			break;
 			case "review_btn_next":
 				// continue to next building section
+				Media.killSounds(); 
 				this.goToNextStop();
 			break;
 			case "review_QA_btn_back":

@@ -21,43 +21,10 @@
 	
 		<!-- Screen 1 -->
 		<view id="view_1" title="Intro">
-			
-			<text id="text_1">Introduction to Integrative Mental Health</text>
-			<text id="text_2">
-				<![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id vestibulum lectus, at vulputate risus. Aliquam vitae nunc cursus, rhoncus est eget, convallis quam. Sed ac euismod mi. Aliquam eget malesuada magna. Pellentesque tincidunt finibus arcu id euismod. Vivamus a ante venenatis, gravida odio at, dapibus sapien. Nullam fermentum felis erat, at ullamcorper sem mollis non. Nam sit tempus quam. Aenean fermentum dolor, a gravida nibh pellentesque sit amet. </br> Vivamus in bibendum eros. Nam sit amet leo ultricies, blandit lacus et, tempus quam. Aenean varius fermentum dolor. Vivamus in bibendum eros. Nam sit amet leo ultricies, blandit lacus et, tempus quam. Aenean varius fermentum dolor, a gravida nibh pellentesque sit amet. ]]>
-			</text>
-			<text id="text_3">
-				<![CDATA[n commodo lectus nisl, dictum aliquam urna eleifend sit amet. Quisque sit amet quam tortor. Phasellus eu fringilla diam, nec sagittis nulla. Sed euismod orci at ligula placerat commodo. In pulvinar, augue nec rutrum tincidunt, enim turpis venenatis turpis, sit amet magna. Vivamus in bibendum eros. Nam sit amet leo ultricies, blandit lacus et, tempus quam. Aenean varius fermentum dolor. Nam sit amet leo ultricies, blandit lacus et, tempus quam. Aenean varius fermentum dolor. Aenean varius fermentum dolor, a gravida nibh sit amet. </br> Vivamus in bibendum eros. Vivamus in bibendum eros. Nam sit amet leo ultricies, blandit lacus et, tempus quam. Aenean varius fermentum dolor, a gravida nibh pellentesque sit amet.</br>]]>
-			</text>
-			
-			<button id="video_1" video="IMH_640">WATCH AN INTRODUCTORY VIDEO</button>
 		</view>
 		
 		<!-- Screen 2 -->
 		<view id="view_2" title="Wellness">
-			
-			<text id="text_1">Eight Dimensions of Wellness</text>
-			<text id="text_2">
-				<![CDATA[Wellness means overall well- being. It incorporates the mental, emotional, physical, occupational, intellectual, social, and spiritual aspects of a person's life. Each aspect of wellness can affect overall quality of life, so it is important to consider all aspects of health. This is especially important for people with mental health and/or substance use conditions because wellness directly relates to the quality and longevity of life.
-				</br></br>
-				That’s why SAMHSA's Wellness Initiative encourages people to incorporate the Eight Dimensions of Wellness in their lives2
-				</br></br>
-				Often IMH providers work together as an interprofessional team to improve the client’s wellness.</br>
-				Click on the circles to explore each dimension.]]>
-			</text>
-			
-			<dimensions audio="TMH_S02_01" duration="13" >
-				<dimension id="Physical" audio="TMH_S02_02" duration="4">Recognizing the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Financial" audio="TMH_S02_03" duration="4">Financial the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Emotional" audio="TMH_S02_01" duration="4">Emotional the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Intellectual" audio="TMH_S02_02" duration="4">Intellectual the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Environmental" audio="TMH_S02_03" duration="4">Environmental the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Occupational" audio="TMH_S02_01" duration="4">Occupational the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Spiritual" audio="TMH_S02_03" duration="4">Spiritual the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Social" audio="TMH_S02_01" duration="4">Social the need for physical activity, healthy foods and sleep</dimension>
-			</dimensions>
-			
-			
 		</view>
 		
 		<!-- Screen 3 -->
@@ -317,11 +284,14 @@
 			
 			<text id="text_1">Welcome to the Wilder Foundation</text>
 			<text id="text_2">
-				<![CDATA[The Amherst H. Wilder Foundation is a nonprofit community organization that helps children, families and older adults in the greater east metro area of Saint Paul through direct service programs, research, leadership development and community building. The Wilder family willed their estate over a century ago to help the poor, sick and needy of Saint Paul, beginning a legacy of service. 
+				<![CDATA[The Amherst H. Wilder Foundation is a nonprofit community organization that helps children, families and older adults in the greater east metro area of Saint Paul through direct service programs, research, leadership development and community building. The Wilder legacy was established by Amherst H. Wilder, a successful Saint Paul businessman, his wife Fanny Spencer Wilder and their daughter, Cornelia Day Wilder Appleby. The Wilder family willed their estate over a century ago to help the poor, sick and needy of Saint Paul, beginning a legacy of service. 
 				The Amherst H. Wilder Foundation believes that investing in people, enhancing the relationships we have with one other, and working to promote health and resilience will help create a vibrant community. Through our direct service programs, Wilder Research, and community building, we are helping people reach their full potential.]]>
 			</text>
 			<text id="text_3">
-				<![CDATA[The purpose of this educational module is to help you better understand our unique approach to mental health services. Click Resources on the top bar for an overview of Trauma-Informed Care, Children and Family Mental Health, and Southeast Asian Services.
+				<![CDATA[The purpose of this educational module is to help you better understand our unique approach to mental health services. Click Resources on the top bar for an overview of the following:
+				Trauma-Informed Care
+				Children and Family Mental Heath
+				Southeast Asian Services
 
 				In this module you will learn more about Wilder’s approach to children and family mental healthcare by engaging in an interactive case story. 
 
@@ -367,7 +337,7 @@
 					]]>
 					</person>
 					
-					<person id="jason" audio="W_S02_ST01_04" duration="14"><![CDATA[I like Miss Wilson, but my favorite person at school is Mr. Lee. He lets me go in his office and play with his toys. It helps me when I can’t control my body. I’m trying to be good, but sometimes my body won’t listen to me. 
+					<person id="jason" audio="W_S02_ST01_04" duration="14"><![CDATA[I like Miss Wilson, but my favorite person at school is Mr. Lee. He lets me go in his office and play with his toys. It helps me when I can’t control my body. I’m trying to be good, but sometimes my body just won’t listen to me. 
 					]]>
 					</person>
 					
@@ -378,7 +348,7 @@
 					<review>
 						<button id="video_review" video="W_S02_ST01_V01">TRANSITIONS</button>
 						<button id="video_review" video="W_S02_ST01_V02">AN OT PERSPECITVE</button>
-						<button id="video_review" video="W_S02_ST01_V03">TEAM GOAL</button>
+						<button id="video_review" video="W_S02_ST01_V02">TEAM GOAL</button>
 						<button id="quiz_review" quiz="stop1_in_review">IN REVIEW</button>
 					</review>
 					
@@ -397,11 +367,11 @@
 					<text id="stop_intro" audio="W_S02_ST02_01" duration="7"><![CDATA[The team of providers gather information from mom and one another to better understand Jason and his needs.]]>
 					</text>
 					
-					<person id="mom" audio="W_S02_ST02_02" duration="22"><![CDATA[Jason’s my little helper at home. I know Jason is smart, and I don’t understand why he’s acting this way at school. I don’t see this at home. He has a hard time sometimes when I tell him, "no" and sometimes he does need to cry it out but ADHD?  I just don’t understand what’s going on at school and why he’s having such a hard time.
+					<person id="mom" audio="W_S02_ST02_02" duration="22"><![CDATA[Jason’s my little helper at home. I know Jason is smart, and I don’t understand why he’s acting this way at school. I don’t see this at home. He has a hard time sometimes when I tell him no and sometimes he does need to cry it out but ADHD?  I just don’t understand what’s going on at school and why he’s having such a hard time.
 					]]>
 					</person>
 					
-					<person id="psych_nurse" audio="W_S02_ST02_03" duration="34"><![CDATA[Jason's mom sounds confused about why Jason is having a much harder time at school than at home. I’d like to talk to her about his ability to pay attention to tasks and how well he can focus at home, at church, and in other environments  because learning more about what Jason’s behaviors are like across all these environments will help me tease out if his behaviors are school related, home related or something else. This will give the team of professionals who care about Jason a clearer picture of what’s going on with him and the impact these behaviors have on his physical wellbeing and his asthma.
+					<person id="psych_nurse" audio="W_S02_ST02_03" duration="34"><![CDATA[mom sounds confused about why Jason is having a much harder time at school than at home. I’d like to talk to her about his ability to pay attention to tasks and how well he can focus at home, at church, and in other environments  because learning more about what Jason’s behaviors are like across all these environments will help me tease out if his behaviors are school related, home related or something else. This will give the team of professionals who care about Jason a clearer picture of what’s going on with him and the impact these behaviors have on his physical wellbeing and his asthma.
 					]]>
 					</person>
 					
@@ -442,7 +412,7 @@
 					]]>
 					</person>
 					
-					<person id="pastor" audio="W_S02_ST03_03" duration="29"><![CDATA[Jason and his family have just started coming, but already they are committed members of our congregation. I know that the family has been through some bad times, but I’m glad we are able to support them here. I know it’s hard for mom to trust, but I think we’re getting there slowly, day by day. In fact mom and Jason have joined one of our support groups here that I think will help her to know that she isn’t alone and that other people are here to help her and Jason. 
+					<person id="pastor" audio="W_S02_ST03_03" duration="29"><![CDATA[Jason and his family have just started coming, but already they are committed members of our congregation. I know that that family has been through some bad times, but I’m glad we are able to support them here. I know it’s hard for mom to trust, but I think we’re getting there slowly, day by day. In fact mom and Jason have joined one of our support groups here that I think will help her to know that she isn’t alone and that other people are here to help her and Jason. 
 					]]>
 					</person>
 					
@@ -513,11 +483,11 @@
 					]]>
 					</text>
 					
-					<person id="pharmacist" audio="W_S02_ST05_02" duration="40"><![CDATA[Jason’s primary care provider informed us that Jason has asthma and is taking some regularly scheduled medications.  As a team, we can work with Jason's mom to ensure that all medications in the household are safely and properly stored. Jason is only 7 years old, and I agree with the team to try alternative approaches to work with his behaviors at school. ADHD is a possible diagnosis and we need to explore other reasons for his school problems. Also, medications for ADHD can worsen other symptoms. I will be in close conversations with Jason’s care providers to ensure that any medication therapy is both safe and effective.
+					<person id="pharmacist" audio="W_S02_ST05_02" duration="40"><![CDATA[Jason’s primary care provider informed us that Jason has asthma and is taking some regularly scheduled medications.  As a team, we can work with mom to ensure that all medications in the household are safely and properly stored. Jason is only 7 years old, and I agree with the team to try alternative approaches to work with his behaviors at school. ADHD is a possible diagnosis and we need to explore other reasons for his school problems. Also, medications for ADHD can worsen other symptoms. I will be in close conversations with Jason’s care providers to ensure that any medication therapy is both safe and effective.
 					]]>
 					</person>
 					
-					<person id="occupational_therapist" audio="W_S02_ST05_03" duration="30"><![CDATA[Jason is a delightful boy who can focus when he is highly engaged. We’ve been working on self-regulation strategies and are using the Alert Program ‘How does your engine run?’ teaching Jason to “self-assess” so he can be better prepared to participate in classroom activities at school. His therapist, teacher and I are working together to incorporate sensory activities to prepare Jason for productive work. And, we’ll begin working with Jason's mom to teach her strategies from the Alert program. 
+					<person id="occupational_therapist" audio="W_S02_ST05_03" duration="30"><![CDATA[Jason is a delightful boy who can focus when he is highly engaged. We’ve been working on self-regulation strategies and are using the Alert Program ‘How does your engine run?’ teaching Jason to “self-assess” so he can be better prepared to participate in classroom activities at school. His therapist, teacher and I are working together to incorporate sensory activities to prepare Jason for productive work. And, we’ll begin working with mom to teach her strategies from the Alert program. 
 					]]>
 					</person>
 					
@@ -586,9 +556,9 @@
 					<text id="stop_intro" audio="W_S02_ST07_01" duration="7"><![CDATA[Incorporating holistic approaches like proper diet and nutrition are important to mom and the rest of the team.]]>
 					</text>
 					
-					<person id="nutritionist" audio="W_S02_ST07_02" duration="68"><![CDATA[Jason's mom asked that I visit with her about Jason’s diet and nutrition. Jason doesn’t have any food allergies and he has a good appetite!  Healthy diets are important for brain development, mood, attention, and overall feeling of well-being. Jason's mom enjoys cooking vegetables and traditional Asian foods, which are high in omega 3 fatty acids. We discussed the importance of limiting processed foods and foods that have refined sugar and high fructose corn syrup. 
-					Jason’s family accesses food from the local food shelf, and Jason's mom doesn’t understand all the directions of how to prepare some of the food her family receives. We talked about how she can prepare healthy meals using food that she gets from the food shelf. I think her case manager and neighbors can make sure she receives good food for her family. 
-					I would like to support Jason's mom in her attempts to have family meals together with no TV or electronic distractions in order to foster positive social interactions at meal time. I’ll work with Jason’s care providers to provide holistic care for Jason.
+					<person id="nutritionist" audio="W_S02_ST07_02" duration="68"><![CDATA[mom asked that I visit with her about Jason’s diet and nutrition. Jason doesn’t have any food allergies and he has a good appetite!  Healthy diets are important for brain development, mood, attention, and overall feeling of well-being. mom enjoys cooking vegetables and traditional Asian foods, which are high in omega 3 fatty acids. We discussed the importance of limiting processed foods and foods that have refined sugar and high fructose corn syrup. 
+					Jason’s family accesses food from the local food shelf, and mom doesn’t understand all the directions of how to prepare some of the food her family receives. We talked about how she can prepare healthy meals using food that she gets from the food shelf. I think her case manager and neighbors can make sure she receives good food for her family. 
+					I would like to support mom in her attempts to have family meals together with no TV or electronic distractions in order to foster positive social interactions at meal time. I’ll work with Jason’s care providers to provide holistic care for Jason.
 					]]>
 					</person>
 					
@@ -596,11 +566,11 @@
 					]]>
 					</person>
 					
-					<person id="psych_nurse " audio="W_S02_ST07_04" duration="29"><![CDATA[I appreciated learning from Sandra, the nutritionist, that Jason's mom is intentional about preparing healthy foods. Also, I was glad to hear Jason doesn’t have any food or seasonal allergies that could be affecting his mood and behaviors. We’ll also assess his diet for caffeine, and follow up with his mom about limiting processed foods. In order to help control his asthma symptoms, I want to find out if Jason is exposed to smoking at home, at Mrs. V’s house, his neighbor, or anywhere else.
+					<person id="psych_nurse " audio="W_S02_ST07_04" duration="29"><![CDATA[I appreciated learning from Sandra, the nutritionist, that mom is intentional about preparing healthy foods. Also, I was glad to hear Jason doesn’t have any food or seasonal allergies that could be affecting his mood and behaviors. We’ll also assess his diet for caffeine, and follow up with his mom about limiting processed foods. In order to help control his asthma symptoms, I want to find out if Jason is exposed to smoking at home, at Mrs. V’s house, his neighbor, or anywhere else.
 					]]>
 					</person>
 					
-					<person id="case_manager" audio="W_S02_ST07_05" duration="14"><![CDATA[Speaking of food, accessing healthy food for nutritious meals is sometimes a real issue for Jason’s family. I can continue to work with Jason's mom to help her access the food her family needs so that Jason can be successful in school, community, and home.
+					<person id="case_manager" audio="W_S02_ST07_05" duration="14"><![CDATA[Speaking of food, accessing healthy food for nutritious meals is sometimes a real issue for Jason’s family. I can continue to work with mom to help her access the food her family needs so that Jason can be successful in school, community, and home.
 					]]>
 					</person>
 

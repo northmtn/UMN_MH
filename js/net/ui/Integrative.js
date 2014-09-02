@@ -8,8 +8,9 @@ define(["libs/pace/pace.min",
 		"net/ui/View", 
 		"net/ui/ViewCollection", 
 		"net/util/Util",
+		"net/ui/BubbleTank",
 		"tween"], 
-		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, Tips, View, ViewCollection, Util )
+		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, Tips, View, ViewCollection, Util, BubbleTank )
 		{
 
 
@@ -44,6 +45,10 @@ define(["libs/pace/pace.min",
 	var timelineNav = {};
 	var viewCollection = {};
 	
+	var bubbleTank = {};
+	var featureBubble = {};
+	var well_dimensions = [];
+	
 	Integrative.prototype.setup = function() {
 	
 		//setup View Collection
@@ -67,7 +72,7 @@ define(["libs/pace/pace.min",
 		});
 		
 		viewCollection.addView( new View( $(c), "view_1", "two_column_intro_b", this.view1Setup) ); 
-		viewCollection.addView( new View( $(c), "view_2", "integrative_circle", this.view2Setup ) );
+		viewCollection.addView( new View( $(c), "view_2", "imh_screen_2", this.view2Setup ) );
 		viewCollection.addView( new View( $(c), "view_3", "two_column_conclusion", this.view3Setup ) );
 		
 		timelineNav = new TimelineNav( $("#screen_integrative  #timeline_nav").first(), viewCollection);
@@ -79,6 +84,15 @@ define(["libs/pace/pace.min",
 	}
 	
 	Integrative.prototype.view2Setup = function() {
+	
+		// setup bubbletank
+		console.log("setup bubble tank");
+		bubbleTank = new BubbleTank("#screen_integrative #bubble_tank_container");
+		bubbleTank.createBubbles(["Physical", "Emotional", "Spiritual", "Social", "Environmental", "Occupational", "Financial"]);
+		bubbleTank.distributeInCircle();
+		bubbleTank.kill();
+		
+		setupBubbleDimensions();
 	
 	}
 	
@@ -100,6 +114,32 @@ define(["libs/pace/pace.min",
 						
 		}
 
+	}
+	
+	function setupBubbleDimensions() {
+	
+		well_dimensions = [];
+		
+		$(AppData.configXML).find("module[id='integrative'] dimensions dimension").each( function () {
+		
+			var dId = $(this).attr('id');
+			var dAudio = $(this).attr('audio');
+			var dDelay = $(this).attr('delay');
+			var dTxt = $(this).text();
+			var dimension = [dId, dAudio, dDelay, dTxt];
+			well_dimensions.push( dimension );
+		
+		});		
+	
+	}
+	
+	function expandBubble(bubId) {
+		
+		console.log("truck: "+bubId);
+		
+		var bub = $("screen_integrative #"+bubId).first();
+		TweenLite.to( $(bub), 0.75, { css: { scale: 1.2, zIndex:1 } } ); // scale  up, bring to foreground
+		
 	}
 	
 	//Overwrite button handlers
@@ -131,6 +171,15 @@ define(["libs/pace/pace.min",
     		var audId = btnRef.attr('data-audio');
     		Media.playTakeoverSound(audId);
     		    		    		
+    	    return;
+    	    
+    	}
+    	//bubbles nav
+    	if (btnId.substring(0, 4) == "bub_") {
+    	
+    		if ($(btnRef).css("cursor") == "pointer") {
+    			expandBubble(btnId);
+    		}
     	    return;
     	    
     	}

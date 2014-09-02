@@ -37,12 +37,15 @@ define(['libs/pace/pace.min', 'net/data/AppData'], function(pace, AppData){
 			break;
 			case 'integrative':
 				this.currentScreen = this.screens[1];
+				$("#video_title").html('Integrative Mental Health');
 			break;
 			case 'touchstone':
 				this.currentScreen = this.screens[2];
+				$("#video_title").html('Touchstone Mental Health');
 			break;
 			case 'wilder':
 				this.currentScreen = this.screens[3];
+				$("#video_title").html('Amherst H. Wilder Foundation');
 			break;
 		  	
 		}

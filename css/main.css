@@ -641,6 +641,107 @@ button.rect-button.prev:before {
 	color: #617ca1;
 
 }
+#screen_integrative .single_centered_col #text_1,
+#screen_integrative .single_centered_col #text_4 {
+
+    border-bottom: solid 3px #617ca1 !important;
+	
+}
+
+#screen_integrative .single_centered_col #text_4{
+	
+	font-size: 26px;
+	font-weight: 500;
+		
+	/* pull the border up*/
+	height: 27px; 
+	
+	/* push the paragraph down */
+	margin-bottom: 36px;
+	
+}
+
+#screen_integrative .single_centered_col #text_4:first-line{
+   background-color: #FFF;
+ }
+ 
+#screen_integrative .single_centered_col #text_4:before,
+#screen_integrative .single_centered_col #text_4:after {
+   content: '\0000a0 \0000a0'; 
+}
+
+#screen_integrative .single_centered_col .two-col {
+	
+	height: 310px;
+	
+}
+/* Wellness */
+#screen_integrative .imh_screen_2 .content_left {
+	width: 330px;
+	height: 585px;
+	left: 25px;
+	top: 50px;
+	padding: 0px;
+	background: white;
+}
+#screen_integrative .imh_screen_2 .inner_content {
+	background: white;
+	height: 100%;
+	padding: 0 40px;
+}
+#screen_integrative .imh_screen_2 .content_left h2 {
+	font-size: 25px;
+}
+#screen_integrative .imh_screen_2 .content_left p {
+	font-size: 14px;
+	color: black;
+}
+#screen_integrative #bubble_tank_container {
+	top: 350px;
+	left: 630px;
+}
+#screen_integrative #bubble_tank_container .bubble {
+	cursor: pointer !important;
+}
+#screen_integrative #bubble_tank_container .bubble:hover {
+	padding-top: 2px;
+}
+#screen_integrative img[data-role="background"]  {
+	
+	top: -100px;
+	left: -65px;
+
+}
+#screen_integrative #bubble_tank_container h2 {
+	color: white;
+}
+#screen_integrative .imh_screen_2 #text_1 {
+
+    border-bottom: solid 2px #617ca1 !important;
+	
+}
+#screen_integrative .imh_screen_2 #text_1{
+	
+	font-size: 26px;
+	font-weight: 500;
+		
+	/* pull the border up*/
+	height: 80px; 
+	
+	/* push the paragraph down */
+	margin-bottom: 6px;
+	
+}
+
+#screen_integrative .imh_screen_2 #text_4:first-line{
+   background-color: #FFF;
+ }
+ 
+#screen_integrative .imh_screen_2 #text_4:before,
+#screen_integrative .imh_screen_2 #text_4:after {
+   content: '\0000a0 \0000a0'; 
+}
+
 
 /*------------*/
 /* Touchstone */
@@ -816,6 +917,7 @@ button.rect-button.prev:before {
     margin-bottom: 36px;
 	
 }
+
 .single_centered_col #text_1:first-line{
    background-color: #FFF;
  }
@@ -1109,7 +1211,7 @@ button.rect-button.prev:before {
 	
 }
 
-#screen_touchstone .bubble .bubTitle {
+.bubble .bubTitle {
 
 	text-align: center;
 	position: relative;
