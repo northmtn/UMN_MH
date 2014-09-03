@@ -1222,6 +1222,18 @@ button.rect-button.prev:before {
 	
 }
 
+.bubble .bubSubhead {
+
+	text-align: center;
+	position: relative;
+	font-size: 22px;
+	width: 70%;
+	left: -103px;
+	top: -110px;
+	color: white !important;
+	
+}
+
 #screen_touchstone #step_content {
 	
 	left: 0px;

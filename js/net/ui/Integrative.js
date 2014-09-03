@@ -137,9 +137,33 @@ define(["libs/pace/pace.min",
 		
 		console.log("truck: "+bubId);
 		
-		var bub = $("screen_integrative #"+bubId).first();
-		TweenLite.to( $(bub), 0.75, { css: { scale: 1.2, zIndex:1 } } ); // scale  up, bring to foreground
+		var allBubs = $("#screen_integrative .bubble");
+		TweenLite.to( $(allBubs), 0.5, { css: { scale: 0.65, zIndex:0 } } ); // scale  down, bring to bg
 		
+		var bub = $("#screen_integrative #"+bubId).first();
+		TweenLite.to( $(bub), 0.65, { css: { scale: 0.85, zIndex:1 } } ); // scale  up, bring to foreground
+		
+		var d = getDimensionById( bubId.substring(4) );
+		Media.playTakeoverSound(d[1]);//play audio
+		
+		 $(bub).find("#bubSubhead").html(d[3]); //populate subhead text
+		
+		TweenLite.to( $(bub).find("#bubTitle"), 0.35, { css: { top:-100 }, delay:0.35 } ); //top: -43px; // raise bub title
+		
+		$(bub).find("#bubSubhead").show();
+		TweenLite.set( $(bub).find("#bubSubhead"), { css: { opacity:0 } } ); // fade in subhead 
+		TweenLite.to( $(bub).find("#bubSubhead"), 0.2, { css: { opacity:1 }, delay:0.35 } ); // fade in subhead 
+
+	}
+	
+	function getDimensionById(bubTitle){
+		var dim = {};
+		for (var j = 0; j < well_dimensions.length; j++) {
+			if ( well_dimensions[j][0].toLowerCase() == bubTitle ) {
+				dim = well_dimensions[j];
+			}
+		}
+		return dim;
 	}
 	
 	//Overwrite button handlers

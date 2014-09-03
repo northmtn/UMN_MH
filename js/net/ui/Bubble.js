@@ -30,6 +30,8 @@ define(['net/util/Geom'], function(Geom){
 	   	$( this.bubbleDiv ).append( '<img src="img/touchstone/bub_' + this.label.toLowerCase() + '.png" data-role="graphic" /> ' );
 	   	//title label
 	   	$( this.bubbleDiv ).append( '<h2 id="bubTitle" class="bubTitle">' + this.label + '</h2>' );
+	   	//subhead label (optional)
+	   	$( this.bubbleDiv ).append( '<p id="bubSubhead" class="bubSubhead" style="display: none;"></p>' );
 	   	//overlay imgs
 	   	$( this.bubbleDiv ).append( '<img id="over_active" src="img/touchstone/bub_over.png" data-role="graphic" alt="'+this.label+'"/>' );
 	   	$( this.bubbleDiv ).append( '<img id="over_inactive" src="img/touchstone/bub_over_inactive.png" data-role="graphic" style="display: none;" />' );
