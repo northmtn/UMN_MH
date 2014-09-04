@@ -642,13 +642,13 @@ button.rect-button.prev:before {
 
 }
 #screen_integrative .single_centered_col #text_1,
-#screen_integrative .single_centered_col #text_4 {
+#screen_integrative .single_centered_col #text_4.line {
 
     border-bottom: solid 3px #617ca1 !important;
 	
 }
 
-#screen_integrative .single_centered_col #text_4{
+#screen_integrative .single_centered_col #text_4.line{
 	
 	font-size: 26px;
 	font-weight: 500;
@@ -661,12 +661,12 @@ button.rect-button.prev:before {
 	
 }
 
-#screen_integrative .single_centered_col #text_4:first-line{
+#screen_integrative .single_centered_col #text_4.line:first-line{
    background-color: #FFF;
  }
  
-#screen_integrative .single_centered_col #text_4:before,
-#screen_integrative .single_centered_col #text_4:after {
+#screen_integrative .single_centered_col #text_4.line:before,
+#screen_integrative .single_centered_col #text_4.line:after {
    content: '\0000a0 \0000a0'; 
 }
 
@@ -740,6 +740,78 @@ button.rect-button.prev:before {
 #screen_integrative .imh_screen_2 #text_4:before,
 #screen_integrative .imh_screen_2 #text_4:after {
    content: '\0000a0 \0000a0'; 
+}
+
+/*Screen 3*/
+#screen_integrative .imh_screen_3 .content_centered {
+	width: 956px;
+	height: 155px;
+	left: 0px;
+	top: -35px;
+	padding: 0px;
+	background: white;
+	
+}
+#screen_integrative .imh_screen_3 .inner_content {
+	background: white;
+	height: 100%;
+	padding: 0 40px;
+}
+#screen_integrative .imh_screen_3 .inner_content p {
+	width: 655px;
+	text-align: left;
+	padding-left: 130px;
+	color: black;
+}
+
+#screen_integrative .imh_screen_3 #oval {
+	top: 160px;
+	left: 180px;
+}
+
+#screen_integrative .imh_screen_3 #arr_right {
+	top: 315px;
+	left: 786px;
+}
+
+#screen_integrative .imh_screen_3 #arr_left {
+	top: 315px;
+	left: 197px;
+}
+
+#screen_integrative .imh_screen_3 #text_3 {
+	position: absolute;
+	color: #ddccc1;
+	
+	top: 160px;
+	left: 326px;
+	text-align: center;
+	
+	width: 375px;
+	height: 120px;
+	
+}
+
+#screen_integrative .imh_screen_3 #text_4 {
+	position: absolute;
+	color: white;
+	
+	top: 270px;
+	left: 275px;
+	text-align: center;
+	
+	width: 475px;
+	height: 220px;
+	
+	overflow-y: auto;
+	
+}
+
+#screen_integrative .imh_screen_3 #video_1 {
+	position: absolute;
+	
+	top: 505px;
+	left: 295px;
 }
 
 

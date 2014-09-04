@@ -49,6 +49,9 @@ define(["libs/pace/pace.min",
 	var featureBubble = {};
 	var well_dimensions = [];
 	
+	var curMemberNum = -1;
+	var members = [];
+	
 	Integrative.prototype.setup = function() {
 	
 		//setup View Collection
@@ -73,7 +76,7 @@ define(["libs/pace/pace.min",
 		
 		viewCollection.addView( new View( $(c), "view_1", "two_column_intro_b", this.view1Setup) ); 
 		viewCollection.addView( new View( $(c), "view_2", "imh_screen_2", this.view2Setup ) );
-		viewCollection.addView( new View( $(c), "view_3", "two_column_conclusion", this.view3Setup ) );
+		viewCollection.addView( new View( $(c), "view_3", "imh_screen_3", this.view3Setup ) );
 		
 		timelineNav = new TimelineNav( $("#screen_integrative  #timeline_nav").first(), viewCollection);
 		
@@ -86,7 +89,6 @@ define(["libs/pace/pace.min",
 	Integrative.prototype.view2Setup = function() {
 	
 		// setup bubbletank
-		console.log("setup bubble tank");
 		bubbleTank = new BubbleTank("#screen_integrative #bubble_tank_container");
 		bubbleTank.createBubbles(["Physical", "Emotional", "Spiritual", "Social", "Environmental", "Occupational", "Financial"]);
 		bubbleTank.distributeInCircle();
@@ -97,7 +99,7 @@ define(["libs/pace/pace.min",
 	}
 	
 	Integrative.prototype.view3Setup = function() {
-		
+		setupTeamMembers();
 	}
 	
 	function changeView(navIndex) {
@@ -109,9 +111,10 @@ define(["libs/pace/pace.min",
 		if ( viewCollection.currentViewIndex == 0 ) {
 			
 		} else if ( viewCollection.currentViewIndex == 1 ) {
-			
+			Tips.showById("page_2_start");
 		} else if ( viewCollection.currentViewIndex == 2 ) {
-						
+			refreshMemberContent();
+			Tips.showById("page_3_start");
 		}
 
 	}
@@ -134,9 +137,7 @@ define(["libs/pace/pace.min",
 	}
 	
 	function expandBubble(bubId) {
-		
-		console.log("truck: "+bubId);
-		
+				
 		var allBubs = $("#screen_integrative .bubble");
 		TweenLite.to( $(allBubs), 0.5, { css: { scale: 0.65, zIndex:0 } } ); // scale  down, bring to bg
 		
@@ -153,6 +154,10 @@ define(["libs/pace/pace.min",
 		$(bub).find("#bubSubhead").show();
 		TweenLite.set( $(bub).find("#bubSubhead"), { css: { opacity:0 } } ); // fade in subhead 
 		TweenLite.to( $(bub).find("#bubSubhead"), 0.2, { css: { opacity:1 }, delay:0.35 } ); // fade in subhead 
+		
+		
+		$(bub).addClass('visited');
+		checkBubbleCompletion();
 
 	}
 	
@@ -164,6 +169,70 @@ define(["libs/pace/pace.min",
 			}
 		}
 		return dim;
+	}
+	
+	function checkBubbleCompletion() {
+		
+		if ( $("#screen_integrative .bubble.visited").length >= $("#screen_integrative .bubble").length  ) {
+			Tips.showById("page_2_complete");
+		}
+		
+	}
+	
+	//Screen 3
+	function setupTeamMembers() {
+	
+		members = [];
+		
+		$(AppData.configXML).find("module[id='integrative'] team team_member").each( function () {
+		
+			var mId = $(this).attr('id');
+			var mAudio = $(this).attr('audio');
+			var mDelay = $(this).attr('delay');
+			var mTxt = $(this).text();
+			var member = [mId, mAudio, mDelay, mTxt];
+			members.push( member );
+		
+		});		
+		
+		showNextTeamMember();
+	
+	}
+	
+	function showPrevTeamMember(){
+		
+		if (curMemberNum > 0) {
+		
+			curMemberNum --;
+			refreshMemberContent();
+
+		}
+		
+	}
+	
+	function showNextTeamMember(){
+	
+		if (curMemberNum < members.length-1) {
+		
+			curMemberNum ++;
+			refreshMemberContent();
+			
+			if (curMemberNum == members.length-1) Tips.showById("integrative_end");
+
+		}
+		
+	}
+	
+	function refreshMemberContent(){
+		
+		var titleTxt = members[curMemberNum][0];
+		var mainTxt = members[curMemberNum][3];
+		
+		$("#screen_integrative .imh_screen_3 #text_3").html(titleTxt);
+		$("#screen_integrative .imh_screen_3 #text_4").html(mainTxt);
+		
+		Media.playTakeoverSound(members[curMemberNum][1]);//play audio
+		
 	}
 	
 	//Overwrite button handlers
@@ -226,6 +295,12 @@ define(["libs/pace/pace.min",
 			break;
 			case "intro_btn_start":
 				
+			break;
+			case "arr_left":
+				showPrevTeamMember();
+			break;
+			case "arr_right":
+				showNextTeamMember();
 			break;
 			case "btn_resources":
 				//TODO - Go to resources page?

@@ -24,10 +24,16 @@
 			
 			<text id="text_1">Introduction to Integrative Mental Health</text>
 			<text id="text_2">
-				<![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id vestibulum lectus, at vulputate risus. Aliquam vitae nunc cursus, rhoncus est eget, convallis quam. Sed ac euismod mi. Aliquam eget malesuada magna. Pellentesque tincidunt finibus arcu id euismod. Vivamus a ante venenatis, gravida odio at, dapibus sapien. Nullam fermentum felis erat, at ullamcorper sem mollis non. Nam sit tempus quam. Aenean fermentum dolor, a gravida nibh pellentesque sit amet. </br> Vivamus in bibendum eros. Nam sit amet leo ultricies, blandit lacus et, tempus quam. Aenean varius fermentum dolor. Vivamus in bibendum eros. Nam sit amet leo ultricies, blandit lacus et, tempus quam. Aenean varius fermentum dolor, a gravida nibh pellentesque sit amet. ]]>
+				<![CDATA[Integrative mental health considers the needs of the whole person. Many experts in the field of IMH agree that psychiatric medications play a part in IMH, sometimes a big one, as does therapy. But medications and therapy should not be the only tools in our box like sometimes happens in the mental health care system. With integrative mental health, providers work closely with each client to understand his or her wishes and then carefully consider a variety of treatments or approaches. They typically start with the least intrusive approach in an effort to help the person heal and recover.
+				</br></br>
+				IMH is more than just adding complementary and alternative medicine (CAM) approaches to conventional]]>
 			</text>
 			<text id="text_3">
-				<![CDATA[n commodo lectus nisl, dictum aliquam urna eleifend sit amet. Quisque sit amet quam tortor. Phasellus eu fringilla diam, nec sagittis nulla. Sed euismod orci at ligula placerat commodo. In pulvinar, augue nec rutrum tincidunt, enim turpis venenatis turpis, sit amet magna. Vivamus in bibendum eros. Nam sit amet leo ultricies, blandit lacus et, tempus quam. Aenean varius fermentum dolor. Nam sit amet leo ultricies, blandit lacus et, tempus quam. Aenean varius fermentum dolor. Aenean varius fermentum dolor, a gravida nibh sit amet. </br> Vivamus in bibendum eros. Vivamus in bibendum eros. Nam sit amet leo ultricies, blandit lacus et, tempus quam. Aenean varius fermentum dolor, a gravida nibh pellentesque sit amet.</br>]]>
+				<![CDATA[care (for example, referring a patient with schizophrenia to acupuncture). IMH is nothing new, it is simply truly doing what all mental health professions state that they should be doing; providing holistic individualized mental health services. In fact it shows how much we have drifted from holism as a mental health care system that the concept of IMH exists at all!
+				</br></br>
+				This module gives a brief overview of IMH, and the importance of an inter-professional team in the delivery of IMH services. 
+				</br></br>
+				Please watch the Integrative Mental Health overview animation and then click “2” on the top bar to continue. </br>]]>
 			</text>
 			
 			<button id="video_1" video="IMH_640">WATCH AN INTRODUCTORY VIDEO</button>
@@ -38,34 +44,68 @@
 			
 			<text id="text_1">Eight Dimensions of Wellness</text>
 			<text id="text_2">
-				<![CDATA[Wellness means overall well- being. It incorporates the mental, emotional, physical, occupational, intellectual, social, and spiritual aspects of a person's life. Each aspect of wellness can affect overall quality of life, so it is important to consider all aspects of health. This is especially important for people with mental health and/or substance use conditions because wellness directly relates to the quality and longevity of life.
+				<![CDATA[Wellness means overall well-being. It incorporates the mental, emotional, physical, occupational, intellectual, social, and spiritual aspects of a person's life. Each aspect of wellness can affect overall quality of life, so it is important to consider all aspects of health. This is especially important for people with mental health and/or substance use conditions because wellness directly relates to the quality and longevity of life.
 				</br></br>
-				That’s why SAMHSA's Wellness Initiative encourages people to incorporate the Eight Dimensions of Wellness in their lives2
+				That’s why SAMHSA's Wellness Initiative encourages people to incorporate the Eight Dimensions of Wellness in their lives.2
 				</br></br>
 				Often IMH providers work together as an interprofessional team to improve the client’s wellness.</br>
+				</br></br>
 				Click on the circles to explore each dimension.]]>
 			</text>
 			
 			<dimensions audio="TMH_S02_01" duration="13" >
-				<dimension id="Physical" audio="TMH_S02_02" duration="4">Recognizing the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Financial" audio="TMH_S02_03" duration="4">Financial the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Emotional" audio="TMH_S02_01" duration="4">Emotional the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Intellectual" audio="TMH_S02_02" duration="4">Intellectual the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Environmental" audio="TMH_S02_03" duration="4">Environmental the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Occupational" audio="TMH_S02_01" duration="4">Occupational the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Spiritual" audio="TMH_S02_03" duration="4">Spiritual the need for physical activity, healthy foods and sleep</dimension>
-				<dimension id="Social" audio="TMH_S02_01" duration="4">Social the need for physical activity, healthy foods and sleep</dimension>
+				<dimension id="Physical" audio="IMH_S02_phy" duration="14">recognizing the need for physical activity, healthy foods and sleep</dimension>
+				<dimension id="Financial" audio="IMH_S02_fin" duration="15">satisfaction with current and future financial situations</dimension>
+				<dimension id="Emotional" audio="IMH_S02_emo" duration="35">coping effectively with life and creating satisfying relationships</dimension>
+				<dimension id="Intellectual" audio="IMH_S02_int" duration="27">recognizing creative abilities and finding ways to expand knowledge and skills</dimension>
+				<dimension id="Environmental" audio="IMH_S02_env" duration="19">good health by occupying pleasant, stimulating environments that support well-being</dimension>
+				<dimension id="Occupational" audio="IMH_S02_occ" duration="19">personal satisfaction and enrichment from one’s work</dimension>
+				<dimension id="Spiritual" audio="IMH_S02_spi" duration="34">expanding our sense of purpose and meaning in life</dimension>
+				<dimension id="Social" audio="IMH_S02_soc" duration="19">a sense of connection, belonging, and a well-developed support system</dimension>
 			</dimensions>
 			
 			
 		</view>
 		
 		<!-- Screen 3 -->
-		<view id="view_3" title="Conclusion">
+		<view id="view_3" title="Team">
+			
+			<text id="text_1">The Interprofessional Team</text>
+			<text id="text_2">
+				<![CDATA[The group of professionals on an integrative mental healthcare team will vary depending on the wishes and needs of the person receiving support. A typical team of providers is described on this screen. Click the forward arrow for more descriptions.
+				]]>
+			</text>
+			
+			<team audio="TMH_S02_01" duration="13" >
+			
+				<team_member id="Advance Practice Registered Nurse" audio="IMH_S02_soc" duration="6"><![CDATA[On an integrative mental healthcare team nurses can function either as a Registered Nurse (RN) or an Advanced Practice Nurse (APRN). An RN has either an AD or a BSN and has both academic and clinical training related to the human condition such as physiology, chemistry, psychology, human growth and development, and anatomy. The RN’s role on the integrative mental healthcare team is to oversee medication administration and patient education, advocate for clients, and support clients in their pursuit of wellness.
+				]]>
+				</team_member>
+				
+				<team_member id="Team Member 2" audio="IMH_S02_phy" duration="6"><![CDATA[ metus. Maecenas elementum, purus non egestas ullamcorper, odio leo porta elit, sit amet euismod metus augue eget leo. Praesent a nunc et ex gravida tincidunt. Nullam et faucibus massa, tempor sodales odio. Integer vel hendrerit libero, id rhoncus ex. Duis hendrerit ut leo eu volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et ornare arcu, gravida tincidunt
+				]]>
+				</team_member>
+				
+				<team_member id="Team Member 3" audio="IMH_S02_int" duration="6"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et ornare arcu, gravida tincidunt metus. Maecenas elementum, puru eget leo. Praesent a nunc et ex gravida tincidunt. Nullam et faucibus massa, tempor sodales odio. Integer vel hendrerit libero, id rhoncus ex. Duis hendrerit ut leo eu volutpat.
+				]]>
+				</team_member>
+				
+				<team_member id="Team Member 4" audio="IMH_S02_soc" duration="6"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et ornare arcu, gravida tincidunt metus. Maecenas elementum, purus non egestas ullamcorper, odio leo porta elit, sit amet euismod metus augue eget leo. Praesent a nunc et ex gravida tincidunt. Nullam et faucibus massa, tempor sodales odio. Integer vel hendrerit libero, id rhoncus ex. Duis hendrerit ut leo eu volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et ornare arcu, gravida tincidunt metus. Maecenas elementum, purus non egestas ullamco
+				]]>
+				</team_member>
+
+			</team>
+			
+			<button id="video_1" video="IMH_640">INTEGRATIVE MENTAL HEALTH CARE TEAM</button>
 		</view>
 	
 		<!-- Integrative Tips -->
 		<tips>
+			<tip id="integrative_entered" delay="2" duration="6">Watch the video, then click "2" on top bar to continue.</tip>
+			<tip id="page_2_start" delay="2" duration="6">Click on each circle</tip>
+			<tip id="page_2_complete" delay="8" duration="6">Click "3" on top bar to continue.</tip>
+			<tip id="page_3_start" delay="2" duration="6">Click the forward arrow for another description.</tip>
+			<tip id="integrative_end" delay="8" duration="6">Click MAIN MENU to select another module.</tip>
 		</tips>
 	</module>
 	
@@ -317,8 +357,8 @@
 			
 			<text id="text_1">Welcome to the Wilder Foundation</text>
 			<text id="text_2">
-				<![CDATA[The Amherst H. Wilder Foundation is a nonprofit community organization that helps children, families and older adults in the greater east metro area of Saint Paul through direct service programs, research, leadership development and community building. The Wilder family willed their estate over a century ago to help the poor, sick and needy of Saint Paul, beginning a legacy of service. 
-				The Amherst H. Wilder Foundation believes that investing in people, enhancing the relationships we have with one other, and working to promote health and resilience will help create a vibrant community. Through our direct service programs, Wilder Research, and community building, we are helping people reach their full potential.]]>
+				<![CDATA[The Amherst H. Wilder Foundation is a nonprofit community organization that helps children, families and older adults in the greater east metro area of St. Paul through direct service programs, research, leadership development and community building. The Wilder family willed their estate over a century ago to help the poor, sick and needy of Saint Paul, beginning a legacy of service. 
+				The Amherst H. Wilder Foundation believes that investing in people, enhancing relationships with one other, and promoting health and resilience will help create a vibrant community. Through our direct service programs, Wilder Research, and community building, we are helping people reach their full potential.]]>
 			</text>
 			<text id="text_3">
 				<![CDATA[The purpose of this educational module is to help you better understand our unique approach to mental health services. Click Resources on the top bar for an overview of Trauma-Informed Care, Children and Family Mental Health, and Southeast Asian Services.
