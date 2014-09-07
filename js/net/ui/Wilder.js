@@ -140,6 +140,10 @@ define(["libs/pace/pace.min",
 		$("#screen_wilder #intro_message #title").html( titleTxt ); // set current title
 		$("#screen_wilder #inner_wheel_container #intro #story_intro").html( columnTxt ); // set main text
 		
+		//conclusion texts
+		var conclusionTxt = ""+$(AppData.configXML).find("module[id='wilder'] text[id='conclusion_text']").first().text();
+		$("#screen_wilder #inner_wheel_container #conclusion #story_conclusion").html( conclusionTxt ); // set main text
+
 	}
 	
 	Wilder.prototype.setupStops = function () {
@@ -158,9 +162,24 @@ define(["libs/pace/pace.min",
 	}
 	
 	Wilder.prototype.goToNextStop = function () {
-	
+
 		this.currentStopIndex ++;
-		this.goToStop( this.currentStopIndex );
+		
+		//catch stop completion
+		if ( this.currentStopIndex < this.stops.length ){
+		
+			this.goToStop( this.currentStopIndex );
+			
+		 } else {
+		 
+		 	//all stops completed
+		 	Media.playTakeoverSound( 'module_complete' );
+		 	Tips.showById("wilder_page_2_complete");
+		 	
+		 	//Show conclusion text
+		 	this.showConclusion();
+		 	
+		 }
 
 	}
 
@@ -168,6 +187,7 @@ define(["libs/pace/pace.min",
 		
 		var thisRef = this;
 		this.currentStop = this.stops[stopNum];	
+
 		
 		// - setup stop content - //
 		//intro		
@@ -255,9 +275,7 @@ define(["libs/pace/pace.min",
 				var rSrc = thisRef.currentStop.reviewBtns[index][3];//reading
 				var qSrc = thisRef.currentStop.reviewBtns[index][4];//quiz
 				var rFeedback = thisRef.currentStop.reviewBtns[index][5];//feedback
-				
-				console.log("setup reviw btn: "+vSrc);
-				
+								
 				//clear previous meta data
 				$(this).removeAttr( 'data-video' );
 				$(this).removeAttr( 'data-audio' );
@@ -306,6 +324,15 @@ define(["libs/pace/pace.min",
 			$(this).removeClass('visited');
 		
 		});
+		
+		//Update 'NEXT' review button
+		if ( this.currentStopIndex >= this.stops.length - 1 ) {
+			$("#screen_wilder #inner_wheel_container #review_btn_next").removeClass('icon-house');
+			$("#screen_wilder #inner_wheel_container #review_btn_next").html('FINISH');
+		}else{
+			$("#screen_wilder #inner_wheel_container #review_btn_next").addClass('icon-house');
+			$("#screen_wilder #inner_wheel_container #review_btn_next").html('NEXT STOP');
+		}
 
 		
 		//spin
@@ -348,12 +375,16 @@ define(["libs/pace/pace.min",
 
 	}
 	
+	Wilder.prototype.showConclusion = function () {
+		
+		this.transitionInnerCircleTo("conclusion");
+
+	}
+
 	Wilder.prototype.showPeople = function () {
 		
 		this.transitionInnerCircleTo("people");
-		
 		$("#screen_wilder #inner_wheel_container #people #person_feature").hide();
-//		$("#screen_wilder #inner_wheel_container #people #people_btn_next").hide();
 		
 	}
 	
@@ -368,6 +399,7 @@ define(["libs/pace/pace.min",
 	Wilder.prototype.transitionInnerCircleTo = function (containerId) {
 		
 		$("#screen_wilder #inner_wheel_container #intro").hide();
+		$("#screen_wilder #inner_wheel_container #conclusion").hide();
 		$("#screen_wilder #inner_wheel_container #review").hide();
 		$("#screen_wilder #inner_wheel_container #people").hide();
 				
@@ -376,9 +408,7 @@ define(["libs/pace/pace.min",
 	}
 	
 	Wilder.prototype.personClicked = function( personData ){
-		
-		console.log("person clicked: "+ personData[0] );
-		
+				
 		var thisRef = this;
     	var sndId = personData[1];
     	var sndDelay = personData[2];
@@ -394,6 +424,7 @@ define(["libs/pace/pace.min",
     	
     	//set person dialog
     	$("#screen_wilder #person_feature #person_feature_dialog").html(personData[4]);
+    	
     	this.startActivePortrait();
     	this.disablePortraits();
 
@@ -403,6 +434,9 @@ define(["libs/pace/pace.min",
     	$("#screen_wilder #personnel_layer").fadeOut('slow');
     	$("#screen_wilder #person_feature").fadeIn('slow');
     	
+    	//Reset scroll position of dialog text
+    	$("#screen_wilder #person_feature #person_feature_dialog").scrollTop(0);
+    	    	
     	$(this.curPersonDiv).removeClass('row1 row2 row3 col1 col2 col3 col4 col5');
 		
 		//Start audio
@@ -414,6 +448,7 @@ define(["libs/pace/pace.min",
     };
     
     Wilder.prototype.checkPortraitsCompletion = function( ) {
+    	
     	//Check if all people have been visited
     	var numVisited = 0;
     	for (var i = 0; i < this.currentStop.people.length; i++) {
@@ -520,7 +555,7 @@ define(["libs/pace/pace.min",
 
     	if (this.reviewCompleted == true) {
     		
-    		Tips.showById("wilder_review_complete");
+    		
     		
     	}
     	
@@ -667,8 +702,7 @@ define(["libs/pace/pace.min",
 			break;
 			case "review_btn_back":
 				// return to people photos
-				$("#screen_wilder #intro").show();
-				$("#screen_wilder #review").hide();
+				this.showPeople();
 				Media.killSounds(); 
 			break;
 			case "review_btn_next":

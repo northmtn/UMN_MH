@@ -1,4 +1,4 @@
-define(['libs/pace/pace.min', 'net/data/AppData'], function(pace, AppData){
+define(['libs/pace/pace.min', 'net/data/AppData', 'net/media/Media'], function(pace, AppData, Media){
 
 
     function Navigator(){
@@ -49,6 +49,8 @@ define(['libs/pace/pace.min', 'net/data/AppData'], function(pace, AppData){
 			break;
 		  	
 		}
+		
+		Media.killSounds(); 
 		
 		//update app data
 		AppData.setCurrentModule(screenContainerId);

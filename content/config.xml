@@ -76,27 +76,55 @@
 				]]>
 			</text>
 			
-			<team audio="TMH_S02_01" duration="13" >
-			
-				<team_member id="Advance Practice Registered Nurse" audio="IMH_S02_soc" duration="6"><![CDATA[On an integrative mental healthcare team nurses can function either as a Registered Nurse (RN) or an Advanced Practice Nurse (APRN). An RN has either an AD or a BSN and has both academic and clinical training related to the human condition such as physiology, chemistry, psychology, human growth and development, and anatomy. The RN’s role on the integrative mental healthcare team is to oversee medication administration and patient education, advocate for clients, and support clients in their pursuit of wellness.
+			<team>
+
+				<team_member id="Nurse"><![CDATA[On an integrative mental healthcare team nurses can function either as a Registered Nurse (RN) or an Advanced Practice Nurse (APRN). An RN has either an AD or a BSN and has both academic and clinical training related to the human condition such as physiology, chemistry, psychology, human growth and development, and anatomy. The RN’s role on the integrative mental healthcare team is to oversee medication administration and patient education, advocate for clients, and support clients in their pursuit of wellness.
 				]]>
 				</team_member>
 				
-				<team_member id="Team Member 2" audio="IMH_S02_phy" duration="6"><![CDATA[ metus. Maecenas elementum, purus non egestas ullamcorper, odio leo porta elit, sit amet euismod metus augue eget leo. Praesent a nunc et ex gravida tincidunt. Nullam et faucibus massa, tempor sodales odio. Integer vel hendrerit libero, id rhoncus ex. Duis hendrerit ut leo eu volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et ornare arcu, gravida tincidunt
+				<team_member id="Nutrition Expert"><![CDATA[Both nutrition experts and dietitians advise clients on appropriate nutrition and diet according to the client’s individual needs. This is especially important when working with people who have a mental illness because of the extreme health disparities common to this population. Nutrition experts may or may not be licensed professionals. The term nutrition expert or nutritionist is not legally protected; however the term Registered Dietician (RD) is.
 				]]>
 				</team_member>
 				
-				<team_member id="Team Member 3" audio="IMH_S02_int" duration="6"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et ornare arcu, gravida tincidunt metus. Maecenas elementum, puru eget leo. Praesent a nunc et ex gravida tincidunt. Nullam et faucibus massa, tempor sodales odio. Integer vel hendrerit libero, id rhoncus ex. Duis hendrerit ut leo eu volutpat.
+				<team_member id="Counselor"><![CDATA[Counselors serve as a role model and coach for clients regarding developing and using effective problem solving, decision-making, conflict resolution, and independent living skills and responsibilities. They also establish supportive and motivational relationships with clients, ensuring an atmosphere of safety, security, and responsible mental healthcare. Licensed Professional Counselors also provide individual and group therapy to various populations. A counselor can have various academic and professional credentials. The term Licensed Professional Counselor is a licensed and regulated professional title in the state of Minnesota, while the term counselor is not. 
+				]]>
+				</team_member>
+
+				<team_member id="Occupational Therapist"><![CDATA[Occupational therapy is about helping people do the day-to-day tasks that “occupy” their time, sustain themselves, and enable them to contribute to the wider community. The ‘core’ intervention is engaging the client in activities that help him or her develop skills for daily life.  OTs use engagement in meaningful activities to teach persons to manage symptoms, self- regulate emotions/manage feelings, develop relationships with others, solve problems, ask others for help in an appropriate manner, be assertive, develop healthy habits and routines, and acquire and/or maintain healthy roles in their families and communities.
+				]]>
+				</team_member>
+
+				<team_member id="Fitness Specialist"><![CDATA[Fitness specialists oversee training and fitness with clients. They often have extensive training in fields such as kinesiology, exercise physiology, and fitness or have served as personal trainers. They use evidence-based knowledge to support their clients in an individualized way to attain personal wellness goals.
+				]]>
+				</team_member>
+
+					<team_member id="Pharmacist"><![CDATA[Once a diagnosis has been made and a prescription has been provided, the pharmacist determines an appropriate medication that is safe, effective, fits the client’s lifestyle, and achieves the desired clinical outcomes for the client. On an IMH team, the pharmacist works closely with the other providers to achieve the best clinical outcomes and make sure that client challenges or limitations are considered when deciding on medications.
 				]]>
 				</team_member>
 				
-				<team_member id="Team Member 4" audio="IMH_S02_soc" duration="6"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et ornare arcu, gravida tincidunt metus. Maecenas elementum, purus non egestas ullamcorper, odio leo porta elit, sit amet euismod metus augue eget leo. Praesent a nunc et ex gravida tincidunt. Nullam et faucibus massa, tempor sodales odio. Integer vel hendrerit libero, id rhoncus ex. Duis hendrerit ut leo eu volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et ornare arcu, gravida tincidunt metus. Maecenas elementum, purus non egestas ullamco
+					<team_member id="Advance Practice Registered Nurse"><![CDATA[On the IMH team the Advance Practice Registered Nurse (APRN) will either be a Psychiatric/Mental Health Clinical Nurse Specialist (PMH CNS) or a Psychiatric/Mental Health Nurse Practitioner (PMH NP). PMH CNSs and PMH NPs maintain the unique and holistic view of the RN and can also diagnose psychiatric illnesses and treat them by prescribing medications, conducting psychotherapy, applying various integrative health approaches, and working with families to promote support for the client.
+				]]>
+				</team_member>
+
+					<team_member id="Integrative Therapy Provider"><![CDATA[An integrative therapy provider is any provider that provides complementary and alternative medicine services to clients. These are often licensed professions and protected by law with extensive training in their chosen specialty. Integrative therapy providers practice in specialties such as acupuncture, chiropractic, massage therapy and energy healing such as Healing Touch or Reiki, Ayurvedic medicine, and more.
+				]]>
+				</team_member>
+
+					<team_member id="Case Manager"><![CDATA[A case manager can be a nurse, social worker, or other healthcare professional as well as an individual with a four-year college degree. It is an assigned role that can be performed by individuals from various professions depending on the needs of the client population with whom they work. Case managers work with clients to develop specific goals to improve their quality of life and then support them in a variety of ways to achieve those goals by connecting clients to needed resources. No specific licensure is necessary to become a case manager.
+				]]>
+				</team_member>
+
+					<team_member id="Social Worker"><![CDATA[Social workers work with clients, family members, and the community to navigate complex formal and informal support systems. They often have vital roles in mental health interdisciplinary teams where their unique knowledge and expertise on the different resources and procedures needed to get appropriate assistance for clients and families is very valuable. The licensed independent clinical social worker (LICSW) is licensed to provide psychotherapy and skills training as well.
+				]]>
+				</team_member>
+
+					<team_member id="Client"><![CDATA[Client can refer to an individual or a group of individuals such as a family or a community. The interdisciplinary healthcare team is centered around the client and focused on his, her, or their needs. Clients are responsible for relaying their needs to the healthcare team whenever possible and providing open and honest feedback regarding their performance. 
 				]]>
 				</team_member>
 
 			</team>
 			
-			<button id="video_1" video="IMH_640">INTEGRATIVE MENTAL HEALTH CARE TEAM</button>
+			<button id="video_1" video="IMH_S03_V01">IMH TEAM</button>
 		</view>
 	
 		<!-- Integrative Tips -->
@@ -380,6 +408,11 @@
 			It often takes him up to half an hour to calm down, and by then, the class is typically almost over. Jason struggles with boundaries and often becomes emotionally distressed if told “no,” sometimes running out of the classroom or crying. Jason has also been diagnosed with asthma, and when he becomes upset, the crying can trigger his asthma symptoms. Jason is really bright and despite what appears to be ADHD, when he’s calm, does well academically. He is also engaging, and most people, including other kids, really like him. 
 ]]>
 			</text>
+			
+			<text id="conclusion_text"><![CDATA[<b>Thank you for completing this activity. We hope it gave you a better understanding of an integrative mental healthcare team in general as well as the approach that Wilder takes to support families and help them heal.</br></br>
+			Please click “3” on the top bar to continue.
+			]]>
+			</text>
 
 			<stops>
 			
@@ -459,7 +492,7 @@
 						<button id="quiz_review" quiz="stop2_in_review">IN REVIEW</button>
 					</review>
 					
-					<reading id="stop2_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
+					<reading id="stop2_reading" title="In Their Shoes">
 						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
 					</reading>
@@ -573,7 +606,7 @@
 						<button id="quiz_review" quiz="stop5_in_review">IN REVIEW</button>
 					</review>
 					
-					<reading id="stop5_reading" title="In Their Shoes" audio="TMH_S03_ST05_03" duration="5">
+					<reading id="stop5_reading" title="In Their Shoes">
 						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
 					</reading>
@@ -690,8 +723,8 @@
 			<tip id="wilder_page_2_intro_complete" delay="0" duration="6">Click START to begin the activity.</tip>
 			<tip id="wilder_new_building" delay="1.5" duration="6">Click on each person.</tip>
 			<tip id="wilder_last_person_completed" delay="0" duration="6">Click on NEXT.</tip>
-			<tip id="wilder_review_start" delay="0" duration="6">Click each orange button. When you are finished, click NEXT.</tip>
-			<tip id="wilder_review_complete" delay="0" duration="6">Click "3" on top bar to continue.</tip>
+			<tip id="wilder_review_start" delay="0" duration="6">Click each orange button. When you are finished, click NEXT STOP.</tip>
+			<tip id="wilder_page_2_complete" delay="3" duration="6">Click "3" on top bar to continue.</tip>
 			<tip id="wilder_end" delay="2" duration="6">Click Main Menu to select another module.</tip>
 		</tips>
 	</module>
