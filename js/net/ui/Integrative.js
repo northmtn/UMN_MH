@@ -90,11 +90,42 @@ define(["libs/pace/pace.min",
 	
 		// setup bubbletank
 		bubbleTank = new BubbleTank("#screen_integrative #bubble_tank_container");
-		bubbleTank.createBubbles(["Physical", "Emotional", "Spiritual", "Social", "Environmental", "Occupational", "Financial"]);
+		bubbleTank.createBubbles(["Physical", "Emotional", "Spiritual", "Social", "Environmental", "Occupational", "Financial", "Intellectual"]);
 		bubbleTank.distributeInCircle();
 		bubbleTank.kill();
 		
 		setupBubbleDimensions();
+		
+		$("#screen_integrative #bubble_tank_container .bubble").each(function(){
+		
+			//Active people can be clicked at anytime
+			$(this).find("#hit").off();
+			$(this).find("#hit").on("click", function(event) {
+	
+				var bubId  = $(this).parent().attr('id');
+				console.log(bubId+" bubId");
+			    expandBubble(bubId);
+
+			});
+			//Circular rollovers
+			$(this).find("#hit").on( {
+				mouseenter: function() {
+					$( this ).parent().addClass( "highlight" );
+				}, mouseleave: function() {
+					$( this ).parent().removeClass( "highlight" );
+				}
+			});
+
+		});
+		
+		$("#screen_integrative #extra_info").on( {
+			mouseenter: function() {
+				$("#screen_integrative #extra_info_popup").fadeIn('fast');
+			}, mouseleave: function() {
+				$("#screen_integrative #extra_info_popup").fadeOut('fast');
+			}
+		});
+
 	
 	}
 	
@@ -137,6 +168,8 @@ define(["libs/pace/pace.min",
 	}
 	
 	function expandBubble(bubId) {
+	
+		console.log( "expandBubble BUB ID: " + bubId );
 				
 		var allBubs = $("#screen_integrative .bubble");
 		TweenLite.to( $(allBubs), 0.5, { css: { scale: 0.65, zIndex:0 } } ); // scale  down, bring to bg
@@ -154,7 +187,6 @@ define(["libs/pace/pace.min",
 		$(bub).find("#bubSubhead").show();
 		TweenLite.set( $(bub).find("#bubSubhead"), { css: { opacity:0 } } ); // fade in subhead 
 		TweenLite.to( $(bub).find("#bubSubhead"), 0.2, { css: { opacity:1 }, delay:0.35 } ); // fade in subhead 
-		
 		
 		$(bub).addClass('visited');
 		checkBubbleCompletion();
@@ -195,7 +227,8 @@ define(["libs/pace/pace.min",
 		
 		});		
 		
-		showNextTeamMember();
+		curMemberNum = 1;
+		showPrevTeamMember(); // show previous to trigger disabling of arrow btn
 	
 	}
 	
@@ -205,6 +238,13 @@ define(["libs/pace/pace.min",
 		
 			curMemberNum --;
 			refreshMemberContent();
+			
+			if (curMemberNum == 0) {
+				TweenLite.set( $(".imh_screen_3 #arr_left"), { css: { opacity: 0.3} } ); // disabled appearance
+				$(".imh_screen_3 #arr_left").css("cursor", "default");
+			}
+			TweenLite.set( $(".imh_screen_3 #arr_right"), { css: { opacity: 1} } ); // enabled appearance
+			$(".imh_screen_3 #arr_right").css("cursor", "pointer");
 
 		}
 		
@@ -217,7 +257,13 @@ define(["libs/pace/pace.min",
 			curMemberNum ++;
 			refreshMemberContent();
 			
-			if (curMemberNum == members.length-1) Tips.showById("integrative_end");
+			if (curMemberNum == members.length-1) {
+				Tips.showById("integrative_end");
+				TweenLite.set( $(".imh_screen_3 #arr_right"), { css: { opacity: 0.3} } ); // disabled appearance
+				$(".imh_screen_3 #arr_right").css("cursor","default");
+			}
+			TweenLite.set( $(".imh_screen_3 #arr_left"), { css: { opacity: 1} } ); // enabled appearance
+			$(".imh_screen_3 #arr_left").css("cursor", "pointer");
 
 		}
 		
@@ -264,15 +310,6 @@ define(["libs/pace/pace.min",
     		var audId = btnRef.attr('data-audio');
     		Media.playTakeoverSound(audId);
     		    		    		
-    	    return;
-    	    
-    	}
-    	//bubbles nav
-    	if (btnId.substring(0, 4) == "bub_") {
-    	
-    		if ($(btnRef).css("cursor") == "pointer") {
-    			expandBubble(btnId);
-    		}
     	    return;
     	    
     	}

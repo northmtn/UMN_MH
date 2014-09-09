@@ -528,10 +528,10 @@ button.icon-house:after {
 
 #screen_mainmenu #learnmore_display {
 	
-	top: 100px;
+	top: 70px;
 	left: 115px;
 	width: 800px;
-	height: 485px;
+	height: 535px;
 	background: white;
 	
 }
@@ -551,6 +551,7 @@ button.icon-house:after {
 }
 #screen_mainmenu #learnmore_display #credits {
 	color: #39230c;
+	font-size: 14px;
 }
 
 #screen_mainmenu #learnmore_display p {
@@ -702,19 +703,59 @@ button.icon-house:after {
 	font-size: 14px;
 	color: black;
 }
+#screen_integrative #extra_info {
+	color: #617ca1;
+	cursor: pointer;
+	font-weight: bold;
+}
+#screen_integrative #extra_info_popup {
+	background: #617ca1;
+	color: white;
+	
+	position: absolute;
+	bottom: 57px;
+	left: 233px;
+	height: 140px;
+	width: 340px;
+}
+#screen_integrative #extra_info_popup p {
+	color: white;
+	font-size: 13px;
+	margin: 15px 20px;
+}
 #screen_integrative #bubble_tank_container {
-	top: 350px;
-	left: 630px;
+	top: 364px;
+	left: 635px;
 }
 #screen_integrative #bubble_tank_container .bubble {
 	cursor: pointer !important;
 }
-#screen_integrative #bubble_tank_container .bubble:hover {
+#screen_integrative #bubble_tank_container .bubble.highlight {
 	padding-top: 2px;
+}
+#screen_integrative .bubble {
+	height: 1px;
+}
+#screen_integrative .bubble #hit {
+	display:block;
+	width:290px;
+	height:290px;
+	top:-145px;
+	left:-145px;
+	position: absolute;
+	border-radius:145px;
+	background:rgba(0,99,0,0.0);
+}
+#screen_integrative .bubble img,
+#screen_integrative .bubble h2,
+#screen_integrative .bubble p {
+
+	pointer-events: none;	
+	
 }
 #screen_integrative img[data-role="background"]  {
 	
-	top: -100px;
+	top: -118px;
 	left: -65px;
 
 }
@@ -1307,11 +1348,12 @@ button.icon-house:after {
 
 	text-align: center;
 	position: relative;
-	font-size: 22px;
-	width: 70%;
-	left: -103px;
-	top: -110px;
+	font-size: 18px;
+	width: 80%;
+	left: -123px;
+	top: -100px;
 	color: white !important;
+	z-index: 2;
 	
 }
 

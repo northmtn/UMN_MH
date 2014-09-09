@@ -35,6 +35,8 @@ define(['net/util/Geom'], function(Geom){
 	   	//overlay imgs
 	   	$( this.bubbleDiv ).append( '<img id="over_active" src="img/touchstone/bub_over.png" data-role="graphic" alt="'+this.label+'"/>' );
 	   	$( this.bubbleDiv ).append( '<img id="over_inactive" src="img/touchstone/bub_over_inactive.png" data-role="graphic" style="display: none;" />' );
+	   	//circular hit 
+	   	$( this.bubbleDiv ).append( '<div id="hit"></div>' );
 	      	
    }
 	
