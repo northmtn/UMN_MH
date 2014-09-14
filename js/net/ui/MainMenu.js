@@ -1,4 +1,4 @@
-define(['net/ui/Screen', 'net/ui/Navigator', 'net/ui/PhotoStack'], function( Screen, Navigator, PhotoStack ){
+define(['net/ui/Screen', 'net/ui/Navigator', 'net/ui/PhotoStack', 'net/data/AppData'], function( Screen, Navigator, PhotoStack, AppData ){
 
 
 	// I return an initialized object.
@@ -16,7 +16,18 @@ define(['net/ui/Screen', 'net/ui/Navigator', 'net/ui/PhotoStack'], function( Scr
 	MainMenu.prototype = Object.create( Screen.prototype );
 	
 	MainMenu.prototype.setup = function() {
+	
+		//Disable Touchstone/Wilder buttons (for organizational versions)
+		if (AppData.disableTouchstone == true) {
+			$("#screen_mainmenu #goto_touchstone").hide().next().hide();//remove button and br
+			$("#screen_mainmenu #goto_wilder").css('margin-bottom', '50px');
+		}
+		if ( AppData.disableWilder == true ) {
+			$("#screen_mainmenu #goto_wilder").hide();
+		}
 		
+		
+		//Create slideshow
 		var c1 = $( this.containerDiv ).find("#photo_stack_1").first();
 		this.photoStack1 = new PhotoStack( $(c1) );
 		this.photoStack1.setTransitionMode( PhotoStack.MODE_FADE );

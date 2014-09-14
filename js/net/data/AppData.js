@@ -15,6 +15,10 @@ define([], function(){
     	this.videoFolder = $(this.configXML).find('setting[id=videoFolder]').attr('value');
     	this.videoExtension = $(this.configXML).find('setting[id=videoExtension]').attr('value');
     	this.developerMode = ($(this.configXML).find('setting[id=developerMode]').attr('value') == "true");
+    	
+    	this.disableTouchstone = ($(this.configXML).find('setting[id=disableTouchstone]').attr('value') == "true");
+    	this.disableWilder = ($(this.configXML).find('setting[id=disableWilder]').attr('value') == "true");
+    	
     	this.resourcesURL = $(this.configXML).find('setting[id=resourcesURL]').attr('value');
     	
     	this.isiOS = false;

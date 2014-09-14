@@ -8,7 +8,11 @@
 		<setting id="videoFolder" value="content/video/" />
 		<setting id="videoExtension" value=".mp4" />
 		
-		<setting id="developerMode" value="true" />
+		<setting id="developerMode" value="false" />
+		
+		<!-- Use these settings to create Wilder/Touchstone specific versions -->
+		<setting id="disableTouchstone" value="true" />
+		<setting id="disableWilder" value="false" />
 		
 		<setting id="resourcesURL" value="http://www.touchstonemh.org/client-resources/mental-health-resources" />
 	</settings>
@@ -129,11 +133,11 @@
 	
 		<!-- Integrative Tips -->
 		<tips>
-			<tip id="integrative_entered" delay="2" duration="6">Watch the video, then click "2" on top bar to continue.</tip>
-			<tip id="page_2_start" delay="2" duration="6">Click on each circle</tip>
-			<tip id="page_2_complete" delay="8" duration="6">Click "3" on top bar to continue.</tip>
-			<tip id="page_3_start" delay="2" duration="6">Click the forward arrow for another description.</tip>
-			<tip id="integrative_end" delay="8" duration="6">Click MAIN MENU to select another module.</tip>
+			<tip id="integrative_entered" delay="2" duration="10">Watch the video, then click "2" on top bar to continue.</tip>
+			<tip id="page_2_start" delay="2" duration="10">Click on each circle</tip>
+			<tip id="page_2_complete" delay="8" duration="10">Click "3" on top bar to continue.</tip>
+			<tip id="page_3_start" delay="2" duration="10">Click the forward arrow for another description.</tip>
+			<tip id="integrative_end" delay="8" duration="10">Click MAIN MENU to select another module.</tip>
 		</tips>
 	</module>
 	
@@ -349,25 +353,25 @@
 		
 		<!-- Touchstone Tips -->
 		<tips>
-			<tip id="touchstone_entered" delay="2" duration="6">Watch the video, then click "2" on top bar to continue.</tip>
-			<tip id="page_2_start" delay="0" duration="6">Click Board and Lodge to begin activity.</tip>
-			<tip id="page_2_active_building" delay="0" duration="6">Click on the active building.</tip>
-			<tip id="page_2_last_building" delay="0" duration="6">Click "3" on top bar for next screen.</tip>
-			<tip id="page_3_step_1" delay="1.5" duration="6">Click Arriving at Touchstone step.</tip>
-			<tip id="page_3_step_1b" delay="0" duration="6">Click the Environmental-Social circles.</tip>
-			<tip id="page_3_step_2" delay="0" duration="6">Click Receiving a Cancer Diagnosis step.</tip>
-			<tip id="page_3_step_2b" delay="0" duration="6">Click the Physical-Emotional circles.</tip>
-			<tip id="page_3_step_3" delay="0" duration="6">Click Increasing Depression step.</tip>
-			<tip id="page_3_step_3b" delay="0" duration="6">Click the Emotional-Financial-Physical circles.</tip>
-			<tip id="page_3_step_4" delay="0" duration="6">Click Team Meeting step.</tip>
-			<tip id="page_3_step_4b" delay="0" duration="6">Click the Emotional-Physical circles.</tip>
-			<tip id="page_3_step_5" delay="0" duration="6">Click Living with Multiple Chronic Illnesses step.</tip>
-			<tip id="page_3_step_5b" delay="0" duration="6">Click the Emotional-Occupational-Physical circles.</tip>
-			<tip id="page_3_step_6" delay="0" duration="6">Click "4" on top bar to continue.</tip>
+			<tip id="touchstone_entered" delay="2" duration="10">Watch the video, then click "2" on top bar to continue.</tip>
+			<tip id="page_2_start" delay="0" duration="10">Click Board and Lodge to begin activity.</tip>
+			<tip id="page_2_active_building" delay="0" duration="10">Click on the active building.</tip>
+			<tip id="page_2_last_building" delay="0" duration="10">Click "3" on top bar for next screen.</tip>
+			<tip id="page_3_step_1" delay="1.5" duration="10">Click Arriving at Touchstone step.</tip>
+			<tip id="page_3_step_1b" delay="0" duration="10">Click the Environmental-Social circles.</tip>
+			<tip id="page_3_step_2" delay="0" duration="10">Click Receiving a Cancer Diagnosis step.</tip>
+			<tip id="page_3_step_2b" delay="0" duration="10">Click the Physical-Emotional circles.</tip>
+			<tip id="page_3_step_3" delay="0" duration="10">Click Increasing Depression step.</tip>
+			<tip id="page_3_step_3b" delay="0" duration="10">Click the Emotional-Financial-Physical circles.</tip>
+			<tip id="page_3_step_4" delay="0" duration="10">Click Team Meeting step.</tip>
+			<tip id="page_3_step_4b" delay="0" duration="10">Click the Emotional-Physical circles.</tip>
+			<tip id="page_3_step_5" delay="0" duration="10">Click Living with Multiple Chronic Illnesses step.</tip>
+			<tip id="page_3_step_5b" delay="0" duration="10">Click the Emotional-Occupational-Physical circles.</tip>
+			<tip id="page_3_step_6" delay="0" duration="10">Click "4" on top bar to continue.</tip>
 			<tip id="page_3_personnel" delay="0" duration="12">Click each active photo.</tip>
-			<tip id="page_3_show_review" delay="0" duration="6">Click each blue button.</tip>
-			<tip id="page_3_close_review" delay="0" duration="6">Click brown "X" to select another step.</tip>
-			<tip id="touchstone_end" delay="2" duration="6">Click MAIN MENU to select another module.</tip>
+			<tip id="page_3_show_review" delay="0" duration="10">Click each blue button.</tip>
+			<tip id="page_3_close_review" delay="0" duration="10">Click brown "X" to select another step.</tip>
+			<tip id="touchstone_end" delay="2" duration="10">Click MAIN MENU to select another module.</tip>
 		</tips>
 		
 	</module>
@@ -386,7 +390,7 @@
 			<text id="text_1">Welcome to the Wilder Foundation</text>
 			<text id="text_2">
 				<![CDATA[The Amherst H. Wilder Foundation is a nonprofit community organization that helps children, families and older adults in the greater east metro area of St. Paul through direct service programs, research, leadership development and community building. The Wilder family willed their estate over a century ago to help the poor, sick and needy of Saint Paul, beginning a legacy of service. 
-				The Amherst H. Wilder Foundation believes that investing in people, enhancing relationships with one other, and promoting health and resilience will help create a vibrant community. Through our direct service programs, Wilder Research, and community building, we are helping people reach their full potential.]]>
+				The Amherst H. Wilder Foundation believes that investing in people, enhancing relationships, and promoting health and resilience will help create a vibrant community. Through our direct service programs, Wilder Research, and community building, we are helping people reach their full potential.]]>
 			</text>
 			<text id="text_3">
 				<![CDATA[The purpose of this educational module is to help you better understand our unique approach to mental health services. Click Resources on the top bar for an overview of Trauma-Informed Care, Children and Family Mental Health, and Southeast Asian Services.
@@ -719,13 +723,13 @@
 	
 		<!-- Wilder Tips -->
 		<tips>
-			<tip id="wilder_entered" delay="2" duration="6">Watch the video, then click "2" on top bar to continue.</tip>
-			<tip id="wilder_page_2_intro_complete" delay="0" duration="6">Click START to begin the activity.</tip>
-			<tip id="wilder_new_building" delay="1.5" duration="6">Click on each person.</tip>
-			<tip id="wilder_last_person_completed" delay="0" duration="6">Click on NEXT.</tip>
-			<tip id="wilder_review_start" delay="0" duration="6">Click each orange button. When you are finished, click NEXT STOP.</tip>
-			<tip id="wilder_page_2_complete" delay="3" duration="6">Click "3" on top bar to continue.</tip>
-			<tip id="wilder_end" delay="2" duration="6">Click Main Menu to select another module.</tip>
+			<tip id="wilder_entered" delay="2" duration="10">Watch the video, then click "2" on top bar to continue.</tip>
+			<tip id="wilder_page_2_intro_complete" delay="0" duration="10">Click START to begin the activity.</tip>
+			<tip id="wilder_new_building" delay="1.5" duration="10">Click on each person.</tip>
+			<tip id="wilder_last_person_completed" delay="0" duration="10">Click on NEXT.</tip>
+			<tip id="wilder_review_start" delay="0" duration="10">Click each orange button. When you are finished, click NEXT STOP.</tip>
+			<tip id="wilder_page_2_complete" delay="3" duration="10">Click "3" on top bar to continue.</tip>
+			<tip id="wilder_end" delay="2" duration="10">Click Main Menu to select another module.</tip>
 		</tips>
 	</module>
 
