@@ -11,7 +11,7 @@
 		<setting id="developerMode" value="false" />
 		
 		<!-- Use these settings to create Wilder/Touchstone specific versions -->
-		<setting id="disableTouchstone" value="true" />
+		<setting id="disableTouchstone" value="false" />
 		<setting id="disableWilder" value="false" />
 		
 		<setting id="resourcesURL" value="http://www.touchstonemh.org/client-resources/mental-health-resources" />

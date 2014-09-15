@@ -633,21 +633,28 @@ button.icon-house:after {
 	-moz-box-shadow:inset 0px 0px 0px 1px #fff;
 	-webkit-box-shadow:inset 0px 0px 0px 1px #fff;
 	box-shadow:inset 0px 0px 0px 1px #fff;
-	background-color:#cbb09f;
-	border:7px solid #cbb09f;
+	background-color:#6e320f;
+	border:7px solid #6e320f;
 	display: inline-block;
 	padding:6px 12px;	
 }
 #screen_integrative button.rect-button:hover {
-	background-color:#6e320f;
+	background-color:#cbb09f;
 }
 /* Fonts */
-#screen_integrative h2,
-#screen_integrative p {
+#screen_integrative h2 {
 	
 	color: #617ca1;
 
 }
+#screen_integrative .two-col p,
+#screen_integrative #tips_container p {
+	
+	color: #3e020f !important;
+	font-weight: 400 !important;
+
+}
+
 #screen_integrative .single_centered_col #text_1,
 #screen_integrative .single_centered_col #text_4.line {
 
@@ -1733,9 +1740,24 @@ button.icon-house:after {
 	color: #043b41;
 	
 }
+#screen_wilder p {
+	
+	font-weight: 400 !important;
+	color: #042b31;
+
+}
+#screen_wilder .two-col p,
+#screen_wilder #tips_container p {
+	
+	color: #043b41;
+	font-size: 16px;
+
+}
+
+
 #screen_wilder .single_centered_col .two-col {
 	
-	height: 290px;
+	height: 310px;
 	
 }
 #screen_wilder #intro_message {
