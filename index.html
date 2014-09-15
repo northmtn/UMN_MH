@@ -22,7 +22,7 @@
          
 </head>
 <body>
-    <div id="wrapper">
+    <div id="wrapper" style="display: none;">
     	
     	<!-- MAIN MENU SCREEN -->
     	<div id="screen_mainmenu" class="fullbleed" data-role="container">
@@ -159,6 +159,13 @@
 					<h3>QUIT PROGRAM</h3>
 				</div>
 			</div>
+			
+			<div id="balloon_feedback_box" data-role="button" class="tooltips" style="display: none;">
+				<span><h1 id="feedback_title">Program Feedback</h1><p id="tip_content">A few sentences of feedback here. A few sentences of feedback here. A few sentences of feedback here.</p><h2 id="tip_title">CLOSE FEEDBACK SECTION</h2>
+					<h3 id="closex" data-role="label">X</h3>
+				</span>
+			</div>
+			<img id="balloon" data-role="button" src="img/wilder/balloon.png"/>
 
 			<!-- Header bar -->
 			<div id="header_bar" class="fullbleed header-bar" data-role="container">

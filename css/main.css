@@ -1770,6 +1770,25 @@ button.icon-house:after {
 	background-position:50px 7px; 
 	
 }
+/*STOPS NAV*/
+#screen_wilder #stops_nav {
+
+	top: 150px;
+	left: 80px;
+	width: 150px;
+
+}
+
+#screen_wilder #stops_nav p {
+
+	margin: 0px;
+	font-size: 12px;
+}
+#screen_wilder #stops_nav p:hover {
+
+	background: rgba(255,255,255,0.5);
+}
+
 #screen_wilder h2 {
 
 	font-size: 24px;
@@ -2013,5 +2032,77 @@ button.icon-house:after {
 }
 #screen_wilder #inner_wheel_container .foot-btn.right {
 	right: -3px;
+}
+
+
+ /*FEEDBACK BOX*/
+#screen_wilder #balloon_feedback_box {
+	
+	left: 245px;
+	top: 275px;
+	z-index: 1;
+}
+
+#screen_wilder #balloon_feedback_box span {
+
+	width: 690px;
+	height: 215px;
+	
+}
+#screen_wilder #balloon {
+	z-index: 3;
+	top: 770px;
+	left: 760px;
+}
+
+#screen_wilder #balloon_feedback_box span:after {
+  border: none;
+}
+
+#screen_wilder #balloon_feedback_box h1 {
+	
+	text-align: left;
+	font-size: 26px;
+	font-weight: 400;
+	padding: 0px 20px;
+	margin-bottom: 0px;
+	color: #ab511b;
+	
+}
+
+#screen_wilder #balloon_feedback_box p {
+
+	text-align: left;
+	padding: 5px 20px;
+	background: #FFFFFF;
+	color: #000;
+	font-size: 16px;
+	font-weight: 200;
+	margin: 0px;
+	
+}
+
+#screen_wilder #balloon_feedback_box h2 {
+	
+	text-align: left;
+	font-size: 15px;
+	padding: 5px 0px 0px 35px;
+	background: #ab511b;
+	color: white;
+	height: 26px;
+	width: 655px;
+	margin: 0px;
+	bottom: 0px;
+	position: absolute;
+	
+}
+
+#screen_wilder #balloon_feedback_box #closex {
+
+	color: #FFFFFF;
+	left: 10px;
+	bottom: -8px;
+	position: absolute;
+	
 }
 

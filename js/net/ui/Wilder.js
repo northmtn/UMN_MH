@@ -10,9 +10,10 @@ define(["libs/pace/pace.min",
 		"net/util/Util",
 		"net/ui/WI_Stop", 
 		"net/ui/ProgressRing", 
+		"net/ui/WI_Feedback",
 		"net/ui/Quiz", 
 		"tween"], 
-		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, Tips, View, ViewCollection, Util, WI_Stop, ProgressRing, Quiz )
+		function( Pace, AppData, Media, Screen, Navigator, TimelineNav, Tips, View, ViewCollection, Util, WI_Stop, ProgressRing, WI_Feedback, Quiz )
 		{
 
 
@@ -59,6 +60,9 @@ define(["libs/pace/pace.min",
 		
 		//Set colors for progress ring
 		ProgressRing.setup(54, 15,"#ddd", "#d29773");
+		
+		//Setup feedback
+		WI_Feedback.setup();
 
 		//First time view collection is loaded, default to view 1
 		var thisRef = this;
@@ -182,6 +186,15 @@ define(["libs/pace/pace.min",
 		 }
 
 	}
+	
+	Wilder.prototype.jumpToStop = function (stopNum) {
+		
+		console.log("jts"+stopNum);
+		this.currentStopIndex = parseInt(stopNum) -1;
+		this.goToStop( this.currentStopIndex );
+		
+	}
+	
 
 	Wilder.prototype.goToStop = function (stopNum) {
 		
@@ -204,7 +217,7 @@ define(["libs/pace/pace.min",
 			$(this).find("#progress_ring").hide();
 			$(this).hide();
 					
-		});
+		}); 
 		//Enable people portraits for this stop
 		for (var i = 0; i < this.currentStop.people.length; i++) {
     		
@@ -238,7 +251,7 @@ define(["libs/pace/pace.min",
     		$(persDiv).addClass("row" + posRowIndex);
     		$(persDiv).addClass( "col" + posColIndex);
     		$(persDiv).addClass( "active" );
-  			
+
   			//Active people can be clicked at anytime
   			$(persDiv).find("#hit").off();
   			$(persDiv).find("#hit").on("click", function(event) {
@@ -412,6 +425,7 @@ define(["libs/pace/pace.min",
 		var thisRef = this;
     	var sndId = personData[1];
     	var sndDelay = personData[2];
+    	var feedbackTxt = personData[3];
     	
     	this.killCurrentActivePersonnel();
     	
@@ -428,9 +442,7 @@ define(["libs/pace/pace.min",
     	this.startActivePortrait();
     	this.disablePortraits();
 
-    	//Transition to featured portrait
-//       	TweenLite.to( $(this.curPersonDiv), 1, { css: { top:50, left:50 },  ease:Power2.easeInOut } );
-    	
+    	//Transition to featured portrait    	
     	$("#screen_wilder #personnel_layer").fadeOut('slow');
     	$("#screen_wilder #person_feature").fadeIn('slow');
     	
@@ -444,6 +456,11 @@ define(["libs/pace/pace.min",
 		
     	//Move portrait activate portrait
     	this.startPortraitProgressRing( sndDelay );
+    	
+    	//check for associated feedback
+    	if (typeof feedbackTxt !== 'undefined' && feedbackTxt !== false) {
+    		thisRef.waitingFeedback = feedbackTxt;
+    	}
 
     };
     
@@ -474,7 +491,7 @@ define(["libs/pace/pace.min",
     }
     
     Wilder.prototype.disablePortraits = function( ) {
-    	console.log($("#screen_wilder #inner_wheel_container #people .personnel.active #hit").length);
+    
     	$("#screen_wilder #inner_wheel_container #people .personnel.active #hit").css('pointer-events', 'auto');
     	
     }
@@ -501,16 +518,16 @@ define(["libs/pace/pace.min",
     }
     
     Wilder.prototype.killCurrentActivePersonnel = function( ) {
-        	
-        	if ( this.curPersonDiv ) {
-        		
-        		TweenLite.to( $(this.curPersonDiv), 0.5, { css: { scale:1, zIndex:0 },  ease:Power2.easeOut } );
-        		TweenMax.killTweensOf( $(this.curPersonDiv).find(".circle-portrait img") );
+    	
+    	if ( this.curPersonDiv ) {
+    		
+    		TweenLite.to( $(this.curPersonDiv), 0.5, { css: { scale:1, zIndex:0 },  ease:Power2.easeOut } );
+    		TweenMax.killTweensOf( $(this.curPersonDiv).find(".circle-portrait img") );
 
-        		this.curPersonnelDiv = null;
-        		
-        	}
-        }
+    		this.curPersonnelDiv = null;
+    		
+    	}
+    }
     
     Wilder.prototype.reviewBtnClicked = function( event ) {
     	
@@ -565,7 +582,7 @@ define(["libs/pace/pace.min",
     
     	if (this.waitingFeedback != null) {
         	WI_Feedback.populateFeedback(this.waitingFeedback);
-        	WI_Feedback.dropLeaf();
+        	WI_Feedback.dropBalloon();
         	this.waitingFeedback = null;
     	}
     	
@@ -636,6 +653,14 @@ define(["libs/pace/pace.min",
 		console.log("Wilder btn clicked: "+ btnId);
 	    				
 		// catch specific types of buttons...
+		//stops nav
+		if (btnId.substring(0, 5) == "stop_") {
+		
+			var stopId = btnId.substring(5);
+			this.jumpToStop( stopId );
+		    return;
+		    
+		}
 		//timeline nav
 		if (btnId.substring(0, 8) == "navIcon_") {
 		    	
@@ -691,6 +716,7 @@ define(["libs/pace/pace.min",
 				$("#screen_wilder #personnel_layer").fadeIn('slow');
 				$("#screen_wilder #person_feature").fadeOut('slow');
 				Media.killSounds(); 
+				this.triggerAwaitingFeedback();
 				this.checkPortraitsCompletion();
 				this.disablePortraits();
 			break;
@@ -717,6 +743,12 @@ define(["libs/pace/pace.min",
 			case "review_text_btn_back":
 				// return to review list from TEXT 
 				this.hideReading();
+			break;
+			case "balloon_feedback_box":
+			case "balloon":
+				if (WI_Feedback.feedbackShowing == true) {
+					WI_Feedback.closeAndReset();
+				}
 			break;
 			case "btn_resources":
 				//TODO - Go to resources page?

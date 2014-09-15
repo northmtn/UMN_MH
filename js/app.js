@@ -61,6 +61,9 @@ require(['jquery', 'libs/pace/pace.min', 'net/data/AppData', 'net/media/Media', 
     	Navigator.addScreen(wi);
     	
     	Navigator.goToScreen("mainmenu");
+    	
+    	//fade-in
+    	$("#wrapper").show();
     	    
     }
     

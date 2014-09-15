@@ -444,11 +444,11 @@
 					]]>
 					</person>
 					
-					<person id="jason" audio="W_S02_ST01_04" duration="14"><![CDATA[I like Miss Wilson, but my favorite person at school is Mr. Lee. He lets me go in his office and play with his toys. It helps me when I can’t control my body. I’m trying to be good, but sometimes my body won’t listen to me. 
+					<person id="jason" audio="W_S02_ST01_04" duration="14" feedback_popup="The feedback pop-up shows after JASON audio completes."><![CDATA[I like Miss Wilson, but my favorite person at school is Mr. Lee. He lets me go in his office and play with his toys. It helps me when I can’t control my body. I’m trying to be good, but sometimes my body won’t listen to me. 
 					]]>
 					</person>
 					
-					<person id="occupational_therapist" audio="W_S02_ST01_05" duration="32">
+					<person id="occupational_therapist" audio="W_S02_ST01_05" duration="32" feedback_popup="The feedback pop-up shows after THERAPIST audio completes.">
 					<![CDATA[I’d like to spend time talking to Jason’s teacher so that I can learn more about what happens at school and how it’s structured. For example, does he have more issues in the cafeteria at lunchtime or in really noisy environments?  Does he have issues when the class activities are seated at the desk tabletop or is it harder when people are talking and the environment is louder?  I’d also like to speak with Mr. Lee about what he sees when Jason visits him. Jason says he likes to see Mr. Lee and I wonder if the quieter, less stimulating space is a factor of this.]]>
 					</person>
 					
