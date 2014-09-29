@@ -63,7 +63,7 @@
 				<dimension id="Emotional" audio="IMH_S02_emo" duration="35">coping effectively with life and creating satisfying relationships</dimension>
 				<dimension id="Intellectual" audio="IMH_S02_int" duration="27">recognizing creative abilities and finding ways to expand knowledge and skills</dimension>
 				<dimension id="Environmental" audio="IMH_S02_env" duration="19">good health by occupying pleasant, stimulating environments that support well-being</dimension>
-				<dimension id="Occupational" audio="IMH_S02_occ" duration="19">personal satisfaction and enrichment from one’s work</dimension>
+				<dimension id="Occupational" audio="IMH_S02_occ" duration="19">personal satisfaction and enrichment from one’s work or daily activities</dimension>
 				<dimension id="Spiritual" audio="IMH_S02_spi" duration="34">expanding our sense of purpose and meaning in life</dimension>
 				<dimension id="Social" audio="IMH_S02_soc" duration="19">a sense of connection, belonging, and a well-developed support system</dimension>
 			</dimensions>

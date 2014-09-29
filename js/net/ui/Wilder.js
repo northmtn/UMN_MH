@@ -69,15 +69,10 @@ define(["libs/pace/pace.min",
 		Pace.once("done", function() {
 			
 			//All setup and loading finished. go to first view. 
-			viewCollection.gotoView(0);
-			timelineNav.refreshDisplays();
-			thisRef.refreshButtonListeners();
-			
+			changeView(0);
 			thisRef.setupStops();
 			thisRef.resetStops();
-			
-			Tips.showById("wilder_entered");
-			
+
 		});
 		
 		viewCollection.addView( new View( $(c), "view_1", "two_column_intro", this.view1Setup) ); 
@@ -102,13 +97,22 @@ define(["libs/pace/pace.min",
 		
 	}
 	
+	Wilder.prototype.transitionIn = function() {
+		if ( viewCollection.currentViewIndex == 0 ) Tips.showById("wilder_entered");
+	}
+	
 	function changeView(navIndex) {
 
 		viewCollection.gotoView(navIndex);
 		timelineNav.refreshDisplays();
-		Media.killSounds(); //Don't allow sounds to bleed into next view.		
+		Media.killSounds(); //Don't allow sounds to bleed into next view.
+		
+		//Close current tip if open
+		Tips.hide();		
 		
 		if ( viewCollection.currentViewIndex == 0 ) {
+		
+			
 			
 		} else if ( viewCollection.currentViewIndex == 1 ) {
 			
@@ -128,6 +132,7 @@ define(["libs/pace/pace.min",
 		} else if ( viewCollection.currentViewIndex == 2 ) {
 			
 			Tips.showById("wilder_end");
+			
 		}
 
 	}
@@ -189,7 +194,6 @@ define(["libs/pace/pace.min",
 	
 	Wilder.prototype.jumpToStop = function (stopNum) {
 		
-		console.log("jts"+stopNum);
 		this.currentStopIndex = parseInt(stopNum) -1;
 		this.goToStop( this.currentStopIndex );
 		
@@ -200,7 +204,11 @@ define(["libs/pace/pace.min",
 		
 		var thisRef = this;
 		this.currentStop = this.stops[stopNum];	
-
+		
+		//update stop nav menu
+		$("#screen_wilder #stop_"+(1+this.currentStopIndex) ).addClass('visited');
+		$("#screen_wilder #stop_"+(1+this.currentStopIndex) ).parent().children().removeClass('active');
+		$("#screen_wilder #stop_"+(1+this.currentStopIndex) ).addClass('active');
 		
 		// - setup stop content - //
 		//intro		
@@ -270,6 +278,9 @@ define(["libs/pace/pace.min",
   			});
   			
     	}
+    	//default to people view not person view
+    	$("#screen_wilder #personnel_layer").show();
+    	$("#screen_wilder #person_feature").hide();
 			
 		//review
 		//review buttons

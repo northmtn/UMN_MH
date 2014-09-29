@@ -24,10 +24,15 @@ define([], function(){
         
         this.hasBeenInitialized = true;  
         this.enable();
+        this.transitionIn();
         
     };
     
     Screen.prototype.setup = function() {
+    	//overwrite function to setup
+    }
+    
+    Screen.prototype.transitionIn = function() {
     	//overwrite function to setup
     }
     

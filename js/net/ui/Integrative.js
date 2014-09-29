@@ -69,9 +69,7 @@ define(["libs/pace/pace.min",
 			viewCollection.gotoView(0);
 			timelineNav.refreshDisplays();
 			thisRef.refreshButtonListeners();
-			
-			Tips.showById("integrative_entered");
-			
+
 		});
 		
 		viewCollection.addView( new View( $(c), "view_1", "two_column_intro_b", this.view1Setup) ); 
@@ -137,7 +135,10 @@ define(["libs/pace/pace.min",
 
 		viewCollection.gotoView(navIndex);
 		timelineNav.refreshDisplays();
-		Media.killSounds(); //Don't allow sounds to bleed into next view.		
+		Media.killSounds(); //Don't allow sounds to bleed into next view.	
+		
+		//Close current tip if open
+		Tips.hide();	
 		
 		if ( viewCollection.currentViewIndex == 0 ) {
 			
@@ -148,6 +149,10 @@ define(["libs/pace/pace.min",
 			Tips.showById("page_3_start");
 		}
 
+	}
+	
+	Integrative.prototype.transitionIn = function() {
+		if ( viewCollection.currentViewIndex == 0 ) Tips.showById("integrative_entered");
 	}
 	
 	function setupBubbleDimensions() {
@@ -168,9 +173,7 @@ define(["libs/pace/pace.min",
 	}
 	
 	function expandBubble(bubId) {
-	
-		console.log( "expandBubble BUB ID: " + bubId );
-				
+					
 		var allBubs = $("#screen_integrative .bubble");
 		TweenLite.to( $(allBubs), 0.5, { css: { scale: 0.65, zIndex:0 } } ); // scale  down, bring to bg
 		

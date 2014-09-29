@@ -66,7 +66,6 @@ define(["libs/pace/pace.min",
 			timelineNav.refreshDisplays();
 			thisRef.refreshButtonListeners();
 			
-			Tips.showById("touchstone_entered");
 			
 		});
 		
@@ -103,11 +102,18 @@ define(["libs/pace/pace.min",
 				
 	}
 	
+	Touchstone.prototype.transitionIn = function() {
+		if ( viewCollection.currentViewIndex == 0 ) Tips.showById("touchstone_entered");
+	}
+	
 	function changeView(navIndex) {
 		
 		if (viewCollection.currentViewIndex == 2 && navIndex != 2) {
 			bubbleTank.kill();
 		}
+		
+		//Close current tip if open
+		Tips.hide();
 		
 		viewCollection.gotoView(navIndex);
 		timelineNav.refreshDisplays();
