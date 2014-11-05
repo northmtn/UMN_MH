@@ -15,9 +15,7 @@ define(['net/util/Geom'], function(Geom){
 		this.curDuration = 0;
 		this.curProgress = 0;
 		this.curProgressRingTween = {};
-		
-		console.log("PR "+ this.fillColor);
-			
+					
 	}
 	
 	ProgressRing.startProgress = function( completionDelay, canvasParentDiv ) {

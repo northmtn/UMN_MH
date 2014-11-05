@@ -72,6 +72,7 @@ define(["libs/pace/pace.min",
 			changeView(0);
 			thisRef.setupStops();
 			thisRef.resetStops();
+			thisRef.refreshButtonListeners();
 
 		});
 		
