@@ -1013,16 +1013,20 @@ button.icon-house:after {
 	text-align: left;
 	font-family: inherit;
 	color: white !important;
-	width: 317px;
+	overflow: auto;
+	font-size: 12px !important;
+	width: 304px;
 	height: 67px;
 	padding: 10px;
 	position: absolute;
+	padding-right: 23px;
 	left: 56px;
 	top: 80px;
 }
 
 #screen_touchstone .quiz-container #feedback_text.feedback_text {
 	color: white;
+	
 }
 
 .single_centered_col {
@@ -1977,7 +1981,7 @@ button.icon-house:after {
 
 	resize: none;
 	width: 340px;
-	height: 190px;
+	height: 140px;
 	border:4px solid #d29773;
 
     font-family: inherit;

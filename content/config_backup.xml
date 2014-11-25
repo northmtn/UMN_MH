@@ -203,7 +203,7 @@
 
 					<personnel role="Case Manager" audio="TMH_S03_ST01_04" duration="17">Right now I’m assisting Jenna with maintaining her benefits which includes keeping her health care affordable – and I can help her with general financial planning. I’m also available to help Jenna coordinate care and will make sure she knows that she should keep seeing her primary care provider and psychiatric nurse practitioner. </personnel>
 					
-					<personnel role="Nurse Practitioner" audio="TMH_S03_ST01_05" duration="49" >In my first visit with Jenna, I want to hear her story and learn about her top concerns as far as her health and wellness. Then I can tell her about the options available to address these issues and together we can come up with a plan that will likely include various interventions such as mind-body connection, nutrition, movement, sleep, purpose, spirituality, environment and relationships. I can refer her to other members of the Health and Wellness team like the dietitian, fitness specialist, acupuncturist, health coach or massage therapist. I may also collaborate with her primary care provider as needed and may order some labs, supplements or medications. My focus is not on managing disease for Jenna but rather on optimizing her level of health. </personnel>
+					<personnel role="Nurse Practitioner" audio="TMH_S03_ST01_05" duration="49" feedback_popup="Feedback shows after Case Manager audio completes.">In my first visit with Jenna, I want to hear her story and learn about her top concerns as far as her health and wellness. Then I can tell her about the options available to address these issues and together we can come up with a plan that will likely include various interventions such as mind-body connection, nutrition, movement, sleep, purpose, spirituality, environment and relationships. I can refer her to other members of the Health and Wellness team like the dietitian, fitness specialist, acupuncturist, health coach or massage therapist. I may also collaborate with her primary care provider as needed and may order some labs, supplements or medications. My focus is not on managing disease for Jenna but rather on optimizing her level of health. </personnel>
 					
 
 					<review>
@@ -212,8 +212,9 @@
 					</review>
 					
 					<quiz id="step1_in_review">
-						<QA title="Question" question="How would one be able to tell if the client is the central member of the care team?" feedback="When the client is the center of the healthcare team, his or her concerns and opinions are validated. The client also helps to determine the care goals, and these goals help to define the function of the team members. Finally, when the client is a central member of the team he or she is present at team meetings regarding his/her health care goals."/> 
-						
+						<QA title="Question 1" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback."/> 
+						<QA title="Question 2" question="Lorem ipsum this will be question number two of three. What is your answer?" feedback="Lorem ipsum, here is some feedback in response to question two."/> 
+						<QA title="Question 3" question="Q3. What is your answer?" feedback="Lorem ipsum, here is some feedback for question three."/> 
 					</quiz>
 
 				</step>
@@ -226,7 +227,7 @@
 
 					<personnel role="Jenna" audio="TMH_S03_ST02_03" duration="31">Today I met with an oncologist who told me that the red area on my shoulder is cancer. When I heard that I felt queasy and my insides did a summersault. The doctor said they can take care of it with surgery and it’s pretty routine, nothing to worry about. Nothing to worry about! Surgery sounds like something to worry about. And lots of people act like my fibromyalgia is nothing but it is something, it’s very real. I don’t know…I don’t know if I can handle this. </personnel>
 					
-					<personnel role="Oncologist" audio="TMH_S03_ST02_04" duration="27">Of course the word “cancer” is scary, but when I explained to Jenna that her basal cell carcinoma is not life threatening and that we can treat it easily with minor surgery, she still looked stunned. When I mentioned that we should get started on treatment sooner rather than later, she didn’t say much and left rather abruptly. I’ll make a note about her response to the diagnosis and her fear about the surgery in her appointment form which goes back to Touchstone.</personnel>
+					<personnel role="Oncologist" audio="TMH_S03_ST02_04" duration="27" feedback_popup="This feedback will show after the Oncologist audio completes.">Of course the word “cancer” is scary, but when I explained to Jenna that her basal cell carcinoma is not life threatening and that we can treat it easily with minor surgery, she still looked stunned. When I mentioned that we should get started on treatment sooner rather than later, she didn’t say much and left rather abruptly. I’ll make a note about her response to the diagnosis and her fear about the surgery in her appointment form which goes back to Touchstone.</personnel>
 
 					<personnel role="Nurse" audio="TMH_S03_ST02_05" duration="29">When I read the oncologist’s note about Jenna’s reaction to learning that she had basal cell carcinoma, I became concerned. In working with Jenna over the past four weeks I’ve learned that her anxiety and depression can become severe pretty quickly when she feels overwhelmed. I called her counselor, Julia, and she said she would contact her right away. Then, I talked to Jenna about seeing a healing touch provider to help her not feel so anxious. She agreed to give it a try and we made the appointment together.</personnel>
 
@@ -234,15 +235,15 @@
 
 					<personnel role="Healing Touch Provider" audio="TMH_S03_ST02_07" duration="24">I just had my first session with Jenna. I explained the benefits and risks of healing touch and how it can help with her immune system as well as helping her manage the pain of her fibromyalgia. Jenna appreciated how relaxing the treatment was and scheduled a return visit. I will let Jenna’s counselor know that the first session went well and that I recommend she continue with a few more especially as the surgery date gets closer.</personnel>
 					
-					<review feedback_popup="This feedback will show before review btns.">
+					<review>
 						<button id="video_review" video="TMH_S03_ST02_V01">COUNSELOR GOALS</button>
 						<button id="video_review" video="TMH_S03_ST02_V02">HEALING TOUCH</button>
 						<button id="quiz_review" quiz="step2_in_review">IN REVIEW</button>
 					</review>
 					
 					<quiz id="step2_in_review">
-						<QA title="Question" question="How might staff provide reassurance to Jenna about her cancer without minimizing her fears?" feedback="Jenna may not understand her cancer diagnosis and may feel uncertain about aspects of the diagnosis, treatment, and recovery. Uncertainty may cause Jenna emotional distress and diminished sense of control. Staff can recognize the potential impact of Jenna’s fear and uncertainty and encourage her to express these feelings. Staff can also reassure Jenna that she has the skills to manager these fears and they will support her during this time. By communicating with each other about Jenna’s fears the entire team is better prepared to support her."/> 
-						
+						<QA title="Don't know?" question="Don't know again." feedback="This is the feedback to I don't know."/> 
+						<QA title="Don't know part 2?" question="Don't know again. part 2" feedback="This is the feedback to I don't know. part 2"/> 
 					</quiz>
 					
 				</step>
@@ -265,7 +266,14 @@
 						<button id="video_review" video="TMH_S03_ST03_V02">GARDENING ACTIVITY</button>
 						<button id="video_review" video="TMH_S03_ST03_V03">ASSESSING DEPRESSION</button>
 						<button id="video_review" video="TMH_S03_ST03_V04">JENNA'S APPOINTMENT</button>
+						<button id="quiz_review" quiz="step3_in_review">IN REVIEW</button>
 					</review>
+
+					<quiz id="step3_in_review">
+						<QA title="Question 1" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback."/> 
+						<QA title="Question 2" question="Lorem ipsum this will be question number two of three. What is your answer?" feedback="Lorem ipsum, here is some feedback in response to question two."/> 
+						<QA title="Question 3" question="Lorem ipsum this will be question number three of three. What is your answer?" feedback="Lorem ipsum, here is some feedback for question three."/> 
+					</quiz>
 					
 				</step>
 	
@@ -288,10 +296,9 @@
 					</review>
 
 					<quiz id="step4_in_review">
-						<QA title="Question" question="What are the benefits on an integrative approach such as nature based therapy, counseling, medications, and healing touch?" feedback="There are many benefits to having an integrative approach to care:
-•	It encourages team members to work closely with each client to understand his or her wishes.
-•	A variety of traditional and non-traditional interventions, starting with the least intrusive approach, help the client heal more naturally and recover a sense of wellness.
-•	It gives clients an opportunity to be in more control of their own health."/> 
+						<QA title="Question 1" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback."/> 
+						<QA title="Question 2" question="Lorem ipsum this will be question number two of three. What is your answer?" feedback="Lorem ipsum, here is some feedback in response to question two."/> 
+						<QA title="Question 3" question="Lorem ipsum this will be question number three of three. What is your answer?" feedback="Lorem ipsum, here is some feedback for question three."/> 
 					</quiz>
 	
 				</step>
@@ -315,8 +322,9 @@
 					</review>
 
 					<quiz id="step5_in_review">
-						<QA title="Question" question="How can dealing with multiple chronic illnesses impact a person’s mental health?" feedback="Sometimes living with multiple chronic illnesses can negatively impact one’s mental health because of the time it takes to manage the illnesses, the number of appointments, the medications required, the isolation from friends and family, the fear of the unknown, the lack of control or predictability over one’s health, and the fatigue that results from all of this. However, many people learn self-care strategies that help them to deal with all of this and maintain a healthy mental state. Some of these strategies include prioritizing daily activities, conserving energy, redefining wellness, and knowing when and where to go for help. Many integrative therapies such as nature based therapy, counseling, and healing touch are also key to maintaining positive mental health."/> 
-						
+						<QA title="Question 1" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback."/> 
+						<QA title="Question 2" question="Lorem ipsum this will be question number two of three. What is your answer?" feedback="Lorem ipsum, here is some feedback in response to question two."/> 
+						<QA title="Question 3" question="Lorem ipsum this will be question number three of three. What is your answer?" feedback="Lorem ipsum, here is some feedback for question three."/> 
 					</quiz>
 					
 				</step>
@@ -436,24 +444,24 @@
 					]]>
 					</person>
 					
-					<person id="jason" audio="W_S02_ST01_04" duration="14"><![CDATA[I like Miss Wilson, but my favorite person at school is Mr. Lee. He lets me go in his office and play with his toys. It helps me when I can’t control my body. I’m trying to be good, but sometimes my body won’t listen to me. 
+					<person id="jason" audio="W_S02_ST01_04" duration="14" feedback_popup="The feedback pop-up shows after JASON audio completes."><![CDATA[I like Miss Wilson, but my favorite person at school is Mr. Lee. He lets me go in his office and play with his toys. It helps me when I can’t control my body. I’m trying to be good, but sometimes my body won’t listen to me. 
 					]]>
 					</person>
 					
-					<person id="occupational_therapist" audio="W_S02_ST01_05" duration="32">
+					<person id="occupational_therapist" audio="W_S02_ST01_05" duration="32" feedback_popup="The feedback pop-up shows after THERAPIST audio completes.">
 					<![CDATA[I’d like to spend time talking to Jason’s teacher so that I can learn more about what happens at school and how it’s structured. For example, does he have more issues in the cafeteria at lunchtime or in really noisy environments?  Does he have issues when the class activities are seated at the desk tabletop or is it harder when people are talking and the environment is louder?  I’d also like to speak with Mr. Lee about what he sees when Jason visits him. Jason says he likes to see Mr. Lee and I wonder if the quieter, less stimulating space is a factor of this.]]>
 					</person>
 					
-					<review feedback_popup="The feedback pop-up shows before buttons.">
+					<review>
 						<button id="video_review" video="W_S02_ST01_V01">TRANSITIONS</button>
-						<button id="video_review" video="W_S02_ST01_V02">AN OT PERSPECTIVE</button>
+						<button id="video_review" video="W_S02_ST01_V02">AN OT PERSPECITVE</button>
 						<button id="video_review" video="W_S02_ST01_V03">TEAM GOAL</button>
 						<button id="quiz_review" quiz="stop1_in_review">IN REVIEW</button>
 					</review>
 					
 					
 					<quiz id="stop1_in_review">
-						<QA title="Question" question="What are other possibilities for why transitions are difficult for Jason?" feedback="It could be neurological. Perhaps Jason’s brain is having a difficult time stopping and switching activities. As providers spend more time with Jason and start to implement supports around him, they should start to get a clearer picture of whether this might be neurological or if it is due to his past and current experiences."/> 
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
 					</quiz>
 					
 				</stop>
@@ -484,13 +492,17 @@
 					
 					<review>
 						<button id="video_review" video="W_S02_ST02_V01">THE HOME ENVIRONMENT</button>
+						<button id="reading_review" reading="stop2_reading">IN THEIR SHOES</button>
 						<button id="quiz_review" quiz="stop2_in_review">IN REVIEW</button>
 					</review>
 					
-			
+					<reading id="stop2_reading" title="In Their Shoes">
+						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
+					</reading>
 					
 					<quiz id="stop2_in_review">
-						<QA title="Question" question="Who on the interprofessional team is the pharmacist working with and why?" feedback="The pharmacist takes an interprofessional perspective by connecting with the case manager to make sure Jason’s family has adequate insurance coverage and by checking with Jason’s mom to learn about nutrition, supplements, and other possible home remedies."/> 
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
 					</quiz>
 					
 				</stop>
@@ -529,7 +541,7 @@
 					
 					
 					<quiz id="stop3_in_review">
-						<QA title="Question" question="Given what you just learned about the unsafe neighborhood and Jason’s reaction when his mom leaves, which professionals would you inform and why?" feedback="This info should be shared with the entire interprofessional team because it may help explain Jason’s behavior and Mom’s reasons for restricting Jason’s outside play time."/> 
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
 					</quiz>
 					
 				</stop>
@@ -564,7 +576,7 @@
 					</review>
 					
 					<quiz id="stop4_in_review">
-						<QA title="Question" question="What are some things to consider when you are working with a child who has a parent who also has a significant history of trauma (and may themselves be triggered by it)?" feedback="While the team needs to be aware that Mom has her own trauma history and she and Jason might be responding to each other’s anxiety or sadness; it’s also important to remember that the client is Jason. Mom did not come to Wilder to address her mental health issues and has not given consent for treatment of herself. Therefore, the team members need to carefully balance how each talks with Mom about how she and Jason might be responding to each other. Jason’s mom needs to become comfortable sharing her own trauma experiences, and this that might take a lot of time. When she’s ready, the team can help her find the resources needed."/> 
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
 					</quiz>
 					
 				</stop>
@@ -594,11 +606,17 @@
 					<review>
 						<button id="video_review" video="W_S02_ST05_V01">LEAST INTRUSIVE APPROACH</button>
 						<button id="video_review" video="W_S02_ST05_V02">MEDICATIONS</button>
+						<button id="reading_review" reading="stop5_reading">IN THEIR SHOES</button>
 						<button id="quiz_review" quiz="stop5_in_review">IN REVIEW</button>
 					</review>
 					
+					<reading id="stop5_reading" title="In Their Shoes">
+						<![CDATA[It’s always helpful to consider a situation from someone else’s perspective, etc. etc. For example, Miss Wilson is obviously concerned about Jason, but remember, she has 30 other children in her classroom and ...
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.]]>
+					</reading>
+					
 					<quiz id="stop5_in_review">
-						<QA title="Question" question="Jason and his mom could likely qualify for many mental health and social services programs. What things should be considered when the integrative, interprofessional team discusses what needs to happen?" feedback="The interprofessional team, including Jason’s mom, can work together to identify what strategies would address Jason’s needs at home and at school and that would still be realistic for everyone to follow. Any intervention must be realistic, acceptable, and not overwhelming for the teacher, Jason, or his mom, and the providers must be accessible."/> 
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
 					</quiz>
 					
 				</stop>
@@ -632,7 +650,7 @@
 					</review>
 					
 					<quiz id="stop6_in_review">
-						<QA title="Question" question="Shared language among parents, the healthcare team, and the school team is important. How can people in Jason’s life begin to ‘speak the same language’?" feedback="First, listening and not assuming that we understand each. Then, clarifying each other’s perspectives. Both are essential to an interprofessional team that functions well. By starting with Jason and his family as the center of the team, we can begin to understand their needs, hopes, and dreams. Unconditional positive regard for each other builds trust and acceptance. Shared language is a natural outgrowth of understanding and acceptance."/> 
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
 					</quiz>
 					
 				</stop>
@@ -676,7 +694,7 @@
 					
 				
 					<quiz id="stop7_in_review">
-						<QA title="Question" question="Diet, nutrition, and meal preparation are part of the integrative approaches to mental health in children. How would you approach the topic of nutrition and diet with Jason’s mother?" feedback="There are many cultural aspects to diet and food choice. It’s important to understand from Jason’s mom how she currently provides nutritious meals for the family. Food security is another issue to consider. Gathering information about where and how Jason’s mom can access nutritious foods is an important service the interprofessional team can provide."/> 
+						<QA title="What Would You Do?" question="How might things have turned out differently if the nurse had not contacted the pharmacist?" feedback="Lorem ipsum, here is some feedback. Lorem ipsum, here is some feedback."/> 
 					</quiz>
 					
 				</stop>
@@ -695,10 +713,10 @@
 				<![CDATA[</br>Behavioral and mental health issues can be difficult to understand and navigate. At Wilder we help families understand the healing process from diagnosis to treatment and everything in between. We work with the entire family to reinforce skills and tools to support people at home and we connect families to helpful resources.]]>
 			</text>
 			<text id="text_3">
-				<![CDATA[</br>We do this by learning about each family’s cultural perspectives on what will be helpful. We are constantly adapting our bicultural bilingual services to emerging needs as new cultural groups move to our community.]]>
+				<![CDATA[</br>We do this by learning about each family’s cultural perspectives on what will be helpful. We are constantly adapting our bicultural bilingual services to adapt to emerging needs as new cultural groups move to our community.]]>
 			</text>
 			
-			<button id="video_1" video="M01_S02V01_D">WATCH A CONCLUSION VIDEO</button>
+			<button id="video_1" video="M01_S02V01_D">WATCH AN CONCLUSION VIDEO</button>
 						
 		</view>
 	

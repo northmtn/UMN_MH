@@ -62,7 +62,10 @@ define([], function(){
     	$(this.titleDiv).html( this.qa[qIndex][0] );
     	$(this.questionDiv).html( this.qa[qIndex][1] );
     	
-    	$(this.feedbackDiv).html( this.qa[qIndex][2] );
+    	var feedbackHTML = this.qa[qIndex][2];
+    	feedbackHTML = feedbackHTML.replace(/•/g, "<br/>  •"); // make sure bullets use line-break
+    	$(this.feedbackDiv).html( feedbackHTML );
+    	$(this.feedbackDiv).scrollTop(0);
     	this.feedbackText = this.qa[qIndex][2];
     	
     	$(this.answerDiv).val( 'Type your answer here' );//reset text area to default value
@@ -85,6 +88,7 @@ define([], function(){
     	$(this.feedbackDiv).fadeIn('fast');
     	this.feedbackShown = true;
     	$(this.feedbackDiv).css('top', parseInt( $(this.answerDiv).position().top ) + 4 );
+    	$(this.feedbackDiv).scrollTop(0);
     	    	
     	if ( this.onLastQuestion() == false ) {
     		$(this.quizBtn).html("NEXT");
