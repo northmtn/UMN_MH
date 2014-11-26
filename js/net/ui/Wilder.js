@@ -416,7 +416,6 @@ define(["libs/pace/pace.min",
 	Wilder.prototype.showReview = function () {
 		
 		this.transitionInnerCircleTo("review");
-		
 		Tips.showById("wilder_review_start");
 		
 	}
@@ -489,9 +488,19 @@ define(["libs/pace/pace.min",
     	}
     	if (numVisited == this.currentStop.people.length) {
     		//show next btn
+    		var thisRef = this;
     		TweenLite.delayedCall(0.5, function() {
 				$("#screen_wilder #views_container #inner_wheel_container #people_btn_next").fadeIn('slow');
 				Tips.showById("wilder_last_person_completed");
+				
+				//show feedback balloon
+				var rFeedback = thisRef.currentStop.reviewFeedback;
+				console.log('rFeedback',rFeedback);
+				if (typeof rFeedback !== 'undefined' && rFeedback !== false) {
+					WI_Feedback.populateFeedback(rFeedback);
+					WI_Feedback.dropBalloon();
+				}
+				
     		});
     	}
     }

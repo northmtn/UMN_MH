@@ -33,6 +33,7 @@ define(['net/util/Util'], function( Util ){
     	
     	//INNER OVAL REVIEW
     	this.reviewBtns = [];
+    	this.reviewFeedback = $(configData).find("review").first().attr('feedback_popup');
     	$(configData).find("review button").each(function() {
 
     		var btnId = $(this).first().text();

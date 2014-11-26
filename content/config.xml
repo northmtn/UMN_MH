@@ -234,7 +234,7 @@
 
 					<personnel role="Healing Touch Provider" audio="TMH_S03_ST02_07" duration="24">I just had my first session with Jenna. I explained the benefits and risks of healing touch and how it can help with her immune system as well as helping her manage the pain of her fibromyalgia. Jenna appreciated how relaxing the treatment was and scheduled a return visit. I will let Jenna’s counselor know that the first session went well and that I recommend she continue with a few more especially as the surgery date gets closer.</personnel>
 					
-					<review feedback_popup="This feedback will show before review btns.">
+					<review feedback_popup="The note the oncologist made on the appointment card about Jenna’s fears and the way the nurse communicated with Jenna’s counselor are great examples of the type of communication that needs to take place to make an interprofessional approach work well. Another particularly important example of this approach is how the nurse involved Jenna in making the decision to see a healing touch provider.">
 						<button id="video_review" video="TMH_S03_ST02_V01">COUNSELOR GOALS</button>
 						<button id="video_review" video="TMH_S03_ST02_V02">HEALING TOUCH</button>
 						<button id="quiz_review" quiz="step2_in_review">IN REVIEW</button>
@@ -260,7 +260,7 @@
 					<personnel role="Counselor" audio="TMH_S03_ST03_07" duration="40">I met with Jenna this morning. Her nurse, Maria, emailed me, so I knew how anxious she was about the surgery. I helped her to understand that avoidance was part of a pattern common in how she relates to others and to important events in her life. Jenna said that every time she thought about the appointment she thought, “I’ll die from the treatment, and maybe I would just be better off dead now.” We talked about how the treatment might involve some pain but will help her stay healthy long term, but she doesn’t seem convinced yet. I reminded Jenna that she’s coped well before, has many supporters on her team, and she can do this!</personnel>
 					<personnel role="Activities Coordinator" audio="TMH_S03_ST03_08" duration="33">This afternoon Jenna and a few of her neighbors participated in a gardening activity that I had planned. Jenna had shared the news about her cancer during the activity and one neighbor made a comment about how Jenna was being over dramatic and unrealistic about her skin cancer. Well, this was hard for Jenna to hear and she began crying. Other neighbors stopped gardening and offered Jenna their support, which appeared to help Jenna feel better. In fact, Jenna planted a flower and named it “hope” and said she will be by to care for and water it daily – which I noted in Jenna’s chart.</personnel>
 
-					<review>
+					<review feedback_popup="When a client like Jenna has multiple chronic illnesses, the number of professionals involved and the amount of communication and coordination necessary is increased. Keeping in mind the needs and perspectives of the other professionals involved is key, just like the way the pharmacist considered insurance and medical assistance issues that Jenna’s case manager might need to know and the way she reached out to Jenna’s nurse practitioner about herbal supplements.">
 						<button id="video_review" video="TMH_S03_ST03_V01">JENNA'S FINANCES</button>
 						<button id="video_review" video="TMH_S03_ST03_V02">GARDENING ACTIVITY</button>
 						<button id="video_review" video="TMH_S03_ST03_V03">ASSESSING DEPRESSION</button>
@@ -444,7 +444,7 @@
 					<![CDATA[I’d like to spend time talking to Jason’s teacher so that I can learn more about what happens at school and how it’s structured. For example, does he have more issues in the cafeteria at lunchtime or in really noisy environments?  Does he have issues when the class activities are seated at the desk tabletop or is it harder when people are talking and the environment is louder?  I’d also like to speak with Mr. Lee about what he sees when Jason visits him. Jason says he likes to see Mr. Lee and I wonder if the quieter, less stimulating space is a factor of this.]]>
 					</person>
 					
-					<review feedback_popup="The feedback pop-up shows before buttons.">
+					<review feedback_popup="Miss Wilson is obviously concerned about Jason, but she has 25 other children in her classroom and it may be challenging for her to take the necessary time to prepare Jason for transitions. Sometimes teachers unconsciously adapt their approaches to a child because they sense the child’s feelings and needs. An interprofessional approach would be to work with the teacher to plan for transitions for Jason and the class. For example, where is the daily schedule printed?  Could students have a copy on their desk? Could the teacher put the schedule on a white or chalk board or discuss it at the beginning of the day? Ongoing reminders could be helpful as well.">
 						<button id="video_review" video="W_S02_ST01_V01">TRANSITIONS</button>
 						<button id="video_review" video="W_S02_ST01_V02">AN OT PERSPECTIVE</button>
 						<button id="video_review" video="W_S02_ST01_V03">TEAM GOAL</button>
@@ -520,7 +520,7 @@
 					]]>
 					</person>
 					
-					<review>
+					<review feedback_popup="Given the family’s current housing situation, running and playing outside is not a safe option for Jason. The integrative team could work with Jason’s mom to modify the home environment to support some gross motor activities and provide suggestions for making a game out of household chores, which would assist Mom as well!">
 						<button id="video_review" video="W_S02_ST03_V01">BUILDING RELATIONSHIPS</button>
 						<button id="video_review" video="W_S02_ST03_V02">THE IMPACT OF TRAUMA</button>
 						<button id="video_review" video="W_S02_ST03_V03">PHYSICAL ACTIVITY</button>

@@ -918,14 +918,14 @@ button.icon-house:after {
 #screen_touchstone #leaf_feedback_box {
 	
 	left: 240px;
-	bottom: 285px;
+	bottom: 315px;
 	z-index: 1;
 }
 
 #screen_touchstone #leaf_feedback_box span {
 
 	width: 690px;
-	height: 215px;
+	height: 245px;
 	
 }
 
@@ -2079,7 +2079,7 @@ button.icon-house:after {
 #screen_wilder #balloon_feedback_box span {
 
 	width: 690px;
-	height: 215px;
+	height: 280px;
 	
 }
 #screen_wilder #balloon {

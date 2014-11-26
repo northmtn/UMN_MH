@@ -84,7 +84,7 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     	//show default view on center oval
     	$(thisRef.containerDiv).find("#center_oval div").hide();
     	$(thisRef.containerDiv).find("#center_oval #step_description_container").show();   
-    	
+
     	//review buttons
     	$(this.containerDiv).find("#review_container button.rect-button").each( function (index) {
     		
@@ -376,6 +376,17 @@ define(['net/data/AppData', 'net/util/Util', 'net/ui/TS_Step', 'net/ui/TS_Feedba
     			
     			//kill speech bubble
     			thisRef.killSpeechBubble();
+    			
+    			//pre-review feedback. Will trigger leaf/feedback box.
+    			var rFeedback = thisRef.currentStep.reviewFeedback
+    			console.log('rFeedback',rFeedback);
+    			if (typeof rFeedback !== 'undefined' && rFeedback !== false) {
+    			
+    				TS_Feedback.populateFeedback(rFeedback);
+    				TS_Feedback.dropLeaf();
+    				
+    			}
+    			
     			
     			//show review media/quiz
     			$(thisRef.containerDiv).find("#center_oval #step_description_container").hide();   
