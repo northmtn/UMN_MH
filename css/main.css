@@ -275,12 +275,14 @@ button.icon-house:after {
 	background-image: url("../img/touchstone/touchstone_footer_tab.png");
 	background-repeat: no-repeat;
 	background-position: bottom;
+	pointer-events: none;
 }
 
 .footer-bar #btn_quit_program {
 	position: absolute;
 	left: 871px;
 	bottom: -8px;
+	pointer-events: visible;
 }
 .footer-bar #btn_quit_program h3 {
 	color: #41270c;
@@ -1966,7 +1968,7 @@ button.icon-house:after {
 
 #screen_wilder #inner_wheel_container #question_title{
 
-	padding-top: 50px;
+	padding-top: 35px;
 	margin: 0px;
 
 }
@@ -1994,11 +1996,15 @@ button.icon-house:after {
 	background-color: #d29773;
 	text-align: left;
 	font-family: inherit;
+	font-size: 13px;
+	overflow-y: auto;
 	color: white !important;
-	width: 338px;
-	height: 180px;
+	width: 312px;
+	height: 130px;
 	padding: 10px;
 	position: absolute;
+	padding-right: 26px;
+	padding-left: 17px;
 	left: 0px;
 	top: 0px;
 	margin-top: 0px;

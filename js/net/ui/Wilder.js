@@ -679,6 +679,7 @@ define(["libs/pace/pace.min",
 		
 			var stopId = btnId.substring(5);
 			this.jumpToStop( stopId );
+			this.hideQuiz();
 		    return;
 		    
 		}
